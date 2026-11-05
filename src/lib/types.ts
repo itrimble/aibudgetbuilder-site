@@ -23,6 +23,10 @@ export type Gpu = Source & {
   spec_verified?: string[]
   spec_unverified?: string[]
   spec_note?: string
+  bandwidth_gbs?: number // memory bandwidth in GB/s, with its own source below (kept apart from the R21 spec fields)
+  bandwidth_source_url?: string
+  bandwidth_checked_on?: string
+  bandwidth_basis?: string
   note: string
 }
 

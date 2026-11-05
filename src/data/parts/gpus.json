@@ -34,7 +34,11 @@
     "spec_unverified": [
       "connector_count"
     ],
-    "spec_note": "NVIDIA P40 datasheet (pdftotext): 24 GB, Max Power 250 W, 'Slot, Full Height' form factor (dual slot per the existing record), passive. Power connector not in the datasheet. Passive is carried from the datasheet cooling line as read in the earlier session; re-read today only for memory, power and slot. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Pascal. Connector still not stated in the datasheet."
+    "spec_note": "NVIDIA P40 datasheet (pdftotext): 24 GB, Max Power 250 W, 'Slot, Full Height' form factor (dual slot per the existing record), passive. Power connector not in the datasheet. Passive is carried from the datasheet cooling line as read in the earlier session; re-read today only for memory, power and slot. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Pascal. Connector still not stated in the datasheet.",
+    "bandwidth_gbs": 346,
+    "bandwidth_source_url": "https://images.nvidia.com/content/pdf/tesla/184427-Tesla-P40-Datasheet-NV-Final-Letter-Web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "instinct-mi50-32",
@@ -70,7 +74,11 @@
       "slot_width"
     ],
     "spec_unverified": [],
-    "spec_note": "AMD accelerator specifications table: MI50 (32GB) HBM2, 300 W, 2x8-pin, passive, double slot, PCIe 4.0 x16. AMD's old MI50 product page returns 404."
+    "spec_note": "AMD accelerator specifications table: MI50 (32GB) HBM2, 300 W, 2x8-pin, passive, double slot, PCIe 4.0 x16. AMD's old MI50 product page returns 404.",
+    "bandwidth_gbs": 1000,
+    "bandwidth_source_url": "https://ir.amd.com/news-events/press-releases/detail/859/amd-unveils-worlds-first-7nm-datacenter-gpus----powering-the-next-era-of-artificial-intelligence-cloud-computing-and-high-performance-computing-hpc",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker press release, search excerpt (\"up to 1 TB/s\", converted to 1,000 GB/s)"
   },
   {
     "id": "radeon-pro-v620",
@@ -106,7 +114,11 @@
     "spec_unverified": [
       "slot_width"
     ],
-    "spec_note": "AMD page: 32 GB GDDR6, 300 W typical board power, 2x8-pin, passive, PCIe 4.0 x16."
+    "spec_note": "AMD page: 32 GB GDDR6, 300 W typical board power, 2x8-pin, passive, PCIe 4.0 x16.",
+    "bandwidth_gbs": 512,
+    "bandwidth_source_url": "https://www.amd.com/en/products/accelerators/radeon-pro/amd-radeon-pro-v620.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-3090",
@@ -143,7 +155,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA 3090/3090 Ti page, 3090 column: 24 GB GDDR6X, 3-Slot, Graphics Card Power 350 W, 750 W system, 2x PCIe 8-pin (adapter to 1x 12-pin included). Cooling and architecture not read. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3090/3090 Ti page: Ampere; Founders Edition slot 3-Slot; 3090 supplementary power 2x PCIe 8-pin (adapter to 1x 12-pin included); 350 W."
+    "spec_note": "NVIDIA 3090/3090 Ti page, 3090 column: 24 GB GDDR6X, 3-Slot, Graphics Card Power 350 W, 750 W system, 2x PCIe 8-pin (adapter to 1x 12-pin included). Cooling and architecture not read. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3090/3090 Ti page: Ampere; Founders Edition slot 3-Slot; 3090 supplementary power 2x PCIe 8-pin (adapter to 1x 12-pin included); 350 W.",
+    "bandwidth_gbs": 936,
+    "bandwidth_source_url": "https://images.nvidia.com/aem-dam/en-zz/Solutions/geforce/ampere/pdf/NVIDIA-ampere-GA102-GPU-Architecture-Whitepaper-V1.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-6600xt",
@@ -179,7 +195,11 @@
       "slot_width",
       "cooling"
     ],
-    "spec_note": "AMD page: 8 GB GDDR6, 160 W typical board power, 500 W minimum PSU, 1x8-pin, PCIe 4.0. A first attempt used a URL that redirected to the RX 9000 page and returned another card's figures; that result was rejected."
+    "spec_note": "AMD page: 8 GB GDDR6, 160 W typical board power, 500 W minimum PSU, 1x8-pin, PCIe 4.0. A first attempt used a URL that redirected to the RX 9000 page and returned another card's figures; that result was rejected.",
+    "bandwidth_gbs": 256,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6600-xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "v100-32-sxm2",
@@ -216,7 +236,11 @@
       "slot_width",
       "cooling"
     ],
-    "spec_note": "NVIDIA V100 datasheet: SXM2 variant 300 W; memory '32GB / 16GB HBM2' is a shared row. Cooling, slot width and connectors depend on the third-party adapter board, so they are unverified. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated."
+    "spec_note": "NVIDIA V100 datasheet: SXM2 variant 300 W; memory '32GB / 16GB HBM2' is a shared row. Cooling, slot width and connectors depend on the third-party adapter board, so they are unverified. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated.",
+    "bandwidth_gbs": 900,
+    "bandwidth_source_url": "https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "v100-32-pcie",
@@ -253,7 +277,11 @@
       "connector_count",
       "slot_width"
     ],
-    "spec_note": "NVIDIA V100 datasheet: PCIe variant 250 W, 32 GB or 16 GB HBM2, Thermal Solution Passive, PCIe full height/length. Connector and slot width not given. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated. Slot width 2 is carried over from the earlier record and is NOT verified against the datasheet."
+    "spec_note": "NVIDIA V100 datasheet: PCIe variant 250 W, 32 GB or 16 GB HBM2, Thermal Solution Passive, PCIe full height/length. Connector and slot width not given. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated. Slot width 2 is carried over from the earlier record and is NOT verified against the datasheet.",
+    "bandwidth_gbs": 900,
+    "bandwidth_source_url": "https://images.nvidia.com/content/technologies/volta/pdf/tesla-volta-v100-datasheet-letter-fnl-web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-3060-12",
@@ -275,7 +303,7 @@
     "price_high": 0,
     "owned_only": true,
     "brand": "nvidia",
-    "note": "Used only to describe a typical gamer's PC. Not for sale in this list.",
+    "note": "Used only to describe a typical gamer's PC. Not for sale in this list. Bandwidth: NVIDIA's page gives the 192-bit bus but no GB/s figure, so 360 GB/s comes from Gigabyte's card page (15 Gbps x 192 bit / 8 = 360).",
     "source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/",
     "checked_on": "2026-11-03",
     "spec_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3060-3060ti/",
@@ -290,7 +318,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA 3060/3060 Ti page: 3060 column lists '12 GB / 8 GB', Graphics Card Power 170 W, 1x PCIe 8-pin. The slot cell has a single value for both columns so slot_width is unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3060 family page: Ampere; Slot cell \"2-Slot\" (single merged cell covering 3060 Ti and 3060), Graphics Card Power 170 W for 3060, Supplementary Power 1x PCIe 8-pin. Cooling not stated. Reference-design values; partner cards differ."
+    "spec_note": "NVIDIA 3060/3060 Ti page: 3060 column lists '12 GB / 8 GB', Graphics Card Power 170 W, 1x PCIe 8-pin. The slot cell has a single value for both columns so slot_width is unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3060 family page: Ampere; Slot cell \"2-Slot\" (single merged cell covering 3060 Ti and 3060), Graphics Card Power 170 W for 3060, Supplementary Power 1x PCIe 8-pin. Cooling not stated. Reference-design values; partner cards differ.",
+    "bandwidth_gbs": 360,
+    "bandwidth_source_url": "https://www.gigabyte.com/us/Graphics-Card/GV-N3060GAMING-12GD/sp",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "rtx-5090",
@@ -328,7 +360,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA page: 32 GB GDDR7, Slot '2-Slot', Total Graphics Power 575 W, Supplementary Power Connectors '4x PCIe 8-pin cables (adapter in box) OR 1x 600 W PCIe Gen 5 cable'; Blackwell architecture. The same page also says to leave room for a 3-slot (61 mm) card, so the 2-slot figure is NVIDIA's own wording for the Founders Edition. Cooling not stated on the page text I read. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. "
+    "spec_note": "NVIDIA page: 32 GB GDDR7, Slot '2-Slot', Total Graphics Power 575 W, Supplementary Power Connectors '4x PCIe 8-pin cables (adapter in box) OR 1x 600 W PCIe Gen 5 cable'; Blackwell architecture. The same page also says to leave room for a 3-slot (61 mm) card, so the 2-slot figure is NVIDIA's own wording for the Founders Edition. Cooling not stated on the page text I read. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. ",
+    "bandwidth_gbs": 1792,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-5080",
@@ -366,7 +402,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA page: 16 GB GDDR7, Slots '2-Slot', Total Graphics Power 360 W, '3x PCIe 8-pin cables (adapter in box) OR ...'. Cooling not stated. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. "
+    "spec_note": "NVIDIA page: 16 GB GDDR7, Slots '2-Slot', Total Graphics Power 360 W, '3x PCIe 8-pin cables (adapter in box) OR ...'. Cooling not stated. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. ",
+    "bandwidth_gbs": 960,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-5070-ti",
@@ -404,7 +444,11 @@
       "slot_width",
       "cooling"
     ],
-    "spec_note": "NVIDIA RTX 5070 family page, Ti column: 16 GB GDDR7, Total Graphics Power 300 W, 2x PCIe 8-pin (adapter in box). The Ti column's slot cell says 'Varies by manufacturer' (the 2-slot figure on the page is the 5070 column), so slot_width 2 is unverified. Cooling not stated. Column mapping read from the page row order (Ti first). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. "
+    "spec_note": "NVIDIA RTX 5070 family page, Ti column: 16 GB GDDR7, Total Graphics Power 300 W, 2x PCIe 8-pin (adapter in box). The Ti column's slot cell says 'Varies by manufacturer' (the 2-slot figure on the page is the 5070 column), so slot_width 2 is unverified. Cooling not stated. Column mapping read from the page row order (Ti first). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. ",
+    "bandwidth_gbs": 896,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-5060-ti-16gb",
@@ -442,7 +486,11 @@
       "slot_width",
       "cooling"
     ],
-    "spec_note": "NVIDIA RTX 5060 family page, Ti column: '16 GB / 8 GB GDDR7' (this record is the 16 GB variant), Total Graphics Power 180 W, 1x PCIe 8-pin. Slot is 'Varies by manufacturer' on the page, so slot_width is a guess for a typical dual-fan card and unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. "
+    "spec_note": "NVIDIA RTX 5060 family page, Ti column: '16 GB / 8 GB GDDR7' (this record is the 16 GB variant), Total Graphics Power 180 W, 1x PCIe 8-pin. Slot is 'Varies by manufacturer' on the page, so slot_width is a guess for a typical dual-fan card and unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. ",
+    "bandwidth_gbs": 448,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-4090",
@@ -480,7 +528,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA page: 24 GB GDDR6X, 3-Slot (61 mm), Total Graphics Power 450 W, 850 W required system power, '3x PCIe 8-pin cables (adapter in box) OR 450 W or greater PCIe Gen 5 cable'; Ada Lovelace architecture. Cooling not stated. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. "
+    "spec_note": "NVIDIA page: 24 GB GDDR6X, 3-Slot (61 mm), Total Graphics Power 450 W, 850 W required system power, '3x PCIe 8-pin cables (adapter in box) OR 450 W or greater PCIe Gen 5 cable'; Ada Lovelace architecture. Cooling not stated. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. ",
+    "bandwidth_gbs": 1008,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-4080",
@@ -518,7 +570,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA RTX 4080 family page (4080 and 4080 SUPER columns identical): 16 GB GDDR6X, 3-Slot, Total Graphics Power 320 W, 750 W system, '3x PCIe 8-pin cables (adapter in box)'. Architecture and cooling not read from the page. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4080 family page lists NVIDIA Architecture: Ada Lovelace."
+    "spec_note": "NVIDIA RTX 4080 family page (4080 and 4080 SUPER columns identical): 16 GB GDDR6X, 3-Slot, Total Graphics Power 320 W, 750 W system, '3x PCIe 8-pin cables (adapter in box)'. Architecture and cooling not read from the page. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4080 family page lists NVIDIA Architecture: Ada Lovelace.",
+    "bandwidth_gbs": 716.8,
+    "bandwidth_source_url": "https://images.nvidia.com/aem-dam/Solutions/Data-Center/l4/nvidia-ada-gpu-architecture-whitepaper-v2.1.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-4080-super",
@@ -556,7 +612,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA RTX 4080 family page (4080 and 4080 SUPER columns identical): 16 GB GDDR6X, 3-Slot, Total Graphics Power 320 W, 750 W system, '3x PCIe 8-pin cables (adapter in box)'. Architecture and cooling not read from the page. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4080 family page lists NVIDIA Architecture: Ada Lovelace."
+    "spec_note": "NVIDIA RTX 4080 family page (4080 and 4080 SUPER columns identical): 16 GB GDDR6X, 3-Slot, Total Graphics Power 320 W, 750 W system, '3x PCIe 8-pin cables (adapter in box)'. Architecture and cooling not read from the page. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4080 family page lists NVIDIA Architecture: Ada Lovelace.",
+    "bandwidth_gbs": 736,
+    "bandwidth_source_url": "https://www.thefpsreview.com/gpu-family/nvidia-geforce-rtx-4080-super-gpu-family-specifications/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "rtx-4070-ti-super",
@@ -594,7 +654,11 @@
       "slot_width",
       "cooling"
     ],
-    "spec_note": "NVIDIA RTX 4070 family page, first column (16 GB GDDR6X, so the 4070 Ti SUPER): Total Graphics Power 285 W, 2x PCIe 8-pin (adapter in box). Slots 'Varies by manufacturer' for this column, so slot_width is unverified. Column mapping inferred from the 16 GB cell. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4070 family page lists Ada Lovelace for all four columns; 2x PCIe 8-pin (or 300 W Gen 5 cable) as already recorded. Slot width not extracted."
+    "spec_note": "NVIDIA RTX 4070 family page, first column (16 GB GDDR6X, so the 4070 Ti SUPER): Total Graphics Power 285 W, 2x PCIe 8-pin (adapter in box). Slots 'Varies by manufacturer' for this column, so slot_width is unverified. Column mapping inferred from the 16 GB cell. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4070 family page lists Ada Lovelace for all four columns; 2x PCIe 8-pin (or 300 W Gen 5 cable) as already recorded. Slot width not extracted.",
+    "bandwidth_gbs": 672,
+    "bandwidth_source_url": "https://nvidianews.nvidia.com/news/geforce-rtx-40-super-series",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, seen as a search excerpt"
   },
   {
     "id": "rtx-3080-ti",
@@ -632,7 +696,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA 3080/3080 Ti page, first column (12 GB, the 3080 Ti): 2-Slot, Graphics Card Power 350 W, 2x PCIe 8-pin (adapter to 12-pin included). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3080 family page lists NVIDIA Architecture Ampere."
+    "spec_note": "NVIDIA 3080/3080 Ti page, first column (12 GB, the 3080 Ti): 2-Slot, Graphics Card Power 350 W, 2x PCIe 8-pin (adapter to 12-pin included). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 3080 family page lists NVIDIA Architecture Ampere.",
+    "bandwidth_gbs": 912,
+    "bandwidth_source_url": "https://www.pny.com/file%20library/company/support/product%20brochures/geforce%20graphics/english/xlr8-geforce-rtx-3080-ti-uprising-epic-x-tf.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "rx-6800",
@@ -670,7 +738,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 250 W, Additional Power Connector 2x8-Pin, Slots 2. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 250 W, Additional Power Connector 2x8-Pin, Slots 2. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 512,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-6800-xt",
@@ -708,7 +780,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 300 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 300 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 512,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6800-xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-6900-xt",
@@ -746,7 +822,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 300 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 300 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 512,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6900-xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-7600-xt",
@@ -784,7 +864,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 190 W, Additional Power Connector 2x8-Pin, Slots 2. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 190 W, Additional Power Connector 2x8-Pin, Slots 2. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 288,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7600-xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-7800-xt",
@@ -821,7 +905,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 263 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 263 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 624,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7800-xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-7900-xt",
@@ -858,7 +946,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 20 GB, Typical Board Power 315 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 20 GB, Typical Board Power 315 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 800,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-7900-xtx",
@@ -895,7 +987,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 24 GB, Typical Board Power 355 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 24 GB, Typical Board Power 355 W, Additional Power Connector 2x8-Pin, Slots 2.5. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 960,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7900xtx.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-9070",
@@ -932,7 +1028,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 220 W, Additional Power Connector 2x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 220 W, Additional Power Connector 2x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 640,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-9070-xt",
@@ -969,7 +1069,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 304 W, Additional Power Connector 2x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 304 W, Additional Power Connector 2x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 640,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rx-9060-xt-16gb",
@@ -1006,7 +1110,11 @@
       "arch",
       "tdp_w"
     ],
-    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 160 W, Additional Power Connector 1x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. "
+    "spec_note": "AMD page: Max Memory Size 16 GB, Typical Board Power 160 W, Additional Power Connector 1x8-Pin, Slots not shown on the page I read, so slot_width is unverified. Specs are AMD's reference page; partner cards differ in slot width, cooling and connectors. AMD's page does not state cooling, and architecture was not read from the page. Minimum-PSU and board power are AMD reference figures. ",
+    "bandwidth_gbs": 320,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "gtx-1080-ti",
@@ -1043,7 +1151,11 @@
       "cooling",
       "arch"
     ],
-    "spec_note": "NVIDIA 10 Series specs page, read 2026-11-04 through a search excerpt: 11 GB GDDR5X, 250 W graphics card power, one 6-pin plus one 8-pin, 2-slot width, 10.5 in long. The NVIDIA user guide PDF also says one 6-pin and one 8-pin. Architecture is left blank because the NVIDIA page does not name it. Cooling is entered as active because every production board has fans, but the NVIDIA page does not say so (PNY lists a Blower Edition), so it is not counted as verified."
+    "spec_note": "NVIDIA 10 Series specs page, read 2026-11-04 through a search excerpt: 11 GB GDDR5X, 250 W graphics card power, one 6-pin plus one 8-pin, 2-slot width, 10.5 in long. The NVIDIA user guide PDF also says one 6-pin and one 8-pin. Architecture is left blank because the NVIDIA page does not name it. Cooling is entered as active because every production board has fans, but the NVIDIA page does not say so (PNY lists a Blower Edition), so it is not counted as verified.",
+    "bandwidth_gbs": 484,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/10-series/10-series-specs/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, seen as a search excerpt"
   },
   {
     "id": "rtx-a6000",
@@ -1080,7 +1192,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA RTX A6000 datasheet: 48 GB GDDR6, total board power 300 W, dual slot full height, Active, 1x 8-pin CPU. 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture."
+    "spec_note": "NVIDIA RTX A6000 datasheet: 48 GB GDDR6, total board power 300 W, dual slot full height, Active, 1x 8-pin CPU. 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture.",
+    "bandwidth_gbs": 768,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/products/workstations/nvidia-rtx-a6000-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-a5000",
@@ -1117,7 +1233,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA RTX A5000 datasheet: 24 GB GDDR6, total board power 230 W, dual slot full height, Active, 1x 8-pin PCIe. 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture."
+    "spec_note": "NVIDIA RTX A5000 datasheet: 24 GB GDDR6, total board power 230 W, dual slot full height, Active, 1x 8-pin PCIe. 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture.",
+    "bandwidth_gbs": 768,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/products/workstations/nvidia-rtx-a5000-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-a4000",
@@ -1154,7 +1274,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA RTX A4000 datasheet: 16 GB GDDR6, total board power 140 W, single-slot, Thermal solution Active, power connector '1x 6-pin PCIe' (text extraction was slightly garbled, 'Ix 6-pin PCla'; double-check against the PDF). 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture."
+    "spec_note": "NVIDIA RTX A4000 datasheet: 16 GB GDDR6, total board power 140 W, single-slot, Thermal solution Active, power connector '1x 6-pin PCIe' (text extraction was slightly garbled, 'Ix 6-pin PCla'; double-check against the PDF). 2026-11-04 update: Datasheet: built on the NVIDIA Ampere architecture.",
+    "bandwidth_gbs": 448,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/gtcs22/design-visualization/quadro-product-literature/quadro-ampere-linecard-us-nvidia-web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, seen as a search excerpt"
   },
   {
     "id": "nvidia-a40",
@@ -1191,7 +1315,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA A40 datasheet: 48 GB GDDR6 with ECC, max power 300 W, dual slot, '8-pin CPU' power connector, Thermal Solution Passive, Ampere."
+    "spec_note": "NVIDIA A40 datasheet: 48 GB GDDR6 with ECC, max power 300 W, dual slot, '8-pin CPU' power connector, Thermal Solution Passive, Ampere.",
+    "bandwidth_gbs": 696,
+    "bandwidth_source_url": "https://images.nvidia.com/content/Solutions/data-center/a40/nvidia-a40-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "radeon-ai-pro-r9700",
@@ -1228,7 +1356,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "AMD page: 32 GB, Total Board Power 300 W, External Power Connectors 12V-2x6, Double Slot, Cooling Active, RDNA 4. Listed in the ROCm system-requirements table."
+    "spec_note": "AMD page: 32 GB, Total Board Power 300 W, External Power Connectors 12V-2x6, Double Slot, Cooling Active, RDNA 4. Listed in the ROCm system-requirements table.",
+    "bandwidth_gbs": 640,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/workstations/radeon-ai-pro/ai-9000-series/amd-radeon-ai-pro-r9700.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-4060-ti-16gb",
@@ -1266,7 +1398,11 @@
       "tdp_w",
       "cooling"
     ],
-    "spec_note": "NVIDIA page: Memory Size '16 GB or 8 GB' (this record is the 16 GB variant), Slots '2-Slot', 1x PCIe 8-pin (adapter in box). Total Graphics Power reads '165 or 160' with no split by memory size, so tdp_w 165 is unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA page: Architecture Ada Lovelace; memory config 16 GB or 8 GB GDDR6; Slots 2-Slot; 1x PCIe 8-pin (adapter in box) or 300 W Gen 5 cable, some partner models 1x 8-pin. Total Graphics Power cell reads \"165 or 160\" and does not say which belongs to the 16 GB model, so tdp_w stays unverified. Price: none read (bestvaluegpu now serves a Vercel bot checkpoint to curl; not bypassed)."
+    "spec_note": "NVIDIA page: Memory Size '16 GB or 8 GB' (this record is the 16 GB variant), Slots '2-Slot', 1x PCIe 8-pin (adapter in box). Total Graphics Power reads '165 or 160' with no split by memory size, so tdp_w 165 is unverified. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA page: Architecture Ada Lovelace; memory config 16 GB or 8 GB GDDR6; Slots 2-Slot; 1x PCIe 8-pin (adapter in box) or 300 W Gen 5 cable, some partner models 1x 8-pin. Total Graphics Power cell reads \"165 or 160\" and does not say which belongs to the 16 GB model, so tdp_w stays unverified. Price: none read (bestvaluegpu now serves a Vercel bot checkpoint to curl; not bypassed).",
+    "bandwidth_gbs": 288,
+    "bandwidth_source_url": "https://www.pny.com/file%20library/company/support/product%20brochures/geforce%20graphics/english/pny-geforce-rtx-4060-ti-16gb-df-b.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "rtx-3090-ti",
@@ -1304,7 +1440,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA 3090/3090 Ti page, 3090 Ti column: 24 GB GDDR6X, 3-Slot, Graphics Card Power 450 W, 850 W system, 3x PCIe 8-pin (adapter in box). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA page: Ampere; FE 3-Slot; Graphics Card Power 450 W; 3x PCIe 8-pin cables (adapter in box) OR 450 W or greater PCIe Gen 5 cable. Price: none, bestvaluegpu blocked to curl (bot checkpoint)."
+    "spec_note": "NVIDIA 3090/3090 Ti page, 3090 Ti column: 24 GB GDDR6X, 3-Slot, Graphics Card Power 450 W, 850 W system, 3x PCIe 8-pin (adapter in box). Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA page: Ampere; FE 3-Slot; Graphics Card Power 450 W; 3x PCIe 8-pin cables (adapter in box) OR 450 W or greater PCIe Gen 5 cable. Price: none, bestvaluegpu blocked to curl (bot checkpoint).",
+    "bandwidth_gbs": 1008,
+    "bandwidth_source_url": "https://videocardz.com/newz/nvidia-geforce-rtx-3090-ti-pictured-specifications-confirmed",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "radeon-pro-w7900",
@@ -1341,7 +1481,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "AMD page: 48 GB, Total Board Power 295 W, 2x8-Pin, Double Slot, Cooling Active, RDNA 3. ROCm table lists W7900 and W7900 Dual Slot."
+    "spec_note": "AMD page: 48 GB, Total Board Power 295 W, 2x8-Pin, Double Slot, Cooling Active, RDNA 3. ROCm table lists W7900 and W7900 Dual Slot.",
+    "bandwidth_gbs": 864,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/workstations/radeon-pro/w7900.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "radeon-pro-w7800",
@@ -1378,7 +1522,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "AMD page: 32 GB, Total Board Power 260 W, 2x8-Pin, Double Slot, Cooling Active, RDNA 3. The ROCm table also lists a W7800 48GB, which this record is not."
+    "spec_note": "AMD page: 32 GB, Total Board Power 260 W, 2x8-Pin, Double Slot, Cooling Active, RDNA 3. The ROCm table also lists a W7800 48GB, which this record is not.",
+    "bandwidth_gbs": 576,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/workstations/radeon-pro/w7800.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "radeon-pro-w6800",
@@ -1415,7 +1563,11 @@
       "arch"
     ],
     "spec_unverified": [],
-    "spec_note": "AMD page: 32 GB, Total Board Power 250 W, External Power Connectors '1x6-Pin + 1x8-Pin', Double Slot, Cooling Active, RDNA 2. The ROCm table lists W6800."
+    "spec_note": "AMD page: 32 GB, Total Board Power 250 W, External Power Connectors '1x6-Pin + 1x8-Pin', Double Slot, Cooling Active, RDNA 2. The ROCm table lists W6800.",
+    "bandwidth_gbs": 512,
+    "bandwidth_source_url": "https://www.amd.com/en/products/graphics/workstations/radeon-pro/w6800.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-l40s",
@@ -1453,7 +1605,11 @@
     "spec_unverified": [
       "arch"
     ],
-    "spec_note": "NVIDIA L40S page: 48 GB GDDR6 with ECC, Max Power Consumption 350 W, 4.4in x 10.5in dual slot, 16-pin power connector, Passive. Architecture not read from the page."
+    "spec_note": "NVIDIA L40S page: 48 GB GDDR6 with ECC, Max Power Consumption 350 W, 4.4in x 10.5in dual slot, 16-pin power connector, Passive. Architecture not read from the page.",
+    "bandwidth_gbs": 864,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/data-center/l40s/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-6000-ada",
@@ -1491,7 +1647,11 @@
     "spec_unverified": [
       "connector_count"
     ],
-    "spec_note": "NVIDIA page: 48 GB GDDR6 ECC, Max Power Consumption 300 W, dual slot, Active, Ada Lovelace. Connector not read. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (2) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf"
+    "spec_note": "NVIDIA page: 48 GB GDDR6 ECC, Max Power Consumption 300 W, dual slot, Active, Ada Lovelace. Connector not read. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (2) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf",
+    "bandwidth_gbs": 960,
+    "bandwidth_source_url": "https://resources.nvidia.com/ja-jp-nvidia-rtx-resources/rtx6000-ada-datasheet",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, seen as a search excerpt"
   },
   {
     "id": "rtx-5000-ada",
@@ -1529,7 +1689,11 @@
     "spec_unverified": [
       "connector_count"
     ],
-    "spec_note": "NVIDIA page: 32 GB GDDR6 ECC, 250 W, dual slot, Active, Ada Lovelace. Connector not read. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (2) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf"
+    "spec_note": "NVIDIA page: 32 GB GDDR6 ECC, 250 W, dual slot, Active, Ada Lovelace. Connector not read. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (2) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf",
+    "bandwidth_gbs": 576,
+    "bandwidth_source_url": "https://resources.nvidia.com/en-us-briefcase-for-datasheets/rtx-5000-ada-datashe",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, seen as a search excerpt"
   },
   {
     "id": "rtx-4000-ada",
@@ -1567,7 +1731,11 @@
       "arch",
       "connector_count"
     ],
-    "spec_note": "NVIDIA RTX 4000 Ada datasheet: 20 GB GDDR6, total board power 130 W, single slot, Active. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (1) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf"
+    "spec_note": "NVIDIA RTX 4000 Ada datasheet: 20 GB GDDR6, total board power 130 W, single slot, Active. NVIDIA lists the connector on the card as one CEM5 16-pin (Power Guidelines for Workstation Products). NVIDIA's adapter takes two PCIe 8-pin for up to 300 W, so the count of power-supply 8-pin outputs used here (1) is derived from that, not stated per card. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf",
+    "bandwidth_gbs": 360,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/products/workstations/nvidia-rtx-4000-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "quadro-rtx-8000",
@@ -1604,7 +1772,11 @@
       "connector_count"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA Quadro datasheet: 48 GB GDDR6, total board power 295 W, dual slot full height, Thermal solution Active. Connector not read; Turing is from the card generation, not the extraction. 2026-11-04 update: Datasheet: \"powered by the NVIDIA Turing architecture\"; Thermal Solution Active; Dual Slot, Full Height. Power connector not stated in the datasheet text; total board power 295 W. NVIDIA Power Guidelines for Workstation Products: Quadro RTX 8000, 260 W, PCIe 8-pin plus PCIe 6-pin. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf"
+    "spec_note": "NVIDIA Quadro datasheet: 48 GB GDDR6, total board power 295 W, dual slot full height, Thermal solution Active. Connector not read; Turing is from the card generation, not the extraction. 2026-11-04 update: Datasheet: \"powered by the NVIDIA Turing architecture\"; Thermal Solution Active; Dual Slot, Full Height. Power connector not stated in the datasheet text; total board power 295 W. NVIDIA Power Guidelines for Workstation Products: Quadro RTX 8000, 260 W, PCIe 8-pin plus PCIe 6-pin. Source: https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/quadro-product-literature/DA-07261-001_v15.pdf",
+    "bandwidth_gbs": 672,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/quadro-rtx-8000-us-nvidia-946977-r1-web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-a100-80gb-pcie",
@@ -1641,7 +1813,11 @@
       "vram_gb"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA A100 datasheet (80GB edition): 80 GB HBM2e, PCIe max thermal design power 300 W (SXM 400 W), PCIe form factor 'dual-slot air cooled or single-slot liquid cooled'. The 40 GB card is not in this datasheet, so I made no 40 GB record. 'Passive' is my reading of 'air cooled' in a server card and is unverified. NVIDIA A100 80GB PCIe product brief: total board power 300 W, passive, full-height full-length dual slot, one CPU 8-pin auxiliary power connector."
+    "spec_note": "NVIDIA A100 datasheet (80GB edition): 80 GB HBM2e, PCIe max thermal design power 300 W (SXM 400 W), PCIe form factor 'dual-slot air cooled or single-slot liquid cooled'. The 40 GB card is not in this datasheet, so I made no 40 GB record. 'Passive' is my reading of 'air cooled' in a server card and is unverified. NVIDIA A100 80GB PCIe product brief: total board power 300 W, passive, full-height full-length dual slot, one CPU 8-pin auxiliary power connector.",
+    "bandwidth_gbs": 1935,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-nvidia-us-2188504-web.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-pro-5000-blackwell",
@@ -1678,7 +1854,11 @@
       "vram_gb"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA page: 48 GB or 72 GB GDDR7 ECC (this is the 48 GB), 300 W, dual slot, Active, Blackwell. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 2 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card."
+    "spec_note": "NVIDIA page: 48 GB or 72 GB GDDR7 ECC (this is the 48 GB), 300 W, dual slot, Active, Blackwell. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 2 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card.",
+    "bandwidth_gbs": 1344,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5000/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "rtx-pro-6000-blackwell",
@@ -1716,7 +1896,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA page: 96 GB GDDR7 ECC, Max Power 600 W, dual slot, Blackwell. Cooling and connector not found in the text I read. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 4 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card. NVIDIA lists the 6000 Workstation Edition cooling as \"double flow through\" (fans); entered as active, not counted as verified."
+    "spec_note": "NVIDIA page: 96 GB GDDR7 ECC, Max Power 600 W, dual slot, Blackwell. Cooling and connector not found in the text I read. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 4 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card. NVIDIA lists the 6000 Workstation Edition cooling as \"double flow through\" (fans); entered as active, not counted as verified.",
+    "bandwidth_gbs": 1792,
+    "bandwidth_source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "arc-a770-16gb",
@@ -1755,7 +1939,11 @@
       "slot_width"
     ],
     "spec_note": "Intel specifications page (read via WebFetch; Intel returns 403 to curl): 16 GB GDDR6, Graphics Card Power 225 W. Power connectors, form factor, slot width and cooling were absent from the page. Intel support article: Arc A770 Limited Edition, 225 W, one 8-pin plus one 6-pin, both required. Slot width (2) and cooling (two fans) come from review and parts-list sites, not Intel, so they are not counted as verified.",
-    "sycl": "llama.cpp README lists a SYCL backend for Intel GPUs and Vulkan for any GPU; I did not run either."
+    "sycl": "llama.cpp README lists a SYCL backend for Intel GPUs and Vulkan for any GPU; I did not run either.",
+    "bandwidth_gbs": 560,
+    "bandwidth_source_url": "https://www.intel.com/content/www/us/en/products/sku/229151/intel-arc-a770-graphics-16gb/specifications.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "arc-b580",
@@ -1794,7 +1982,11 @@
       "cooling"
     ],
     "spec_note": "Intel specifications page (via WebFetch): 12 GB GDDR6, Total Board Power 190 W, '1 x 8-pin', 272 x 115 mm, Slots 2. Cooling not stated. Cooling is entered as active (the Limited Edition has two fans) but Intel's specification page does not say, so it is not counted as verified.",
-    "sycl": "llama.cpp README lists a SYCL backend for Intel GPUs; not run."
+    "sycl": "llama.cpp README lists a SYCL backend for Intel GPUs; not run.",
+    "bandwidth_gbs": 456,
+    "bandwidth_source_url": "https://www.intel.com/content/www/us/en/products/sku/241598/intel-arc-b580-graphics/specifications.html",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "tesla-p100-16gb",
@@ -1831,7 +2023,11 @@
       "vram_gb"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA P100 PCIe datasheet: 16 GB or 12 GB CoWoS HBM2 (this is the 16 GB), Max Power 250 W, Thermal Solution Passive, PCIe full height/length, Pascal architecture. Slot width and connector not given. Price withheld: the only price source was an eBay page read in a way eBay prohibits. NVIDIA Tesla P100 PCIe product brief: dual-slot 10.5 in card, 250 W total board power, one CPU 8-pin auxiliary power connector (or NVIDIA's dongle fed by two PCIe cables)."
+    "spec_note": "NVIDIA P100 PCIe datasheet: 16 GB or 12 GB CoWoS HBM2 (this is the 16 GB), Max Power 250 W, Thermal Solution Passive, PCIe full height/length, Pascal architecture. Slot width and connector not given. Price withheld: the only price source was an eBay page read in a way eBay prohibits. NVIDIA Tesla P100 PCIe product brief: dual-slot 10.5 in card, 250 W total board power, one CPU 8-pin auxiliary power connector (or NVIDIA's dongle fed by two PCIe cables).",
+    "bandwidth_gbs": 732,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/NV-tesla-p100-pcie-PB-08248-001-v01.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "v100-16-pcie",
@@ -1868,7 +2064,11 @@
       "vram_gb"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA V100 datasheet: PCIe variant 250 W, 32 GB or 16 GB HBM2, Thermal Solution Passive. Connector and slot width not given. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated. NVIDIA Tesla V100 PCIe product brief: dual-slot 10.5 in card, passive heat sink, 250 W total board power, one CPU 8-pin auxiliary power connector."
+    "spec_note": "NVIDIA V100 datasheet: PCIe variant 250 W, 32 GB or 16 GB HBM2, Thermal Solution Passive. Connector and slot width not given. 2026-11-04 update: Datasheet row GPU Architecture: NVIDIA Volta. PCIe datasheet says Form Factor \"PCIe Full Height/Length\" and Thermal Solution Passive; slot count and power connector not stated. NVIDIA Tesla V100 PCIe product brief: dual-slot 10.5 in card, passive heat sink, 250 W total board power, one CPU 8-pin auxiliary power connector.",
+    "bandwidth_gbs": 900,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/Tesla-V100-PCIe-Product-Brief.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "tesla-t4",
@@ -1906,7 +2106,11 @@
     "spec_unverified": [
       "connector_count"
     ],
-    "spec_note": "NVIDIA T4 product brief: 16 GB GDDR6, 70 W, single-slot low-profile, passively cooled, Turing Tensor Cores. Connector not stated (I believe none is needed at 70 W, not verified). I set 'c' unverified. NVIDIA T4 board specification: single-slot low-profile card, passive, 70 W total board power, and no power-connector row (the V100 and P100 briefs have one). Zero auxiliary connectors is derived from that and from the slot supplying up to 75 W, so it is not counted as verified."
+    "spec_note": "NVIDIA T4 product brief: 16 GB GDDR6, 70 W, single-slot low-profile, passively cooled, Turing Tensor Cores. Connector not stated (I believe none is needed at 70 W, not verified). I set 'c' unverified. NVIDIA T4 board specification: single-slot low-profile card, passive, 70 W total board power, and no power-connector row (the V100 and P100 briefs have one). Zero auxiliary connectors is derived from that and from the slot supplying up to 75 W, so it is not counted as verified.",
+    "bandwidth_gbs": 300,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-t4/t4-tensor-core-datasheet-951643.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-a30",
@@ -1943,7 +2147,11 @@
       "vram_gb"
     ],
     "spec_unverified": [],
-    "spec_note": "NVIDIA A30 datasheet: 24 GB HBM2, '165W power envelope' in the prose (the TDP table cell did not extract), form factor 2-slot full height full length. Connector and cooling not found. NVIDIA A30 product brief: total board power 165 W, passive, full-height full-length dual slot, one CPU 8-pin auxiliary power connector. Still no US price read."
+    "spec_note": "NVIDIA A30 datasheet: 24 GB HBM2, '165W power envelope' in the prose (the TDP table cell did not extract), form factor 2-slot full height full length. Connector and cooling not found. NVIDIA A30 product brief: total board power 165 W, passive, full-height full-length dual slot, one CPU 8-pin auxiliary power connector. Still no US price read.",
+    "bandwidth_gbs": 933,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/products/a30-gpu/pdf/a30-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-l4",
@@ -1981,7 +2189,11 @@
     "spec_unverified": [
       "connector_count"
     ],
-    "spec_note": "NVIDIA L4 product brief: 24 GB GDDR6, total board power 72 W, half-height half-length single slot, Thermal solution Passive. Connector not stated; Ada architecture from the file name of the whitepaper link, not the brief, so unverified. 2026-11-04 update: Product brief text: \"Powered by the NVIDIA Ada Lovelace architecture\". Single slot, Thermal solution Passive. Connector not stated. NVIDIA L4 specification: 72 W maximum, single-slot low-profile, passive. The sheet has no power-connector row, so zero auxiliary connectors is derived from the 72 W board power and the slot's 75 W and is not counted as verified."
+    "spec_note": "NVIDIA L4 product brief: 24 GB GDDR6, total board power 72 W, half-height half-length single slot, Thermal solution Passive. Connector not stated; Ada architecture from the file name of the whitepaper link, not the brief, so unverified. 2026-11-04 update: Product brief text: \"Powered by the NVIDIA Ada Lovelace architecture\". Single slot, Thermal solution Passive. Connector not stated. NVIDIA L4 specification: 72 W maximum, single-slot low-profile, passive. The sheet has no power-connector row, so zero auxiliary connectors is derived from the 72 W board power and the slot's 75 W and is not counted as verified.",
+    "bandwidth_gbs": 300,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/l4/PB-11316-001_v01.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-a10",
@@ -2019,7 +2231,11 @@
     "spec_unverified": [
       "cooling"
     ],
-    "spec_note": "NVIDIA A10 datasheet: 24 GB GDDR6, Max TDP 150 W, Form factor 1-slot FHFL, Power Connector PEX 8-pin, Ampere. Cooling not given in the text I read. Cooling is entered as passive from dealer listings (one says \"passive: requires directed chassis airflow\"); NVIDIA's datasheet read here has no cooling line, so it is not counted as verified."
+    "spec_note": "NVIDIA A10 datasheet: 24 GB GDDR6, Max TDP 150 W, Form factor 1-slot FHFL, Power Connector PEX 8-pin, Ampere. Cooling not given in the text I read. Cooling is entered as passive from dealer listings (one says \"passive: requires directed chassis airflow\"); NVIDIA's datasheet read here has no cooling line, so it is not counted as verified.",
+    "bandwidth_gbs": 600,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a10/pdf/datasheet-new/nvidia-a10-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   },
   {
     "id": "nvidia-a2",
@@ -2057,6 +2273,10 @@
       "connector_count",
       "cooling"
     ],
-    "spec_note": "NVIDIA A2 datasheet: 16 GB GDDR6, configurable 40-60 W (60 W recorded), 1-slot low-profile PCIe. Connector and cooling not given. Zero auxiliary connectors is derived from the 40 to 60 W board power; passive cooling is from a dealer listing. Neither is stated on the NVIDIA page read, so neither is counted as verified."
+    "spec_note": "NVIDIA A2 datasheet: 16 GB GDDR6, configurable 40-60 W (60 W recorded), 1-slot low-profile PCIe. Connector and cooling not given. Zero auxiliary connectors is derived from the 40 to 60 W board power; passive cooling is from a dealer listing. Neither is stated on the NVIDIA page read, so neither is counted as verified.",
+    "bandwidth_gbs": 200,
+    "bandwidth_source_url": "https://www.nvidia.com/content/dam/en-zz/solutions/data-center/a2/pdf/a2-datasheet.pdf",
+    "bandwidth_checked_on": "2026-11-05",
+    "bandwidth_basis": "maker page, read"
   }
 ]

@@ -5,7 +5,7 @@
 #   - every day at 11:17 UTC, and on demand (Actions tab, "Run workflow")
 #
 # What the daily run does by itself (mechanical data only, nothing that needs judgement):
-#   1. refresh the European Central Bank exchange rates and the Hugging Face model-link snapshot
+#   1. refresh the European Central Bank exchange rates and the Hugging Face model-link snapshot, and record today's card prices for the price history
 #   2. regenerate docs/METHODOLOGY.md, run the tests and the audit; any audit error or failing test stops here and nothing is published
 #   3. build, publish, then commit the refreshed data files back to main
 # GPU prices are NOT refreshed here: a price needs a person (or a reviewed pull request) to say where it came from.
@@ -46,6 +46,7 @@ jobs:
         run: |
           node scripts/update-rates.mjs
           node scripts/check-model-links.mjs
+          node scripts/snapshot-prices.mjs
 
       - name: Regenerate the methodology status
         run: npm run methodology
@@ -74,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/rates.json src/data/models/links.json docs/METHODOLOGY.md
+          git add src/data/rates.json src/data/models/links.json src/data/history/prices.json docs/METHODOLOGY.md
           if git diff --cached --quiet; then echo "No data changes."; else
             git commit -m "Daily data refresh: exchange rates, model links, methodology status"
             git push origin HEAD:main

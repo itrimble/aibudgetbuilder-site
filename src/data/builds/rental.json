@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-11-05",
+  "source": { "label": "RunPod pricing page", "url": "https://www.runpod.io/pricing", "how_seen": "read page by an agent via curl", "date": "2026-11-04" },
+  "billing": "on-demand",
+  "tiers": [
+    { "vram_gb": 24, "gpu": "RTX 3090", "usd_per_hour": 0.5 },
+    { "vram_gb": 48, "gpu": "A40 or RTX A6000", "usd_per_hour": 0.59 },
+    { "vram_gb": 80, "gpu": "A100 PCIe", "usd_per_hour": 1.79 }
+  ],
+  "other_prices_seen": "Hyperstack lists an A100 PCIe at $1.40 an hour and RunPod's community cloud lists one from $1.19, but those pages carry no date or are not on-demand, so the tiers above use RunPod's dated on-demand prices. Vast.ai and Lambda prices could not be read.",
+  "caveats": [
+    "A rented data-centre GPU is much faster than a used card, so hours of renting are not hours of equal work.",
+    "It leaves out electricity (see Running cost), the rest of the box, storage and bandwidth fees, and your own time.",
+    "Rental prices move often; this is one provider on one day."
+  ]
+}

@@ -70,6 +70,8 @@ export const RULES: Rule[] = [
   { id: 'R36', severity: 'error', title: 'A torrent is listed only with a valid infohash, the maker named, and the maker\'s own page that publishes it', why: 'A magnet link guarantees consistent bytes, not authentic ones. The site lists a torrent only when the maker itself published it, so a reader never gets a swarm link from a stranger.' },
   { id: 'R37', severity: 'warn', title: 'A price quoted in a card note must sit near the card\'s range, or the note must say why it does not', why: 'A reader who sees a note quoting $1,500 beside a range of $489 to $555 stops trusting every number. The range and its note must agree or explain the gap.' },
   { id: 'R38', severity: 'error', title: 'Card notes carry no formatting slips or claims that contradict the price rule', why: 'Stray punctuation such as "$138,.", a price with no dollar sign, or the old claim that a low end is a 12-month average makes the data look unfinished or states something the methodology forbids.' },
+  { id: 'R40', severity: 'error', title: 'A memory-bandwidth figure carries a plausible value, an https source, a check date and a stated basis', why: 'Speed estimates are built on bandwidth, so an unsourced or mistyped figure would put a wrong speed on the page.' },
+  { id: 'R41', severity: 'warn', title: 'A bandwidth figure that is not read from the maker\'s own page is listed as a gap', why: 'A figure seen only as a search excerpt or on a third-party page may be right, but the speed estimate that uses it must say so.' },
   { id: 'R39', severity: 'warn', title: 'Card notes are written in the site\'s voice, not first person', why: 'Phrases like "my sum" or "I have not benchmarked" read like a working log, not a published page. Say "our sum" or "we have not".' },
 ]
 const ruleOf = (id: string) => RULES.find((r) => r.id === id)!
@@ -346,6 +348,11 @@ export function auditAll(d: AuditInput): Finding[] {
     const id = `gpu:${g.id}`
     if (/,\.|\$\d+,\.|low end is the tracker'?s? (12-month|all-time) average|\((\d[\d,]*)\), not an average/.test(note)) add('R38', id, 'The note has a formatting slip or a price-basis claim the methodology forbids.')
     if (/\b(I|my|me)\b/.test(note)) add('R39', id, 'The note uses first person.')
+    const bw = g as unknown as { bandwidth_gbs?: number; bandwidth_source_url?: string; bandwidth_checked_on?: string; bandwidth_basis?: string }
+    if (bw.bandwidth_gbs !== undefined) {
+      if (!(bw.bandwidth_gbs > 0 && bw.bandwidth_gbs < 4000) || !/^https:\/\//.test(bw.bandwidth_source_url ?? '') || !isDate(bw.bandwidth_checked_on) || !bw.bandwidth_basis) add('R40', id, 'A bandwidth figure needs a plausible GB/s value, an https source, a check date and a stated basis.')
+      else if (bw.bandwidth_basis !== 'maker page, read') add('R41', id, `Bandwidth rests on weaker evidence: ${bw.bandwidth_basis}.`)
+    }
     const lo = g.price_low ?? 0, hi = g.price_high ?? 0
     if (hi > 0 && !/Why the range|outlier|ignored|not part of the used range|not a price you can pay|listings from /i.test(note)) {
       const amounts = [...note.matchAll(/\$([\d,]+(?:\.\d+)?)/g)].map((m) => Number(m[1].replace(/,/g, ''))).filter((n) => n >= 100)

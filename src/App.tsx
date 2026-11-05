@@ -26,14 +26,17 @@ const BUYABLE = ALL_GPUS.filter((g) => !g.owned_only)
 const ADAPTERS = adapterData as unknown as Adapter[]
 const PSUS = psuData as unknown as Psu[]
 const PCS = pcData as unknown as MyPc[]
-import { OVERHEAD_GB } from './lib/constants'
+import { CONTEXT_GB, OVERHEAD_GB } from './lib/constants'
 import { decodeBuild, encodeBuild, type BuildState, type Known } from './lib/share'
-import { toCsv, toText, type Line } from './lib/exportBuild'
+import { toCsv, toMarkdown, toText, type Line } from './lib/exportBuild'
 import { HeldBack } from './components/HeldBack'
 import { CardTable } from './components/CardTable'
 import { ModelPicker, type PickModel } from './components/ModelPicker'
 import { MobileBar, Summary } from './components/Summary'
 import { Alternatives } from './components/Alternatives'
+import { SpeedNote } from './components/SpeedNote'
+import { BreakEven } from './components/BreakEven'
+import { QUANTS, needGb, type QuantId } from './lib/quant'
 import { compatFlags } from './lib/flags'
 import { restOfBox } from './lib/restOfBox'
 import { RunningCost, ShareExport } from './components/BuildTools'
@@ -99,6 +102,7 @@ export default function App() {
   const [tierId, setTierId] = useState('hobby')
   const [custom, setCustom] = useState('')
   const [fullBuild, setFullBuild] = useState(false)
+  const [quant, setQuant] = useState<QuantId | ''>('')
   const money = (n: number) => fmt(n, currency)
   const rng = (l: number, h: number) => fmtRange(l, h, currency)
   const usdNote = (l: number, h: number) => (currency === 'USD' ? '' : ` · ${fmtUsdRange(l, h)} USD`)
@@ -132,7 +136,7 @@ export default function App() {
   const budgetUsd = fullBuild ? Math.max(0, totalBudgetUsd - rest.high) : totalBudgetUsd // in Full build mode the rest of the box comes out of the budget first
   const budgetResult = useMemo(() => recommend({ board, owned: ownedCards, gpus: ALL_GPUS, adapters: ADAPTERS, psus: psuOptions, budgetUsd, nvme }), [board, pcId, psuId, budgetUsd, nvme, keepOwned]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const allModels = (taskData.tasks as { task: string; models: ModelRec[] }[]).flatMap((g) => g.models.map((m) => ({ ...m, task: g.task })))
+  const allModels = (taskData.tasks as { task: string; models: ModelRec[] }[]).flatMap((g) => g.models.map((m) => ({ ...m, task: g.task, vram_gb_estimate: needGb(m, quant) })))
   const target = allModels.find((m) => `${m.task}|${m.name}` === goal)
   const need = target ? target.vram_gb_estimate : 0
   const fits = target ? fitsModel(t.vram, need, OVERHEAD_GB, t.cards) : false
@@ -164,6 +168,7 @@ export default function App() {
       ...(newCards.length && psu.price > 0 ? [{ kind: 'PSU', name: psu.name, qty: 1, low: psu.price, high: psu.price, checked_on: psu.checked_on, source_url: psu.source_url } as Line] : []),
     ]
   }
+  const markdownText = () => toMarkdown({ title: 'AI Budget Build', date: new Date().toLocaleDateString('en-CA'), lines: exportLines(), vram: t.vram, cards: t.cards, watts: t.watts, findings, link: buildLink() })
   const summaryText = () => toText({ title: 'AI Budget Build', date: new Date().toLocaleDateString('en-CA'), lines: exportLines(), vram: t.vram, cards: t.cards, watts: t.watts, findings, link: buildLink() })
 
   const setCount = (id: string, d: number) => setCounts((c) => ({ ...c, [id]: Math.max(0, (c[id] ?? 0) + d) }))
@@ -173,7 +178,8 @@ export default function App() {
   const summaryEl = (
     <Summary t={t} spend={spend} newVram={newVram} ownedVram={ownedVram} flags={flags} findings={findings} placements={placements} rng={rng} money={money} currency={currency} usd={fmtUsdRange} fullBuild={fullBuild} rest={rest}>
       <RunningCost wallW={Math.round(t.watts / ASSUMED_EFFICIENCY)} currency={currency} />
-      <ShareExport getLink={buildLink} getSummary={summaryText} getCsv={() => toCsv(exportLines())} />
+      <BreakEven vramGb={t.vram} low={fullBuild ? spend.priceLow + rest.low : spend.priceLow} high={fullBuild ? spend.priceHigh + rest.high : spend.priceHigh} money={money} />
+      <ShareExport getLink={buildLink} getSummary={summaryText} getCsv={() => toCsv(exportLines())} getMarkdown={markdownText} />
     </Summary>
   )
   return (
@@ -250,6 +256,13 @@ export default function App() {
               <div>
                 <h2 className={label}>2. What do you want to run?</h2>
                 <ModelPicker models={allModels as PickModel[]} value={goal} onChange={setGoal} vram={t.vram} cards={t.cards} />
+                <label className="mt-2 flex flex-wrap items-center gap-2 text-xs text-muted">Quantisation
+                  <select aria-label="Quantisation" value={quant} onChange={(e) => setQuant(e.target.value as QuantId | '')} className="rounded border border-line bg-panel p-1 text-fg">
+                    <option value="">Each model&apos;s suggested</option>
+                    {QUANTS.map((q) => <option key={q.id} value={q.id}>{q.id} (about {q.bits} bits per weight)</option>)}
+                  </select>
+                  <span>Bits per weight are approximate, our arithmetic. Memory adds a {CONTEXT_GB} GB allowance for context; long contexts need more.</span>
+                </label>
                 {target && (
                   <div className="mt-2 rounded border border-line bg-panel p-3 text-sm" aria-live="polite">
                     {fits
@@ -265,6 +278,7 @@ export default function App() {
                             ))}
                           </ul>
                         </>}
+                    <SpeedNote model={target} quant={quant} cards={cards} />
                   </div>
                 )}
               </div>

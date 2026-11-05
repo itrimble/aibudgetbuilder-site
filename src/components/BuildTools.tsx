@@ -38,7 +38,7 @@ export function RunningCost({ wallW, currency }: { wallW: number; currency: stri
 }
 
 /** Copy a link or a text summary, or download a CSV. If the browser blocks the clipboard, the text is shown to copy by hand. */
-export function ShareExport({ getLink, getSummary, getCsv }: { getLink: () => string; getSummary: () => string; getCsv: () => string }) {
+export function ShareExport({ getLink, getSummary, getCsv, getMarkdown }: { getLink: () => string; getSummary: () => string; getCsv: () => string; getMarkdown: () => string }) {
   const [notice, setNotice] = useState('')
   const [manual, setManual] = useState('')
   const copy = async (text: string, done: string) => {
@@ -61,6 +61,7 @@ export function ShareExport({ getLink, getSummary, getCsv }: { getLink: () => st
       <div className="flex flex-wrap gap-2">
         <button className={btn} onClick={() => copy(getLink(), "Link copied. It holds only part ids, so anyone who opens it sees today's prices.")}>Copy link</button>
         <button className={btn} onClick={() => copy(getSummary(), 'Summary copied.')}>Copy summary</button>
+        <button className={btn} onClick={() => copy(getMarkdown(), 'Markdown copied. Paste it into a forum post or chat.')}>Copy as Markdown</button>
         <button className={btn} onClick={download}>Download CSV</button>
       </div>
       <p role="status" className="mt-2 text-xs text-muted">{notice}</p>

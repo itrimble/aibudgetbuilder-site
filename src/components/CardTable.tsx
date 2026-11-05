@@ -3,6 +3,7 @@ import type { Gpu } from '../lib/types'
 import { cardVerdict } from '../lib/verdict'
 import { shopLink } from '../lib/affiliate'
 import { Logo, PartImage } from './Visual'
+import { Sparkline } from './Sparkline'
 
 const SPEC_LABELS: Record<string, string> = { vram_gb: 'memory', tdp_w: 'power', slot_width: 'slot width', connector_count: 'power connectors', cooling: 'cooling' }
 const specLabel = (f: string) => SPEC_LABELS[f] ?? f
@@ -40,6 +41,8 @@ function Details({ g, usdNote, rng }: { g: Gpu; usdNote: (l: number, h: number) 
             {g.spec_source_url && <> <a className="text-link underline" href={g.spec_source_url}>maker source</a></>}
           </p>
           {g.price_high > 0 && <p>{rng(g.price_low / g.vram_gb, g.price_high / g.vram_gb)} per GB{usdNote(g.price_low, g.price_high)}</p>}
+          {g.bandwidth_gbs && <p>Memory bandwidth {g.bandwidth_gbs} GB/s: {g.bandwidth_basis}{g.bandwidth_source_url && <> (<a className="text-link underline" href={g.bandwidth_source_url}>source</a>, checked {g.bandwidth_checked_on})</>}.</p>}
+          <Sparkline id={g.id} />
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <a className="text-link underline" href={g.source_url}>price source, checked {g.checked_on}</a>
             {(['ebay', 'amazon'] as const).map((m) => {

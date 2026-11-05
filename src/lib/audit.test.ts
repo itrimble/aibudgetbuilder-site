@@ -144,6 +144,16 @@ describe('each logic check actually fires on bad data', () => {
     expect(ruleHits(withNote('Price is my sum.'), 'R39').length).toBe(1)
     expect(ruleHits(withNote('Price is our sum.'), 'R39').length).toBe(0)
   })
+  it('R40/R41: a bandwidth figure needs a source, a date and a basis, and weaker evidence is listed', () => {
+    const base = live()
+    const withBw = (bw: Record<string, unknown>) => ({ ...base, gpus: base.gpus.map((g, i) => (i === 0 ? { ...g, ...bw } : g)) }) as AuditInput
+    const good = { bandwidth_gbs: 346, bandwidth_source_url: 'https://images.nvidia.com/x.pdf', bandwidth_checked_on: '2026-11-05', bandwidth_basis: 'maker page, read' }
+    expect(ruleHits(withBw(good), 'R40').length).toBe(0)
+    expect(ruleHits(withBw({ ...good, bandwidth_source_url: 'http://x' }), 'R40').length).toBe(1)
+    expect(ruleHits(withBw({ ...good, bandwidth_gbs: 99999 }), 'R40').length).toBe(1)
+    expect(ruleHits(withBw({ ...good, bandwidth_basis: undefined }), 'R40').length).toBe(1)
+    expect(ruleHits(withBw({ ...good, bandwidth_basis: 'third-party page (not the maker)' }), 'R41').length).toBeGreaterThanOrEqual(1)
+  })
   it('R34/R35/R36: untrusted model links, missing, moved or stale link checks, and torrents that are not the maker\'s', () => {
     const i = live()
     const link = (extra: object) => ({ checked_on: '2026-11-04', status: 'ok', ...extra })
