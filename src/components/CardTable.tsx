@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import type { Gpu } from '../lib/types'
 import { cardVerdict } from '../lib/verdict'
+import { osSupport } from '../lib/osSupport'
 import { shopLink } from '../lib/affiliate'
 import { Logo, PartImage } from './Visual'
 import { Sparkline } from './Sparkline'
@@ -27,6 +28,20 @@ function Cooling({ g }: { g: Gpu }) {
   return <span className={`rounded-full border px-1.5 text-[11px] ${g.cooling === 'passive' ? 'border-warn text-warn' : 'border-ok text-ok'}`}>{g.cooling === 'passive' ? 'passive' : 'fan'}</span>
 }
 
+const OS_WORD: Record<string, string> = { works: 'works', 'works with caveat': 'works, with a caveat', 'not supported': 'not supported', 'not researched': 'not researched' }
+
+/** Where the card runs on each system, from the Windows, Linux, Mac tab's checked table. */
+function OsLine({ g }: { g: Gpu }) {
+  const o = osSupport(g)
+  const cell = (name: string, c: { status: string; backend: string | null }) => `${name}: ${OS_WORD[c.status] ?? c.status}${c.backend && c.status !== 'not supported' ? ` (${c.backend})` : ''}`
+  return (
+    <p>
+      <strong className="text-fg">Runs on:</strong> {cell('Windows', o.windows)}; {cell('Linux', o.linux)}; {cell('macOS', o.macos)}. {o.extra}{' '}
+      <span className="text-subtle">Details for each system are in the Windows, Linux, Mac guide.</span>
+    </p>
+  )
+}
+
 function Details({ g, usdNote, rng }: { g: Gpu; usdNote: (l: number, h: number) => string; rng: (l: number, h: number) => string }) {
   return (
     <details className="text-xs text-muted">
@@ -42,6 +57,7 @@ function Details({ g, usdNote, rng }: { g: Gpu; usdNote: (l: number, h: number) 
           </p>
           {g.price_high > 0 && <p>{rng(g.price_low / g.vram_gb, g.price_high / g.vram_gb)} per GB{usdNote(g.price_low, g.price_high)}</p>}
           {g.bandwidth_gbs && <p>Memory bandwidth {g.bandwidth_gbs} GB/s: {g.bandwidth_basis}{g.bandwidth_source_url && <> (<a className="text-link underline" href={g.bandwidth_source_url}>source</a>, checked {g.bandwidth_checked_on})</>}.</p>}
+          <OsLine g={g} />
           <Sparkline id={g.id} />
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <a className="text-link underline" href={g.source_url}>price source, checked {g.checked_on}</a>
