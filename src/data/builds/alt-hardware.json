@@ -25,20 +25,25 @@
       "network": "1 Gbit Ethernet per console",
       "verdict": "Not recommended",
       "catches": [
-        "Linux needs a jailbreak. The ps5-linux loader supports only Phat and Slim consoles on firmware 3.00 to 7.61, and its FAQ says 8.00 and above will not be supported.",
-        "It is a soft mod: a restart drops the console back to the normal system until the exploit is run again.",
-        "You cannot read the firmware version from a used listing, so eight consoles is eight rolls of the dice.",
-        "Eight machines each hold their own 16 GB shared with the system. It is not one 128 GB pool; llama.cpp splits layers across the network and runs at the speed of the slowest link.",
-        "We have not looked into the legal side of breaking the console protections. Read up before you try."
+        "Linux needs a jailbreak. The ps5-linux loader (README read 2026-11-05) now supports Phat and Slim firmware 3.00 to 7.61 and 11.00 to 13.60, and Pro 11.00 to 13.60. It does not list 8.x to 10.x, and a console cannot be downgraded. Our 2026-10-17 post said 7.61 was the limit; that is out of date.",
+        "The jailbreak is tethered: it has to be re-run after every reboot, can take several tries, and can crash the console. Newer firmware matters because 14.00 and 14.10 have no public kernel exploit and 14.20 patched a leaked one, so do not update a console you want to keep jailbreakable.",
+        "You cannot read the firmware from most used listings. Sellers who advertised a usable firmware (12.40 to 13.60) asked $530 to $600 on eBay on Oct 18, against $430 to $525 when no firmware was stated (search excerpts, asking prices).",
+        "Eight consoles each hold their own 16 GB shared with the system. It is not one 128 GB pool; llama.cpp splits layers across the network and runs at the speed of the slowest link.",
+        "Measured by someone else: two PS5s pooled over gigabit ran a 27B model at about 14 to 21 tok/s, and one console running a smaller version of the same model was as fast or faster at 19.7 to 22 (ps5-llama-cluster README, 2026-10-24, firmware 13.60). Pooling bought a larger version, vision and a 262K context, not speed. A LinkedIn post claims about 41 tok/s on a 35B model with two consoles; we could not open its repo, so that is unverified.",
+        "Warranty is void and a ban from the PlayStation network is possible; the project warns that sustained inference may overheat the console. We have not looked into the legal side of breaking the console protections. Read up before you try."
       ],
       "sources": [
         {
-          "label": "ps5-linux loader repository",
+          "label": "ps5-linux loader repository (README read 2026-11-05)",
           "url": "https://github.com/ps5-linux/ps5-linux-loader"
         },
         {
-          "label": "TechPowerUp: Linux now officially available for PlayStation 5",
-          "url": "https://www.techpowerup.com/forums/threads/linux-now-officially-available-for-playstation-5.348624/"
+          "label": "fragtion/ps5-llama-cluster (two-console measurements)",
+          "url": "https://github.com/fragtion/ps5-llama-cluster"
+        },
+        {
+          "label": "ps5jbstatus.com (jailbreak status tracker)",
+          "url": "https://ps5jbstatus.com/"
         },
         {
           "label": "llama.cpp discussion: RPC over Ethernet strangely slow",
@@ -62,13 +67,18 @@
       "network": "1 Gbit Ethernet per board (Tecce used gigabit; a 2.5 Gbit card is untested by us)",
       "verdict": "A cheap experiment, not a 128 GB machine",
       "catches": [
-        "It boots ordinary Linux, so there is no jailbreak, but it is a bare board: you supply power, cooling and a network connection.",
-        "Each board has 16 GB shared between the processor and the graphics side, and the setup guide says you silently get only 12 GiB until a kernel memory setting is raised.",
-        "The one published cluster write-up used three boards over gigabit Ethernet (45 GB of pooled memory). A third board added overhead instead of speed, and long contexts were slow. It is a way to fit a bigger model, not a way to run it faster.",
-        "We found no clean eight-board result. A twelve-board chassis exists, but we found nothing tying it to a measured result.",
+        "It boots ordinary Linux, so there is no jailbreak, but it is a bare board: you supply power, cooling and a network connection, and a BIOS flash and a kernel patch are needed to unlock the full 40-unit mode. The patch silently reverts after a kernel upgrade.",
+        "Each board has 16 GB shared between the processor and the graphics side, and the setup guide says you silently get only about half of it until a kernel memory setting is raised.",
+        "Largest measured cluster we found: five boards over 2.5-gigabit Ethernet ran Qwen3.5-122B-A10B at 3-bit (a 43 GiB file) at 29.5 tok/s generating, and three boards ran a 35B mixture-of-experts model at 68 tok/s. That is the author's own production run on llama.cpp's discussion board (read, 2026-09-02). We found no eight-board result.",
+        "The three-board homelab write-up (Tecce) found two boards faster than three, one board died, and long contexts were slow. Clustering helps fit a bigger model more than it helps speed.",
+        "Passive mining heat sinks throttle in a warm room. Prices are rising and stock is thin: reports range from $150 to $220 on eBay in mid-October (Hacker News comments, excerpt) to the $290 listing above.",
         "That the BC-250 is nearly the same silicon as a PS5 comes from a forum comment. Verify it before betting money on it."
       ],
       "sources": [
+        {
+          "label": "llama.cpp discussion 28226: five-board cluster",
+          "url": "https://github.com/ggml-org/llama.cpp/discussions/28226"
+        },
         {
           "label": "akandr/bc250 setup guide and benchmarks",
           "url": "https://github.com/akandr/bc250"
@@ -76,10 +86,6 @@
         {
           "label": "Ciro Lucio Tecce: Local Inference on an Asrock BC250 Cluster",
           "url": "https://ciroluciotecce.it/en/posts/bc250-cluster-inferenza-locale/"
-        },
-        {
-          "label": "LocalLLaMA: two BC-250 boards running Qwen3.6-35B",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wou3gr/my_foray_into_local_ai_two_bc250_ex_mining_apus/"
         },
         {
           "label": "Level1Techs: Project Ariel and LLMtune",

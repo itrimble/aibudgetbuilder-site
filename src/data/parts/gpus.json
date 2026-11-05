@@ -90,7 +90,7 @@
     },
     "price_low": 1099,
     "price_high": 1239,
-    "note": "Same architecture family as the RX 6600 XT already in the box, so the existing HSA_OVERRIDE_GFX_VERSION=10.3.0 trick applies. The card Country Boy Computers used (2x in an HP Z4 G4). Passive. Price 2026-11-05: Active US eBay asking prices dated Nov 4-5 (one $1,999 outlier ignored); listings from March and earlier were $528-$700.",
+    "note": "Same architecture family as the RX 6600 XT already in the box, so the existing HSA_OVERRIDE_GFX_VERSION=10.3.0 trick applies. The card Country Boy Computers used (2x in an HP Z4 G4). Passive. Price 2026-11-05: asking prices in USD on three active eBay listings by US-located sellers ($1,099, $1,214 and $1,239; pages updated Nov 4 to 5), seen on eBay's UK, Dutch and Hong Kong sites, so the linked page is the cheapest of them, not a US page. One $1,999 outlier ignored; listings from March and earlier were $528 to $700.",
     "source_url": "https://www.ebay.co.uk/itm/236202042771",
     "checked_on": "2026-11-05",
     "image_query": "AMD Radeon PRO V620",

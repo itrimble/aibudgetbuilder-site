@@ -1,0 +1,623 @@
+{
+ "checked_on": "2026-11-05",
+ "routes": [
+  {
+   "id": "mini-m6-32",
+   "group": "Apple",
+   "name": "Mac mini M6, 32 GB",
+   "memory": "32 GB (about 24 GB usable by the GPU at Apple's default)",
+   "price": "$1,299",
+   "price_kind": "Apple list price",
+   "price_source": "$1,299 Apple list price ($899 base + $400 for 32 GB), derived from Daring Fireball; not rechecked on Apple's configurator",
+   "price_date": "2026-08-25",
+   "measured": [],
+   "watts": "155 W maximum continuous (Apple)",
+   "catches": [
+    "Memory bandwidth 170 GB/s (153 GB/s on the 16 GB model), per Apple's spec page, read 2026-11-05.",
+    "Thunderbolt 4 only, so no RDMA clustering; four of them (about $5,196) would be 128 GB joined only over Ethernet, and decode gets slower, not faster.",
+    "No CUDA: software has to support Apple's Metal, MLX or llama.cpp."
+   ],
+   "verdict": "A quiet single machine up to about 24 GB of model; not a route to 128 GB",
+   "sources": [
+    {
+     "label": "Apple Mac mini tech specs (M6: 153/170 GB/s, TB4; M5 Pro: 307 GB/s, TB5, 24-64GB)",
+     "url": "https://www.apple.com/mac-mini/specs/",
+     "how_seen": "read page",
+     "date": "2026-11-05 (fetched)"
+    },
+    {
+     "label": "Daring Fireball config/price tables",
+     "url": "https://daringfireball.net/2026/08/configurations_and_pricing_for_new_mac_minis_and_mac_studios",
+     "how_seen": "read page",
+     "date": "2026-08-25"
+    },
+    {
+     "label": "Apple Newsroom: M6 from $899, M5 Pro from $1,699",
+     "url": "https://www.apple.com/newsroom/2026/09/the-new-mac-mini-and-mac-studio-are-available-today/",
+     "how_seen": "excerpt only",
+     "date": "2026-09-22"
+    }
+   ]
+  },
+  {
+   "id": "mini-m5pro-64",
+   "group": "Apple",
+   "name": "Mac mini M5 Pro, 64 GB",
+   "memory": "64 GB (about 48 GB usable at the default)",
+   "price": "$2,699",
+   "price_kind": "Apple list price",
+   "price_source": "$2,699 Apple list ($1,699 base + $1,000 for 64 GB), derived from Daring Fireball and a reseller blog; not rechecked on Apple's configurator",
+   "price_date": "2026-08-25",
+   "measured": [],
+   "watts": null,
+   "catches": [
+    "Bandwidth 307 GB/s; three Thunderbolt 5 ports, so RDMA clustering is possible on macOS 26.2 or later (Apple spec page, read 2026-11-05).",
+    "Two would be 128 GB for about $5,400 and four 256 GB for about $10,800, pooled over Thunderbolt. Four need six full-mesh cables because no Thunderbolt 5 switch exists.",
+    "We found no measured benchmark of an M5 Pro mini cluster; one buying guide says outright it claims none.",
+    "Memory is soldered; $25 per GB at order time."
+   ],
+   "verdict": "Best small Apple box, but pooling is unmeasured",
+   "sources": [
+    {
+     "label": "Apple Mac mini tech specs",
+     "url": "https://www.apple.com/mac-mini/specs/",
+     "how_seen": "read page",
+     "date": "2026-11-05 (fetched)"
+    },
+    {
+     "label": "Hard Bargains: Apple configurator prices, M5 Pro 64GB/1TB $3,199",
+     "url": "https://hard.bargains/posts/where-to-buy-new-mac-mini/",
+     "how_seen": "excerpt only",
+     "date": "2026-09-16"
+    },
+    {
+     "label": "OpenClawDC price/GB table (reseller blog)",
+     "url": "https://openclawdc.com/blog/which-mac-mini-to-buy-local-llm/",
+     "how_seen": "excerpt only",
+     "date": "2026-09-22"
+    }
+   ]
+  },
+  {
+   "id": "studio-m5max-128",
+   "group": "Apple",
+   "name": "Mac Studio M5 Max, 128 GB",
+   "memory": "128 GB (about 96 GB usable at the default; the limit can be raised)",
+   "price": "about $5,100",
+   "price_kind": "Apple list price (derived)",
+   "price_source": "About $5,100: Apple list $3,100 for the 40-core-GPU model with 48 GB plus $2,000 for 128 GB, derived from Daring Fireball; not rechecked on Apple's configurator",
+   "price_date": "2026-08-25",
+   "measured": [],
+   "watts": "480 W maximum (Apple)",
+   "catches": [
+    "Bandwidth 614 GB/s with the 40-core GPU (460 GB/s with the 32-core), four Thunderbolt 5 ports (Apple spec page, read 2026-11-05).",
+    "About $39.8 per GB of installed memory, against roughly $18 to $40 per GB for the used cards on the Builder.",
+    "We found no first-hand LLM benchmark of this machine."
+   ],
+   "verdict": "The simplest new-hardware route to 128 GB in one quiet box, at a premium",
+   "sources": [
+    {
+     "label": "Apple Mac Studio tech specs (M5 Max 460/614 GB/s; M5 Ultra 1.2 TB/s; $2,499 / $5,499)",
+     "url": "https://www.apple.com/mac-studio/specs/",
+     "how_seen": "read page",
+     "date": "2026-11-05 (fetched)"
+    },
+    {
+     "label": "Daring Fireball config/price tables",
+     "url": "https://daringfireball.net/2026/08/configurations_and_pricing_for_new_mac_minis_and_mac_studios",
+     "how_seen": "read page",
+     "date": "2026-08-25"
+    }
+   ]
+  },
+  {
+   "id": "studio-m5ultra-256",
+   "group": "Apple",
+   "name": "Mac Studio M5 Ultra, 256 GB",
+   "memory": "256 GB (about 192 GB usable at the default)",
+   "price": "about $9,500 (or $10,800 with the larger chip)",
+   "price_kind": "Apple list price (derived)",
+   "price_source": "Apple list $5,500 (64-core GPU, 96 GB) plus $4,000 for 256 GB, derived from Daring Fireball; whether 256 GB needs the 80-core chip ($10,800) is unclear on Apple's page",
+   "price_date": "2026-08-25",
+   "measured": [
+    "Apple's own ML research post (2026-10-15, read) reports up to 4.6x faster time to first token and about 1.6x faster generation than the M3 Ultra."
+   ],
+   "watts": "480 W maximum (Apple)",
+   "catches": [
+    "Bandwidth 1.2 TB/s.",
+    "Memory above the base is dear: $4,000 for the step to 256 GB and about $11,500 from 256 to 512 GB (TechRadar, excerpt).",
+    "One machine, one failure point."
+   ],
+   "verdict": "The only single box here that reaches 256 GB with fast memory",
+   "sources": [
+    {
+     "label": "Apple Mac Studio tech specs",
+     "url": "https://www.apple.com/mac-studio/specs/",
+     "how_seen": "read page",
+     "date": "2026-11-05 (fetched)"
+    },
+    {
+     "label": "Daring Fireball config/price tables",
+     "url": "https://daringfireball.net/2026/08/configurations_and_pricing_for_new_mac_minis_and_mac_studios",
+     "how_seen": "read page",
+     "date": "2026-08-25"
+    },
+    {
+     "label": "Apple ML Research: MLX + RDMA on Mac Studio (benchmarks)",
+     "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+     "how_seen": "read page",
+     "date": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "id": "studio-m3ultra-256-used",
+   "group": "Apple",
+   "name": "Mac Studio M3 Ultra, 256 GB, used",
+   "memory": "256 GB",
+   "price": "$7,300 to $9,999",
+   "price_kind": "Sold (reported by a reseller blog)",
+   "price_source": "eBay sold-listing range, Sep 10 to Oct 6 2026, as reported by a reseller blog (search excerpt only)",
+   "price_date": "2026-10-06",
+   "measured": [
+    "Four M3 Ultra Studios linked with Thunderbolt 5 RDMA ran Qwen3-235B at 31.9 tok/s with exo (see the cluster table below)."
+   ],
+   "watts": null,
+   "catches": [
+    "Discontinued; supply is whatever resellers have.",
+    "Prices are sold prices from a reseller blog we saw only as an excerpt, so treat them as a rough range."
+   ],
+   "verdict": "Reasonable if you find one near the low end; check the price yourself",
+   "sources": [
+    {
+     "label": "MacPro-LA price guide (reseller)",
+     "url": "https://macpro-la.com/blogs/news/mac-studio-price-guide-2026",
+     "how_seen": "excerpt only",
+     "date": "2026-10-06"
+    },
+    {
+     "label": "RunAIHome used vs new",
+     "url": "https://runaihome.com/blog/mac-studio-m5-ultra-vs-m3-ultra-local-ai-2026/",
+     "how_seen": "excerpt only",
+     "date": "2026-09-16"
+    },
+    {
+     "label": "Macfax secondary-market notes",
+     "url": "https://macfax.com/blog/the-512gb-m3-ultra-mac-studio-a-discontinued-capability-premium",
+     "how_seen": "excerpt only",
+     "date": "2026-10-05"
+    },
+    {
+     "label": "Apple ML Research (819 GB/s, TTFT/decode tables)",
+     "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+     "how_seen": "read page",
+     "date": "2026-10-15"
+    }
+   ]
+  },
+  {
+   "id": "strix-halo",
+   "group": "Small boxes",
+   "name": "Ryzen AI Max+ 395 mini PC or Framework Desktop, 128 GB",
+   "memory": "128 GB shared (soldered)",
+   "price": "$3,449 to $4,349",
+   "price_kind": "Vendor list prices",
+   "price_source": "Vendor list prices read by third-party sites on Oct 3 and Oct 22 2026; launch price was $1,999 (Framework, Feb 2025). The cheapest 128 GB boxes seen: Bosgame M5 $3,599, GMKtec EVO-X2 $3,649.99, Framework Desktop $3,449 (pre-order)",
+   "price_date": "2026-10-22",
+   "measured": [
+    "One Framework Desktop board: gpt-oss-120b 33.12 tok/s generating, Llama 3.1 70B Q4_K_M 5.01 tok/s, about 98 W at the wall (Jeff Geerling, Aug 2025, llama.cpp Vulkan, GitHub issue read in part)."
+   ],
+   "watts": "about 10 W idle, about 150 W under load per board (Geerling, measured)",
+   "catches": [
+    "Bandwidth about 256 GB/s on paper and 210 to 220 measured, so large dense models crawl and mixture-of-experts models are what it is good at.",
+    "Windows caps GPU memory at 96 GB; on Linux, models over about 64 GB can fail to load until kernel parameters are set (two buying guides).",
+    "Prices are up about 73% from launch because of memory costs, and moving weekly."
+   ],
+   "verdict": "The best-documented small 128 GB box; pay attention to the price",
+   "sources": [
+    {
+     "label": "AI mini-PC field guide, dated prices",
+     "url": "https://gadgetnuggets.com/ai-mini-pc-field-guide/",
+     "how_seen": "READ",
+     "date": "2026-10-29"
+    },
+    {
+     "label": "Framework memory pricing updates",
+     "url": "https://frame.work/blog/updates-on-memory-pricing-and-navigating-the-volatile-memory-market",
+     "how_seen": "EXCERPT",
+     "date": "2026-09-29"
+    },
+    {
+     "label": "Framework vs EVO-X2 price history",
+     "url": "https://runaihome.com/blog/framework-desktop-vs-gmktec-evo-x2-local-ai-2026/",
+     "how_seen": "EXCERPT",
+     "date": "2026-09-26"
+    },
+    {
+     "label": "EVO-X2 $3,649.99 Oct 2026",
+     "url": "https://www.aimiracle.ai/ai-hardware-review/gmktec-evo-x2-review/",
+     "how_seen": "EXCERPT",
+     "date": "2026-10-13"
+    },
+    {
+     "label": "vendor-store price table 2026-10-03",
+     "url": "https://openclawdc.com/blog/best-models-amd-ryzen-ai-max-395/",
+     "how_seen": "EXCERPT",
+     "date": "2026-08-05 (updated Oct)"
+    }
+   ]
+  },
+  {
+   "id": "dgx-spark",
+   "group": "Small boxes",
+   "name": "NVIDIA DGX Spark (GB10)",
+   "memory": "128 GB shared",
+   "price": "$6,950 (partner 64 GB boxes from $4,999)",
+   "price_kind": "Vendor list price (reported)",
+   "price_source": "NVIDIA list since Oct 2 2026, as reported by ComputingForGeeks and Gadget Nuggets; it was $3,999 in Oct 2025 and out of stock at NVIDIA and Amazon on Oct 28",
+   "price_date": "2026-10-29",
+   "measured": [
+    "gpt-oss-120b: 58.72 tok/s generating on a current llama.cpp build, 52.87 on an Oct 2025 build (reported in review tables, excerpts). Llama 3.1 70B FP8: 2.7 tok/s."
+   ],
+   "watts": "240 W external supply",
+   "catches": [
+    "Bandwidth 273 GB/s, the same ceiling as the Strix Halo for generation, so dense models crawl.",
+    "Now about twice the price of a 128 GB Strix Halo; worth it only for CUDA, 2 to 3 times faster prompt processing, or the built-in fast network port.",
+    "Prices and stock change weekly."
+   ],
+   "verdict": "CUDA in a small box, at a high price",
+   "sources": [
+    {
+     "label": "Thor vs Spark",
+     "url": "https://computingforgeeks.com/jetson-thor-vs-dgx-spark/",
+     "how_seen": "READ (truncated)",
+     "date": "2026-10-29"
+    },
+    {
+     "label": "GB10 price history",
+     "url": "https://gadgetnuggets.com/ai-mini-pc-field-guide/",
+     "how_seen": "READ",
+     "date": "2026-10-29"
+    },
+    {
+     "label": "llama.cpp Spark/Thor thread",
+     "url": "https://github.com/ggml-org/llama.cpp/discussions/16578",
+     "how_seen": "EXCERPT",
+     "date": "2025-10-14"
+    }
+   ]
+  },
+  {
+   "id": "jetson-thor",
+   "group": "Small boxes",
+   "name": "NVIDIA Jetson AGX Thor developer kit",
+   "memory": "128 GB shared",
+   "price": "$5,499 list (about $5,300 on Amazon)",
+   "price_kind": "Vendor list price (reported)",
+   "price_source": "NVIDIA raised Jetson prices by up to 101% around Jul 22 2026; figure from ComputingForGeeks, Oct 28 2026",
+   "price_date": "2026-10-28",
+   "measured": [
+    "gpt-oss-120b: 42.00 tok/s generating, 34.02 at 32K context (a user-posted run in a llama.cpp discussion, Oct 2025)."
+   ],
+   "watts": "40 to 130 W module",
+   "catches": [
+    "Built for robots: the DGX Spark beats it by about 1.9x on prompt processing and 1.1 to 1.4x on generation.",
+    "Runs NVIDIA's JetPack Linux stack, not a normal desktop distribution."
+   ],
+   "verdict": "Only if you already work on Jetson",
+   "sources": [
+    {
+     "label": "comparison",
+     "url": "https://computingforgeeks.com/jetson-thor-vs-dgx-spark/",
+     "how_seen": "READ (truncated)",
+     "date": "2026-10-29"
+    },
+    {
+     "label": "price table",
+     "url": "https://www.cnx-software.com/2026/07/22/nvidia-increases-the-price-of-jetson-modules-and-devkits-by-up-to-101/",
+     "how_seen": "EXCERPT",
+     "date": "2026-07-22"
+    }
+   ]
+  },
+  {
+   "id": "pi-gpu",
+   "group": "Odd hardware",
+   "name": "Raspberry Pi as the host for a desktop GPU",
+   "memory": "the card's own memory (20 GB RX 7900 XT, 24 GB RTX 4090, or 96 GB from four RTX A5000)",
+   "price": "$350 to $400 for the Pi side, plus the GPUs",
+   "price_kind": "Author's estimate",
+   "price_source": "Jeff Geerling's own estimate for a Pi 5 or CM5 with an OCuLink dock, adapter and supply, Dec 2025; the Pi 500+ keyboard computer is $200. The GPUs are the real cost",
+   "price_date": "2025-12-20",
+   "measured": [
+    "Pi 500+ with a Radeon RX 7900 XT over OCuLink (llama-bench, Vulkan): Llama 3.2 3B Q4_K_M 108.58 tok/s, Qwen2.5 14B Q4_K_M 7.16 tok/s, whole system about 315 to 330 W (Geerling, Sep 2025, read in full).",
+    "CM5 with an RTX 4090, llama.cpp Vulkan: Qwen3 30B less than 5% slower than a 265K desktop; small models and an AMD R9700 did much worse (Geerling, Dec 2025, read in full; the charts were not readable as text).",
+    "Four RTX A5000 on a Pi: Llama 3 70B 11.83 tok/s against 12 on an Intel server, a GitHub user's report relayed by Geerling; we did not open the original."
+   ],
+   "watts": "315 to 330 W whole system with a 7900 XT",
+   "catches": [
+    "The Pi is not what costs money and it saves little power: the whole system still draws 315 to 330 W under load.",
+    "It reached the PC's speed on NVIDIA cards that can pool memory directly through a PCIe 4 switch; mixed cards would not pool, AMD cards were flaky, and the amdgpu driver needed a 15-line kernel patch.",
+    "The x1 link is slow, so loading a model takes a while."
+   ],
+   "verdict": "A fun, documented experiment; not a cheaper way to 128 GB",
+   "sources": [
+    {
+     "label": "Big GPUs don't need big PCs",
+     "url": "https://www.jeffgeerling.com/blog/2025/big-gpus-dont-need-big-pcs/",
+     "how_seen": "READ",
+     "date": "2025-12-20"
+    },
+    {
+     "label": "Pi 500+ eGPU",
+     "url": "https://www.jeffgeerling.com/blog/2025/full-egpu-acceleration-on-pi-500-15-line-patch/",
+     "how_seen": "READ",
+     "date": "2025-09-25"
+    }
+   ]
+  },
+  {
+   "id": "modded-vram",
+   "group": "Odd hardware",
+   "name": "Modified NVIDIA cards with extra memory (2080 Ti 22 GB, 3080 20 GB, 4090 48 GB)",
+   "memory": "22, 20 or 48 GB per card",
+   "price": "about $340 to $500 (2080 Ti 22 GB); about $3,300 to $4,100 (4090 48 GB)",
+   "price_kind": "Asking prices (mixed sources)",
+   "price_source": "Asking prices from several sellers and articles, mostly undated or from Oct to Nov 2026 (search excerpts and one page read in part); one shop quotes $4,989.99 for a finished 4090 48 GB",
+   "price_date": "2026-11-02",
+   "measured": [
+    "One 2080 Ti 22 GB at 200 W: Gemma 4 26B-A4B 97 tok/s and Qwen3.6 27B 34 tok/s, self-reported on LinkedIn (Jul 2026, excerpt).",
+    "Two 22 GB 2080 Ti in WSL2 served a 13B AWQ model about 16% faster than one card (vLLM issue 1935, read; a 2023 report)."
+   ],
+   "watts": "250 to 300 W (2080 Ti), 450 W (4090 48 GB)",
+   "catches": [
+    "No NVIDIA warranty; the shops we found give 90 days, and the original maker may refuse service.",
+    "Reliability evidence is thin and comes from sellers (one says about 2% fail); nobody has published an independent long-term study.",
+    "Scams on 48 GB 4090 resales are reported, and a \"96 GB 5090\" was called fake by one forum owner (excerpt only).",
+    "Capacity only: a 2080 Ti keeps its 616 GB/s bandwidth and has no FP8; running several over PCIe scales badly. Four 48 GB 4090s would be 192 GB for $13,000 to $16,000, which is not a budget route."
+   ],
+   "verdict": "Closest to the salvage spirit and the riskiest purchase here",
+   "sources": [
+    {
+     "label": "48 GB 4090 buyer's guide",
+     "url": "https://needforvram.com/gpus/4090-48gb/",
+     "how_seen": "READ (truncated)",
+     "date": "2026-10-02, checked 2026-10-10"
+    },
+    {
+     "label": "PCGH test of 22GB 2080 Ti",
+     "url": "https://www.techspot.com/news/114421-22gb-geforce-rtx-2080-ti-mod-fix-problem.html",
+     "how_seen": "EXCERPT",
+     "date": "2026-11-02"
+    },
+    {
+     "label": "GPU Lab warranty page",
+     "url": "https://gpulab.net/warranty",
+     "how_seen": "EXCERPT",
+     "date": "undated"
+    },
+    {
+     "label": "says none of these mods were tested",
+     "url": "https://www.lukaswojcik.com/blog/en/cloud-ai/22-20-or-48-gb-through-vram-mods-rtx-2080-ti-rtx-3080-and-rtx-4090d-for-local-llms/",
+     "how_seen": "EXCERPT",
+     "date": "2026-10-22"
+    },
+    {
+     "label": "EU reseller prices",
+     "url": "https://bim-computing.com/category/memory-augmented-gpus",
+     "how_seen": "EXCERPT",
+     "date": "undated"
+    }
+   ]
+  },
+  {
+   "id": "cmp170hx",
+   "group": "Odd hardware",
+   "name": "NVIDIA CMP 170HX mining cards, memory-unlocked to 64 GB",
+   "memory": "64 GB per card (four would be 256 GB)",
+   "price": "$1,100 to $3,550 (sources conflict)",
+   "price_kind": "Asking prices (conflicting)",
+   "price_source": "A repo README says about $1,100 to $1,200 per card in Aug 2026; a hardware site says the median eBay ask was about $3,550 in early Nov 2026. We could not reconcile them",
+   "price_date": "2026-11-05",
+   "measured": [
+    "Four cards ran a 284B-parameter DeepSeek model at 50.8 tok/s, or 98.1 with speculative decoding, using a modified vLLM (the repo author's own harness, self-reported, repo read in part).",
+    "One unlocked card: gpt-oss-120B 78 tok/s (a Reddit post relayed by a hardware site, excerpt)."
+   ],
+   "watts": "250 W each",
+   "catches": [
+    "It needs a community driver patch on Linux; the cards are passive, have no video output and run PCIe Gen 2 x4.",
+    "Owners report cards dying, and the price jumped as people found out. Every number here is a self-report."
+   ],
+   "verdict": "Fascinating and fragile: an experiment, not a plan",
+   "sources": [
+    {
+     "label": "4-card DeepSeek V4 Flash repo",
+     "url": "https://github.com/allover326/deepseek-v4-cmp170hx",
+     "how_seen": "READ (truncated)",
+     "date": "created 2026-08-03"
+    },
+    {
+     "label": "RAGShelf buyer page",
+     "url": "https://ragshelf.com/hardware/cmp-170hx/",
+     "how_seen": "READ (truncated)",
+     "date": "Oct/Nov 2026"
+    },
+    {
+     "label": "CMP wiki benchmark aggregator",
+     "url": "https://cmp.wiki/wiki/Benchmarks",
+     "how_seen": "EXCERPT",
+     "date": "2026-10"
+    }
+   ]
+  },
+  {
+   "id": "epyc-cpu",
+   "group": "Odd hardware",
+   "name": "Used EPYC or Xeon server with 256 to 512 GB of DDR4, CPU only",
+   "memory": "256 to 512 GB",
+   "price": "about $2,000 (Jan 2025 prices; stale)",
+   "price_kind": "Stale build-list price",
+   "price_source": "Digital Spaceport's build list priced Jan 29 2025, when 512 GB of DDR4 cost about $400; the 2026 memory shortage makes that out of date and we found no verified 2026 price",
+   "price_date": "2025-01-29",
+   "measured": [
+    "DeepSeek R1 671B Q4 at 3.5 to 4.25 tok/s on an EPYC 7702 with 512 GB DDR4-2400 (Digital Spaceport, Jan 2025, excerpt).",
+    "Another report: 4.2 tok/s Q5_K_S on a single EPYC 7K62, 2.9 on dual-socket, 2.8 on a Threadripper Pro (llama.cpp discussion 11765, Feb 2025, excerpt)."
+   ],
+   "watts": null,
+   "catches": [
+    "Dual sockets gave no speed-up in llama.cpp; dense 70B models run at about 2 to 3.4 tok/s; prompt processing is slow.",
+    "Current memory prices are the unknown, so the cost is not trustworthy."
+   ],
+   "verdict": "Capacity for giant mixture-of-experts models, slowly",
+   "sources": [
+    {
+     "label": "Digital Spaceport EPYC build",
+     "url": "https://digitalspaceport.com/how-to-run-deepseek-r1-671b-fully-locally-on-2000-epyc-rig/",
+     "how_seen": "EXCERPT",
+     "date": "2025-01"
+    },
+    {
+     "label": "R1 CPU-only comparison",
+     "url": "https://github.com/ggml-org/llama.cpp/discussions/11765",
+     "how_seen": "EXCERPT",
+     "date": "2025-02-08"
+    },
+    {
+     "label": "DDR4 channel table",
+     "url": "https://cpurepublic.com/blogs/buying-guides/server-ram-for-local-llm",
+     "how_seen": "EXCERPT",
+     "date": "2026-10-26"
+    }
+   ]
+  }
+ ],
+ "mac_clusters": [
+  {
+   "what": "Four Mac Studio M3 Ultra (two 512 GB, two 256 GB) over Thunderbolt 5 with RDMA",
+   "model": "Qwen3-235B",
+   "tok_per_sec": "31.9 with exo across four, 19.5 on one; llama.cpp over ordinary networking went down, from 20.4 to 15.2",
+   "source": {
+    "label": "Jeff Geerling (Apple-loaned hardware)",
+    "url": "https://www.jeffgeerling.com/blog/2025/15-tb-vram-on-mac-studio-rdma-over-thunderbolt-5",
+    "date": "2025-12-18",
+    "how_seen": "read page"
+   },
+   "note": "Linked fast, a cluster speeds up; over ordinary networking it slows down."
+  },
+  {
+   "what": "Five Mac Studio M3 Ultra 512 GB in a full Thunderbolt 5 mesh, MLX distributed with RDMA",
+   "model": "Kimi-K2",
+   "tok_per_sec": "13 to 15; one layout failed outright, and one run hit a GPU timeout at about 1,500 tokens of context",
+   "source": {
+    "label": "MLX GitHub discussion (an independent user)",
+    "url": "https://github.com/ml-explore/mlx/discussions/2990",
+    "date": "2026-01-12",
+    "how_seen": "read page"
+   },
+   "note": "Shows the limits: more nodes did not mean more speed, and long contexts broke."
+  },
+  {
+   "what": "One, two and four Mac Studio M5 Ultra with MLX and RDMA",
+   "model": "Qwen 3.8, generating at 8,192 tokens of context",
+   "tok_per_sec": "19.69 on one, 33.27 on two, 50.89 on four (tensor parallel)",
+   "source": {
+    "label": "Apple Machine Learning Research",
+    "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+    "date": "2026-10-15",
+    "how_seen": "read page"
+   },
+   "note": "Apple's own benchmark, so the vendor chose the test."
+  },
+  {
+   "what": "Eight Mac mini M4 Pro 64 GB with exo",
+   "model": "DeepSeek V3 671B, 4-bit",
+   "tok_per_sec": "5.37 (Llama 3.3 70B 3.89, Llama 405B 0.88)",
+   "source": {
+    "label": "exo Labs demo",
+    "url": "https://blog.exolabs.net/day-2/",
+    "date": "2024-12-26",
+    "how_seen": "read page"
+   },
+   "note": "The vendor's own December 2024 demo, still repeated by content sites. We found no measured M5 Pro or M6 mini cluster."
+  },
+  {
+   "what": "Two Mac mini M4 Pro 48 GB over Thunderbolt 5 with exo",
+   "model": "not stated",
+   "tok_per_sec": "4 to 5, the same as or lower than one machine with Ollama",
+   "source": {
+    "label": "exo GitHub issue 564 (a user report)",
+    "url": "https://github.com/exo-explore/exo/issues/564",
+    "date": "2024-12-19",
+    "how_seen": "read page"
+   },
+   "note": "One user's report from 2024; the issue was closed."
+  }
+ ],
+ "claim_checks": [
+  {
+   "claim": "A Raspberry Pi with a desktop GPU is \"less than 5% slower\" than a PC",
+   "verdict": "True for one setup, not in general",
+   "detail": "Geerling's sentence is about a Pi CM5 with an RTX 4090 on Vulkan against an Intel Core Ultra 265K PC. In the same post tiny models were much slower on the Pi, an AMD Radeon AI Pro R9700 did poorly, and a second, different GPU through the Pi was slower than one bigger GPU. We could not read the charts, so per-model numbers are unchecked.",
+   "source": {
+    "label": "Jeff Geerling, Dec 2025",
+    "url": "https://www.jeffgeerling.com/blog/2025/big-gpus-dont-need-big-pcs/",
+    "date": "2025-12-20",
+    "how_seen": "read page (text only)"
+   }
+  },
+  {
+   "claim": "A Pi 500+ with a Radeon RX 7900 XT: about 108.6 tok/s on a 3B model and 7.2 on a 14B, at 315 to 330 W",
+   "verdict": "Confirmed",
+   "detail": "llama-bench, Vulkan, Q4_K_M: Llama 3.2 3B 108.58 tok/s generating (2,089 reading the prompt), Qwen2.5 14B 7.16 (336), whole system about 315 W and 330 W. The 14B number is oddly slow for that card and the post does not explain it. The Pi 500+ is $200, the dock $55 and the cable $21.",
+   "source": {
+    "label": "Jeff Geerling, Sep 2025",
+    "url": "https://www.jeffgeerling.com/blog/2025/full-egpu-acceleration-on-pi-500-15-line-patch/",
+    "date": "2025-09-25",
+    "how_seen": "read page"
+   }
+  },
+  {
+   "claim": "Four RTX A5000 on one Raspberry Pi: 11.83 tok/s on Llama 3 70B against about 12 on an Intel server",
+   "verdict": "Reported, second-hand",
+   "detail": "Geerling relays a GitHub user's result. It worked because the cards pool memory through an external PCIe 4 switch, which keeps the Pi's slow link out of the data path. Geerling could not reproduce it with mixed cards. We did not open the original report.",
+   "source": {
+    "label": "Jeff Geerling, Dec 2025",
+    "url": "https://www.jeffgeerling.com/blog/2025/big-gpus-dont-need-big-pcs/",
+    "date": "2025-12-20",
+    "how_seen": "read page (second-hand relay)"
+   }
+  },
+  {
+   "claim": "Two 22 GB modified RTX 2080 Ti cards run a quantized model under WSL2",
+   "verdict": "Confirmed, but it is a 2023 report",
+   "detail": "vLLM issue 1935: two 22 GB cards served an orca-2-13B AWQ model about 16% faster than one card (1.19 against 1.03 requests per second). There is no tokens-per-second figure, and it says nothing about how reliable the cards are.",
+   "source": {
+    "label": "vLLM issue 1935",
+    "url": "https://github.com/vllm-project/vllm/issues/1935",
+    "date": "2023",
+    "how_seen": "read page (issue and first comments)"
+   }
+  },
+  {
+   "claim": "Four Framework Desktop boards: DeepSeek R1 671B at about 8.25 tok/s, and gpt-oss-120B 33 tok/s on one board against 24 across four",
+   "verdict": "Confirmed",
+   "detail": "R1 Q2_K 8.25 tok/s generating over five-gigabit networking; gpt-oss-120B 33.12 on one node and 24.09 across four with llama.cpp RPC. Clustering here is a way to fit a bigger model, not to go faster.",
+   "source": {
+    "label": "Jeff Geerling, Aug 2025 (benchmark issue 21)",
+    "url": "https://github.com/geerlingguy/ai-benchmarks/issues/21",
+    "date": "2025-08",
+    "how_seen": "read, partly through a summarizer"
+   }
+  }
+ ],
+ "ruled_out": [
+  {
+   "name": "Raspberry Pi AI HAT+ 2 (8 GB on the add-on board)",
+   "why": "Reported to be slower than the Pi's own processor for language models, so it is not a way to more memory. We saw this only in search excerpts."
+  },
+  {
+   "name": "Cheap 10 GB mining cards on x1 risers (P102-100)",
+   "why": "A YouTube creator quoted about $40 per card \"before the price spike\"; we could not verify a current price or a result."
+  }
+ ]
+}

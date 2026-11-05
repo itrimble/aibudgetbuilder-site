@@ -29,3 +29,26 @@ describe('use-cases data', () => {
     for (const u of uses.use_cases) expect(u.confidence, u.name).toMatch(/excerpt/)
   })
 })
+
+import more from '../data/builds/more-hardware.json'
+describe('more-hardware data', () => {
+  it('dates every price and names a price basis and a source for every route', () => {
+    for (const r of more.routes) {
+      expect(r.price_date, r.id).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+      expect(r.price_kind.length, r.id).toBeGreaterThan(3)
+      expect(r.price_source.length, r.id).toBeGreaterThan(20)
+      expect(r.catches.length, r.id).toBeGreaterThan(0)
+      expect(r.sources.length, r.id).toBeGreaterThan(0)
+      for (const s of r.sources) {
+        expect(s.url, r.id).toMatch(/^https:\/\//)
+        expect(s.how_seen, `${r.id} ${s.url}`).toBeTruthy()
+      }
+    }
+  })
+  it('gives every cluster result and claim check a real https source and how it was seen', () => {
+    for (const c of [...more.mac_clusters, ...more.claim_checks]) {
+      expect(c.source.url).toMatch(/^https:\/\//)
+      expect(c.source.how_seen).toBeTruthy()
+    }
+  })
+})

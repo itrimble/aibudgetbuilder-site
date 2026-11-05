@@ -1,5 +1,6 @@
 import data from '../data/builds/alt-hardware.json'
 import { MAINS_120V_LIMIT_W } from '../lib/compat'
+import { MoreHardware } from './MoreHardware'
 
 type Src = { label: string; url: string }
 type Opt = {
@@ -23,9 +24,9 @@ export function OtherHardware() {
   return (
     <div className="space-y-8">
       <section aria-label="About this page" className="rounded border border-line bg-panel p-3 text-sm text-muted">
-        <h2 className="mb-1 font-mono text-lg text-accent">Consoles and other boards</h2>
+        <h2 className="mb-1 font-mono text-lg text-accent">Consoles, Macs and other hardware</h2>
         <p>
-          Could a shelf of used PS5s, or the bare board built on the same chip family, reach 128 GB cheaply? On paper yes: 8 x 16 GB. In practice the plan runs
+          Could a shelf of used PS5s, a stack of Mac minis, a Raspberry Pi with a big GPU or a modified card reach 128 GB cheaply? The first three sections cover the PS5 idea and its bare-board cousin; the rest cover Macs, small boxes and odd hardware. On paper yes: 8 x 16 GB. In practice the plan runs
           into locked firmware, gigabit network links and memory that is not one pool. <strong className="text-fg">We have not built or run any of this.</strong>{' '}
           Everything below is other people&apos;s work, read and dated, apart from one line we measured on our own card. Prices checked {data.checked_on}{' '}
           unless a row says otherwise.
@@ -99,8 +100,10 @@ export function OtherHardware() {
         ))}
       </section>
 
+      <MoreHardware />
+
       <section aria-label="What would change our mind" className="rounded border border-line bg-panel p-3 text-sm text-muted">
-        <h2 className="mb-1 font-mono text-base text-accent">What we would do</h2>
+        <h2 className="mb-1 font-mono text-base text-accent">What we would do about the console idea</h2>
         <p>
           Not buy eight consoles. If you want to find out whether cheap clustered boards are worth it, buy one BC-250, measure it on the models you already run, then add a second
           board and measure what the split costs. One measured case of a model split across four or more boards staying above 20 tokens per second for coding would change our view.

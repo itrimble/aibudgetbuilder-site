@@ -168,7 +168,7 @@ export default function App() {
           {(['builder', 'models', 'capacity', 'community', 'consoles', 'uses', 'guide'] as const).map((v) => (
             <button key={v} onClick={() => setView(v)} aria-pressed={view === v}
               className={`rounded px-3 py-1 font-mono text-sm ${view === v ? 'bg-accent text-onaccent' : 'border border-line bg-panel'}`}>
-              {v === 'builder' ? 'Builder' : v === 'models' ? 'Models by task' : v === 'capacity' ? 'What can I run?' : v === 'community' ? 'Community reports' : v === 'consoles' ? 'PS5 and other boards' : v === 'uses' ? 'What people build' : 'Before you buy'}
+              {v === 'builder' ? 'Builder' : v === 'models' ? 'Models by task' : v === 'capacity' ? 'What can I run?' : v === 'community' ? 'Community reports' : v === 'consoles' ? 'PS5, Mac and odd hardware' : v === 'uses' ? 'What people build' : 'Before you buy'}
             </button>
           ))}
           <label className="flex items-center gap-1 text-sm text-muted">Currency
