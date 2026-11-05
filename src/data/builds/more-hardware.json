@@ -37,7 +37,12 @@
      "how_seen": "excerpt only",
      "date": "2026-09-22"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 32,
+    "low_usd": 1299,
+    "high_usd": 1299
+   }
   },
   {
    "id": "mini-m5pro-64",
@@ -76,7 +81,12 @@
      "how_seen": "excerpt only",
      "date": "2026-09-22"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 64,
+    "low_usd": 2699,
+    "high_usd": 2699
+   }
   },
   {
    "id": "studio-m5max-128",
@@ -108,7 +118,12 @@
      "how_seen": "read page",
      "date": "2026-08-25"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 128,
+    "low_usd": 5100,
+    "high_usd": 5100
+   }
   },
   {
    "id": "studio-m5ultra-256",
@@ -148,7 +163,12 @@
      "how_seen": "read page",
      "date": "2026-10-15"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 256,
+    "low_usd": 9500,
+    "high_usd": 10800
+   }
   },
   {
    "id": "studio-m3ultra-256-used",
@@ -193,7 +213,12 @@
      "how_seen": "read page",
      "date": "2026-10-15"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 256,
+    "low_usd": 7300,
+    "high_usd": 9999
+   }
   },
   {
    "id": "strix-halo",
@@ -245,7 +270,12 @@
      "how_seen": "EXCERPT",
      "date": "2026-08-05 (updated Oct)"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 128,
+    "low_usd": 3449,
+    "high_usd": 4349
+   }
   },
   {
    "id": "dgx-spark",
@@ -285,7 +315,12 @@
      "how_seen": "EXCERPT",
      "date": "2025-10-14"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 128,
+    "low_usd": 6950,
+    "high_usd": 6950
+   }
   },
   {
    "id": "jetson-thor",
@@ -318,7 +353,12 @@
      "how_seen": "EXCERPT",
      "date": "2026-07-22"
     }
-   ]
+   ],
+   "alt": {
+    "memory_gb": 128,
+    "low_usd": 5499,
+    "high_usd": 5499
+   }
   },
   {
    "id": "pi-gpu",

@@ -15,8 +15,8 @@ import { OtherHardware } from './components/OtherHardware'
 import { UseCases } from './components/UseCases'
 import { BuyingGuide } from './components/BuyingGuide'
 import { OsGuide } from './components/OsGuide'
-import { Icon, Logo, PartImage, credits } from './components/Visual'
-import { disclosure, shopLink } from './lib/affiliate'
+import { Icon, PartImage, credits } from './components/Visual'
+import { disclosure } from './lib/affiliate'
 import { CURRENCIES, RATES, detectCurrency, fmt, fmtRange, fmtUsd, fmtUsdRange, isSupported, toUsd } from './lib/currency'
 import { TIERS, recommend } from './lib/budget'
 
@@ -30,7 +30,12 @@ import { OVERHEAD_GB } from './lib/constants'
 import { decodeBuild, encodeBuild, type BuildState, type Known } from './lib/share'
 import { toCsv, toText, type Line } from './lib/exportBuild'
 import { HeldBack } from './components/HeldBack'
-import { RestOfBox } from './components/RestOfBox'
+import { CardTable } from './components/CardTable'
+import { ModelPicker, type PickModel } from './components/ModelPicker'
+import { MobileBar, Summary } from './components/Summary'
+import { Alternatives } from './components/Alternatives'
+import { compatFlags } from './lib/flags'
+import { restOfBox } from './lib/restOfBox'
 import { RunningCost, ShareExport } from './components/BuildTools'
 
 // The footer's price statement is computed from the data, so it cannot drift from it.
@@ -44,9 +49,6 @@ const KNOWN: Known = {
 
 const PRESETS = presetData as unknown as { name: string; counts: Record<string, number>; adapters: string[]; psu: string }[]
 
-const SPEC_LABELS: Record<string, string> = { vram_gb: 'memory', tdp_w: 'power', slot_width: 'slot width', connector_count: 'power connectors', cooling: 'cooling' }
-const specLabel = (f: string) => SPEC_LABELS[f] ?? f
-const tone = { error: 'text-err', warn: 'text-warn', info: 'text-info' } as const
 const label = 'mb-2 font-mono text-xs font-semibold uppercase tracking-wide text-muted'
 const btn = 'rounded border border-line bg-panel px-3 py-1 text-sm hover:bg-panel2'
 
@@ -70,9 +72,17 @@ function useCurrency() {
   return [code, setCode] as const
 }
 
+type View = 'builder' | 'models' | 'capacity' | 'community' | 'consoles' | 'uses' | 'guide' | 'os'
+const NAV: { id: string; label: string; views: { id: View; label: string }[] }[] = [
+  { id: 'build', label: 'Build', views: [{ id: 'builder', label: 'Build' }] },
+  { id: 'models', label: 'Models', views: [{ id: 'models', label: 'Models by task' }, { id: 'capacity', label: 'What can I run?' }] },
+  { id: 'guides', label: 'Guides', views: [{ id: 'guide', label: 'Before you buy' }, { id: 'os', label: 'Windows, Linux, Mac' }, { id: 'consoles', label: 'PS5, Mac and odd hardware' }, { id: 'uses', label: 'What people build' }] },
+  { id: 'community', label: 'Community', views: [{ id: 'community', label: 'Community reports' }] },
+]
+
 export default function App() {
   const [dark, setDark] = useTheme()
-  const [view, setView] = useState<'builder' | 'models' | 'capacity' | 'community' | 'consoles' | 'uses' | 'guide' | 'os'>('builder')
+  const [view, setView] = useState<View>('builder')
   const shared = useMemo(() => (typeof window === 'undefined' ? null : decodeBuild(window.location.hash, KNOWN)), []) // a build link, or null (never a partial build)
   const [pcId, setPcId] = useState(shared?.pcId ?? 'omarchy')
   const pc = PCS.find((p) => p.id === pcId)!
@@ -88,8 +98,7 @@ export default function App() {
   const [currency, setCurrency] = useCurrency()
   const [tierId, setTierId] = useState('hobby')
   const [custom, setCustom] = useState('')
-  const [cardQuery, setCardQuery] = useState('')
-  const [maxPerGb, setMaxPerGb] = useState(0) // 0 = show every card
+  const [fullBuild, setFullBuild] = useState(false)
   const money = (n: number) => fmt(n, currency)
   const rng = (l: number, h: number) => fmtRange(l, h, currency)
   const usdNote = (l: number, h: number) => (currency === 'USD' ? '' : ` · ${fmtUsdRange(l, h)} USD`)
@@ -110,10 +119,6 @@ export default function App() {
   const psu = psuOptions.find((p) => p.id === psuId) ?? psuOptions[0]
   const pcOwned = pc.owned_gpus.map((id) => ALL_GPUS.find((g) => g.id === id)!).filter(Boolean)
   const ownedCards = keepOwned ? pcOwned : []
-  const perGb = (g: Gpu) => (g.price_low > 0 ? g.price_low / g.vram_gb : Infinity) // an owned card has no price, so it goes last
-  const shownCards = [...BUYABLE]
-    .filter((g) => (counts[g.id] ?? 0) > 0 || ((!cardQuery || g.name.toLowerCase().includes(cardQuery.toLowerCase())) && (!maxPerGb || perGb(g) <= maxPerGb)))
-    .sort((a, b) => perGb(a) - perGb(b))
   const newCards = useMemo(() => BUYABLE.flatMap((g) => Array(counts[g.id] ?? 0).fill(g) as Gpu[]), [counts])
   const cards = [...ownedCards, ...newCards]
   const adapters = adapterIds.map((id) => ADAPTERS.find((a) => a.id === id)!).filter(Boolean)
@@ -122,7 +127,9 @@ export default function App() {
   const spend = totals(newCards, adapters, newCards.length ? psu : undefined) // no PSU cost until something is actually being bought
   const findings = checkBuild(build, board, cards, adapters, psu)
   const { placements } = placeCards(board, cards, adapters)
-  const budgetUsd = custom && Number(custom) > 0 ? toUsd(currency, Number(custom)) : (TIERS.find((t) => t.id === tierId)?.usd ?? 0)
+  const rest = useMemo(() => restOfBox({ scratch: pcId === 'scratch', board, nvme, openFrame }), [pcId, board, nvme, openFrame])
+  const totalBudgetUsd = custom && Number(custom) > 0 ? toUsd(currency, Number(custom)) : (TIERS.find((t) => t.id === tierId)?.usd ?? 0)
+  const budgetUsd = fullBuild ? Math.max(0, totalBudgetUsd - rest.high) : totalBudgetUsd // in Full build mode the rest of the box comes out of the budget first
   const budgetResult = useMemo(() => recommend({ board, owned: ownedCards, gpus: ALL_GPUS, adapters: ADAPTERS, psus: psuOptions, budgetUsd, nvme }), [board, pcId, psuId, budgetUsd, nvme, keepOwned]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const allModels = (taskData.tasks as { task: string; models: ModelRec[] }[]).flatMap((g) => g.models.map((m) => ({ ...m, task: g.task })))
@@ -141,6 +148,10 @@ export default function App() {
       }).sort((a, b) => a.low - b.low).slice(0, 3)
     : []
   const errorCount = findings.filter((f) => f.severity === 'error').length
+  const warnCount = findings.filter((f) => f.severity === 'warn').length
+  const ownedVram = ownedCards.reduce((n, g) => n + g.vram_gb, 0)
+  const newVram = newCards.reduce((n, g) => n + g.vram_gb, 0)
+  const flags = compatFlags(findings, cards)
 
   // sharing and export
   const stateNow: BuildState = { pcId, boardId, counts, adapterIds, psuId, nvme, openFrame, airflow, keepOwned }
@@ -158,18 +169,25 @@ export default function App() {
   const setCount = (id: string, d: number) => setCounts((c) => ({ ...c, [id]: Math.max(0, (c[id] ?? 0) + d) }))
   const applyPreset = (p: (typeof PRESETS)[number]) => { setCounts(p.counts); setAdapterIds(p.adapters); setPsuId(p.psu) }
 
+  const group = NAV.find((g) => g.views.some((v) => v.id === view))!
+  const summaryEl = (
+    <Summary t={t} spend={spend} newVram={newVram} ownedVram={ownedVram} flags={flags} findings={findings} placements={placements} rng={rng} money={money} currency={currency} usd={fmtUsdRange} fullBuild={fullBuild} rest={rest}>
+      <RunningCost wallW={Math.round(t.watts / ASSUMED_EFFICIENCY)} currency={currency} />
+      <ShareExport getLink={buildLink} getSummary={summaryText} getCsv={() => toCsv(exportLines())} />
+    </Summary>
+  )
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6">
+    <div className="mx-auto max-w-6xl px-4 py-6 pb-24 md:pb-6">
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="font-mono text-2xl font-bold text-accent">AI Budget Build</h1>
           <p className="text-sm text-muted">Budget local AI on Windows, Linux or macOS. Start from the machine you own: see what fits, what it costs, and what it can run.</p>
         </div>
-        <nav className="flex flex-wrap gap-2" aria-label="Views">
-          {(['builder', 'models', 'capacity', 'community', 'consoles', 'uses', 'guide', 'os'] as const).map((v) => (
-            <button key={v} onClick={() => setView(v)} aria-pressed={view === v}
-              className={`rounded px-3 py-1 font-mono text-sm ${view === v ? 'bg-accent text-onaccent' : 'border border-line bg-panel'}`}>
-              {v === 'builder' ? 'Builder' : v === 'models' ? 'Models by task' : v === 'capacity' ? 'What can I run?' : v === 'community' ? 'Community reports' : v === 'consoles' ? 'PS5, Mac and odd hardware' : v === 'uses' ? 'What people build' : v === 'guide' ? 'Before you buy' : 'Windows, Linux, Mac'}
+        <nav className="flex flex-wrap items-center gap-2" aria-label="Sections">
+          {NAV.map((g) => (
+            <button key={g.id} onClick={() => setView(g.views[0].id)} aria-pressed={group.id === g.id}
+              className={`rounded px-3 py-1 font-mono text-sm ${group.id === g.id ? 'bg-accent text-onaccent' : 'border border-line bg-panel'}`}>
+              {g.label}
             </button>
           ))}
           <label className="flex items-center gap-1 text-sm text-muted">Currency
@@ -180,6 +198,15 @@ export default function App() {
           <button className={btn} onClick={() => setDark(!dark)} aria-pressed={dark}>{dark ? 'Light mode' : 'Dark mode'}</button>
         </nav>
       </header>
+
+      {group.views.length > 1 && (
+        <nav aria-label={`${group.label} pages`} className="-mt-3 mb-4 flex flex-wrap gap-2 border-b border-line pb-2">
+          {group.views.map((v) => (
+            <button key={v.id} onClick={() => setView(v.id)} aria-pressed={view === v.id}
+              className={`rounded px-3 py-1 text-sm ${view === v.id ? 'bg-panel2 font-semibold text-accent ring-1 ring-accent' : 'text-muted hover:bg-panel2'}`}>{v.label}</button>
+          ))}
+        </nav>
+      )}
 
       <p className="mb-6 rounded border border-line bg-panel p-3 text-xs text-muted">
         {disclosure()} Prices are dated asking prices, not quotes, and nothing here was benchmarked on a multi-GPU build by us.
@@ -201,6 +228,7 @@ export default function App() {
         ) : view === 'models' ? (
           <Models tasks={taskData.tasks} vramGb={t.vram} cards={t.cards} />
         ) : (
+          <>
           <div className="grid gap-6 md:grid-cols-3">
             <section className="min-w-0 space-y-6 md:col-span-2" aria-label="Parts">
               <div>
@@ -221,10 +249,7 @@ export default function App() {
 
               <div>
                 <h2 className={label}>2. What do you want to run?</h2>
-                <select aria-label="Model goal" value={goal} onChange={(e) => setGoal(e.target.value)} className="w-full rounded border border-line bg-panel p-2">
-                  <option value="">Pick a model (optional)</option>
-                  {allModels.map((m) => <option key={`${m.task}|${m.name}`} value={`${m.task}|${m.name}`}>{taskLabel(m.task)}: {m.name} (~{m.vram_gb_estimate} GB)</option>)}
-                </select>
+                <ModelPicker models={allModels as PickModel[]} value={goal} onChange={setGoal} vram={t.vram} cards={t.cards} />
                 {target && (
                   <div className="mt-2 rounded border border-line bg-panel p-3 text-sm" aria-live="polite">
                     {fits
@@ -246,6 +271,11 @@ export default function App() {
 
               <div>
                 <h2 className={label}>3. What is your budget?</h2>
+                <div className="mb-2 flex flex-wrap items-center gap-2 text-sm" role="group" aria-label="What the budget covers">
+                  <button onClick={() => setFullBuild(false)} aria-pressed={!fullBuild} className={`rounded border px-3 py-1 ${!fullBuild ? 'border-accent bg-accent text-onaccent' : 'border-line bg-panel hover:bg-panel2'}`}>Upgrade what I have</button>
+                  <button onClick={() => setFullBuild(true)} aria-pressed={fullBuild} className={`rounded border px-3 py-1 ${fullBuild ? 'border-accent bg-accent text-onaccent' : 'border-line bg-panel hover:bg-panel2'}`}>Full build</button>
+                  <span className="text-xs text-muted">{fullBuild ? 'Takes the drive, and when you start from scratch the board, memory and case, out of the budget first.' : 'Cards, adapters and a PSU only.'}</span>
+                </div>
                 <div className="flex flex-wrap items-center gap-2">
                   {TIERS.map((t) => (
                     <button key={t.id} onClick={() => { setTierId(t.id); setCustom('') }} aria-pressed={tierId === t.id && !custom}
@@ -259,8 +289,11 @@ export default function App() {
                   </label>
                 </div>
                 <p className="mt-2 text-xs text-muted">
-                  {custom ? 'Custom budget.' : TIERS.find((t) => t.id === tierId)?.blurb} Counts cards, adapters and a PSU only if yours cannot carry the build. It does not count the board, CPU, RAM, 2 TB NVMe or case.
-                  Each option is kept inside the budget even at the top of its price range.
+                  {custom ? 'Custom budget.' : TIERS.find((t) => t.id === tierId)?.blurb}{' '}
+                  {fullBuild
+                    ? `Full build: ${money(rest.high)} goes to the rest of the box first (${rest.items.map((i) => i.label).join(', ') || 'nothing priced'}), leaving ${money(budgetUsd)} for cards, adapters and a PSU${rest.unpriced.length ? `. Not priced, so not counted: ${rest.unpriced.join(', ')}.` : '.'}`
+                    : 'Counts cards, adapters and a PSU only if yours cannot carry the build. It does not count the board, CPU, RAM, 2 TB NVMe or case. Switch to Full build to price what we can.'}
+                  {' '}Each option is kept inside the budget even at the top of its price range.
                 </p>
                 <ul className="mt-2 space-y-2" aria-live="polite">
                   {budgetResult.options.slice(0, 3).map((o) => (
@@ -283,6 +316,8 @@ export default function App() {
                   )}
                 </ul>
               </div>
+
+              <Alternatives targetGb={target ? Math.ceil(need + OVERHEAD_GB) : 128} money={money} onOpen={() => setView('consoles')} />
 
               <div>
                 <h2 className={label}>Presets</h2>
@@ -314,46 +349,7 @@ export default function App() {
                     <span>Keep the card already in your PC: {pcOwned.map((g) => `${g.name} (${g.vram_gb} GB, ${g.tdp_w} W)`).join(', ')}. Untick it if you would pull it to free a slot and its power draw. If it is your only video output, pulling it leaves the PC with no screen until another card or a remote session takes over.</span>
                   </label>
                 )}
-                <div className="mb-2 flex flex-wrap items-center gap-2 text-xs">
-                  <input value={cardQuery} onChange={(e) => setCardQuery(e.target.value)} placeholder="Search cards" aria-label="Search cards" className="rounded border border-line bg-panel p-1" />
-                  <select value={maxPerGb} onChange={(e) => setMaxPerGb(Number(e.target.value))} aria-label="Price per GB limit" className="rounded border border-line bg-panel p-1">
-                    <option value={0}>Any price per GB</option><option value={30}>Up to $30 per GB (lowest price)</option><option value={60}>Up to $60 per GB</option><option value={120}>Up to $120 per GB</option>
-                  </select>
-                  <span className="text-muted">Cheapest per GB first. Cards you have picked always stay in the list. Showing {shownCards.length} of {BUYABLE.length}.</span>
-                </div>
-                <ul className="space-y-2">
-                  {shownCards.map((g) => (
-                    <li key={g.id} className="rounded border border-line bg-panel p-3">
-                      <div className="flex flex-wrap items-start gap-3">
-                        <PartImage id={g.id} name={g.name} brand={g.brand} />
-                        <div className="min-w-[11rem] flex-1">
-                          <div className="flex items-center gap-2 font-semibold"><Logo brand={g.brand} /> <span className="min-w-0">{g.name}</span></div>
-                          <div className="text-xs text-muted">
-                            {g.vram_gb} GB · {g.cooling} · {g.tdp_w} W · {g.price_high ? `${rng(g.price_low, g.price_high)} (${rng(g.price_low / g.vram_gb, g.price_high / g.vram_gb)}/GB)${usdNote(g.price_low, g.price_high)}` : 'owned'}
-                          </div>
-                          <p className="mt-1 text-xs text-subtle">{g.note}</p>
-                          <p className="mt-1 text-xs text-muted">
-                            Specs checked against the maker{g.spec_checked_on ? ` on ${g.spec_checked_on}` : ''}: {(g.spec_verified ?? []).map(specLabel).join(', ') || 'none'}.
-                            {(g.spec_unverified ?? []).length > 0 && <> <strong>Not verified:</strong> {(g.spec_unverified ?? []).map(specLabel).join(', ')}.</>}
-                            {g.spec_source_url && <> <a className="text-link underline" href={g.spec_source_url}>maker source</a></>}
-                          </p>
-                          <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-                            <a className="text-link underline" href={g.source_url}>price source, checked {g.checked_on}</a>
-                            {(['ebay', 'amazon'] as const).map((m) => {
-                              const l = shopLink(m, g.name.replace(/\(.*?\)/g, '').trim(), g.id)
-                              return <a key={m} className="text-link underline" href={l.href} rel={l.rel} target="_blank">search {m === 'ebay' ? 'eBay' : 'Amazon'}</a>
-                            })}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 font-mono">
-                          <button aria-label={`Remove one ${g.name}`} onClick={() => setCount(g.id, -1)} className={`${btn} h-8 w-8 px-0`}>−</button>
-                          <span aria-live="polite" className="w-6 text-center">{counts[g.id] ?? 0}</span>
-                          <button aria-label={`Add one ${g.name}`} onClick={() => setCount(g.id, 1)} className={`${btn} h-8 w-8 px-0`}>+</button>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                <CardTable cards={BUYABLE} counts={counts} setCount={setCount} rng={rng} usdNote={usdNote} />
               </div>
 
               <div>
@@ -376,35 +372,10 @@ export default function App() {
               </div>
             </section>
 
-            <aside className="min-w-0 space-y-4 md:sticky md:top-4 md:self-start" aria-label="Build summary">
-              <div className="rounded border border-line bg-panel p-4">
-                <div className="font-mono text-3xl font-bold text-accent">{t.vram} GB</div>
-                <div className="text-sm text-muted">total VRAM · {t.cards} card(s)</div>
-                <dl className="mt-3 space-y-1 text-sm">
-                  <div className="flex justify-between gap-2"><dt>You would buy</dt><dd className="text-right">{rng(spend.priceLow, spend.priceHigh)}{currency !== 'USD' && <span className="block text-xs text-subtle">{fmtUsdRange(spend.priceLow, spend.priceHigh)} USD</span>}</dd></div>
-                  <div className="flex justify-between gap-2"><dt>Est. draw</dt><dd>{t.watts} W</dd></div>
-                  <div className="flex justify-between gap-2"><dt>Not priced</dt><dd className="text-right text-subtle">board, CPU, case</dd></div>
-                  <RestOfBox money={money} usd={fmtUsd} currency={currency} />
-                </dl>
-              </div>
-              <RunningCost wallW={Math.round(t.watts / ASSUMED_EFFICIENCY)} currency={currency} />
-              <ShareExport getLink={buildLink} getSummary={summaryText} getCsv={() => toCsv(exportLines())} />
-              <div className="rounded border border-line bg-panel p-4">
-                <h2 className={label}>Placement</h2>
-                <ol className="space-y-1 text-sm">
-                  {placements.map((p, i) => <li key={i}>{p.gpu.name.replace(/\(.*?\)/g, '').replace(/^(NVIDIA|AMD) /, '').trim()} → {p.where}{p.lanes ? ` (x${p.lanes})` : ''}</li>)}
-                  {!placements.length && <li className="text-subtle">No cards yet.</li>}
-                </ol>
-              </div>
-              <div className="rounded border border-line bg-panel p-4">
-                <h2 className={label}>Checks</h2>
-                <ul className="space-y-2 text-sm">
-                  {findings.map((f, i) => <li key={i} className={`flex gap-2 ${tone[f.severity]}`}><Icon name={f.severity === 'info' ? 'mdi-information-outline' : 'mdi-alert-circle-outline'} size={18} className="mt-0.5" /><span><span className="font-mono text-xs font-semibold uppercase">{f.severity}</span> {f.message}</span></li>)}
-                  {!findings.length && <li className="text-subtle">Add cards to see checks.</li>}
-                </ul>
-              </div>
-            </aside>
+            <aside className="hidden min-w-0 md:sticky md:top-4 md:block md:self-start" aria-label="Build summary">{summaryEl}</aside>
           </div>
+          <MobileBar vram={t.vram} newVram={newVram} ownedVram={ownedVram} rng={rng} low={fullBuild ? spend.priceLow + rest.low : spend.priceLow} high={fullBuild ? spend.priceHigh + rest.high : spend.priceHigh} problems={errorCount} warnings={warnCount}>{summaryEl}</MobileBar>
+          </>
         )}
       </main>
 
