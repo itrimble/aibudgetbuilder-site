@@ -1,0 +1,6 @@
+{
+  "_note": "Leave campid and tag empty until the accounts are approved. Empty means links are plain and the page says no affiliate links are active. Never commit a secret here: these IDs are public in every link.",
+  "customidPrefix": "abb",
+  "ebay": { "campid": "", "mkrid": "711-53200-19255-0" },
+  "amazon": { "tag": "" }
+}

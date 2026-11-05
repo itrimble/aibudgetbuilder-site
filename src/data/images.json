@@ -1,0 +1,89 @@
+{
+ "msi-x570-tomahawk": {
+  "status": "missing",
+  "query": "MSI MAG X570 Tomahawk",
+  "fetched": "2026-11-04T01:36:29.411Z"
+ },
+ "hp-z4-g4": {
+  "status": "missing",
+  "query": "HP Z4 G4 workstation",
+  "fetched": "2026-11-04T01:36:29.478Z"
+ },
+ "asus-x99-e-ws": {
+  "status": "missing",
+  "query": "ASUS X99-E WS motherboard",
+  "fetched": "2026-11-04T01:36:29.490Z"
+ },
+ "asrock-romed8-2t": {
+  "status": "missing",
+  "query": "ASRock Rack ROMED8-2T",
+  "fetched": "2026-11-04T01:36:29.490Z"
+ },
+ "supermicro-h12ssl-i": {
+  "status": "missing",
+  "query": "Supermicro H12SSL-i",
+  "fetched": "2026-11-04T01:36:29.512Z"
+ },
+ "asrock-x399-taichi": {
+  "status": "missing",
+  "query": "ASRock X399 Taichi",
+  "fetched": "2026-11-04T01:36:29.572Z"
+ },
+ "asus-wrx80e-sage": {
+  "status": "missing",
+  "query": "ASUS Pro WS WRX80E-SAGE",
+  "fetched": "2026-11-04T01:36:29.572Z"
+ },
+ "asus-b250-mining-expert": {
+  "status": "missing",
+  "query": "ASUS B250 Mining Expert",
+  "fetched": "2026-11-04T01:36:29.573Z"
+ },
+ "radeon-pro-v620": {
+  "status": "missing",
+  "query": "AMD Radeon PRO V620",
+  "fetched": "2026-11-04T01:36:29.650Z"
+ },
+ "instinct-mi50-32": {
+  "status": "missing",
+  "query": "AMD Radeon Instinct MI50",
+  "fetched": "2026-11-04T01:36:29.662Z"
+ },
+ "v100-32-sxm2": {
+  "status": "missing",
+  "query": "Nvidia Tesla V100 SXM2",
+  "fetched": "2026-11-04T01:36:29.724Z"
+ },
+ "v100-32-pcie": {
+  "status": "missing",
+  "query": "Nvidia Tesla V100 PCIe",
+  "fetched": "2026-11-04T01:36:29.799Z"
+ },
+ "tesla-p40": {
+  "status": "ok",
+  "file": "tesla-p40.webp",
+  "title": "File:Nvidia P40 with Heatsink Removed.jpg",
+  "license": "CC BY 4.0",
+  "author": "Tim Sheerman-Chase",
+  "source": "https://commons.wikimedia.org/wiki/File:Nvidia_P40_with_Heatsink_Removed.jpg",
+  "fetched": "2026-11-04T01:36:30.032Z"
+ },
+ "rtx-3090": {
+  "status": "ok",
+  "file": "rtx-3090.webp",
+  "title": "File:Gigabyte GeForce RTX 3090 Eagle OC 24G, 24576 MiB GDDR6X Front 20201114 DSC5880.jpg",
+  "license": "CC BY 4.0",
+  "author": "PantheraLeo1359531",
+  "source": "https://commons.wikimedia.org/wiki/File:Gigabyte_GeForce_RTX_3090_Eagle_OC_24G,_24576_MiB_GDDR6X_Front_20201114_DSC5880.jpg",
+  "fetched": "2026-11-04T01:36:30.119Z"
+ },
+ "rx-6600xt": {
+  "status": "ok",
+  "file": "rx-6600xt.webp",
+  "title": "File:ASUS AMD RX 6600 XT, in the box. (51999585263).jpg",
+  "license": "CC BY 2.0",
+  "author": "Chi Ho Chan from Hong Kong",
+  "source": "https://commons.wikimedia.org/wiki/File:ASUS_AMD_RX_6600_XT,_in_the_box._(51999585263).jpg",
+  "fetched": "2026-11-04T01:36:30.150Z"
+ }
+}

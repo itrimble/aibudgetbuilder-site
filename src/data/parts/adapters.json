@@ -1,0 +1,48 @@
+[
+  {
+    "id": "adt-r13-x1-x16-extender",
+    "name": "ADT-Link R13 PCIe x1 to x16 ribbon extender (30 to 1000 mm)",
+    "kind": "riser",
+    "consumes_m2": false,
+    "lanes": 1,
+    "price": 20,
+    "note": "Maker page lists $11 for the 5 or 10 cm cable up to $20 for 100 cm. Priced at the longest cable because an open frame rarely uses the shortest. Fine for layer-split inference after the model is loaded, slow to load (x1 link). Power input is not stated on the page. Spec and price range re-read directly from the maker page on 2026-11-04 and matched the earlier reading.",
+    "source_url": "https://www.adt.link/product/R13.html",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.adt.link/product/R13.html",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "interface PCIe x1 to x16",
+      "PCIe 3.0",
+      "lengths",
+      "price range $11 to $20"
+    ],
+    "spec_unverified": [
+      "power input (page does not state it)"
+    ]
+  },
+  {
+    "id": "adt-r43sf-m2-x16-gen3",
+    "name": "ADT-Link R43SF M.2 NVMe to PCIe x16 extender (50 to 800 mm)",
+    "kind": "m2-to-pcie",
+    "consumes_m2": true,
+    "lanes": 4,
+    "price": 33,
+    "note": "Maker page lists $19 for the shortest cable up to $33 for the longest. Priced at the longest. Uses one M.2 slot, runs the card at x4, PCIe 3.0, and needs 12 V from a SATA power lead. That the plug occupies the M.2 slot is inferred from the M-key connector, not stated as a sentence on the page. Spec and price range re-read directly from the maker page on 2026-11-04 and matched the earlier reading.",
+    "source_url": "https://www.adt.link/product/R43SF.html",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.adt.link/product/R43SF.html",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "interface M.2 NVMe to PCIe x16",
+      "x4 lanes",
+      "PCIe 3.0",
+      "lengths",
+      "SATA power cable for 12 V",
+      "price range $19 to $33"
+    ],
+    "spec_unverified": [
+      "consumes_m2 (inferred from the M-key plug)"
+    ]
+  }
+]

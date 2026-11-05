@@ -1,0 +1,189 @@
+[
+  {
+    "id": "instinct-mi100",
+    "name": "AMD Instinct MI100 32GB",
+    "vendor": "AMD",
+    "vram_gb": 32,
+    "arch": "CDNA (gfx908)",
+    "slot_width": 2,
+    "tdp_w": 300,
+    "power_connectors": "unverified (AMD page says PCIe Powered)",
+    "connector_count": null,
+    "cooling": "passive",
+    "stacks": {
+      "cuda": false,
+      "rocm": true,
+      "vulkan": true
+    },
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "No price: eBay blocks automated access.",
+    "source_url": "https://www.amd.com/en/products/accelerators/instinct/mi100.html",
+    "checked_on": "2026-11-03",
+    "image_query": "AMD Instinct MI100 32GB",
+    "brand": "amd",
+    "spec_source_url": "https://www.amd.com/en/products/accelerators/instinct/mi100.html",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "vram_gb",
+      "tdp_w",
+      "slot_width",
+      "cooling"
+    ],
+    "spec_unverified": [
+      "connector_count",
+      "arch"
+    ],
+    "spec_note": "AMD page: 32 GB, TDP '300W Peak', Cooling Passive, Double Slot, External Power Connectors 'PCIe Powered' (ambiguous, so connector_count unverified). Architecture CDNA/gfx908 from the ROCm table row, not the product page. ROCm table lists MI100. AMD's MI100 page lists \"External Power Connectors: PCIe Powered\" (unclear), while a third-party spec database says two 8-pin EPS connectors. The two disagree, so the connector count is left blank rather than chosen. Still no US price."
+  },
+  {
+    "id": "instinct-mi210",
+    "name": "AMD Instinct MI210 64GB",
+    "vendor": "AMD",
+    "vram_gb": 64,
+    "arch": "CDNA2 (gfx90a)",
+    "slot_width": 2,
+    "tdp_w": 300,
+    "power_connectors": "1x 8-pin EPS12V",
+    "connector_count": 1,
+    "cooling": "passive",
+    "stacks": {
+      "cuda": false,
+      "rocm": true,
+      "vulkan": true
+    },
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "No price: eBay blocks automated access.",
+    "source_url": "https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html",
+    "checked_on": "2026-11-03",
+    "image_query": "AMD Instinct MI210 64GB",
+    "brand": "amd",
+    "spec_source_url": "https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/product-briefs/instinct-mi210-brochure.pdf",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "connector_count",
+      "cooling",
+      "slot_width",
+      "tdp_w",
+      "vram_gb"
+    ],
+    "spec_unverified": [
+      "arch"
+    ],
+    "spec_note": "AMD page: Dedicated Memory 64 GB, Cooling Passive, Double Slot, Form Factor Servers. TDP and power connectors not found in the page text I read, so tdp_w is left null. ROCm table lists MI210. AMD MI210 brochure (amd.com): full-height full-length dual slot, passively cooled, 300 W TDP (EPS12V, 8-pin). Still no US price found: a tracker showed it sold out."
+  },
+  {
+    "id": "quadro-rtx-6000",
+    "name": "NVIDIA Quadro RTX 6000 24GB",
+    "vendor": "NVIDIA",
+    "vram_gb": 24,
+    "arch": "Turing",
+    "slot_width": 2,
+    "tdp_w": 295,
+    "power_connectors": "1x PCIe 8-pin + 1x PCIe 6-pin",
+    "connector_count": 2,
+    "cooling": "active",
+    "stacks": {
+      "cuda": true,
+      "rocm": false,
+      "vulkan": true
+    },
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "No price: eBay blocks automated access (robots.txt and 403) and my Firecrawl credits ran out before I could read other price pages.",
+    "source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/quadro-rtx-6000-us-nvidia-704093-r4-web.pdf",
+    "checked_on": "2026-11-03",
+    "image_query": "NVIDIA Quadro RTX 6000 24GB",
+    "brand": "nvidia",
+    "spec_source_url": "https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/quadro-rtx-6000-us-nvidia-704093-r4-web.pdf",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "arch",
+      "connector_count",
+      "cooling",
+      "slot_width",
+      "tdp_w",
+      "vram_gb"
+    ],
+    "spec_unverified": [],
+    "spec_note": "NVIDIA Quadro datasheet: 24 GB GDDR6, total board power 295 W, dual slot full height, Thermal solution Active. Connector not read; Turing is from the card generation, not the extraction. 2026-11-04 update: Datasheet: \"powered by the NVIDIA Turing architecture\"; Thermal Solution Active; Dual Slot, Full Height. Power connector not stated in the datasheet text; total board power 295 W. NVIDIA Power Guidelines for Workstation Products: Quadro RTX 6000, PCIe 8-pin plus PCIe 6-pin. Still no US price for the active-cooled card (the one dealer listing found was a passive Dell-branded variant)."
+  },
+  {
+    "id": "rtx-pro-4500-blackwell",
+    "name": "NVIDIA RTX PRO 4500 Blackwell 32GB",
+    "vendor": "NVIDIA",
+    "vram_gb": 32,
+    "arch": "Blackwell",
+    "slot_width": 2,
+    "tdp_w": 200,
+    "power_connectors": "1x PCIe Gen5 16-pin on the card (2x PCIe 8-pin on the supply, NVIDIA dual adapter)",
+    "connector_count": 2,
+    "cooling": "active",
+    "stacks": {
+      "cuda": true,
+      "rocm": false,
+      "vulkan": true
+    },
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "No price: eBay blocks automated access (robots.txt and 403) and my Firecrawl credits ran out before I could read other price pages.",
+    "source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4500/",
+    "checked_on": "2026-11-03",
+    "image_query": "NVIDIA RTX PRO 4500 Blackwell 32GB",
+    "brand": "nvidia",
+    "spec_source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4500/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "arch",
+      "connector_count",
+      "cooling",
+      "slot_width",
+      "tdp_w",
+      "vram_gb"
+    ],
+    "spec_unverified": [],
+    "spec_note": "NVIDIA page: 32 GB GDDR7 ECC, 200 W, dual slot, Active, Blackwell. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 2 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card."
+  },
+  {
+    "id": "rtx-pro-4000-blackwell",
+    "name": "NVIDIA RTX PRO 4000 Blackwell 24GB",
+    "vendor": "NVIDIA",
+    "vram_gb": 24,
+    "arch": "Blackwell",
+    "slot_width": 1,
+    "tdp_w": 145,
+    "power_connectors": "1x PCIe Gen5 16-pin on the card (1x PCIe 8-pin on the supply, NVIDIA adapter)",
+    "connector_count": 1,
+    "cooling": "active",
+    "stacks": {
+      "cuda": true,
+      "rocm": false,
+      "vulkan": true
+    },
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "No price: eBay blocks automated access (robots.txt and 403) and my Firecrawl credits ran out before I could read other price pages.",
+    "source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4000/",
+    "checked_on": "2026-11-03",
+    "image_query": "NVIDIA RTX PRO 4000 Blackwell 24GB",
+    "brand": "nvidia",
+    "spec_source_url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4000/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "arch",
+      "connector_count",
+      "cooling",
+      "slot_width",
+      "tdp_w",
+      "vram_gb"
+    ],
+    "spec_unverified": [],
+    "spec_note": "NVIDIA page: 24 GB GDDR7 ECC, 145 W, single slot, Active, Blackwell. NVIDIA RTX PRO Blackwell quick start guide (r18, 2026-03-17): the supply cables per card are 1 PCIe 8-pin into NVIDIA's adapter and one 16-pin on the card."
+  }
+]

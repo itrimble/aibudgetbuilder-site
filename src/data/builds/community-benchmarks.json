@@ -1,0 +1,128 @@
+{
+ "source_url": "https://countryboycomputersbg.com/instinct-mi50-32gb-vs-radeon-pro-v620-32gb/",
+ "checked_on": "2026-11-03",
+ "author": "David Jarboe (Country Boy Computers)",
+ "method_caveats": [
+  "Self-published spreadsheet embedded in the page; llama.cpp llama-bench style columns pp512 (prompt tok/s) and tg128 (generation tok/s), 32k n_ctx.",
+  "The page does not say how many cards each row used. Qwen3-Coder-Next Q4 (80B) is ~48 GB of weights, so that row cannot be a single 32 GB card; treat card count as unknown.",
+  "Author notes flash attention was off on all Navi (V620) tests because of a ROCm bug.",
+  "These are one person's numbers on his machines. Not reproduced by us."
+ ],
+ "rows": [
+  {
+   "gpu": "Radeon PRO V620 32GB",
+   "model": "Qwen3-Coder-Next Q4 (80B)",
+   "backend": "Vulkan, Ubuntu 26.04",
+   "pp512": 1041.64,
+   "tg128": 62.46,
+   "watts": 285
+  },
+  {
+   "gpu": "Radeon PRO V620 32GB",
+   "model": "Qwen3-Coder-Next Q4 (80B)",
+   "backend": "Vulkan, Windows",
+   "pp512": 873.53,
+   "tg128": 59.13,
+   "watts": 297
+  },
+  {
+   "gpu": "Radeon PRO V620 32GB",
+   "model": "Qwen3.6-35b",
+   "backend": "Vulkan, Ubuntu 26.04",
+   "pp512": 1337.26,
+   "tg128": 82.55,
+   "watts": 215
+  },
+  {
+   "gpu": "Radeon PRO V620 32GB",
+   "model": "Qwen3-32b",
+   "backend": "Vulkan, Ubuntu 26.04",
+   "pp512": 334.47,
+   "tg128": 18.16,
+   "watts": 325
+  },
+  {
+   "gpu": "Radeon PRO V620 32GB",
+   "model": "GPT-OSS-20b",
+   "backend": "Vulkan, Ubuntu 26.04",
+   "pp512": 1804.54,
+   "tg128": 96.11,
+   "watts": 295
+  },
+  {
+   "gpu": "Instinct MI50 32GB",
+   "model": "Qwen3-Coder-Next Q4 (80B)",
+   "backend": "HIP, Ubuntu 26.04",
+   "pp512": 578.11,
+   "tg128": 55.17,
+   "watts": 295
+  },
+  {
+   "gpu": "Instinct MI50 32GB",
+   "model": "Qwen3.6-35b",
+   "backend": "HIP, Ubuntu 26.04",
+   "pp512": 786.83,
+   "tg128": 70.35,
+   "watts": 295
+  },
+  {
+   "gpu": "Instinct MI50 32GB",
+   "model": "Qwen3-32b",
+   "backend": "HIP, Ubuntu 26.04",
+   "pp512": 155.88,
+   "tg128": 21.42,
+   "watts": 440
+  },
+  {
+   "gpu": "Instinct MI50 32GB",
+   "model": "GPT-OSS-20b",
+   "backend": "HIP, Ubuntu 26.04",
+   "pp512": 1197.79,
+   "tg128": 106.98,
+   "watts": 420
+  },
+  {
+   "gpu": "Tesla V100 32GB (SXM2, OcuLink)",
+   "model": "Qwen 3.8 27B dense",
+   "backend": "llama.cpp, Ubuntu 26.04",
+   "pp512": 50,
+   "tg128": 45,
+   "watts": 270,
+   "source": "https://blog.lon.tv/2026/09/08/the-cheapest-32gb-nvidia-gpu-you-can-buy-for-local-ai-tesla-v100/",
+   "note": "Prefill ~50 and generation ~45 tok/s; 24-30 tok/s when the 96k context was 80% full (Lon Seidman)."
+  },
+  {
+   "gpu": "Tesla V100 32GB (SXM2, OcuLink)",
+   "model": "Gemma 4 26B-A4B (MoE)",
+   "backend": "llama.cpp, Ubuntu 26.04",
+   "pp512": 1100,
+   "tg128": 90,
+   "watts": null,
+   "source": "https://blog.lon.tv/2026/09/08/the-cheapest-32gb-nvidia-gpu-you-can-buy-for-local-ai-tesla-v100/",
+   "note": "Prefill 1,100 and generation 'over 90' tok/s."
+  },
+  {
+   "gpu": "Tesla V100 16GB (SXM2) + RTX 4080 16GB",
+   "model": "Qwen3.6-27B-MTP Q5_K_M (19GB)",
+   "backend": "llama.cpp CUDA, NixOS, -ts 1,1",
+   "pp512": null,
+   "tg128": 32,
+   "watts": 150,
+   "source": "https://blog.tymscar.com/posts/v100localllm/",
+   "note": "~32 tok/s generation, 133-160 tok/s prompt, 128k context. Draw is his highest seen on the V100."
+  }
+ ],
+ "reader_reports": [
+  {
+   "claim": "Dell workstation would not POST with two 32GB V620s until MMIO high granularity was raised from 1GB to 64GB chunks via the UEFI shell; BIOS UI did not expose it.",
+   "by": "commenter 'greg', 2026-09-06",
+   "verified": false
+  },
+  {
+   "claim": "Speculative decoding on Qwen 3.8 27B (llama.cpp, 2x V620) raised generation from 19 to 40 tok/s.",
+   "by": "commenter 'greg', 2026-09-06",
+   "verified": false
+  }
+ ],
+ "image_video_notes": "Lon Seidman: Flux 1024x1024 ~1 min; LTX 2.5 5s 720p ~3.5 min; MiniMax H3 too slow on V100. Intel Arc card was under 1.5 min on the same job."
+}

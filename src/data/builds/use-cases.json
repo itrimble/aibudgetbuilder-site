@@ -1,0 +1,828 @@
+{
+  "researched_on": "2026-11-05",
+  "method_note": "Every source below was seen as an Exa search-result excerpt (highlights). I did not open any page in full, did not run yt-dlp, and did not open any Reddit thread directly. Reddit content was seen only through third-party mirrors/summaries. So no entry is higher than 'search excerpt only' unless it is a forum/community thread whose text was quoted in the excerpt, marked 'thread excerpt'. VRAM figures are what the sources state; where a source gave none, vram_gb is null. Prices are snapshots from the source date, not current.",
+  "use_cases": [
+    {
+      "name": "Home Assistant local voice assistant",
+      "description": "Wake word, faster-whisper STT, Piper/Kokoro TTS and an Ollama LLM as the conversation agent, wired through the Wyoming protocol, replacing Alexa-style assistants.",
+      "models": [
+        "faster-whisper small-int8/medium/distil-large-v3",
+        "Piper (libritts-high, lessac-medium) or Kokoro",
+        "llama3.2:3b, qwen3-4b, Qwen2.5 7B-14B, 20B-30B MoE or 9B dense"
+      ],
+      "vram_gb": "~9 GB whole stack (author claim, 4-bit model); 12 GB 3060 is 'a squeeze' with whisper+kokoro+7B-14B; 4B dense on 8 GB",
+      "hardware_reported": [
+        "RTX 3090 24GB and RX 7900XTX 24GB: 20B-30B MoE / 9B dense, 1-2 s response after prompt caching (HA community table)",
+        "RTX 5060 Ti 16GB: 1.5-3 s; RX 9060 XT 16GB: 1.5-4 s; RTX 3050 8GB: 4B dense, ~3 s",
+        "RTX 3060 12GB in Lenovo P520 (HA community thread)",
+        "GTX 1080 Ti running whisper distil-large-v3 + piper + llama3.1 (HA community thread)",
+        "Intel Arc A580 with IPEX-LLM Ollama + Qwen3-4B (blog)",
+        "RTX A4000 16GB in Dell R730 (blog)",
+        "Mini PC N100/Beelink SER5 class $150-250 used for small whisper + 7B Q4 (blog)"
+      ],
+      "cost_reported": "Mini PC $150-250 used (blog, 2026-09); other builds no price given",
+      "confidence": "thread excerpt",
+      "sources": [
+        {
+          "url": "https://community.home-assistant.io/t/my-journey-to-a-reliable-and-enjoyable-locally-hosted-voice-assistant/944860",
+          "how_seen": "search excerpt (forum thread, GPU response-time table)",
+          "date": "not shown in result"
+        },
+        {
+          "url": "https://community.home-assistant.io/t/whisper-piper-and-llm-on-single-computer-sharing-2-gpus/851985",
+          "how_seen": "search excerpt (forum thread)",
+          "date": "not shown in result"
+        },
+        {
+          "url": "https://github.com/RoyalCities/RC-Home-Assistant-Low-VRAM",
+          "how_seen": "search excerpt",
+          "date": "not shown in result"
+        }
+      ]
+    },
+    {
+      "name": "Paperless-ngx AI tagging and RAG chat over personal documents",
+      "description": "Scanned household paperwork gets OCR, LLM-generated titles/tags/correspondents, embeddings and a chat interface (paperless-gpt, paperless-ai, PLAI).",
+      "models": [
+        "qwen3:8b + MiniCPM-V (paperless-gpt OCR)",
+        "gemma3:4b + multilingual-e5-small embeddings (512-token chunks)",
+        "qwen3.5:4b Q4_K_M on CPU",
+        "llama3.2:3b",
+        "Mistral-Instruct on a 5 GB P2000"
+      ],
+      "vram_gb": "CPU-only works (i3-8100, 16 GB RAM) at 3-5 s per 3B response; GPU builds 5-24 GB reported",
+      "hardware_reported": [
+        "Old office PC i3-8100 16GB RAM no GPU (GitHub discussion, 2026-09)",
+        "2x HP EliteDesk 800 G2 mini PCs, no GPU, 3B model 3-5 s (blog 2026-01)",
+        "Aged Pascal card in an Ollama LXC (XDA 2026-03)",
+        "RTX 3090 build woken over WoL for overnight multi-pass extraction (Reddit mirror, 2026-08)",
+        "Quadro P2000 5GB asked about in paperless-ai discussion"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://github.com/paperless-ngx/paperless-ngx/discussions/14091",
+          "how_seen": "search excerpt",
+          "date": "2026-09-13"
+        },
+        {
+          "url": "https://xerolux.de/paperless-ngx-ollama-rag-proxmox/",
+          "how_seen": "search excerpt",
+          "date": "2026-09-15"
+        },
+        {
+          "url": "https://www.xda-developers.com/i-use-local-llms-and-self-hosted-apps-to-manage-my-documents/",
+          "how_seen": "search excerpt",
+          "date": "2026-03-09"
+        },
+        {
+          "url": "https://technotim.com/posts/paperless-ngx-local-ai/",
+          "how_seen": "search excerpt",
+          "date": "2026-01-27"
+        }
+      ]
+    },
+    {
+      "name": "Local meeting / voice-note transcription with speaker labels",
+      "description": "Whisper large-v3(-turbo) plus pyannote diarization and optional LLM summary/action items, run on a home GPU or Mac instead of Otter.",
+      "models": [
+        "faster-whisper / WhisperX large-v3 or large-v3-turbo int8",
+        "pyannote speaker-diarization-community-1 / 3.1",
+        "Ollama qwen3:8b for summaries"
+      ],
+      "vram_gb": "~2.4 GB resident (large-v3-turbo int8); <8 GB WhisperX large-v2 (project README); ~8 GB peak for the full v2 pipeline",
+      "hardware_reported": [
+        "GTX 1660 6GB (usable ~5.6 GiB) with Ollama taking the rest (blog 2026-06-28)",
+        "RTX 3090: ~2 minutes for a 42-minute recording (GitHub README)",
+        "RTX 2070 Super 8GB eGPU (self-hosted docs)",
+        "Apple Silicon via MLX, 18-28x realtime (GitHub README)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://autokaam.com/tutorials/low-vram-local-meeting-transcription-whisper-diarization/",
+          "how_seen": "search excerpt",
+          "date": "2026-06-28"
+        },
+        {
+          "url": "https://github.com/steemandavid/whisper-transcribe",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/haniabdemai/local-transcription",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Plex/Jellyfin auto-subtitles and subtitle translation",
+      "description": "Subgen/Bazarr-style Whisper transcription of the home media library, with optional TranslateGemma bilingual SRT output.",
+      "models": [
+        "faster-whisper medium / large-v3-turbo",
+        "translategemma-4b-it"
+      ],
+      "vram_gb": "8 GB+ recommended for large-v3-turbo (README); lower CONCURRENT_TRANSCRIPTIONS if out of VRAM",
+      "hardware_reported": [
+        "Any NVIDIA GPU with CUDA 12; CPU possible but slow (README)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://github.com/ddadaal/subgen-translate",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Local video dubbing and live stream translation",
+      "description": "Whisper transcription, NLLB or Gemma translation, voice-cloned TTS (XTTS/F5/Fish) and ffmpeg remux; optionally lip-sync or live HLS translation.",
+      "models": [
+        "Whisper large-v3",
+        "NLLB-200",
+        "gemma4:26b / gemma4:e4b",
+        "XTTS-v2, F5-TTS, Fish Speech",
+        "LatentSync (optional)"
+      ],
+      "vram_gb": "4-6 GB for Whisper large-v3 live pipeline; 8 GB GPU 'comfortably' runs full live pipeline; dubbing stack with gemma4:26b needs more (not stated)",
+      "hardware_reported": [
+        "RTX 5070 Laptop 8GB, ~3-4 s per 8 s segment (README)",
+        "Lambda Labs-class NVIDIA server suggested for the dubbing stack (README)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://github.com/Eli-code1/livetranslate",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/mike10010100/auto-sub-dub",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/devrim/mid-voice",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Photo library captioning and natural-language search (Immich)",
+      "description": "A local vision model writes captions/keywords for every photo, stored as embeddings or Immich descriptions so you can search 'kids building a sandcastle'.",
+      "models": [
+        "minicpm-v (2-4 s/photo)",
+        "moondream (<1 s)",
+        "qwen3-vl (20-30 s)",
+        "qwen3-vl:2b",
+        "gemma4:12b",
+        "nomic-embed-text",
+        "Immich built-in CLIP smart search"
+      ],
+      "vram_gb": "~2 GB RAM for qwen3-vl:2b; 6-8 GB RAM total on Raspberry Pi 5; Immich ML accelerated by CUDA/ROCm/OpenVINO/RKNN",
+      "hardware_reported": [
+        "Raspberry Pi 5 8GB (README)",
+        "Tesla P40 with a llama.cpp vision model: 1.3 s per garment photo (related app, magazine article)",
+        "Immich ML on CUDA/ROCm/OpenVINO (docs)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://github.com/seconion/immich-go-analyze",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/COU7INHO/imlens",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://docs.immich.app/features/ml-hardware-acceleration",
+          "how_seen": "search excerpt",
+          "date": "2026-07-27"
+        }
+      ]
+    },
+    {
+      "name": "Security camera event descriptions and semantic search (Frigate GenAI)",
+      "description": "Frigate NVR detects a person/package, a local vision model writes a one-sentence description pushed to Home Assistant or the phone; also searchable by meaning.",
+      "models": [
+        "qwen3-vl:4b",
+        "qwen3.5-vl 9B",
+        "qwen2.5vl:7b",
+        "minicpm-v:8b",
+        "moondream 1.8B",
+        "gemma4"
+      ],
+      "vram_gb": "Frigate docs: most 7B 4-bit vision models fit in 8 GB; Big Iron guide table 1.7 GB (moondream) to ~6 GB (minicpm-v:8b)",
+      "hardware_reported": [
+        "Intel NUC + Coral USB TPU for detection, Mac Studio running llama-swap for the VLM (blog 2026-07-28)",
+        "Mac M4 mini running Ollama qwen2.5vl:7b (GitHub)",
+        "Nvidia GPU or Apple Silicon recommended by Frigate docs; CPU 'impractical'"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://docs.frigate.video/configuration/genai/genai_config/",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://www.rustybower.com/posts/frigate-coral-tpu-vision-llm-camera-alerts/",
+          "how_seen": "search excerpt",
+          "date": "2026-07-28"
+        },
+        {
+          "url": "https://www.bigiron.cc/guides/frigate-semantic-search-genai-descriptions-ollama",
+          "how_seen": "search excerpt",
+          "date": "2026-08-20"
+        }
+      ]
+    },
+    {
+      "name": "Document OCR and invoice/scan extraction with OCR-VLMs",
+      "description": "Small document vision models (PaddleOCR-VL, GLM-OCR, olmOCR, DeepSeek-OCR) turn scans into Markdown/JSON locally.",
+      "models": [
+        "PaddleOCR-VL-1.5/1.6 (0.9B)",
+        "GLM-OCR (0.9B)",
+        "MinerU2.5-Pro (1.2B)",
+        "DeepSeek-OCR-2 (3.4B)",
+        "olmOCR-2-7B",
+        "LightOnOCR-3",
+        "Qwen3.8-27B for schema extraction"
+      ],
+      "vram_gb": "BF16 weights: ~2 GB for 1B-class, ~7 GB DeepSeek-OCR-2, ~17 GB olmOCR-2 (FP8 ~9 GB). Measured peak on an RTX 4070 8GB: ~7.9 GB for both dots.ocr 3B and PaddleOCR-VL 0.9B. One repo states ~3.3 GB with flash-attn, ~40 GB without.",
+      "hardware_reported": [
+        "RTX 4070 Laptop 8GB (Medium, measured)",
+        "RTX 4090 24GB (repo table)",
+        "24GB RTX PRO 4000 or 96GB RTX PRO 6000 (vendor blog)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://wz-it.com/en/blog/local-vlm-ocr-models/",
+          "how_seen": "search excerpt",
+          "date": "2026-09-27"
+        },
+        {
+          "url": "https://vdf.ai/blog/best-local-ocr-models/",
+          "how_seen": "search excerpt",
+          "date": "2026-10-22"
+        },
+        {
+          "url": "https://adityamangal98.medium.com/the-hidden-cost-of-local-ocr-dots-ocr-vs-paddleocr-vl-on-an-8gb-laptop-ac16af46c513",
+          "how_seen": "search excerpt",
+          "date": "2026-07-20"
+        }
+      ]
+    },
+    {
+      "name": "Video and image upscaling (SeedVR2 in ComfyUI)",
+      "description": "One-step diffusion upscaler for old footage and AI video; people tune batch size, tiling and BlockSwap to fit their VRAM.",
+      "models": [
+        "SeedVR2 3B/7B (FP16, FP8, GGUF, INT8)"
+      ],
+      "vram_gb": "Doc guidance: 8 GB or less with GGUF Q4 + BlockSwap + VAE tiling; 12-16 GB FP8; 24 GB+ FP16. One repo says even 3B needs ~18 GB without tricks.",
+      "hardware_reported": [
+        "RTX 4080 16GB (YouTube demo: works but flickers at small batch)",
+        "RTX 5090 32GB rented on RunPod for long clips, <$1/h claimed (YouTube description)",
+        "16 GB RTX 4080 runs SeedVR2 on short, small clips; the author says it flickers because only a small batch fits and the upscale size is limited (WeirdWonderful AI Art, uploaded 2025-08-13, captions read 2026-11-05)",
+        "Comfy Compositing's settings by memory tier (uploaded 2025-11-26, captions read 2026-11-05): low-memory cards use the 3B FP8 model, batch 9, 512 tiles and block swap to system RAM; 24 and 32 GB cards can switch block swap off; 48 GB and up leave it at zero"
+      ],
+      "cost_reported": "RunPod 'less than $0.90/h' (YouTube transcript excerpt)",
+      "confidence": "search excerpt, plus two video caption files read",
+      "sources": [
+        {
+          "url": "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dN2UauHO4BU",
+          "how_seen": "search excerpt incl. transcript text (yt-dlp not run)",
+          "date": "2025-08-13"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=LT6mw1iAqkQ",
+          "how_seen": "search excerpt incl. transcript text (yt-dlp not run)",
+          "date": "not shown"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dN2UauHO4BU",
+          "how_seen": "auto-generated captions read in full, 2026-11-05; WeirdWonderful AI Art, 4:49"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=LT6mw1iAqkQ",
+          "how_seen": "auto-generated captions read in full, 2026-11-05; Comfy Compositing, 7:26"
+        }
+      ]
+    },
+    {
+      "name": "Local coding agents (Claude Code / pi / Codex harness on local models)",
+      "description": "Agent harnesses pointed at a llama.cpp or Ollama server running Qwen3-Coder-class models; people report prefill and tool-calling as the pain.",
+      "models": [
+        "Qwen3.6/3.8-27B",
+        "Qwen3-Coder-30B-A3B",
+        "Qwen3.6 MoE REAP and GLM-4.7-flash REAP 23B (Q4)",
+        "gpt-oss-20b"
+      ],
+      "vram_gb": "Qwen3.8-27B Q4 ~16.5 GB on a 24 GB card (ModelFit); 4 GB GTX 1050 works but 3000-token prefill takes 30-60 s",
+      "hardware_reported": [
+        "RTX 3090 24GB (multiple guides)",
+        "MacBook, RTX 5080, DGX Spark compared (dev.to 2026-11-04)",
+        "budget GPU with CPU offload and llama.cpp -ub 1024 (YouTube, Codacus)",
+        "GTX 1050 4GB (dev.to 2026-11-05)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://dev.to/trynocoder/what-broke-when-we-ran-an-ai-coding-agent-on-local-ollama-models-including-a-4gb-gpu-4f9c",
+          "how_seen": "search excerpt",
+          "date": "2026-11-05"
+        },
+        {
+          "url": "https://dev.to/ngirchev/can-local-llms-replace-opus-and-codex-i-tested-a-macbook-an-rtx-5080-a-dgx-spark-and-cheap-4hdb",
+          "how_seen": "search excerpt (title and fragments only)",
+          "date": "2026-11-04"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0AqpaFm11oI",
+          "how_seen": "search excerpt incl. transcript text (yt-dlp not run)",
+          "date": "not shown"
+        },
+        {
+          "url": "https://insights.marvin-42.com/articles/675-comments-later-localllama-is-still-arguing-about-whether-local-coding-llms-are-worth-it",
+          "how_seen": "search excerpt (summary of a r/LocalLLaMA thread, not the thread)",
+          "date": "2026-04-29"
+        }
+      ]
+    },
+    {
+      "name": "Self-hosted deep research agent with web search (SearXNG, Local Deep Research, Perplexica)",
+      "description": "A local model plans searches, reads pages and writes cited reports; private Perplexity replacement inside Open WebUI or standalone.",
+      "models": [
+        "Qwen3.6-27B",
+        "gpt-oss:20b",
+        "mistral-small + deepseek-r1:14b (fully local config)"
+      ],
+      "vram_gb": "24 GB GPU with a 27B-class model is 'the practical floor' for multi-step research (Big Iron guide)",
+      "hardware_reported": [
+        "Single RTX 3090 with Qwen3.6-27B reported ~95% SimpleQA (project README claim, not verified by me)",
+        "RTX 3060 12GB minimum / 24-32GB recommended (setup guide)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://www.bigiron.cc/guides/a-self-hosted-deep-research-agent-searxng-local-llms-and-citations-you-can-check",
+          "how_seen": "search excerpt",
+          "date": "2026-09-29"
+        },
+        {
+          "url": "https://github.com/LearningCircuit/local-deep-research",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Roleplay and character chat (SillyTavern + KoboldCpp)",
+      "description": "Long-context chat with character cards, optional cloned voice and VRM avatar; one of the main reasons hobbyists buy 16-24 GB cards.",
+      "models": [
+        "Mistral Nemo 12B",
+        "Gemma 2 27B / Gemma 4 26B-A4B and 31B (abliterated/heretic)",
+        "Qwen3-32B",
+        "Chatterbox/AllTalk for voice"
+      ],
+      "vram_gb": "8 GB 'a struggle', 16 GB sweet spot (12B), 24 GB for 27B-34B plus voice and avatar (Red Stapler)",
+      "hardware_reported": [
+        "RTX 3090/4090 24GB",
+        "Radeon 9070 XT 16GB asked about in Reddit mirror post (2026-05)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "thread excerpt (via mirror)",
+      "sources": [
+        {
+          "url": "https://redstapler.co/how-much-vram-do-you-actually-need-for-sillytavern-in-2026/",
+          "how_seen": "search excerpt",
+          "date": "2026-01-03"
+        },
+        {
+          "url": "https://reddit.sentinel-team.org/posts/1t43lg6/snapshots/2026-05-09T00%3A46%3A53.937033Z",
+          "how_seen": "search excerpt (mirror of a r/LocalLLaMA thread)",
+          "date": "2026-05-09 snapshot"
+        }
+      ]
+    },
+    {
+      "name": "LLM-driven game NPCs (Skyrim Mantella/CHIM/SkyrimNet, Unity)",
+      "description": "Speak to NPCs by voice with a local LLM, TTS and STT running next to the game on the same GPU.",
+      "models": [
+        "Llama 3.1 8B Q4_K_M",
+        "Qwen2.5 7B",
+        "Mistral Nemo 12B",
+        "Qwen3-4B",
+        "XTTS + Whisper base",
+        "Piper on CPU"
+      ],
+      "vram_gb": "Estimated by npcvram.com: 8 GB cloud LLM only; 12 GB fits 7B with CPU voice; 16.2 GB total for modded Skyrim + 8B + XTTS + Whisper, so 24 GB for all-local. Mantella docs ask 6 GB free (12-15 optimal); CHIM docs recommend RTX 3090 or second PC. These are calculator/estimate values, not measurements.",
+      "hardware_reported": [
+        "12/16/24 GB single GPU tiers (calculator)",
+        "Second PC or cloud suggested by CHIM docs"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://npcvram.com/",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/niStee/Pantella",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://www.doria.fi/handle/10024/194912",
+          "how_seen": "search excerpt (thesis abstract: local LLMs raise CPU/GPU/VRAM use; users noted repetition, wrong answers and delay)",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Hobby robotics with onboard local VLM/LLM/voice (Jetson)",
+      "description": "ROS 2 robots and desk robots running faster-whisper, a small VLM, Piper/Kokoro and person tracking on a Jetson Orin Nano.",
+      "models": [
+        "Cosmos-Reason2-2B GGUF Q4_K_M",
+        "faster-whisper",
+        "Kokoro ONNX",
+        "YOLOv8n-Pose TensorRT",
+        "Llama 2 7B / VILA1.5-3B on NanoLLM"
+      ],
+      "vram_gb": "Orin Nano 8GB has ~7.6 GB usable unified memory; VLM footprint cut from ~6.6 GB to ~2.2 GB with GGUF 4-bit (NVIDIA tutorial)",
+      "hardware_reported": [
+        "Jetson Orin Nano Super 8GB",
+        "Jetson AGX Orin 64GB for gpt-oss-20b",
+        "one project calls NVIDIA NIM cloud APIs for the LLM, so is not fully local"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://developer.nvidia.com/blog/getting-started-with-edge-ai-on-nvidia-jetson-llms-vlms-and-foundation-models-for-robotics/",
+          "how_seen": "search excerpt",
+          "date": "2025-12-11"
+        },
+        {
+          "url": "https://github.com/NVIDIA-AI-IOT/jetson-ai-lab/blob/main/src/content/tutorials/applications/reachy-mini-jetson-assistant.md",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://github.com/sourabhwarghane/Autonomous_Mobile_Robot",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Local market research / trading-signal agents with backtesting",
+      "description": "Multi-agent bull/bear debate, FinBERT news sentiment and walk-forward backtests on a local model; most projects stress look-ahead bias and no auto-trading by default.",
+      "models": [
+        "Gemma 3 on RTX 4090",
+        "Gemma 4 4-bit on a Colab GPU",
+        "Llama 3.1 via Ollama",
+        "FinBERT"
+      ],
+      "vram_gb": "not stated in sources",
+      "hardware_reported": [
+        "RTX 4090 (Medium post 2026-04-04)",
+        "RTX 5070 + RTX 3060 split across two Ollama endpoints (GitHub README)"
+      ],
+      "cost_reported": "none stated. One repo warns it 'will likely lose more money than you gain'.",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://github.com/everett6/airp-local",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        },
+        {
+          "url": "https://medium.com/@kaveh.kamali/i-built-an-ai-powered-stock-analysis-platform-that-runs-entirely-on-open-source-4eddae5fd305",
+          "how_seen": "search excerpt",
+          "date": "2026-04-04"
+        },
+        {
+          "url": "https://github.com/liljestk/open-traitor",
+          "how_seen": "search excerpt",
+          "date": "not shown"
+        }
+      ]
+    },
+    {
+      "name": "Private always-on homelab LLM server (Open WebUI) with batch jobs",
+      "description": "A GPU box that sleeps and is woken over Wake-on-LAN for nightly jobs such as HN-briefing summaries, document extraction, and family chat.",
+      "models": [
+        "not named"
+      ],
+      "vram_gb": "24 GB (RTX 3090)",
+      "hardware_reported": [
+        "Bare-metal RTX 3090 Ubuntu box beside Dell T20, N150 mini PC and Raspberry Pi 4 (Reddit mirror post)"
+      ],
+      "cost_reported": "none stated",
+      "confidence": "thread excerpt (via mirror)",
+      "sources": [
+        {
+          "url": "https://reddit.sentinel-team.org/posts/1vxhuah/snapshots/2026-08-26T22%3A36%3A52.961307Z",
+          "how_seen": "search excerpt (mirror of a homelab post)",
+          "date": "2026-08-26 snapshot"
+        }
+      ]
+    },
+    {
+      "name": "Wardrobe / virtual try-on and garment recognition on an old Tesla P40",
+      "description": "A small app uses a vision model for garment recognition and a diffusion try-on model on a P40 homeserver.",
+      "models": [
+        "a llama.cpp vision model (name not shown in excerpt)",
+        "Leffa try-on diffusion"
+      ],
+      "vram_gb": "6.4 GB for the llama.cpp vision model vs 7.6 GB under Ollama (author)",
+      "hardware_reported": [
+        "Tesla P40 24GB + Quadro M2000; wall power 156-166 W idle, ~350 W during a render; 20-step render 86.7 s in fp32"
+      ],
+      "cost_reported": "Electricity about EUR 275-295 per year for the whole server at EUR 0.20/kWh (author's estimate)",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://www.unsustainablemagazine.com/reusing-old-gpu-local-ai/",
+          "how_seen": "search excerpt",
+          "date": "2026-11-03"
+        }
+      ]
+    },
+    {
+      "name": "Multi-user family/team inference server on 4x 32GB Radeon",
+      "description": "Large MoE model served to many concurrent users with tensor-parallel inference; shows what the hobby ceiling looks like.",
+      "models": [
+        "Qwen3.8-Flash-Next ~180B MoE (113.6 GiB quant) per the news summary"
+      ],
+      "vram_gb": "128 GB (4x32 GB)",
+      "hardware_reported": [
+        "4x Radeon AI PRO R9700 32GB at 211 W each, PCIe 5.0 x16, 1200 W+ PSU; 236 tok/s single stream, 1,192 tok/s aggregate over 16 streams with a tensor-parallel C++/HIP engine, vs 65-75 tok/s in llama.cpp layer split (r/LocalLLM post as reported by a French news site)"
+      ],
+      "cost_reported": "not stated",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://www.lacremedugaming.fr/high-tech/il-assemble-un-pc-equipe-de-quatre-cartes-graphiques-radeon-et-de-128-go-de-vram-pour-faire-tourner-une-ia-en-local-et-atteint-1-192-tokens-par-seconde-232886.html",
+          "how_seen": "search excerpt (secondary report of a r/LocalLLM post; thread not opened)",
+          "date": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "name": "Ex-mining board clusters running 35B MoE for about $300",
+      "description": "Two BC-250 boards bought for $115 each, joined over llama.cpp RPC on gigabit Ethernet.",
+      "models": [
+        "Qwen3-35B-A3B Q4_K_M, 64k context"
+      ],
+      "vram_gb": "~27 GB combined",
+      "hardware_reported": [
+        "2x BC-250 APU boards, Bazzite, Vulkan + RPC; ~60 tok/s; $300 including PSU (as summarised by tokenfeed from a r/LocalLLaMA post)"
+      ],
+      "cost_reported": "$115 per board, ~$300 total (per summary)",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://tokenfeed.ai/ex-mining-hardware-now-mining-intelligence-locally",
+          "how_seen": "search excerpt (AI-style summary of a r/LocalLLaMA post, original not opened)",
+          "date": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "name": "Nine-card P106-100 'garage' build",
+      "description": "Nine mining-derived P106-100 cards (6 GB each) combined for 54 GB VRAM running a Qwen model above 30 tok/s.",
+      "models": [
+        "a Qwen model (exact name not shown)"
+      ],
+      "vram_gb": "54 GB combined",
+      "hardware_reported": [
+        "9x P106-100 for $35 (headline of Tom's Hardware Italy forum post, 2026-10-12)"
+      ],
+      "cost_reported": "$35 total per the headline; I could not read the body",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://forum.tomshw.it/threads/erano-ferme-in-un-garage-umido-ora-9-gpu-fanno-girare-unai.1255669/",
+          "how_seen": "search excerpt (headline and one line only)",
+          "date": "2026-10-12"
+        }
+      ]
+    },
+    {
+      "name": "Dual used RTX 3090 workstation for 70B-class Q4 and long context",
+      "description": "Two used 3090s on a cheap Threadripper PRO platform for 48 GB of CUDA VRAM.",
+      "models": [
+        "70B-class Q4",
+        "27-35B models at higher quant and bigger KV cache"
+      ],
+      "vram_gb": "48 GB (two separate 24 GB pools, llama.cpp split over PCIe, no NVLink)",
+      "hardware_reported": [
+        "3x: Threadripper PRO 3945WX (~GBP 100), ASRock WRX80 (~GBP 500-600 from Taobao), 128 GB ECC DDR4 (~GBP 250-300), 1600 W PSU, open frame; total GBP 2,500-3,000, 3090s from Facebook Marketplace (blog 2026-08-25)",
+        "Another poster: 2x used 3090 for USD 1,400 total, ~USD 2,800 whole rig, ~700 W under load, says renting an H100 is cheaper per token (aggregator summary of a Reddit post)"
+      ],
+      "cost_reported": "GBP 2,500-3,000 (blog); ~USD 2,800 (Reddit summary)",
+      "confidence": "search excerpt only",
+      "sources": [
+        {
+          "url": "https://harrisoldroyd.com/local-ai/dual-rtx-3090-local-ai-workstation/",
+          "how_seen": "search excerpt",
+          "date": "2026-08-25"
+        },
+        {
+          "url": "https://bittide.aicompass.dev/article/779a7c30-d45d-4263-b93d-7ad8626b5fb6",
+          "how_seen": "search excerpt (aggregator summary of a Reddit post)",
+          "date": "not shown"
+        }
+      ]
+    }
+  ],
+  "gotchas": [
+    {
+      "text": "Pascal cards (P40, GTX 10xx) are being left behind by software: NVIDIA R580 is the last driver branch and CUDA 12.x the last toolkit generation for them; PyTorch 2.8 CUDA 12.8/12.9 builds drop Pascal kernels; vLLM needs compute capability 7.5+; Ollama needs driver 570+ for Pascal. One author moved to llama.cpp, which was faster and lighter.",
+      "sources": [
+        "https://www.unsustainablemagazine.com/reusing-old-gpu-local-ai/"
+      ]
+    },
+    {
+      "text": "fp16 on Pascal and on GTX 16xx is a trap: one user measured a render at 1,241 s in fp16 vs 85 s in fp32 on a P40; another saw FP16 embeddings return NaN on a GTX 1660. Use int8 or fp32 on those cards.",
+      "sources": [
+        "https://www.unsustainablemagazine.com/reusing-old-gpu-local-ai/",
+        "https://autokaam.com/tutorials/low-vram-local-meeting-transcription-whisper-diarization/"
+      ]
+    },
+    {
+      "text": "Idle power dominates for a small home service. A P40 idled at ~48 W with models loaded (whole server 156-166 W at the wall, ~EUR 275-295 per year at EUR 0.20/kWh); another P40 owner reports 10-15 W idle with scripts, but 300-350 W total with three cards and ~20 tok/s on Qwen 3.8 27B, and says it is 'not economically viable' and a 3090 is at least 3x faster.",
+      "sources": [
+        "https://www.unsustainablemagazine.com/reusing-old-gpu-local-ai/",
+        "https://reddit.sentinel-team.org/posts/1vrmmaw/snapshots/2026-08-21T19%3A43%3A59.644708Z"
+      ]
+    },
+    {
+      "text": "Passive-cooled datacenter cards (P40, MI50) need serious airflow or they throttle; owners build 3D-printed plenums with PWM fans and temperature-controlled scripts. 16-MI50 builds draw 550 W idle and 2,400 W peak and the author lists PSU per-cable wattage and motherboard fan-header limits as fire risks.",
+      "sources": [
+        "https://reddit.sentinel-team.org/posts/1vrmmaw/snapshots/2026-08-21T19%3A43%3A59.644708Z",
+        "https://github.com/ai-infos/guidances-setup-16-mi50-deepseek-v32"
+      ]
+    },
+    {
+      "text": "Agent workloads are prefill-bound, not decode-bound: a 3,000-token prompt took 30-60 s on a 4 GB GTX 1050; another author raised llama.cpp micro-batch from 256 to 2048 and saw prompt processing go from 300 to 1,142 tok/s while generation stayed flat. Prompt-cache invalidation by the harness makes agents feel slow.",
+      "sources": [
+        "https://dev.to/trynocoder/what-broke-when-we-ran-an-ai-coding-agent-on-local-ollama-models-including-a-4gb-gpu-4f9c",
+        "https://www.youtube.com/watch?v=0AqpaFm11oI"
+      ]
+    },
+    {
+      "text": "Local coding agents: the same weights gave 12/12 task passes under two harnesses and 7/12 under a third (first-prompt size 1.4k vs 15.8k tokens). Tool calling is the weak point: qwen2.5-coder has no native tool calling in Ollama, Qwen3 thinking mode can suppress tool calls, and Ollama lacks tool_choice 'required'. A LocalLLaMA thread summary describes users quitting local agents over poor tool-call judgement and broken prompt caches.",
+      "sources": [
+        "https://dev.to/paul_irolla_6b5ae261d0224/comment/3i2c2",
+        "https://dev.to/trynocoder/what-broke-when-we-ran-an-ai-coding-agent-on-local-ollama-models-including-a-4gb-gpu-4f9c",
+        "https://insights.marvin-42.com/articles/675-comments-later-localllama-is-still-arguing-about-whether-local-coding-llms-are-worth-it"
+      ]
+    },
+    {
+      "text": "Spilling out of VRAM is a cliff, not a slope: 70B on an RTX 5090 is 45+ tok/s fully in VRAM and 1-2 tok/s with RAM offload (secondary source); on Windows the NVIDIA shared-memory fallback made a 70B Q4 slower than a 50/50 CPU split on an RTX 4090 (0.69 vs 2.32 tok/s).",
+      "sources": [
+        "https://medium.com/codex/best-gpus-for-running-local-llms-in-2026-what-actually-works-292f27a99f04",
+        "https://dev.to/maximsaplin/llamacpp-cpu-vs-gpu-shared-vram-and-inference-speed-3jpl"
+      ]
+    },
+    {
+      "text": "Several services sharing one small card collide: with 12 GB you can run whisper + kokoro + a 7B but a 14B is slow; on a 6 GB GTX 1660 a resident Ollama model leaves ~781 MiB free so whisper and diarization must run as non-concurrent bursts. Ollama must be told OLLAMA_NUM_PARALLEL=1 for Frigate.",
+      "sources": [
+        "https://community.home-assistant.io/t/whisper-piper-and-llm-on-single-computer-sharing-2-gpus/851985",
+        "https://autokaam.com/tutorials/low-vram-local-meeting-transcription-whisper-diarization/",
+        "https://docs.frigate.video/configuration/genai/genai_config/"
+      ]
+    },
+    {
+      "text": "Home Assistant voice: confirm Ollama is on GPU (ollama ps should say 100% GPU, otherwise answers take ~10 s), prefer local intents first, the HA add-on does not do GPU whisper so people use the faster-whisper Docker image, and tiny whisper mishears words like bedroom/bathroom.",
+      "sources": [
+        "https://jpk.io/home-automation/home-assistant-voice-pe-local-llm/",
+        "https://www.joekarlsson.com/blog/local-voice-ai-home-assistant-gpu/"
+      ]
+    },
+    {
+      "text": "Dependency and runtime conflicts waste more time than model choice: dots.ocr needs transformers 4.51.3 while PaddleOCR-VL needs 5.x so they cannot share an environment; PaddleOCR-VL took 273 s per page via raw transformers vs 3.6 s on vLLM; the '0.9B' model peaked ~7.9 GB on an 8 GB card because of vision tokens.",
+      "sources": [
+        "https://adityamangal98.medium.com/the-hidden-cost-of-local-ocr-dots-ocr-vs-paddleocr-vl-on-an-8gb-laptop-ac16af46c513"
+      ]
+    },
+    {
+      "text": "pyannote diarization is gated (accept terms on Hugging Face per user) and its API changed in 4.x (DiarizeOutput); chunked diarization loses speaker identity across chunks (4 real speakers collapsed to 2 labels in a 38-minute test).",
+      "sources": [
+        "https://autokaam.com/tutorials/low-vram-local-meeting-transcription-whisper-diarization/",
+        "https://github.com/TheBeachLab/selfhosted/blob/master/doc/whisper.md"
+      ]
+    },
+    {
+      "text": "AI document tagging should not overwrite metadata automatically: homelabbers run read-only trials on 50-100 documents, only fill missing fields, never touch dates, and flag failures for human review rather than silently correcting.",
+      "sources": [
+        "https://xerolux.de/paperless-ngx-ollama-rag-proxmox/",
+        "https://reddit.sentinel-team.org/posts/1vxhuah/snapshots/2026-08-26T22%3A36%3A52.961307Z"
+      ]
+    },
+    {
+      "text": "'Local' research agents are not fully private: search queries still reach search engines through SearXNG, upstream engines throttle a single IP, and SearXNG needs JSON output enabled or API calls return 403. A benchmark headline (~95% SimpleQA) used a paid search API in one configuration.",
+      "sources": [
+        "https://www.bigiron.cc/guides/a-self-hosted-deep-research-agent-searxng-local-llms-and-citations-you-can-check"
+      ]
+    },
+    {
+      "text": "Frigate GenAI: a chat model used as an embedding model silently gives poor semantic search; enabling GenAI on busy cameras queues captions minutes behind real time; CPU inference is 'impractical'.",
+      "sources": [
+        "https://localusecases.com/use-cases/security-camera-descriptions-and-search-with-frigate-genai/",
+        "https://www.bigiron.cc/guides/frigate-semantic-search-genai-descriptions-ollama"
+      ]
+    },
+    {
+      "text": "Game NPC mods compete with the game for VRAM: on 8 GB a modded game leaves no room for a local LLM; thesis testers also reported inaccurate answers, repetitive dialogue and delay. (npcvram.com figures are the calculator's estimates.)",
+      "sources": [
+        "https://npcvram.com/",
+        "https://www.doria.fi/handle/10024/194912"
+      ]
+    },
+    {
+      "text": "Cost honesty: owners say self-hosting is not cheaper per token than renting (an H100 at ~$1.99/h beat a dual-3090 rig at roughly $0.50-0.80 per active hour in one poster's maths); people keep rigs for privacy, control, tinkering and no cold start. A hobbyist 4-GPU build also needs 800 W+ of GPU power and chassis modifications for heat.",
+      "sources": [
+        "https://bittide.aicompass.dev/article/779a7c30-d45d-4263-b93d-7ad8626b5fb6",
+        "https://www.lacremedugaming.fr/high-tech/il-assemble-un-pc-equipe-de-quatre-cartes-graphiques-radeon-et-de-128-go-de-vram-pour-faire-tourner-une-ia-en-local-et-atteint-1-192-tokens-par-seconde-232886.html"
+      ]
+    },
+    {
+      "text": "Buying used: mining-card and overseas-seller risk; recommended path is a local in-person test. Used 3090s were quoted at $550-750 and 3060 12GB at $180-230 in one May 2026 guide (a snapshot, not a current price). Motherboard slot spacing, PCIe lane counts and lack of IPMI come up when fitting two 3090s in a consumer board.",
+      "sources": [
+        "https://zenvanriel.com/ai-engineer-blog/best-used-gpu-local-ai-under-400-dollars/",
+        "https://forum.level1techs.com/t/local-ai-extravaganza-on-a-budget/219147"
+      ]
+    },
+    {
+      "text": "Consumer-GPU caveats for upscaling: low batch sizes cause flicker (SeedVR2 needs batch >= 5 for temporal consistency); settings that work on one card OOM on another.",
+      "sources": [
+        "https://www.youtube.com/watch?v=dN2UauHO4BU",
+        "https://github.com/eddyhhlure1Eddy/seedVR2_cudafull"
+      ]
+    }
+  ],
+  "platforms_checked": [
+    {
+      "platform": "Reddit (r/LocalLLaMA, r/LocalLLM, r/homelab, r/selfhosted, r/StableDiffusion, r/comfyui, r/MachineLearning)",
+      "result": "excerpts only",
+      "note": "I did not open any reddit.com thread. Content came from third-party mirrors/summaries (reddit.sentinel-team.org snapshots, tokenfeed.ai, bittide.aicompass.dev, marvin-42 insights, a French news article citing an r/LocalLLM post). r/StableDiffusion, r/comfyui and r/MachineLearning produced no usable thread excerpt in my searches. Dates for mirror posts are snapshot dates."
+    },
+    {
+      "platform": "YouTube",
+      "result": "two captions read, one blocked",
+      "note": "Auto-generated captions were fetched for the two SeedVR2 videos and read in full. The third video (Codacus, local coding agent with llama.cpp and Pi, 0AqpaFm11oI) returned HTTP 429 and was not retried; its use-case entry still rests on search excerpts. Captions are auto-generated, so product names are sometimes misspelled."
+    },
+    {
+      "platform": "X/Twitter",
+      "result": "blocked",
+      "note": "Direct X pages not retrievable. One aggregator mirror (topicdigg.com) returned a single tweet by @jun_song, 2026-08-14, giving a hardware ladder: ~$2k RTX 3090 desktop with Qwen3.8-27B; ~$4k DGX Spark; ~$7k MacBook Pro M5 Max 128GB; ~$8k 2x DGX Spark; ~$12k 3x DGX Spark. Not used in use_cases; unverified claim from one account. No other X posts found."
+    },
+    {
+      "platform": "Facebook groups",
+      "result": "blocked",
+      "note": "Search returned no public Facebook group posts. The only Facebook mention was a blog saying the author bought two used 3090s on Facebook Marketplace. Nothing about group discussions can be reported."
+    },
+    {
+      "platform": "Home Assistant Community forum",
+      "result": "excerpts only",
+      "note": "Two threads seen as search excerpts (GPU response-time table; 3060/1080 Ti setups)."
+    },
+    {
+      "platform": "GitHub (READMEs/discussions), dev.to, Medium, personal homelab blogs",
+      "result": "excerpts only",
+      "note": "Most use-case evidence comes from here as Exa highlights; no full pages were fetched."
+    },
+    {
+      "platform": "Exa web search",
+      "result": "read",
+      "note": "Primary tool; 20+ queries. WebSearch/WebFetch/brave/curl were not used."
+    }
+  ]
+}

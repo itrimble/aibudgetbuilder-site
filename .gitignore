@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.serve/
+*.tsbuildinfo
+.claude/settings.local.json
+.env*
+.DS_Store
+stage/
+
+# blog drafts are published through the blog repo, not here
+blog/

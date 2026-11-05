@@ -1,0 +1,2431 @@
+[
+ {
+  "id": "qwen3-235b-a22b",
+  "name": "Qwen3-235B-A22B",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 235.1,
+  "active_params_b": 22,
+  "num_experts": 128,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2025-04-27",
+  "context_len": 32768,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-235B-A22B-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 2,
+     "bytes": 85691002112,
+     "gb": 85.69
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 2,
+     "bytes": 88014818560,
+     "gb": 88.01
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 3,
+     "bytes": 112447380832,
+     "gb": 112.45
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 3,
+     "bytes": 142154075488,
+     "gb": 142.15
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 3,
+     "bytes": 134123851136,
+     "gb": 134.12
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 4,
+     "bytes": 166814158272,
+     "gb": 166.81
+    },
+    {
+     "quant": "Q6_K",
+     "files": 4,
+     "bytes": 193015496192,
+     "gb": 193.02
+    },
+    {
+     "quant": "Q8_0",
+     "files": 6,
+     "bytes": 249940107008,
+     "gb": 249.94
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-235B-A22B",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '235B in total and 22B activated'; 128 experts, 8 activated; context '32,768 natively and 131,072 tokens with YaRN'. Hybrid thinking model. 2507 split variants exist (Instruct-2507, Thinking-2507; native 262144 ctx). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-30b-a3b",
+  "name": "Qwen3-30B-A3B",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 30.5,
+  "active_params_b": 3.3,
+  "num_experts": 128,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2025-04-27",
+  "context_len": 32768,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-30B-A3B-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 11258610240,
+     "gb": 11.26
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 11814277696,
+     "gb": 11.81
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 14711847488,
+     "gb": 14.71
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 18556686912,
+     "gb": 18.56
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 17715663424,
+     "gb": 17.72
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 21725581888,
+     "gb": 21.73
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 25092532800,
+     "gb": 25.09
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 32483932736,
+     "gb": 32.48
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-30B-A3B",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '30.5B in total and 3.3B activated'; context 32,768 native, 131,072 with YaRN. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-coder-480b-a35b",
+  "name": "Qwen3-Coder-480B-A35B-Instruct",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 480.2,
+  "active_params_b": 35,
+  "num_experts": 160,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2025-07-22",
+  "context_len": 262144,
+  "tasks": [
+   "coding",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-Coder-480B-A35B-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 4,
+     "bytes": 174656356544,
+     "gb": 174.66
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 4,
+     "bytes": 180294643936,
+     "gb": 180.29
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 5,
+     "bytes": 229248837984,
+     "gb": 229.25
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 6,
+     "bytes": 290058826208,
+     "gb": 290.06
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 6,
+     "bytes": 275553579456,
+     "gb": 275.55
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 7,
+     "bytes": 340493005408,
+     "gb": 340.49
+    },
+    {
+     "quant": "Q6_K",
+     "files": 9,
+     "bytes": 394079320928,
+     "gb": 394.08
+    },
+    {
+     "quant": "Q8_0",
+     "files": 11,
+     "bytes": 510351879264,
+     "gb": 510.35
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '480B in total and 35B activated'; 160 experts, 8 activated; 262,144 native context. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-coder-30b-a3b",
+  "name": "Qwen3-Coder-30B-A3B-Instruct",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 30.5,
+  "active_params_b": 3.3,
+  "num_experts": 128,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2025-07-31",
+  "context_len": 262144,
+  "tasks": [
+   "coding",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 11258612896,
+     "gb": 11.26
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 11788590240,
+     "gb": 11.79
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 14711850144,
+     "gb": 14.71
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 18556689568,
+     "gb": 18.56
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 17665334432,
+     "gb": 17.67
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 21725584544,
+     "gb": 21.73
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 25092535456,
+     "gb": 25.09
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 32483935392,
+     "gb": 32.48
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '30.5B in total and 3.3B activated'; 262,144 native context. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-next-80b-a3b",
+  "name": "Qwen3-Next-80B-A3B-Instruct",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 81.3,
+  "active_params_b": 3,
+  "num_experts": 512,
+  "experts_per_token": 10,
+  "licence": "apache-2.0",
+  "released": "2025-09-09",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-Next-80B-A3B-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 29171165984,
+     "gb": 29.17
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 30126545696,
+     "gb": 30.13
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 38299874080,
+     "gb": 38.3
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 48506100512,
+     "gb": 48.51
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 46067137312,
+     "gb": 46.07
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 2,
+     "bytes": 56807578592,
+     "gb": 56.81
+    },
+    {
+     "quant": "Q6_K",
+     "files": 2,
+     "bytes": 65540654048,
+     "gb": 65.54
+    },
+    {
+     "quant": "Q8_0",
+     "files": 2,
+     "bytes": 84812055520,
+     "gb": 84.81
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '80B in total and 3B activated'; 512 experts, 10 activated, 1 shared. Hybrid Gated DeltaNet attention. Context from config.json max_position_embeddings (262144). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-coder-next",
+  "name": "Qwen3-Coder-Next",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 79.7,
+  "active_params_b": 3,
+  "num_experts": 512,
+  "experts_per_token": 10,
+  "licence": "apache-2.0",
+  "released": "2026-01-30",
+  "context_len": 262144,
+  "tasks": [
+   "coding",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3-Coder-Next-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 29224450080,
+     "gb": 29.22
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 26760515584,
+     "gb": 26.76
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 38322487328,
+     "gb": 38.32
+    },
+    {
+     "quant": "UD-Q3_K_M",
+     "files": 1,
+     "bytes": 35937513472,
+     "gb": 35.94
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 48528320544,
+     "gb": 48.53
+    },
+    {
+     "quant": "UD-Q4_K_M",
+     "files": 1,
+     "bytes": 49301055488,
+     "gb": 49.3
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 49608478720,
+     "gb": 49.61
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 3,
+     "bytes": 56847886688,
+     "gb": 56.85
+    },
+    {
+     "quant": "UD-Q5_K_M",
+     "files": 3,
+     "bytes": 59242008928,
+     "gb": 59.24
+    },
+    {
+     "quant": "Q6_K",
+     "files": 3,
+     "bytes": 65613992288,
+     "gb": 65.61
+    },
+    {
+     "quant": "UD-Q6_K",
+     "files": 3,
+     "bytes": 65789092160,
+     "gb": 65.79
+    },
+    {
+     "quant": "Q8_0",
+     "files": 3,
+     "bytes": 84812255584,
+     "gb": 84.81
+    },
+    {
+     "quant": "MXFP4_MOE",
+     "files": 1,
+     "bytes": 48033779712,
+     "gb": 48.03
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '80B total, 3B activated'; 512 experts, 10 activated, 1 shared; card mentions '256k context'; config max_position_embeddings 262144. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-5-35b-a3b",
+  "name": "Qwen3.5-35B-A3B",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 36.0,
+  "active_params_b": 3,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2026-02-24",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding",
+   "vision"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3.5-35B-A3B-GGUF",
+   "quants": [
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 12156754560,
+     "gb": 12.16
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 16356375168,
+     "gb": 16.36
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 22016023168,
+     "gb": 22.02
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 22241950336,
+     "gb": 22.24
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 26249607808,
+     "gb": 26.25
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 28852861568,
+     "gb": 28.85
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 36903139968,
+     "gb": 36.9
+    },
+    {
+     "quant": "MXFP4_MOE",
+     "files": 1,
+     "bytes": 21587638912,
+     "gb": 21.59
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "vision capability not checked beyond repo existing; tasks vision unverified",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '35B in total and 3B activated'; 256 experts, '8 Routed + 1 Shared'; context 262,144 native, extensible to 1,010,000. Safetensors total includes any vision tower. Tasks tags are editorial. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-5-397b-a17b",
+  "name": "Qwen3.5-397B-A17B",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 403.4,
+  "active_params_b": 17,
+  "num_experts": 512,
+  "experts_per_token": 10,
+  "licence": "apache-2.0",
+  "released": "2026-02-16",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding",
+   "vision"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3.5-397B-A17B-GGUF",
+   "quants": [
+    {
+     "quant": "Q3_K_M",
+     "files": 5,
+     "bytes": 177409522016,
+     "gb": 177.41
+    },
+    {
+     "quant": "UD-Q3_K_M",
+     "files": 5,
+     "bytes": 177409522016,
+     "gb": 177.41
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 6,
+     "bytes": 244093630912,
+     "gb": 244.09
+    },
+    {
+     "quant": "UD-Q4_K_M",
+     "files": 6,
+     "bytes": 244093630912,
+     "gb": 244.09
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 6,
+     "bytes": 245272148448,
+     "gb": 245.27
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 8,
+     "bytes": 293664979584,
+     "gb": 293.66
+    },
+    {
+     "quant": "UD-Q5_K_M",
+     "files": 8,
+     "bytes": 293664979584,
+     "gb": 293.66
+    },
+    {
+     "quant": "Q6_K",
+     "files": 8,
+     "bytes": 326595345056,
+     "gb": 326.6
+    },
+    {
+     "quant": "UD-Q6_K",
+     "files": 8,
+     "bytes": 326595345056,
+     "gb": 326.6
+    },
+    {
+     "quant": "Q8_0",
+     "files": 10,
+     "bytes": 421507365824,
+     "gb": 421.51
+    },
+    {
+     "quant": "MXFP4_MOE",
+     "files": 6,
+     "bytes": 237353302496,
+     "gb": 237.35
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "vision capability not checked",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '397B in total and 17B activated'; 512 experts, '10 Routed + 1 Shared'; 262,144 native context. Safetensors total (403.4B) includes non-text tensors. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "qwen3-6-35b-a3b",
+  "name": "Qwen3.6-35B-A3B",
+  "vendor": "Alibaba Qwen",
+  "total_params_b": 36.0,
+  "active_params_b": 3,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2026-04-15",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding",
+   "vision"
+  ],
+  "gguf": {
+   "repo": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "quants": [
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 12290628576,
+     "gb": 12.29
+    },
+    {
+     "quant": "UD-Q3_K_M",
+     "files": 1,
+     "bytes": 16600710112,
+     "gb": 16.6
+    },
+    {
+     "quant": "UD-Q4_K_M",
+     "files": 1,
+     "bytes": 22134528992,
+     "gb": 22.13
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 22360456160,
+     "gb": 22.36
+    },
+    {
+     "quant": "UD-Q5_K_M",
+     "files": 1,
+     "bytes": 26456194016,
+     "gb": 26.46
+    },
+    {
+     "quant": "UD-Q6_K",
+     "files": 1,
+     "bytes": 29308320736,
+     "gb": 29.31
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 36903140320,
+     "gb": 36.9
+    },
+    {
+     "quant": "MXFP4_MOE",
+     "files": 1,
+     "bytes": 21706144736,
+     "gb": 21.71
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "vision capability not checked",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '35B in total and 3B activated'; 256 experts, '8 Routed + 1 Shared'; 262,144 native context. Unsloth repo has UD-Q4_K_M etc. (no plain Q4_K_M). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "deepseek-v3-1",
+  "name": "DeepSeek-V3.1",
+  "vendor": "DeepSeek",
+  "total_params_b": 684.5,
+  "active_params_b": 37,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-08-21",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/DeepSeek-V3.1-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 5,
+     "bytes": 245696582144,
+     "gb": 245.7
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 6,
+     "bytes": 255725077088,
+     "gb": 255.73
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 7,
+     "bytes": 320451083008,
+     "gb": 320.45
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 9,
+     "bytes": 405398012928,
+     "gb": 405.4
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 8,
+     "bytes": 386913043296,
+     "gb": 386.91
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 10,
+     "bytes": 476161393760,
+     "gb": 476.16
+    },
+    {
+     "quant": "Q6_K",
+     "files": 12,
+     "bytes": 551313395136,
+     "gb": 551.31
+    },
+    {
+     "quant": "Q8_0",
+     "files": 15,
+     "bytes": 713286520224,
+     "gb": 713.29
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card table: '671B total, 37B activated, 128K context'. 256 routed + 1 shared expert, 8 per token (config.json). Safetensors total 684.5B includes MTP/extra tensors. Plain DeepSeek-V3 (Dec 2024) not separately recorded. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "deepseek-r1",
+  "name": "DeepSeek-R1",
+  "vendor": "DeepSeek",
+  "total_params_b": 684.5,
+  "active_params_b": 37,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-01-20",
+  "context_len": 131072,
+  "tasks": [
+   "reasoning",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/DeepSeek-R1-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 5,
+     "bytes": 244028343936,
+     "gb": 244.03
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 5,
+     "bytes": 226601595040,
+     "gb": 226.6
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 7,
+     "bytes": 319198395744,
+     "gb": 319.2
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 9,
+     "bytes": 404430187616,
+     "gb": 404.43
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 10,
+     "bytes": 475396558144,
+     "gb": 475.4
+    },
+    {
+     "quant": "Q6_K",
+     "files": 12,
+     "bytes": 550798326880,
+     "gb": 550.8
+    },
+    {
+     "quant": "Q8_0",
+     "files": 15,
+     "bytes": 713286514368,
+     "gb": 713.29
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '# Total Params 671B, # Activated Params 37B'. Context: card table says 128K for the family; config max_position_embeddings 163840. Same V3 architecture. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "kimi-k2-0905",
+  "name": "Kimi-K2-Instruct-0905",
+  "vendor": "Moonshot AI",
+  "total_params_b": 1026.4,
+  "active_params_b": 32,
+  "num_experts": 384,
+  "experts_per_token": 8,
+  "licence": "other (modified-mit)",
+  "released": "2025-09-03",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Kimi-K2-Instruct-0905-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 8,
+     "bytes": 374121100512,
+     "gb": 374.12
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 8,
+     "bytes": 383572153632,
+     "gb": 383.57
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 11,
+     "bytes": 489995126336,
+     "gb": 490.0
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 13,
+     "bytes": 621245224864,
+     "gb": 621.25
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 13,
+     "bytes": 588117530560,
+     "gb": 588.12
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 16,
+     "bytes": 728735733952,
+     "gb": 728.74
+    },
+    {
+     "quant": "Q6_K",
+     "files": 18,
+     "bytes": 842909133280,
+     "gb": 842.91
+    },
+    {
+     "quant": "Q8_0",
+     "files": 23,
+     "bytes": 1091053886240,
+     "gb": 1091.05
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: 'Total 1T, Activated 32B, 384 experts, 8 selected, 1 shared'; context increased to 256k. Licence is 'modified-mit' (custom terms, read before commercial use). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "kimi-k2-thinking",
+  "name": "Kimi-K2-Thinking",
+  "vendor": "Moonshot AI",
+  "total_params_b": 1026.4,
+  "active_params_b": 32,
+  "num_experts": 384,
+  "experts_per_token": 8,
+  "licence": "other (modified-mit)",
+  "released": "2025-11-04",
+  "context_len": 262144,
+  "tasks": [
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Kimi-K2-Thinking-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 8,
+     "bytes": 374121101888,
+     "gb": 374.12
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 8,
+     "bytes": 386346687040,
+     "gb": 386.35
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 11,
+     "bytes": 489995127712,
+     "gb": 490.0
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 13,
+     "bytes": 621245226208,
+     "gb": 621.25
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 14,
+     "bytes": 646236364064,
+     "gb": 646.24
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 16,
+     "bytes": 728735735328,
+     "gb": 728.74
+    },
+    {
+     "quant": "Q6_K",
+     "files": 18,
+     "bytes": 842909134624,
+     "gb": 842.91
+    },
+    {
+     "quant": "Q8_0",
+     "files": 23,
+     "bytes": 1091053887872,
+     "gb": 1091.05
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '1T total, 32B activated, 384 experts, 8 selected, 1 shared, context 256K'. Native INT4 weights; modified-MIT licence. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "glm-4-5",
+  "name": "GLM-4.5",
+  "vendor": "Zhipu AI (Z.ai)",
+  "total_params_b": 358.3,
+  "active_params_b": 32,
+  "num_experts": 160,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-07-20",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/GLM-4.5-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 131159649248,
+     "gb": 131.16
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 3,
+     "bytes": 135199411168,
+     "gb": 135.2
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 4,
+     "bytes": 171268787296,
+     "gb": 171.27
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 5,
+     "bytes": 216455572672,
+     "gb": 216.46
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 5,
+     "bytes": 204407250176,
+     "gb": 204.41
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 6,
+     "bytes": 254246825344,
+     "gb": 254.25
+    },
+    {
+     "quant": "Q6_K",
+     "files": 6,
+     "bytes": 294371691840,
+     "gb": 294.37
+    },
+    {
+     "quant": "Q8_0",
+     "files": 8,
+     "bytes": 380966784608,
+     "gb": 380.97
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/zai-org/GLM-4.5",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '355 billion total parameters with 32 billion active'; 160 routed + 1 shared experts, 8 per token (config.json); full 128K context stated. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "glm-4-5-air",
+  "name": "GLM-4.5-Air",
+  "vendor": "Zhipu AI (Z.ai)",
+  "total_params_b": 110.5,
+  "active_params_b": 12,
+  "num_experts": 128,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-07-20",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/GLM-4.5-Air-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 45322103872,
+     "gb": 45.32
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 47444888640,
+     "gb": 47.44
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 2,
+     "bytes": 57203694848,
+     "gb": 57.2
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 2,
+     "bytes": 72975748384,
+     "gb": 72.98
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 2,
+     "bytes": 67721071872,
+     "gb": 67.72
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 2,
+     "bytes": 83519589632,
+     "gb": 83.52
+    },
+    {
+     "quant": "Q6_K",
+     "files": 2,
+     "bytes": 99007528192,
+     "gb": 99.01
+    },
+    {
+     "quant": "Q8_0",
+     "files": 3,
+     "bytes": 117456506240,
+     "gb": 117.46
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/zai-org/GLM-4.5-Air",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card (GLM-4.5 family text): '106 billion total parameters and 12 billion active'; 128 routed + 1 shared, 8 per token (config.json). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "glm-4-6",
+  "name": "GLM-4.6",
+  "vendor": "Zhipu AI (Z.ai)",
+  "total_params_b": 356.8,
+  "active_params_b": null,
+  "num_experts": 160,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-09-29",
+  "context_len": 202752,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/GLM-4.6-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 130650434432,
+     "gb": 130.65
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 3,
+     "bytes": 134690196352,
+     "gb": 134.69
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 4,
+     "bytes": 170601958368,
+     "gb": 170.6
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 5,
+     "bytes": 215582633056,
+     "gb": 215.58
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 5,
+     "bytes": 203691596928,
+     "gb": 203.69
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 6,
+     "bytes": 253179899136,
+     "gb": 253.18
+    },
+    {
+     "quant": "Q6_K",
+     "files": 6,
+     "bytes": 293098654944,
+     "gb": 293.1
+    },
+    {
+     "quant": "Q8_0",
+     "files": 8,
+     "bytes": 379317898752,
+     "gb": 379.32
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/zai-org/GLM-4.6",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "active_params_b (GLM-4.6 card does not state it; architecture matches GLM-4.5 355B-A32B but that is inference)",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: context 'expanded from 128K to 200K tokens'; config max_position_embeddings 202752. Active params not stated on the GLM-4.6 card so left null. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "glm-4-7",
+  "name": "GLM-4.7",
+  "vendor": "Zhipu AI (Z.ai)",
+  "total_params_b": 358.3,
+  "active_params_b": null,
+  "num_experts": 160,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-12-22",
+  "context_len": 202752,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/GLM-4.7-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 131159649152,
+     "gb": 131.16
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 3,
+     "bytes": 135199411136,
+     "gb": 135.2
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 4,
+     "bytes": 171268787232,
+     "gb": 171.27
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 5,
+     "bytes": 216455572576,
+     "gb": 216.46
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 5,
+     "bytes": 204564536480,
+     "gb": 204.56
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 6,
+     "bytes": 254246825248,
+     "gb": 254.25
+    },
+    {
+     "quant": "Q6_K",
+     "files": 6,
+     "bytes": 294371691776,
+     "gb": 294.37
+    },
+    {
+     "quant": "Q8_0",
+     "files": 8,
+     "bytes": 380966784544,
+     "gb": 380.97
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/zai-org/GLM-4.7",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "active_params_b (not stated on card); context_len taken from config.json only",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Active params not stated on the GLM-4.7 card. Context from config.json max_position_embeddings. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "gpt-oss-120b",
+  "name": "gpt-oss-120b",
+  "vendor": "OpenAI",
+  "total_params_b": 116.8,
+  "active_params_b": 5.1,
+  "num_experts": 128,
+  "experts_per_token": 4,
+  "licence": "apache-2.0",
+  "released": "2025-08-04",
+  "context_len": 131072,
+  "tasks": [
+   "reasoning",
+   "agents",
+   "coding",
+   "chat"
+  ],
+  "gguf": {
+   "repo": "ggml-org/gpt-oss-120b-GGUF",
+   "quants": [
+    {
+     "quant": "MXFP4",
+     "files": 1,
+     "bytes": 63387346208,
+     "gb": 63.39
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/openai/gpt-oss-120b",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '117B parameters with 5.1B active parameters'; 128 experts, top-4 (config.json). Shipped natively in MXFP4, so GGUF sizes barely vary by quant. Context from config.json (131072). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "gpt-oss-20b",
+  "name": "gpt-oss-20b",
+  "vendor": "OpenAI",
+  "total_params_b": 20.9,
+  "active_params_b": 3.6,
+  "num_experts": 32,
+  "experts_per_token": 4,
+  "licence": "apache-2.0",
+  "released": "2025-08-04",
+  "context_len": 131072,
+  "tasks": [
+   "reasoning",
+   "agents",
+   "coding",
+   "chat"
+  ],
+  "gguf": {
+   "repo": "ggml-org/gpt-oss-20b-GGUF",
+   "quants": [
+    {
+     "quant": "MXFP4",
+     "files": 1,
+     "bytes": 12109566624,
+     "gb": 12.11
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/openai/gpt-oss-20b",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '21B parameters with 3.6B active parameters'; 32 experts, top-4 (config.json). Native MXFP4. Context from config.json. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "llama-4-scout",
+  "name": "Llama 4 Scout 17B-16E Instruct",
+  "vendor": "Meta",
+  "total_params_b": 108.6,
+  "active_params_b": 17,
+  "num_experts": 16,
+  "experts_per_token": 1,
+  "licence": "other (llama4)",
+  "released": "2025-04-02",
+  "context_len": 10485760,
+  "tasks": [
+   "chat",
+   "vision",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 39563317760,
+     "gb": 39.56
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 42376957440,
+     "gb": 42.38
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 2,
+     "bytes": 51755187392,
+     "gb": 51.76
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 2,
+     "bytes": 65359900352,
+     "gb": 65.36
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 2,
+     "bytes": 61998108352,
+     "gb": 62.0
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 2,
+     "bytes": 76546444992,
+     "gb": 76.55
+    },
+    {
+     "quant": "Q6_K",
+     "files": 2,
+     "bytes": 88432148672,
+     "gb": 88.43
+    },
+    {
+     "quant": "Q8_0",
+     "files": 3,
+     "bytes": 114531589472,
+     "gb": 114.53
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "meta-llama card/config are gated (HTTP 401); active, per-token experts and context read from unsloth mirror (card table '17B (Activated)', 109B total, 10M context; config num_experts_per_tok 1)",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Licence is the Llama 4 Community License (not OSI open source; 700M-MAU clause, 'Built with Llama' attribution). Native multimodal. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "llama-4-maverick",
+  "name": "Llama 4 Maverick 17B-128E Instruct",
+  "vendor": "Meta",
+  "total_params_b": 401.6,
+  "active_params_b": 17,
+  "num_experts": 128,
+  "experts_per_token": 1,
+  "licence": "other (llama4)",
+  "released": "2025-04-01",
+  "context_len": 1048576,
+  "tasks": [
+   "chat",
+   "vision",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 145645120544,
+     "gb": 145.65
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 4,
+     "bytes": 152655890592,
+     "gb": 152.66
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 4,
+     "bytes": 191068984960,
+     "gb": 191.07
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 5,
+     "bytes": 242767153440,
+     "gb": 242.77
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 5,
+     "bytes": 232134674688,
+     "gb": 232.13
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 6,
+     "bytes": 284467259776,
+     "gb": 284.47
+    },
+    {
+     "quant": "Q6_K",
+     "files": 7,
+     "bytes": 328773622752,
+     "gb": 328.77
+    },
+    {
+     "quant": "Q8_0",
+     "files": 9,
+     "bytes": 425817094048,
+     "gb": 425.82
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "meta-llama card/config gated (401); values from unsloth mirror (card: 400B total, 1M context; config num_experts_per_tok 1)",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Llama 4 Community License (custom, not OSI). Native multimodal. MoE layers interleaved every 2nd layer per config. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "minimax-m2",
+  "name": "MiniMax-M2",
+  "vendor": "MiniMax",
+  "total_params_b": 228.7,
+  "active_params_b": 10,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "other (modified-mit)",
+  "released": "2025-10-22",
+  "context_len": 196608,
+  "tasks": [
+   "agents",
+   "coding",
+   "reasoning"
+  ],
+  "gguf": {
+   "repo": "unsloth/MiniMax-M2-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 2,
+     "bytes": 83302681984,
+     "gb": 83.3
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 2,
+     "bytes": 85757560192,
+     "gb": 85.76
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 3,
+     "bytes": 109272482272,
+     "gb": 109.27
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 3,
+     "bytes": 138342385120,
+     "gb": 138.34
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 3,
+     "bytes": 131623847424,
+     "gb": 131.62
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 4,
+     "bytes": 162303936128,
+     "gb": 162.3
+    },
+    {
+     "quant": "Q6_K",
+     "files": 4,
+     "bytes": 187763083904,
+     "gb": 187.76
+    },
+    {
+     "quant": "Q8_0",
+     "files": 5,
+     "bytes": 243136873184,
+     "gb": 243.14
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '10 billion activated parameters (230 billion in total)'; 256 experts, 8 per token (config.json); context from config.json (196608). Licence tag 'modified-mit'. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "mixtral-8x7b",
+  "name": "Mixtral 8x7B Instruct v0.1",
+  "vendor": "Mistral AI",
+  "total_params_b": 46.7,
+  "active_params_b": null,
+  "num_experts": 8,
+  "experts_per_token": 2,
+  "licence": "apache-2.0",
+  "released": "2023-12-10",
+  "context_len": 32768,
+  "tasks": [
+   "chat"
+  ],
+  "gguf": {
+   "repo": "TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 15644035008,
+     "gb": 15.64
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 20363356096,
+     "gb": 20.36
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 26441533376,
+     "gb": 26.44
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 32229279680,
+     "gb": 32.23
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 38378760128,
+     "gb": 38.38
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 49624262592,
+     "gb": 49.62
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "active_params_b (not stated on HF card; config shows 2 of 8 experts per token); context from config.json",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "GGUF repo is TheBloke (community, de-facto standard; no maker GGUF). Q4_K_M and Q4_0 files are the same byte size there. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "mixtral-8x22b",
+  "name": "Mixtral 8x22B Instruct v0.1",
+  "vendor": "Mistral AI",
+  "total_params_b": 140.6,
+  "active_params_b": null,
+  "num_experts": 8,
+  "experts_per_token": 2,
+  "licence": "apache-2.0",
+  "released": "2024-04-16",
+  "context_len": 65536,
+  "tasks": [
+   "chat",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "MaziyarPanahi/Mixtral-8x22B-Instruct-v0.1-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 52108606272,
+     "gb": 52.11
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 2,
+     "bytes": 67795565248,
+     "gb": 67.8
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 2,
+     "bytes": 85593307840,
+     "gb": 85.59
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 4,
+     "bytes": 99975576480,
+     "gb": 99.98
+    },
+    {
+     "quant": "Q8_0",
+     "files": 4,
+     "bytes": 149424847776,
+     "gb": 149.42
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "active_params_b (not on HF card); context from config.json",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "GGUF repo is MaziyarPanahi (community). Its Q6 shards are named 'Q6' not 'Q6_K', so Q6 omitted from the quant list. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "mistral-large-3",
+  "name": "Mistral Large 3 675B Instruct 2512",
+  "vendor": "Mistral AI",
+  "total_params_b": 675,
+  "active_params_b": 41,
+  "num_experts": null,
+  "experts_per_token": null,
+  "licence": "apache-2.0",
+  "released": "2025-11-28",
+  "context_len": null,
+  "tasks": [
+   "chat",
+   "vision",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Mistral-Large-3-675B-Instruct-2512-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 5,
+     "bytes": 247110065152,
+     "gb": 247.11
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 6,
+     "bytes": 256369376320,
+     "gb": 256.37
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 7,
+     "bytes": 321845570720,
+     "gb": 321.85
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 9,
+     "bytes": 406989520384,
+     "gb": 406.99
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 8,
+     "bytes": 387880303968,
+     "gb": 387.88
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 10,
+     "bytes": 477969661536,
+     "gb": 477.97
+    },
+    {
+     "quant": "Q6_K",
+     "files": 12,
+     "bytes": 553317879616,
+     "gb": 553.32
+    },
+    {
+     "quant": "Q8_0",
+     "files": 15,
+     "bytes": 715677646752,
+     "gb": 715.68
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "num_experts, experts_per_token, context_len (no config.json/safetensors metadata via API; consolidated format)",
+   "num_experts",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: 'granular Mixture-of-Experts model with 41B active parameters and 675B total parameters'. Total from card (API safetensors metadata absent)."
+ },
+ {
+  "id": "nemotron-3-nano-30b-a3b",
+  "name": "NVIDIA Nemotron 3 Nano 30B-A3B",
+  "vendor": "NVIDIA",
+  "total_params_b": 31.6,
+  "active_params_b": 3.5,
+  "num_experts": 128,
+  "experts_per_token": 6,
+  "licence": "other (nvidia-nemotron-open-model-license)",
+  "released": "2025-12-04",
+  "context_len": 1000000,
+  "tasks": [
+   "reasoning",
+   "chat",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "unsloth/Nemotron-3-Nano-30B-A3B-GGUF",
+   "quants": [
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 19919660832,
+     "gb": 19.92
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 20007397152,
+     "gb": 20.01
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 24574373664,
+     "gb": 24.57
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 22833947424,
+     "gb": 22.83
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 26149294368,
+     "gb": 26.15
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 33508167456,
+     "gb": 33.51
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 33585495840,
+     "gb": 33.59
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '128 experts plus 1 shared expert, with 6 experts activated per token. 3.5B active parameters and 30B in total'; 'Maximum input size: 1M tokens'. Hybrid Mamba-2/MoE/attention. Licence is NVIDIA Open Model License (custom). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "ernie-4-5-300b-a47b",
+  "name": "ERNIE-4.5-300B-A47B-PT",
+  "vendor": "Baidu",
+  "total_params_b": 300.5,
+  "active_params_b": 47,
+  "num_experts": 64,
+  "experts_per_token": 8,
+  "licence": "apache-2.0",
+  "released": "2025-06-28",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "reasoning"
+  ],
+  "gguf": {
+   "repo": "unsloth/ERNIE-4.5-300B-A47B-PT-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 3,
+     "bytes": 109067796352,
+     "gb": 109.07
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 3,
+     "bytes": 114619875200,
+     "gb": 114.62
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 3,
+     "bytes": 142569471872,
+     "gb": 142.57
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 4,
+     "bytes": 180155744256,
+     "gb": 180.16
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 4,
+     "bytes": 172643876896,
+     "gb": 172.64
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 5,
+     "bytes": 211964297408,
+     "gb": 211.96
+    },
+    {
+     "quant": "Q6_K",
+     "files": 5,
+     "bytes": 245760884832,
+     "gb": 245.76
+    },
+    {
+     "quant": "Q8_0",
+     "files": 7,
+     "bytes": 318285513152,
+     "gb": 318.29
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-PT",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card table: '300B / 47B' params, 'Text Experts (Total / Activated) 64 / 8', context 131072. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "ernie-4-5-21b-a3b",
+  "name": "ERNIE-4.5-21B-A3B-PT",
+  "vendor": "Baidu",
+  "total_params_b": 21.9,
+  "active_params_b": 3,
+  "num_experts": 64,
+  "experts_per_token": 6,
+  "licence": "apache-2.0",
+  "released": "2025-06-28",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "reasoning"
+  ],
+  "gguf": {
+   "repo": "unsloth/ERNIE-4.5-21B-A3B-PT-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 8152596256,
+     "gb": 8.15
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 8222883616,
+     "gb": 8.22
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 10524815136,
+     "gb": 10.52
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 13331015456,
+     "gb": 13.33
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 13431623456,
+     "gb": 13.43
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 15585330976,
+     "gb": 15.59
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 17972039456,
+     "gb": 17.97
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 23205355296,
+     "gb": 23.21
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/baidu/ERNIE-4.5-21B-A3B-PT",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card table: '21B / 3B', 'Text Experts 64 / 6', 2 shared, context 131072. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "hunyuan-a13b",
+  "name": "Hunyuan-A13B-Instruct",
+  "vendor": "Tencent",
+  "total_params_b": 80.4,
+  "active_params_b": 13,
+  "num_experts": 64,
+  "experts_per_token": null,
+  "licence": "other (tencent-hunyuan-a13b)",
+  "released": "2025-06-25",
+  "context_len": 262144,
+  "tasks": [
+   "chat",
+   "reasoning",
+   "agents"
+  ],
+  "gguf": {
+   "repo": "unsloth/Hunyuan-A13B-Instruct-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 29418205568,
+     "gb": 29.42
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 1,
+     "bytes": 31036158336,
+     "gb": 31.04
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 38555496832,
+     "gb": 38.56
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 48782258560,
+     "gb": 48.78
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 1,
+     "bytes": 46694740352,
+     "gb": 46.69
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 2,
+     "bytes": 57120535136,
+     "gb": 57.12
+    },
+    {
+     "quant": "Q8_0",
+     "files": 2,
+     "bytes": 85448079744,
+     "gb": 85.45
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/tencent/Hunyuan-A13B-Instruct",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "experts_per_token (not read from card; config uses a non-scalar field)",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '13 billion active parameters (out of a total of 80 billion)'; supports 256K (262,144) context but config.json default limits to 32K. Licence 'tencent-hunyuan-a13b' is custom and has territory restrictions (check before shipping in EU/UK/South Korea). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "granite-4-0-h-small",
+  "name": "Granite 4.0 H Small",
+  "vendor": "IBM",
+  "total_params_b": 32.2,
+  "active_params_b": 9,
+  "num_experts": 72,
+  "experts_per_token": 10,
+  "licence": "apache-2.0",
+  "released": "2025-09-16",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "agents",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "ibm-granite/granite-4.0-h-small-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 11779386016,
+     "gb": 11.78
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 15360125600,
+     "gb": 15.36
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 1,
+     "bytes": 19476621984,
+     "gb": 19.48
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 1,
+     "bytes": 22866406048,
+     "gb": 22.87
+    },
+    {
+     "quant": "Q6_K",
+     "files": 1,
+     "bytes": 26468051616,
+     "gb": 26.47
+    },
+    {
+     "quant": "Q8_0",
+     "files": 1,
+     "bytes": 34264885920,
+     "gb": 34.26
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/ibm-granite/granite-4.0-h-small",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card table: 'Num. Experts 72, Num. active Experts 10, 32B, # Active parameters 9B'. Hybrid Mamba2/transformer MoE. Context from config.json (131072). GGUF is maker repo. total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "dots-llm1",
+  "name": "dots.llm1.inst",
+  "vendor": "rednote-hilab (Xiaohongshu)",
+  "total_params_b": 142.8,
+  "active_params_b": 14,
+  "num_experts": 128,
+  "experts_per_token": 6,
+  "licence": "mit",
+  "released": "2025-05-14",
+  "context_len": 32768,
+  "tasks": [
+   "chat"
+  ],
+  "gguf": {
+   "repo": "unsloth/dots.llm1.inst-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 2,
+     "bytes": 58126970912,
+     "gb": 58.13
+    },
+    {
+     "quant": "UD-Q2_K_XL",
+     "files": 2,
+     "bytes": 60218904608,
+     "gb": 60.22
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 2,
+     "bytes": 73806528544,
+     "gb": 73.81
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 2,
+     "bytes": 94484008992,
+     "gb": 94.48
+    },
+    {
+     "quant": "UD-Q4_K_XL",
+     "files": 2,
+     "bytes": 86844133408,
+     "gb": 86.84
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 3,
+     "bytes": 107986194592,
+     "gb": 107.99
+    },
+    {
+     "quant": "Q6_K",
+     "files": 3,
+     "bytes": 128145571968,
+     "gb": 128.15
+    },
+    {
+     "quant": "Q8_0",
+     "files": 4,
+     "bytes": 151799296032,
+     "gb": 151.8
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/dots-studio/dots.llm1.inst",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: 'activates 14B parameters out of a total of 142B'; 128 routed + 2 shared experts, 6 per token (config.json). Repo has moved to dots-studio/dots.llm1.inst (redirect). Context from config.json (32768). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "ling-flash-2-0",
+  "name": "Ling-flash-2.0",
+  "vendor": "inclusionAI (Ant Group)",
+  "total_params_b": 102.9,
+  "active_params_b": 6.1,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-09-17",
+  "context_len": 131072,
+  "tasks": [
+   "chat",
+   "coding"
+  ],
+  "gguf": {
+   "repo": "bartowski/inclusionAI_Ling-flash-2.0-GGUF",
+   "quants": [
+    {
+     "quant": "Q2_K",
+     "files": 1,
+     "bytes": 36247981728,
+     "gb": 36.25
+    },
+    {
+     "quant": "Q3_K_M",
+     "files": 1,
+     "bytes": 47133200032,
+     "gb": 47.13
+    },
+    {
+     "quant": "Q4_K_M",
+     "files": 2,
+     "bytes": 62620028768,
+     "gb": 62.62
+    },
+    {
+     "quant": "Q5_K_M",
+     "files": 2,
+     "bytes": 73316814688,
+     "gb": 73.32
+    },
+    {
+     "quant": "Q6_K",
+     "files": 3,
+     "bytes": 84606947296,
+     "gb": 84.61
+    },
+    {
+     "quant": "Q8_0",
+     "files": 3,
+     "bytes": 109423136704,
+     "gb": 109.42
+    }
+   ],
+   "size_note": "MEASURED sum of GGUF file sizes from HF tree API; excludes KV cache/context memory and runtime overhead; gb = bytes/1e9"
+  },
+  "source_url": "https://huggingface.co/inclusionAI/Ling-flash-2.0",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: '6.1B activated parameters'; 100B total (safetensors 102.9B); card: 'with YaRN extrapolation, it supports 128K context length' (config.json native 32768). total_params_b = safetensors metadata total (all tensors)."
+ },
+ {
+  "id": "ring-flash-2-0",
+  "name": "Ring-flash-2.0",
+  "vendor": "inclusionAI (Ant Group)",
+  "total_params_b": 102.9,
+  "active_params_b": 6.1,
+  "num_experts": 256,
+  "experts_per_token": 8,
+  "licence": "mit",
+  "released": "2025-09-19",
+  "context_len": 131072,
+  "tasks": [
+   "reasoning"
+  ],
+  "gguf": null,
+  "source_url": "https://huggingface.co/inclusionAI/Ring-flash-2.0",
+  "checked_on": "2026-11-04",
+  "unverified": [
+   "context_len (config.json says 32768; 128K not confirmed on the card text I read)",
+   "released is HF repo createdAt, not an official launch date",
+   "tasks are editorial tags"
+  ],
+  "note": "Card: 'total of 100B parameters, with only 6.1B activated per inference'. Thinking model. gguf is null: bartowski/inclusionAI_Ring-flash-2.0-GGUF returned no repo (API 404); other community repos were not searched, so a GGUF may exist elsewhere. total_params_b = safetensors metadata total (all tensors)."
+ }
+]

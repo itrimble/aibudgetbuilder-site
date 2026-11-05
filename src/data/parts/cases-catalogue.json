@@ -1,0 +1,549 @@
+[
+  {
+    "id": "corsair-7000d-airflow-black",
+    "name": "Corsair 7000D AIRFLOW (CC-9011218-WW)",
+    "vendor": "Corsair",
+    "form": "Full tower",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": 450,
+    "open_frame": false,
+    "price": 269.99,
+    "price_basis": "Corsair store price, In Stock when read",
+    "source_url": "https://www.corsair.com/us/en/p/pc-cases/cc-9011218-ww/7000d-airflow-full-tower-atx-pc-case-black-cc-9011218-ww",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.corsair.com/us/en/p/pc-cases/cc-9011218-ww/7000d-airflow-full-tower-atx-pc-case-black-cc-9011218-ww",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form",
+      "price"
+    ],
+    "spec_unverified": [],
+    "spec_note": "Spec table: 'Case Expansion Slots 8 horizontal + 3 vertical'; gpu_slots counts the 8 horizontal. Max GPU length 450 mm. The product is the 7000D AIRFLOW, not a plain 7000D. Price from the page's structured data (InStock)."
+  },
+  {
+    "id": "phanteks-enthoo-pro-2-tg",
+    "name": "Phanteks Enthoo Pro II Tempered Glass (PH-ES620PTG_DBK01)",
+    "vendor": "Phanteks",
+    "form": "Full tower",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": 503,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://phanteks.com/product/enthoo-pro-2-tg/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://phanteks.com/product/enthoo-pro-2-tg/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Spec table: PCI/expansion slots 11, GPU clearance length 503 mm, model PH-ES620PTG_DBK01. Phanteks site shows no price (points to resellers). The base 'enthoo-pro-2' URL redirected to the Server Edition TG page, so each variant was opened by its own URL."
+  },
+  {
+    "id": "phanteks-enthoo-pro-2-server-edition-tg",
+    "name": "Phanteks Enthoo Pro II Server Edition TG (PH-ES620PTG_BK02)",
+    "vendor": "Phanteks",
+    "form": "Full tower",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": 503,
+    "open_frame": false,
+    "price": 189.99,
+    "price_basis": "asking",
+    "source_url": "https://www.amazon.com/Phanteks-PH-ES620PTG_BK02-Enthoo-Pro-Server/dp/B0CBPM8492",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://phanteks.com/product/enthoo-pro-2-server-edition-tg/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Spec table: PCI/expansion slots 11, GPU clearance length 503 mm, model PH-ES620PTG_BK02. Phanteks site shows no price (points to resellers). The base 'enthoo-pro-2' URL redirected to the Server Edition TG page, so each variant was opened by its own URL. Price: Amazon asking $189.99, read through a search excerpt 2026-11-04. Other US sellers listed $241.80 to $250.36, so treat this as a floor. Amazon text: 11 PCI slots, SSI-EEB support."
+  },
+  {
+    "id": "phanteks-enthoo-pro-2-server-edition-cp",
+    "name": "Phanteks Enthoo Pro II Server Edition CP (PH-ES620PC_BK02)",
+    "vendor": "Phanteks",
+    "form": "Full tower",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": 503,
+    "open_frame": false,
+    "price": 245.23,
+    "price_basis": "asking",
+    "source_url": "https://www.beachaudio.com/phanteks-ph-es620pc_bk02-cases-phanteks-enthoo-pro-2-server-edition-blk-phes620pc_bk02/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://phanteks.com/product/enthoo-pro-2-server-edition-cp/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Spec table: PCI/expansion slots 11, GPU clearance length 503 mm, model PH-ES620PC_BK02. Phanteks site shows no price (points to resellers). The base 'enthoo-pro-2' URL redirected to the Server Edition TG page, so each variant was opened by its own URL. Price: Beach Audio asking $245.23, in stock (171 listed), read through a search excerpt 2026-11-04."
+  },
+  {
+    "id": "phanteks-enthoo-pro-2-server-v2",
+    "name": "Phanteks Enthoo Pro 2 Server V2 Black (PH-ES620PC_BK03)",
+    "vendor": "Phanteks",
+    "form": "Full tower",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": 503,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://phanteks.com/product/enthoo-pro-2-server-v2-black/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://phanteks.com/product/enthoo-pro-2-server-v2-black/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Spec table: PCI/expansion slots 11, GPU clearance length 503 mm, model PH-ES620PC_BK03. Phanteks site shows no price (points to resellers). The base 'enthoo-pro-2' URL redirected to the Server Edition TG page, so each variant was opened by its own URL."
+  },
+  {
+    "id": "fractal-define-7-xl-black-light-tg",
+    "name": "Fractal Design Define 7 XL Black Light TG",
+    "vendor": "Fractal Design",
+    "form": "Full tower",
+    "gpu_slots": 9,
+    "max_gpu_length_mm": 530,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-light-tg/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.fractal-design.com/products/cases/define-series/define-7-xl/define-7-xl-black-light-tg/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Spec table: Expansion slots 9, GPU max length 530 mm. Page has no price. Spec table may assume some fan/layout configuration; the page gives one number."
+  },
+  {
+    "id": "lian-li-o11-dynamic-evo-xl-black",
+    "name": "Lian Li O11 Dynamic EVO XL (O11DEXL-X)",
+    "vendor": "Lian Li",
+    "form": "Full tower",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": 460,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://lian-li.com/product/o11-dynamic-evo-xl/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://lian-li.com/product/o11-dynamic-evo-xl/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Requested 'O11 Dynamic XL' product page was not found (guessed URLs 404 or redirected to an accessory); the EVO XL is the current XL page. Specs: expansion slot 8, GPU length clearance 460 mm max. No price on page."
+  },
+  {
+    "id": "coolermaster-haf-700-titanium-grey",
+    "name": "Cooler Master HAF 700 (H700-IGNN-S00)",
+    "vendor": "Cooler Master",
+    "form": "Full tower",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": 490,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://www.coolermaster.com/en-global/products/haf-700.html",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.coolermaster.com/en-global/products/haf-700.html",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Specs: Expansion Slots 8; 'Clearance - GFX 490mm / 19.29in'. Global page, no price (availability InStock in page data)."
+  },
+  {
+    "id": "kingwin-kc-6gpu-ss",
+    "name": "Kingwin KC-6GPU-SS open-air mining frame",
+    "vendor": "Kingwin",
+    "form": "Open frame",
+    "gpu_slots": 6,
+    "max_gpu_length_mm": null,
+    "open_frame": true,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://www.kingwin.com/accessories/kc-6gpu-ss/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.kingwin.com/accessories/kc-6gpu-ss/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "open_frame"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Page: '6 GPU Slots', open-air steel frame, 500x285x225 mm, 2.2 kg, ATX motherboard compatible. Notes a GPU holding bar is needed for GPUs shorter than 25 cm. No max GPU length or price on page."
+  },
+  {
+    "id": "kingwin-kc-8gpu",
+    "name": "Kingwin KC-8GPU open-air mining frame",
+    "vendor": "Kingwin",
+    "form": "Open frame",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": true,
+    "price": 88.99,
+    "price_basis": "asking",
+    "source_url": "https://www.amazon.com/Kingwin-Professional-Cryptocurrency-Convection-Performance/dp/B07H44XZPW",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.kingwin.com/accessories/kc-8gpu-2/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "open_frame"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Page titled 'KC-8GPU NEW': 8 GPU slots, aluminum, 880x360x380 mm, 4.9 kg, 7 fan slots, ATX board compatible. No max GPU length or price on page. A sibling URL /kc-8gpu/ returned an empty body and was not used. Price: Amazon asking $88.99, sold by KWI-Kingwin, in stock, read through a search excerpt 2026-11-04 (Newegg listed $99.99 and eBay $98.99 the same day). Kingwin page confirms 8 GPU slots, ATX board, 880 x 360 x 380 mm, fans and PSU not included."
+  },
+  {
+    "id": "kingwin-kc-12gpu",
+    "name": "Kingwin KC-12GPU open-air mining frame",
+    "vendor": "Kingwin",
+    "form": "Open frame",
+    "gpu_slots": 12,
+    "max_gpu_length_mm": null,
+    "open_frame": true,
+    "price": 192.18,
+    "price_basis": "asking",
+    "source_url": "https://www.newegg.com/Kingwin-Inc/BrandStore/ID-1633",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.kingwin.com/accessories/kc-12gpu/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "open_frame"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Page: 'Fit Up to 12 GPUs', aluminum, 640x360x550 mm, 5.6 kg, 10 fan slots. Beyond the 4-6 card target but included for 8+ GPU context. No max GPU length or price on page. Price: Newegg brand-store asking $192.18 with free shipping, read through a search excerpt 2026-11-04; the listing page itself was not opened."
+  },
+  {
+    "id": "rosewill-rsv-ai01",
+    "name": "Rosewill RSV-AI01 4U AI server chassis",
+    "vendor": "Rosewill",
+    "form": "4U rackmount",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": 400,
+    "open_frame": false,
+    "price": 499.99,
+    "price_basis": "Rosewill store list price on product page. Page <title> is generic; the model was confirmed from the product heading and spec table.",
+    "source_url": "https://www.rosewill.com/rosewill-rsv-ai01-black-silver/p/9SIA072KFJ5868",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.rosewill.com/rosewill-rsv-ai01-black-silver/p/9SIA072KFJ5868",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form",
+      "price"
+    ],
+    "spec_unverified": [],
+    "spec_note": "Expansion slots 11. Max GPU length: 330 mm with fan / 400 mm without fan; 400 is stored (no fan). Heading says 'supports up to 4 GPUs' (3-4 triple-width cards realistic; maker count is 4). E-ATX, ATX PSU."
+  },
+  {
+    "id": "rosewill-rsv-l4500u",
+    "name": "Rosewill RSV-L4500U 4U server chassis",
+    "vendor": "Rosewill",
+    "form": "4U rackmount",
+    "gpu_slots": 7,
+    "max_gpu_length_mm": 400,
+    "open_frame": false,
+    "price": 229.99,
+    "price_basis": "Rosewill store list price on product page. Page <title> is generic; the model was confirmed from the product heading and spec table.",
+    "source_url": "https://www.rosewill.com/rosewill-rsv-l4500u-black/p/9SIA072GJ92805",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.rosewill.com/rosewill-rsv-l4500u-black/p/9SIA072GJ92805",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form",
+      "price"
+    ],
+    "spec_unverified": [],
+    "spec_note": "Expansion slots 7. Max GPU length: with middle fan 320 mm / without 400 mm; 400 stored. URL slug says l4500u for both IDs, so the product name was taken from the page heading (RSV-L4500U)."
+  },
+  {
+    "id": "rosewill-rsv-l4412u",
+    "name": "Rosewill RSV-L4412U 4U server chassis",
+    "vendor": "Rosewill",
+    "form": "4U rackmount",
+    "gpu_slots": 7,
+    "max_gpu_length_mm": 400,
+    "open_frame": false,
+    "price": 399.99,
+    "price_basis": "Rosewill store list price on product page. Page <title> is generic; the model was confirmed from the product heading and spec table.",
+    "source_url": "https://www.rosewill.com/rosewill-rsv-l4500u-black/p/9SIA072GJ92847",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.rosewill.com/rosewill-rsv-l4500u-black/p/9SIA072GJ92847",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form",
+      "price"
+    ],
+    "spec_unverified": [],
+    "spec_note": "Expansion slots 7. Max GPU length: with middle fan 320 mm / without 400 mm; 400 stored. URL slug says l4500u for both IDs, so the product name was taken from the page heading (RSV-L4412U)."
+  },
+  {
+    "id": "rosewill-rsv-l4000u",
+    "name": "Rosewill RSV-L4000U 4U server chassis",
+    "vendor": "Rosewill",
+    "form": "4U rackmount",
+    "gpu_slots": 7,
+    "max_gpu_length_mm": 400,
+    "open_frame": false,
+    "price": 209.99,
+    "price_basis": "Rosewill store list price on product page. Page <title> is generic; the model was confirmed from the product heading and spec table.",
+    "source_url": "https://www.rosewill.com/rosewill-rsv-l4000u-black/p/9SIA072GJ92809",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.rosewill.com/rosewill-rsv-l4000u-black/p/9SIA072GJ92809",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form",
+      "price"
+    ],
+    "spec_unverified": [],
+    "spec_note": "Expansion slots 7. Max GPU length: with middle fan 320 mm / without 400 mm; 400 stored. The URL ID also resolved with a different slug (rsv-l4000c); the heading on the page is RSV-L4000U."
+  },
+  {
+    "id": "supermicro-sc747btq-r2k04b",
+    "name": "Supermicro SC747BTQ-R2K04B 4U tower/rackmount",
+    "vendor": "Supermicro",
+    "form": "4U tower/rackmount",
+    "gpu_slots": 11,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://www.supermicro.com/en/products/chassis/4u/747/sc747btq-r2k04b",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.supermicro.com/en/products/chassis/4u/747/sc747btq-r2k04b",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Page: 11x full-height full-length expansion slots, optimized for 4x double-width GPUs, E-ATX up to 15.2x13.2 in, 2000W redundant Titanium PSU included. No GPU length or price on page (sold via channel)."
+  },
+  {
+    "id": "sliger-cx4170a",
+    "name": "Sliger CX4170a 17in-deep 4U",
+    "vendor": "Sliger",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": 375,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://www.sliger.com/products/cx4170a/",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.sliger.com/products/cx4170a/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "max_gpu_length_mm",
+      "form"
+    ],
+    "spec_unverified": [
+      "price"
+    ],
+    "spec_note": "Page: 'Supports GPUs up to 375mm', 8x PCIe slots (cards up to 158 mm tall), ATX PSU, EATX/SSI-EEB up to 13 in deep. Price depends on the configurator and was not read."
+  },
+  {
+    "id": "istarusa-g-401",
+    "name": "iStarUSA G-401 (OEM 4U GPU chassis for 8x dual-slot add-ons)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-401",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-401",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type 1U redundant, motherboard not stated, dimensions 19.00 x 7.00 x 17.72 in. OEM-ready product, no price or GPU length on page."
+  },
+  {
+    "id": "istarusa-g-402",
+    "name": "iStarUSA G-402 (OEM 4U front-mounted 8x dual-slot GPU ATX chassis)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-402",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-402",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type ATX, motherboard ATX/microATX/mini-ITX (12 x 9.6 in), dimensions 19.00 x 7.00 x 24.80 in. OEM-ready product, no price or GPU length on page."
+  },
+  {
+    "id": "istarusa-g-403",
+    "name": "iStarUSA G-403 (OEM 4U front-mounted 8x dual-slot GPU ATX chassis, dual PSU)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-403",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-403",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type ATX (dual ATX/AT supported), motherboard ATX/microATX/mini-ITX (12 x 9.6 in), dimensions 19.00 x 7.00 x 26.00 in. OEM-ready product, no price or GPU length on page."
+  },
+  {
+    "id": "istarusa-g-404",
+    "name": "iStarUSA G-404 (OEM 4U 8-slot GPU EATX chassis)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-404",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-404",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type SFX, motherboard 12 x 13 in (EATX), dimensions 19.00 x 7.00 x 21.60 in. OEM-ready product, no price or GPU length on page."
+  },
+  {
+    "id": "istarusa-g-405",
+    "name": "iStarUSA G-405 (OEM 4U 8-slot GPU EATX chassis)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-405",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-405",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type SFX, motherboard 12 x 13 in (EATX), dimensions 19.00 x 7.00 x 21.60 in. OEM-ready product, no price or GPU length on page."
+  },
+  {
+    "id": "istarusa-g-406",
+    "name": "iStarUSA G-406 (OEM 4U 8-slot GPU EATX chassis)",
+    "vendor": "iStarUSA",
+    "form": "4U rackmount",
+    "gpu_slots": 8,
+    "max_gpu_length_mm": null,
+    "open_frame": false,
+    "price": null,
+    "price_basis": null,
+    "source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-406",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://istarusa.com/product/product-detail/?brand=istarusa&model=G-406",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "gpu_slots",
+      "form"
+    ],
+    "spec_unverified": [
+      "max_gpu_length_mm",
+      "price"
+    ],
+    "spec_note": "Spec table: expansion slots 8, form factor 4U, PSU type SFX, motherboard 12 x 13 in (EATX), dimensions 19.00 x 7.00 x 21.60 in. OEM-ready product, no price or GPU length on page."
+  }
+]

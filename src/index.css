@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light by default. Dark applies only when the visitor picks it (data-theme="dark"). */
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9; --panel: #ffffff; --panel2: #eceff3; --line: #d9dde4;
+  --fg: #14181f; --muted: #4b5563; --subtle: #66707e;
+  --accent: #0b6e6e; --onaccent: #ffffff;
+  --err: #b42318; --ok: #1a6b3c; --warn: #8f5200; --info: #1d5fa8; --link: #1d5fa8;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f1318; --panel: #171c23; --panel2: #222933; --line: #2c3440;
+  --fg: #e8ecf1; --muted: #aab4c0; --subtle: #8a95a3;
+  --accent: #3cc4c4; --onaccent: #08191a;
+  --err: #ff8a80; --ok: #6fd69a; --warn: #f2b24c; --info: #7db7f5; --link: #7db7f5;
+}
+body { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.logo { filter: none; }
+:root[data-theme="dark"] .logo { filter: invert(1); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

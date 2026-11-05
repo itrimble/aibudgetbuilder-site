@@ -1,0 +1,91 @@
+# Builds and publishes https://aibudgetbuilder.remnantsecurity.com/ from this repo with GitHub Pages (Pages source: GitHub Actions).
+#
+# When it runs
+#   - on every push to main (a data or code change goes live by itself)
+#   - every day at 11:17 UTC, and on demand (Actions tab, "Run workflow")
+#
+# What the daily run does by itself (mechanical data only, nothing that needs judgement):
+#   1. refresh the European Central Bank exchange rates and the Hugging Face model-link snapshot
+#   2. regenerate docs/METHODOLOGY.md, run the tests and the audit; any audit error or failing test stops here and nothing is published
+#   3. build, publish, then commit the refreshed data files back to main
+# GPU prices are NOT refreshed here: a price needs a person (or a reviewed pull request) to say where it came from.
+# The audit fails once any price is older than 30 days, so stale prices stop publishing instead of going out unnoticed.
+name: Build and publish
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 11 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Refresh exchange rates and model links (daily run only)
+        if: github.event_name != 'push'
+        run: |
+          node scripts/update-rates.mjs
+          node scripts/check-model-links.mjs
+
+      - name: Regenerate the methodology status
+        run: npm run methodology
+
+      - name: Test, audit and build
+        run: |
+          npm test
+          npm run methodology:check
+          npm run build
+
+      - name: Assemble the site folder
+        run: |
+          mkdir _site
+          cp dist/index.html _site/index.html
+          printf 'aibudgetbuilder.remnantsecurity.com' > _site/CNAME
+          : > _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Commit refreshed data back to main (daily run only)
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/rates.json src/data/models/links.json docs/METHODOLOGY.md
+          if git diff --cached --quiet; then echo "No data changes."; else
+            git commit -m "Daily data refresh: exchange rates, model links, methodology status"
+            git push origin HEAD:main
+          fi
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

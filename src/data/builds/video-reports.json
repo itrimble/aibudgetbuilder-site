@@ -1,0 +1,132 @@
+{
+  "note": "Claims read from YouTube auto-generated captions. Source tier D. Used for build ideas, software findings and relative comparisons only. Prices in a video are a snapshot from the upload date and are never used as site prices; current prices are expected to be at or above them.",
+  "videos": [
+    {
+      "id": "s4ndArnAz30",
+      "channel": "Country Boy Computers",
+      "title": "Best Budget gpu of 2026 for your Home Ai-server!! It destroys the Instinct Mi50..AMD Radeon Pro v620",
+      "url": "https://www.youtube.com/watch?v=s4ndArnAz30",
+      "uploaded": "2026-06-10",
+      "duration": "23:17",
+      "transcript": "auto-captions",
+      "transcript_checked_on": "2026-11-04",
+      "test_bench": "ASUS Prime X299 Deluxe II, Ubuntu 26.04, ROCm 7.1, 64 GB RAM, two Radeon PRO V620 32 GB plus one RX 6800 16 GB (said at 00:01:05 to 00:01:18; the MI50 runs swap the V620s out).",
+      "claims": [
+        {
+          "kind": "benchmark",
+          "at": "00:02:32",
+          "gpu": "Radeon PRO V620 32GB",
+          "backend": "Vulkan, Linux",
+          "text": "Qwen 3.6 27B at Q8, flash attention off: about 356 prompt tok/s and 12.5 generation tok/s on Linux Vulkan, against 303 and 13.1 on Windows Vulkan.",
+          "pp": 356,
+          "tg": 12.5,
+          "watts": 400,
+          "cross_check": "Not in the author's written table (it lists Qwen3-32b and a 35B model, not a 27B), so this figure has no second source."
+        },
+        {
+          "kind": "benchmark",
+          "at": "00:05:12",
+          "gpu": "Radeon PRO V620 32GB",
+          "backend": "Vulkan, Linux",
+          "text": "Qwen 3 14B on Linux Vulkan: the captions give about 806 prompt tok/s at 320 W (against an expected 590 at 350 W); the generation figure is garbled in the captions (heard as '18, 37') so it is not recorded.",
+          "pp": 806,
+          "watts": 320,
+          "cross_check": "Not in the author's written table (it has no Qwen 3 14B row), so this figure has no second source."
+        },
+        {
+          "kind": "software",
+          "at": "00:05:56",
+          "text": "On the V620s, Linux Vulkan gave much better prompt processing than Windows Vulkan, generation about the same (5 to 10 percent difference), and lower power."
+        },
+        {
+          "kind": "software",
+          "at": "00:06:29",
+          "text": "Vulkan on the V620: flash attention works, no ROCm setup needed."
+        },
+        {
+          "kind": "software",
+          "at": "00:07:46",
+          "text": "On ROCm 7.1 HIP, a Navi 21 card (V620) crashes with flash attention on; with it off, models run. The author did not apply the code workaround or try AMD's Docker image."
+        },
+        {
+          "kind": "software",
+          "at": "00:06:58",
+          "text": "In ROCm the RX 6800 appeared as device 1; he used HIP_VISIBLE_DEVICES=0,2 to load models on the V620s only. Vulkan listed it as device 0."
+        },
+        {
+          "kind": "benchmark",
+          "at": "00:09:01",
+          "gpu": "Radeon PRO V620 32GB",
+          "backend": "HIP (ROCm 7.1), Linux",
+          "text": "A 35B-A3B MoE at Q4 (model name garbled in captions) on HIP: about 1550 prompt tok/s and 70 generation tok/s at 395 W; he calls HIP's prompt-processing gain large on this model.",
+          "pp": 1550,
+          "tg": 70,
+          "watts": 395,
+          "cross_check": "Not in the author's written table, which has no V620-on-HIP row for this model, so this figure has no second source."
+        },
+        {
+          "kind": "benchmark",
+          "at": "00:09:53",
+          "gpu": null,
+          "backend": "HIP and Vulkan, Linux",
+          "text": "A 20B model at Q4, heard as 'GPT-J 20B': one run at about 1198 prompt and 107 generation tok/s at 420 W, another at about 1800 prompt and 96 generation at 295 W (the captions say the second was Vulkan). The same four figures appear in the author's written table as the MI50 on HIP and the V620 on Vulkan, so the card for the first run is unclear from the captions.",
+          "cross_check": "Matches the author's written table: its GPT-OSS-20b rows are the MI50 on HIP at 1197.8 prompt / 107 generation tok/s and 420 W, and the V620 on Vulkan at 1804.5 / 96.1 and 295 W. That is the same video author and the same tests, so it confirms the figures were read correctly, not that they are independent."
+        },
+        {
+          "kind": "power",
+          "at": "00:11:39",
+          "text": "Idle draw of the whole machine (RX 6800 plus two V620s) was about 130 to 140 W on Linux against 88 to 90 W on Windows; he had not investigated why."
+        },
+        {
+          "kind": "software",
+          "at": "00:12:57",
+          "text": "On the MI50s, Linux Vulkan prompt processing was far above Windows Vulkan, for example Qwen3 Coder Next 129 to 629 prompt tok/s, with about 100 W less power."
+        },
+        {
+          "kind": "software",
+          "at": "00:19:44",
+          "text": "Flash attention works on MI50s in HIP but crashes on V620s in HIP. MI50 prompt processing in HIP on Linux was not quite as good as the V620 on Vulkan; generation was about the same."
+        },
+        {
+          "kind": "price",
+          "at": "00:20:18",
+          "gpu": "Instinct MI50 32GB",
+          "price_usd": 210,
+          "text": "Says he bought MI50s 'in October' for $210 each, direct from China (the year is not said; the upload was June 2026).",
+          "price_note": "Import price from a seller, not a US listing.",
+          "gpu_id": "instinct-mi50-32"
+        },
+        {
+          "kind": "price",
+          "at": "00:20:25",
+          "gpu": "Radeon PRO V620 32GB",
+          "price_usd": 350,
+          "text": "Says he offered an eBay seller $350 each for V620s the week before the upload and it was accepted.",
+          "price_note": "An accepted offer, not a listing price.",
+          "gpu_id": "radeon-pro-v620"
+        },
+        {
+          "kind": "price",
+          "at": "00:20:55",
+          "gpu": "Instinct MI50 32GB",
+          "price_usd": 500,
+          "text": "Says MI50s were about $500 at the time of the upload.",
+          "price_note": "Spoken as a market price.",
+          "gpu_id": "instinct-mi50-32"
+        }
+      ]
+    }
+  ],
+  "not_yet_read": [
+    {
+      "id": "8zHUvixZAtg",
+      "title": "How To: 64gb Home Ai-Server for under $1000? *with Buyer's Guide!",
+      "reason": "YouTube answered the caption request with HTTP 429 (rate limited) on 2026-11-04, and again on a single retry about 30 minutes later. Not retried further. Try again on another day."
+    },
+    {
+      "id": "QeZwQAPqgRQ",
+      "title": "Qwen3.8-27b on a Budget!! AMD v620 vs Strix Halo vs Radeon Vii benchmarks",
+      "reason": "YouTube answered the caption request with HTTP 429 (rate limited) on 2026-11-04, and again on a single retry about 30 minutes later. Not retried further. Try again on another day."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+ {
+  "id": "starter",
+  "name": "Starter",
+  "usd": 500,
+  "blurb": "A small top-up."
+ },
+ {
+  "id": "hobby",
+  "name": "Hobby",
+  "usd": 1000,
+  "blurb": "A modest build."
+ },
+ {
+  "id": "builder",
+  "name": "Builder",
+  "usd": 2000,
+  "blurb": "A serious build."
+ },
+ {
+  "id": "enthusiast",
+  "name": "Enthusiast",
+  "usd": 4000,
+  "blurb": "A large build."
+ },
+ {
+  "id": "stretch",
+  "name": "No real limit",
+  "usd": 10000,
+  "blurb": "Shows everything the listed cards, slots and PSUs can reach."
+ }
+]

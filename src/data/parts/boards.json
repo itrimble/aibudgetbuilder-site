@@ -1,0 +1,2144 @@
+[
+  {
+    "id": "asrock-romed8-2t",
+    "name": "ASRock Rack ROMED8-2T (EPYC 7002/7003)",
+    "socket": "SP3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "SLOT1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT7",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": 1953.05,
+    "price_high": 2108.3,
+    "price_basis": "new",
+    "note": "Seven PCIe 4.0 x16 slots (SLOT7 is next to the CPU). SLOT2 is x16, or by jumper x8 plus 1 M.2 plus 1 miniSAS HD, or no PCIe slot plus 2 OCuLink plus 1 M.2 plus 1 miniSAS HD; the second M.2 and the 2 OCuLink ports share with SLOT2 by jumper. Page does not mention bifurcation, so unknown. Price is the board only (listings are the ROMED8-2T/BCM variant), no CPU or RDIMMs. Price range: eBay Buy It Now search page opened 2026-11-03, listings titled 'ROMED8-2T/BCM' marked Brand New $1,953.05 to $2,108.30; Open Box listings were $1,968.00. Asking prices, not sold prices.",
+    "source_url": "https://www.ebay.com/sch/i.html?_nkw=ASRock+Rack+ROMED8-2T&_sacat=0&LH_BIN=1&_ipg=60",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=ROMED8-2T",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket",
+      "form factor",
+      "ram_slots",
+      "per-slot PCIe gen and width",
+      "SLOT2 sharing",
+      "M.2 count/gen/width and sharing",
+      "per-DIMM capacity"
+    ],
+    "spec_unverified": [
+      "lane source (EPYC SP3 has no chipset, so cpu is likely, but the page does not say)",
+      "max_ram_gb 2048 is derived: 8 DIMMs x 256GB RDIMM/LRDIMM-3DS, page gives per-DIMM caps only",
+      "bifurcation",
+      "M.2 numbering ids are mine"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock Rack ROMED8-2T (EPYC 7002/7003)"
+  },
+  {
+    "id": "supermicro-h12ssl-i",
+    "name": "Supermicro H12SSL-i (EPYC 7002/7003)",
+    "socket": "SP3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "x16_1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_1",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_2",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Five PCIe 4.0 x16 plus two PCIe 4.0 x8 slots. Supermicro's page does not number the slots or say which are x16-size connectors vs open-ended x8, so slot ids are mine. Bifurcation not mentioned on the page. No price checked.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/h12ssl-i",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/h12ssl-i",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket SP3",
+      "DIMM slots 8 and 2TB RDIMM DDR4-3200",
+      "5 x PCI-E 4.0 x16 and 2 x PCI-E 4.0 x8",
+      "2 x M.2 PCIe 4.0 x4 M-key 2280/22110"
+    ],
+    "spec_unverified": [
+      "slot numbering, lane source (cpu/chipset), form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro H12SSL-i (EPYC 7002/7003)"
+  },
+  {
+    "id": "supermicro-h12ssl-nt",
+    "name": "Supermicro H12SSL-NT (EPYC 7002/7003, 10GbE)",
+    "socket": "SP3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "x16_1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_1",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_2",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Five PCIe 4.0 x16 plus two PCIe 4.0 x8 slots. Supermicro's page does not number the slots or say which are x16-size connectors vs open-ended x8, so slot ids are mine. Bifurcation not mentioned on the page. No price checked.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/h12ssl-nt",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/h12ssl-nt",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket SP3",
+      "DIMM slots 8 and 2TB RDIMM DDR4-3200",
+      "5 x PCI-E 4.0 x16 and 2 x PCI-E 4.0 x8",
+      "2 x M.2 PCIe 4.0 x4 M-key 2280/22110"
+    ],
+    "spec_unverified": [
+      "slot numbering, lane source (cpu/chipset), form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro H12SSL-NT (EPYC 7002/7003, 10GbE)"
+  },
+  {
+    "id": "supermicro-h11ssl-i",
+    "name": "Supermicro H11SSL-i (EPYC 7001/7002)",
+    "socket": "SP3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "x16_1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_2",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_3",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_1",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_2",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_3",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Three PCIe 3.0 x16 and three PCIe 3.0 x8 slots (6 total, not 7). Rev 2.x board is required for EPYC 7002 and for 2TB DDR4-3200; older revisions top out at 1TB DDR4-2666. Slot numbering not on the page. No price checked.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/h11ssl-i",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/h11ssl-i",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket SP3",
+      "8 DIMM slots",
+      "1TB DDR4-2666 or 2TB DDR4-3200 (rev 2.x)",
+      "3 x PCI-E 3.0 x8 and 3 x PCI-E 3.0 x16",
+      "1 x M.2 PCI-E 3.0 x4"
+    ],
+    "spec_unverified": [
+      "slot numbering, lane source",
+      "bifurcation",
+      "form factor",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro H11SSL-i (EPYC 7001/7002)"
+  },
+  {
+    "id": "asus-wrx80e-sage-se",
+    "name": "ASUS Pro WS WRX80E-SAGE SE WIFI (Threadripper Pro 3000/5000WX)",
+    "socket": "sWRX8",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE7",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "supported",
+    "form_factor": "EATX (EEB)",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Seven slots listed as PCIe 4.0/3.0 x16. ASUS's spec page footnote says the slots 'support PCIe bandwidth bifurcation for RAID on CPU function', so bifurcation is recorded as supported. Two U.2 ports: U.2_1 shares bandwidth with M.2_2 and U.2_2 with M.2_3 (populating the M.2 disables the U.2). Per-slot lane widths when all seven are populated are not broken out on the page. No price checked today.",
+    "source_url": "https://www.asus.com/motherboards-components/motherboards/workstation/pro-ws-wrx80e-sage-se-wifi/techspec/",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asus.com/motherboards-components/motherboards/workstation/pro-ws-wrx80e-sage-se-wifi/techspec/",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket sWRX8",
+      "8 DIMM max 2048GB",
+      "7 x PCIe 4.0/3.0 x16 slots",
+      "bifurcation footnote",
+      "3 M.2 PCIe 4.0 x4 and U.2 sharing",
+      "EATX(EEB)"
+    ],
+    "spec_unverified": [
+      "electrical lanes per slot (16 recorded because the page calls them x16 slots)",
+      "lane source cpu (inferred, Threadripper Pro is CPU-fed)",
+      "price"
+    ],
+    "brand": "asus",
+    "image_query": "ASUS Pro WS WRX80E-SAGE SE WIFI (Threadripper Pro 3000/5000WX)"
+  },
+  {
+    "id": "asrock-x399-taichi",
+    "name": "ASRock X399 Taichi (Threadripper 1000/2000)",
+    "socket": "TR4",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 128,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE4",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE5",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "ASRock: single card x16 (PCIE1); two cards x16 (PCIE1) + x16 (PCIE4); three cards x16/x8 (PCIE2)/x16; four cards x16/x8/x16/x8 (PCIE5). Plus one PCIe 2.0 x1. One U.2 connector, disabled if M2_1 is used. 128GB max UDIMM. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/X399%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/X399%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket TR4",
+      "8 DIMM, 128GB max",
+      "4 PCIe 3.0 x16 and sharing modes",
+      "3 Ultra M.2 PCIe Gen3 x4",
+      "ATX"
+    ],
+    "spec_unverified": [
+      "lane source",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock X399 Taichi (Threadripper 1000/2000)"
+  },
+  {
+    "id": "asrock-trx40-creator",
+    "name": "ASRock TRX40 Creator (Threadripper 3rd gen)",
+    "socket": "sTRX4",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 256,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE4",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_a",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_b",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "ASRock: single x16 (PCIE1); dual x16 (PCIE1)/x16 (PCIE3); triple x16/x16/x8 (PCIE4); quad x16 (PCIE1)/x8 (PCIE2)/x16 (PCIE3)/x8 (PCIE4). Max 256GB UDIMM. M.2 count (2 Hyper M.2 Gen4x4) is from the page's meta description, not the spec table. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/TRX40%20Creator/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/TRX40%20Creator/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket sTRX4",
+      "8 DIMM, 256GB",
+      "4 PCIe 4.0 x16 and the sharing modes"
+    ],
+    "spec_unverified": [
+      "M.2 count and ids (from marketing description only)",
+      "lane source",
+      "form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock TRX40 Creator (Threadripper 3rd gen)"
+  },
+  {
+    "id": "asrock-wrx80-creator",
+    "name": "ASRock WRX80 Creator (Threadripper Pro 3000WX/5000WX)",
+    "socket": "sWRX8",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE7",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_a",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_b",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Partial record: the page spec table only returned memory (8 DIMM, 2048GB). Slot count and gen come from the page's description line ('7 PCIe 4.0 x16 slots', '2 Hyper M.2 PCIe Gen4x4', '1 U.2 PCIe Gen3x4'). Electrical widths and sharing rules were not read. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/WRX80%20Creator/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/WRX80%20Creator/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "8 DIMM and 2048GB max (spec table)",
+      "7 PCIe 4.0 x16 / 2 Hyper M.2 Gen4x4 / 1 U.2 Gen3x4 (description text)"
+    ],
+    "spec_unverified": [
+      "per-slot electrical lanes (16 assumed from the 'x16' label)",
+      "slot sharing",
+      "lane source",
+      "form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock WRX80 Creator (Threadripper Pro 3000WX/5000WX)"
+  },
+  {
+    "id": "asrock-x570-taichi",
+    "name": "ASRock X570 Taichi (AM4)",
+    "socket": "AM4",
+    "ram_type": "DDR4",
+    "ram_slots": 4,
+    "max_ram_gb": 128,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIE3",
+        "lanes": 8,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIE5",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_a",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_b",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_c",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Single card: PCIE1 x16. Two cards: PCIE1 x8 / PCIE3 x8 (Ryzen 3000/5000, PCIe 4.0; Ryzen 2000 runs these at 3.0). PCIE5 is x4 from the X570 chipset. Two more PCIe 4.0 x1. With a Picasso APU only one of PCIE1 or PCIE5 works. 128GB max. The x8/x8 split is a CPU lane split, not BIOS x4x4x4x4 bifurcation, which is not documented. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/X570%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/X570%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket AM4",
+      "4 DIMM and 128GB",
+      "slot modes and cpu/chipset assignment",
+      "ATX",
+      "3 Hyper M.2 Gen4x4 (2 also SATA3)"
+    ],
+    "spec_unverified": [
+      "M.2 lane source and ids",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock X570 Taichi (AM4)"
+  },
+  {
+    "id": "asrock-x670e-taichi",
+    "name": "ASRock X670E Taichi (AM5)",
+    "socket": "AM5",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": 256,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 8,
+        "gen": 5,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "EATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Two CPU PCIe 5.0 x16 slots (PCIE1 and PCIE2) that run x16 or x8/x8. PCIE2 is recorded as x8 (its width when both are used). No third x16-size slot. Ryzen 7000/8000/9000. That x8/x8 split is a CPU lane split; BIOS x4x4x4x4 bifurcation is not documented on the page. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/X670E%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/X670E%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket AM5",
+      "4 DDR5 DIMM, 256GB",
+      "PCIE1/PCIE2 on CPU, x16 or x8/x8",
+      "M.2 sockets and cpu/chipset assignment",
+      "EATX"
+    ],
+    "spec_unverified": [
+      "bifurcation",
+      "price",
+      "exact M.2_2 sata mode (X670E lists SATA3 too)"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock X670E Taichi (AM5)"
+  },
+  {
+    "id": "asrock-x870e-taichi",
+    "name": "ASRock X870E Taichi (AM5)",
+    "socket": "AM5",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": 256,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": 8,
+        "gen": 5,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "EATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Two CPU PCIe 5.0 x16 slots (PCIE1 and PCIE2) that run x16 or x8/x8. PCIE2 is recorded as x8 (its width when both are used). No third x16-size slot. PCIE1 runs Gen5 x16 with Ryzen 9000/7000, Gen4 x8 with 8000 (Phoenix 1) and Gen4 x4 with 8000 (Phoenix 2). That x8/x8 split is a CPU lane split; BIOS x4x4x4x4 bifurcation is not documented on the page. No price checked.",
+    "source_url": "https://www.asrock.com/mb/AMD/X870E%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/X870E%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket AM5",
+      "4 DDR5 DIMM, 256GB",
+      "PCIE1/PCIE2 on CPU, x16 or x8/x8",
+      "M.2 sockets and cpu/chipset assignment",
+      "EATX"
+    ],
+    "spec_unverified": [
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock X870E Taichi (AM5)"
+  },
+  {
+    "id": "asus-proart-x670e-creator-wifi",
+    "name": "ASUS ProArt X670E-Creator WiFi (AM5)",
+    "socket": "AM5",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": 192,
+    "gpu_slots": [
+      {
+        "id": "PCIEX16_1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIEX16_2",
+        "lanes": 8,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIEX16_3",
+        "lanes": 2,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M.2_1",
+        "lanes": 4,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "M.2_2",
+        "lanes": 4,
+        "gen": 5,
+        "source": "cpu"
+      },
+      {
+        "id": "M.2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M.2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Two PCIe 5.0 x16 (x16 or x8/x8) plus one PCIe 4.0 x16 that runs x2 from the X670 chipset. PCIEX16_3 shares with M.2_3, which drops to x2 when it is enabled in BIOS. ASUS points to a PCIe bifurcation table on its support site (not opened), so bifurcation stays unknown. 192GB max with 4 DIMMs.",
+    "source_url": "https://www.asus.com/motherboards-components/motherboards/proart/proart-x670e-creator-wifi/techspec/",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asus.com/motherboards-components/motherboards/proart/proart-x670e-creator-wifi/techspec/",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket AM5",
+      "4 DIMM, 192GB, DDR5",
+      "slot modes",
+      "M.2 and sharing",
+      "ATX"
+    ],
+    "spec_unverified": [
+      "bifurcation table (ASUS FAQ 1037507 not opened)",
+      "cpu assignment of slot 1/2 is implied by page grouping (chipset slot is listed separately)",
+      "price"
+    ],
+    "brand": "asus",
+    "image_query": "ASUS ProArt X670E-Creator WiFi (AM5)"
+  },
+  {
+    "id": "asus-proart-z790-creator-wifi",
+    "name": "ASUS ProArt Z790-Creator WiFi (LGA1700)",
+    "socket": "LGA1700",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": 192,
+    "gpu_slots": [
+      {
+        "id": "PCIEX16_1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIEX16_2",
+        "lanes": 8,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIEX16_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M.2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "M.2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M.2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "M.2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Two PCIe 5.0 x16 (x16 or x8/x8) and one PCIe 4.0 x16 that runs x4. M.2_4 shares bandwidth with SATA6G_5-8. ASUS refers to a bifurcation table on its support site (not opened). 192GB max.",
+    "source_url": "https://www.asus.com/motherboards-components/motherboards/proart/proart-z790-creator-wifi/techspec/",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asus.com/motherboards-components/motherboards/proart/proart-z790-creator-wifi/techspec/",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket LGA1700",
+      "4 DIMM, 192GB, DDR5",
+      "2 x PCIe 5.0 x16 (x16 or x8/x8), 1 x PCIe 4.0 x16 (x4)",
+      "4 M.2 PCIe 4.0 x4",
+      "ATX"
+    ],
+    "spec_unverified": [
+      "lane source of the x4 slot",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asus",
+    "image_query": "ASUS ProArt Z790-Creator WiFi (LGA1700)"
+  },
+  {
+    "id": "msi-x570-tomahawk",
+    "name": "MSI MAG X570 Tomahawk WiFi (Ian's board)",
+    "socket": "AM4",
+    "ram_type": "DDR4",
+    "ram_slots": 4,
+    "max_ram_gb": 128,
+    "gpu_slots": [
+      {
+        "id": "PCI_E1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "PCI_E3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "PCI_E2",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "PCI_E4",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "From the MSI manual E7C84v1.1 (MSI's English manual, re-read 2026-11-03): PCI_E1 is x16 from the CPU (PCIe 4.0 with 3rd gen Ryzen, 3.0 with 2nd gen, x8 3.0 with APUs); PCI_E3 is x4 from the chipset. Gen for 3rd-gen Ryzen; table gives PCIe 3.0 for 2nd-gen. The manual lists no x8/x8 mode. The MSI web specification page only gave counts. BIOS (manual PDF page 51, read 2026-11-04): 'Above 4G memory / Crypto Currency mining' exists, default Disabled, and Enabled 'allows you to utilize more than 4x GPUs'. 'PCIe SlotX Lanes Configuration' exists for M.2 Xpander or other M.2 PCIe storage cards, with options that vary by installed processor. The manual does not say a GPU slot can be split x8/x8, so bifurcation stays unknown.",
+    "source_url": "https://download-2.msi.com/archive/mnu_exe/mb/E7C84v1.1.pdf",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://download-2.msi.com/archive/mnu_exe/mb/E7C84v1.1.pdf",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "PCI_E1~4 slot table and cpu/chipset source",
+      "M2_1 cpu, M2_2 chipset",
+      "4 DDR4 DIMM up to 128GB",
+      "gen per CPU generation",
+      "BIOS has an Above 4G decoding setting (manual page 51)",
+      "BIOS has an M.2-card lane configuration whose options vary by CPU (manual page 51)"
+    ],
+    "spec_unverified": [
+      "GPU-slot bifurcation (manual does not say)",
+      "price"
+    ],
+    "brand": "msi",
+    "image_query": "MSI MAG X570 Tomahawk WiFi (Ian's board)"
+  },
+  {
+    "id": "hp-z4-g4",
+    "name": "HP Z4 G4 workstation (Xeon W-2100/2200 or Core X)",
+    "socket": "LGA2066",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 512,
+    "gpu_slots": [
+      {
+        "id": "Slot1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "Slot2",
+        "lanes": 4,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "Slot3",
+        "lanes": 16,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "Slot4",
+        "lanes": 4,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "Slot5",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 3,
+        "source": "cpu"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "tower workstation",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "HP QuickSpecs v62 (Jan 2025): Slot 1 x16 (CPU), Slot 2 x4 (PCH, open-ended), Slot 3 x16 (CPU; x8 electrical on Core i7-X other than i7-9800X), Slot 4 x4 (PCH, open-ended), Slot 5 x8 (CPU, open-ended; mechanical-only on those same Core i7-X parts). Slot 0 is mechanical-only. Xeon W models: 8 DIMM RDIMM ECC up to 512GB; Core X models: UDIMM non-ECC up to 256GB (max_ram_gb records the Xeon W figure). 2nd M.2 slot exists on Xeon W only. This corrects the old site record (it said 4 DIMMs and an x16 Slot 2).",
+    "source_url": "https://h20195.www2.hp.com/v2/getpdf.aspx/c05527757.pdf",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://h20195.www2.hp.com/v2/getpdf.aspx/c05527757.pdf",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "every slot line, gen and CPU/PCH source",
+      "8 DIMM slots and 512/256GB",
+      "2 M.2 on Xeon W from CPU",
+      "LGA2066"
+    ],
+    "spec_unverified": [
+      "bifurcation",
+      "price (system, not board; not checked today)"
+    ],
+    "brand": "hp",
+    "image_query": "HP Z4 G4 workstation (Xeon W-2100/2200 or Core X)"
+  },
+  {
+    "id": "asrock-rack-ep2c612-ws",
+    "name": "ASRock Rack EP2C612 WS (dual LGA2011-3)",
+    "socket": "LGA2011-3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 512,
+    "gpu_slots": [
+      {
+        "id": "SLOT7",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT6",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT5",
+        "lanes": 16,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT4",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT3",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT2",
+        "lanes": 8,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Page tags slots by CPU: SLOT7/6/5/2 on CPU0, SLOT4/3/1 on CPU1 (CPU1 slots presumably need the second CPU; not stated). SLOT7 is x16 but auto-switches to x8 when SLOT6 is occupied; SLOT3 likewise to x8 when SLOT4 is occupied; SLOT6, SLOT4 and SLOT2 are x16 connectors wired x8. Lanes recorded for all-slots-populated. Max RAM derived as 8 x 64GB LRDIMM. No price.",
+    "source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=EP2C612%20WS",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=EP2C612%20WS",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket LGA 2011 R3, E5-2600 v3/v4",
+      "8 DIMM and per-DIMM caps",
+      "all 7 slot lines with CPU0/CPU1 tags"
+    ],
+    "spec_unverified": [
+      "max_ram_gb 512 derived from 8 x 64GB LRDIMM",
+      "M.2/U.2 (storage section not read)",
+      "form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock Rack EP2C612 WS (dual LGA2011-3)"
+  },
+  {
+    "id": "asrock-rack-rome2d16-2t",
+    "name": "ASRock Rack ROME2D16-2T (dual EPYC 7002/7003)",
+    "socket": "SP3 x2",
+    "ram_type": "DDR4",
+    "ram_slots": 16,
+    "max_ram_gb": 4096,
+    "gpu_slots": [
+      {
+        "id": "SLOT6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "SLOT2",
+        "lanes": 8,
+        "gen": 4,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Dual-socket. Slots are tagged CPU0 or CPU1 (SLOT6 and SLOT4 on CPU1, SLOT5/3/1 on CPU0, SLOT2 x8 on CPU1), so a second CPU is needed for the CPU1 slots (inferred, not stated). Five PCIe 4.0 x16 plus one x8. M.2 both on CPU0. max_ram_gb derived from 16 x 256GB 3DS RDIMM. No price.",
+    "source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=ROME2D16-2T",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=ROME2D16-2T",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "slot list with CPU tags",
+      "16 DIMM (8+8)",
+      "per-DIMM caps",
+      "2 M.2 on CPU0"
+    ],
+    "spec_unverified": [
+      "max_ram_gb 4096 derived",
+      "form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock Rack ROME2D16-2T (dual EPYC 7002/7003)"
+  },
+  {
+    "id": "asrock-rack-genoad8x-2t-bcm",
+    "name": "ASRock Rack GENOAD8X-2T/BCM (EPYC 9004/9005, SP5)",
+    "socket": "SP5",
+    "ram_type": "DDR5",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "SLOT0",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT2",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT3",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT4",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT5",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT6",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "SLOT7",
+        "lanes": 8,
+        "gen": 5,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 5,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "EEB",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Seven PCIe 5.0 x16 slots (SLOT0, 2, 4, 6 also CXL 2.0) plus SLOT7 at x8. SLOT1 auto-switches to x8 when either 1 MCIO or 1 M.2 is populated. SLOT7 shares lanes with 2 MCIO; with one MCIO enabled by jumper it drops to x4. EEB 12.63 x 13 in. max_ram_gb is derived: 8 x 256GB 3DS RDIMM. No price checked.",
+    "source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8X-2T/BCM",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrockrack.com/general/productdetail.asp?Model=GENOAD8X-2T/BCM",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "slot list and sharing",
+      "8 DIMM DDR5",
+      "per-DIMM caps",
+      "EEB",
+      "M.2 PCIe5 x4 x2"
+    ],
+    "spec_unverified": [
+      "max_ram_gb derived",
+      "lane source",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock Rack GENOAD8X-2T/BCM (EPYC 9004/9005, SP5)"
+  },
+  {
+    "id": "supermicro-x10srl-f",
+    "name": "Supermicro X10SRL-F (LGA2011-3)",
+    "socket": "LGA2011-3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 1024,
+    "gpu_slots": [
+      {
+        "id": "x8_a",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_b",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_c",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x8_d",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Not a good GPU board: page lists 2 PCIe 3.0 x8, 2 PCIe 3.0 x8 in x16 slots, 2 PCIe 3.0 x4 in an x8 slot (auto-switch to 1 x8) and 1 PCIe 2.0 x4 in an x8 slot. Recorded here as the four x8-or-better slots. Up to 512GB LRDIMM, 1TB with ECC 3DS LRDIMM (1024 recorded).",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/x10srl-f",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/x10srl-f",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "PCI-E line",
+      "memory line",
+      "ATX"
+    ],
+    "spec_unverified": [
+      "slot order",
+      "lane source",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro X10SRL-F (LGA2011-3)"
+  },
+  {
+    "id": "supermicro-m12swa-tf",
+    "name": "Supermicro M12SWA-TF (Threadripper Pro 3000/5000WX)",
+    "socket": "sWRX8",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 2048,
+    "gpu_slots": [
+      {
+        "id": "x16_1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_2",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_5",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "E-ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Six PCIe 4.0 x16 slots (the WRX80E-SAGE has seven). Four M.2 PCIe 4.0 x4. RDIMM up to 2TB, UDIMM up to 256GB. No price checked.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/m12swa-tf",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/m12swa-tf",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "6 PCI-E 4.0 x16",
+      "4 M.2 PCI-E 4.0 x4",
+      "8 DIMM, 2TB RDIMM",
+      "E-ATX"
+    ],
+    "spec_unverified": [
+      "lane source",
+      "slot numbering",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro M12SWA-TF (Threadripper Pro 3000/5000WX)"
+  },
+  {
+    "id": "supermicro-x11spa-t",
+    "name": "Supermicro X11SPA-T (LGA3647, Xeon Scalable)",
+    "socket": "LGA3647",
+    "ram_type": "DDR4",
+    "ram_slots": 12,
+    "max_ram_gb": 3072,
+    "gpu_slots": [
+      {
+        "id": "Slot1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot2",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot3",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot4",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot5",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot6",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot7",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_4",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Seven slots (4 x16 + 3 x8 in x16 connectors). Supermicro: Slot1 shares with M.2; Slot2/3, 4/5 and 6/7 share (NA/16 or 8/8), giving 16/NA/16/NA/16/NA/16 or 16/8/8/8/8/8/8. The recorded lane numbers are the 'maximum' per slot; the exact slot-by-slot assignment is the second list. 12 DIMM, up to 3TB (Optane / 3DS RDIMM). No price.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/x11spa-t",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/x11spa-t",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "4 PCIe 3.0 x16 and 3 x8",
+      "sharing rules",
+      "12 DIMM",
+      "4 M.2 PCIe 3.0 x4"
+    ],
+    "spec_unverified": [
+      "lanes per slot are my reading of the two patterns",
+      "form factor",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro X11SPA-T (LGA3647, Xeon Scalable)"
+  },
+  {
+    "id": "asrock-h110-pro-btc-plus",
+    "name": "ASRock H110 Pro BTC+ (mining board, LGA1151)",
+    "socket": "LGA1151",
+    "ram_type": "DDR4",
+    "ram_slots": 2,
+    "max_ram_gb": 32,
+    "gpu_slots": [
+      {
+        "id": "PCIE2",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_1",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_2",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_3",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_4",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_5",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_6",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_7",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_8",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_9",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_10",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_11",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_12",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": null,
+        "gen": null,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "One PCIe 3.0 x16 (x16 mode) and 12 PCIe 2.0 x1 slots (13 GPU positions). The single M.2 is a SATA3 module socket (M Key, SATA3 only on the page). Every card except the first is on a PCIe 2.0 x1 link, so it is a poor choice for multi-GPU tensor-parallel local AI. No price (eBay query not completed).",
+    "source_url": "https://www.asrock.com/mb/Intel/H110%20Pro%20BTC+/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/Intel/H110%20Pro%20BTC+/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "12 PCIe 2.0 x1 and 1 PCIe 3.0 x16",
+      "2 DDR4, 32GB",
+      "M.2 SATA3 only"
+    ],
+    "spec_unverified": [
+      "lane source",
+      "form factor",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock H110 Pro BTC+ (mining board, LGA1151)"
+  },
+  {
+    "id": "asus-b250-mining-expert",
+    "name": "ASUS B250 Mining Expert (mining-style board, 19 slots)",
+    "socket": "LGA1151",
+    "ram_type": "DDR4",
+    "ram_slots": 2,
+    "max_ram_gb": 32,
+    "gpu_slots": [
+      {
+        "id": "S1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "cpu"
+      },
+      {
+        "id": "S2",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S3",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S4",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S5",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S6",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S7",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S8",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S9",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S10",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S11",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S12",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S13",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S14",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S15",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S16",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S17",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S18",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      },
+      {
+        "id": "S19",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      }
+    ],
+    "m2_slots": [],
+    "bifurcation": "unknown",
+    "price_low": 20,
+    "price_high": 625,
+    "note": "All cards run on PCIe x1 lanes, so loading is slow and multi-GPU tensor parallel is poor. Per-card inference of a model that fits in one card's VRAM is fine. A forum snippet says only 16 of the PCIe connections can talk at once (excerpt only, not verified). 32GB RAM max. Price range is very noisy ($20 low is likely parts; $625 high likely new-old-stock). Slot list hand-simplified from the research agent's extracted text; PCIe generation and lane sharing not fully verified. Prices are asking prices.",
+    "source_url": "https://www.bhphotovideo.com/c/product/1381522-REG/asus_90mb0vy0_m0aay0_b250_mining_expert_desktop.html",
+    "checked_on": "2026-11-03",
+    "image_query": "ASUS B250 Mining Expert",
+    "brand": "asus"
+  },
+  {
+    "id": "generic-atx-am5",
+    "name": "Typical ATX desktop (AM5 / LGA1700 class)",
+    "socket": "generic",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": 128,
+    "gpu_slots": [
+      {
+        "id": "PCIe x16 #1",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "PCIe x16 #2 (x4 wired)",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      },
+      {
+        "id": "PCIe x1",
+        "lanes": 1,
+        "gen": 3,
+        "source": "chipset"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "note": "A generic profile for mid-range ATX boards. Your real board may differ: check its manual for the second x16 slot's lane count. Not a specific product.",
+    "source_url": "https://www.pcisig.com",
+    "checked_on": "2026-11-03"
+  },
+  {
+    "id": "generic-mini-itx",
+    "name": "Small-form-factor PC (Mini-ITX, one slot)",
+    "socket": "generic",
+    "ram_type": "DDR5",
+    "ram_slots": 2,
+    "max_ram_gb": 96,
+    "gpu_slots": [
+      {
+        "id": "PCIe x16 (single)",
+        "lanes": 16,
+        "gen": 4,
+        "source": "cpu"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 4,
+        "source": "cpu"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "chipset"
+      }
+    ],
+    "bifurcation": "unknown",
+    "note": "One physical slot. A second card needs an M.2-to-OCuLink or M.2-to-PCIe adapter and an external PSU. Generic profile, not a specific product.",
+    "source_url": "https://www.pcisig.com",
+    "checked_on": "2026-11-03"
+  },
+  {
+    "id": "gigabyte-mz32-ar0",
+    "name": "Gigabyte MZ32-AR0 (EPYC 7001/7002, rev 1.x)",
+    "socket": "SP3",
+    "ram_type": "DDR4",
+    "ram_slots": 16,
+    "max_ram_gb": null,
+    "gpu_slots": [
+      {
+        "id": "Slot_7",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_6",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_5",
+        "lanes": 8,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_4",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_3",
+        "lanes": 16,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_2",
+        "lanes": 8,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "Slot_1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "E-ATX",
+    "price_low": 667.0,
+    "price_high": 667.0,
+    "price_basis": "new",
+    "note": "Gigabyte: Slot_7 x16 shared with 4 NVMe (SlimSAS); Slot_5 is an x16 connector at Gen4 x8; Slot_1 is Gen3 x16 or x8 and shares with Slot_2 (Gen3 x0 or x8, an x8 connector). Slots 1-2 are Gen3 while 3-7 are Gen4. Lane widths for Slot_2 and Slot_1 are the maximum. One OCP 2.0 mezzanine Gen3 x16. 16 DIMM slots; max RAM not read. Price: CoreRex asking $667 (was $784.35), in stock, new, read through a search excerpt 2026-11-04; the listing does not say which revision it is. Other US listings were out of stock: Newegg $637.99 (rev 3.0), CE Showroom $634.49, Walmart $603.43. Gigabyte lists memory as RDIMM/LRDIMM up to 128GB per module on 16 slots; the board total was not stated, so max RAM is left blank.",
+    "source_url": "https://corerex.com/product/gigabyte-mz32-ar0-socket-sp3-system-on-chip-chipset-eatx-motherboard",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.gigabyte.com/Enterprise/Server-Motherboard/MZ32-AR0-rev-10",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "slot list with gen and widths",
+      "16 DIMM",
+      "2 M.2 Gen3 x4",
+      "E-ATX",
+      "socket SP3",
+      "rev 3.x page (end of support) lists the same slot layout: 5 Gen4 x16/x8 slots, 2 Gen3 slots, OCP mezzanine"
+    ],
+    "spec_unverified": [
+      "max RAM",
+      "lane source",
+      "bifurcation"
+    ],
+    "brand": "gigabyte",
+    "image_query": "Gigabyte MZ32-AR0 (EPYC 7001/7002, rev 1.x)"
+  }
+]

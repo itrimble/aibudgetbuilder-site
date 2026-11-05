@@ -1,0 +1,122 @@
+[
+ {
+  "code": "USD",
+  "name": "US dollar",
+  "locale": "en-US"
+ },
+ {
+  "code": "EUR",
+  "name": "Euro",
+  "locale": "en-IE"
+ },
+ {
+  "code": "GBP",
+  "name": "Pound sterling",
+  "locale": "en-GB"
+ },
+ {
+  "code": "CAD",
+  "name": "Canadian dollar",
+  "locale": "en-CA"
+ },
+ {
+  "code": "AUD",
+  "name": "Australian dollar",
+  "locale": "en-AU"
+ },
+ {
+  "code": "NZD",
+  "name": "New Zealand dollar",
+  "locale": "en-NZ"
+ },
+ {
+  "code": "JPY",
+  "name": "Japanese yen",
+  "locale": "ja-JP"
+ },
+ {
+  "code": "CHF",
+  "name": "Swiss franc",
+  "locale": "de-CH"
+ },
+ {
+  "code": "SEK",
+  "name": "Swedish krona",
+  "locale": "sv-SE"
+ },
+ {
+  "code": "NOK",
+  "name": "Norwegian krone",
+  "locale": "nb-NO"
+ },
+ {
+  "code": "DKK",
+  "name": "Danish krone",
+  "locale": "da-DK"
+ },
+ {
+  "code": "PLN",
+  "name": "Polish zloty",
+  "locale": "pl-PL"
+ },
+ {
+  "code": "CZK",
+  "name": "Czech koruna",
+  "locale": "cs-CZ"
+ },
+ {
+  "code": "HUF",
+  "name": "Hungarian forint",
+  "locale": "hu-HU"
+ },
+ {
+  "code": "INR",
+  "name": "Indian rupee",
+  "locale": "en-IN"
+ },
+ {
+  "code": "BRL",
+  "name": "Brazilian real",
+  "locale": "pt-BR"
+ },
+ {
+  "code": "MXN",
+  "name": "Mexican peso",
+  "locale": "es-MX"
+ },
+ {
+  "code": "ZAR",
+  "name": "South African rand",
+  "locale": "en-ZA"
+ },
+ {
+  "code": "KRW",
+  "name": "South Korean won",
+  "locale": "ko-KR"
+ },
+ {
+  "code": "SGD",
+  "name": "Singapore dollar",
+  "locale": "en-SG"
+ },
+ {
+  "code": "CNY",
+  "name": "Chinese yuan",
+  "locale": "zh-CN"
+ },
+ {
+  "code": "HKD",
+  "name": "Hong Kong dollar",
+  "locale": "zh-HK"
+ },
+ {
+  "code": "TRY",
+  "name": "Turkish lira",
+  "locale": "tr-TR"
+ },
+ {
+  "code": "ILS",
+  "name": "Israeli shekel",
+  "locale": "he-IL"
+ }
+]

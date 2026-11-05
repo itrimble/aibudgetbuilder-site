@@ -1,0 +1,158 @@
+{
+  "checked_on": "2026-11-05",
+  "intro_source": "https://www.techpowerup.com/forums/threads/linux-now-officially-available-for-playstation-5.348624/",
+  "our_measurements": [
+    {
+      "what": "Radeon RX 6600 XT 8 GB (the omarchy box), Qwen3 8B 4-bit, llama.cpp Vulkan, all layers on the card",
+      "pp": 746,
+      "tg": 46,
+      "measured_on": "2026-10-17",
+      "note": "Measured by us over SSH. It is the only hardware on this page we have measured. Nothing about a PS5 or a BC-250 was run by us."
+    }
+  ],
+  "options": [
+    {
+      "id": "ps5-x8",
+      "name": "Eight used PS5 consoles",
+      "units": 8,
+      "gb_per_unit": 16,
+      "unit_price_usd": 443,
+      "unit_price_note": "Average sold price of a used PS5 Slim Digital over the last 30 days (424 sales) per Techfare, 2026-11-05. Typical sold range $326 to $442. Our 2026-10-17 post used a lower range of $180 to $450, so this is a price rise.",
+      "price_source": "https://techfare.com/game-consoles/Sony-PlayStation-5-Slim-Digital-Edition",
+      "price_checked_on": "2026-11-05",
+      "watts_each_low": null,
+      "watts_each_high": null,
+      "network": "1 Gbit Ethernet per console",
+      "verdict": "Not recommended",
+      "catches": [
+        "Linux needs a jailbreak. The ps5-linux loader supports only Phat and Slim consoles on firmware 3.00 to 7.61, and its FAQ says 8.00 and above will not be supported.",
+        "It is a soft mod: a restart drops the console back to the normal system until the exploit is run again.",
+        "You cannot read the firmware version from a used listing, so eight consoles is eight rolls of the dice.",
+        "Eight machines each hold their own 16 GB shared with the system. It is not one 128 GB pool; llama.cpp splits layers across the network and runs at the speed of the slowest link.",
+        "We have not looked into the legal side of breaking the console protections. Read up before you try."
+      ],
+      "sources": [
+        {
+          "label": "ps5-linux loader repository",
+          "url": "https://github.com/ps5-linux/ps5-linux-loader"
+        },
+        {
+          "label": "TechPowerUp: Linux now officially available for PlayStation 5",
+          "url": "https://www.techpowerup.com/forums/threads/linux-now-officially-available-for-playstation-5.348624/"
+        },
+        {
+          "label": "llama.cpp discussion: RPC over Ethernet strangely slow",
+          "url": "https://github.com/ggml-org/llama.cpp/discussions/9136"
+        }
+      ],
+      "price_kind": "average sold"
+    },
+    {
+      "id": "bc250-x8",
+      "name": "Eight AMD BC-250 boards (ex-mining, built on the PS5 chip family)",
+      "units": 8,
+      "gb_per_unit": 16,
+      "unit_price_usd": 290,
+      "unit_price_note": "One US eBay listing for a used ASRock BC-250 16 GB with an SSD and free shipping, US $290, listing last updated 2026-11-03 (259 sold). Other listings seen: $399.99 with shipping to some regions, 249 EUR in Germany, $329 new from Japan plus shipping. These are asking prices, and the board needs a power supply, case or frame, cooling and a network port.",
+      "price_source": "https://www.ebay.com/itm/327238672127",
+      "price_checked_on": "2026-11-05",
+      "watts_each_low": 101,
+      "watts_each_high": 116,
+      "watts_rated_max": 220,
+      "network": "1 Gbit Ethernet per board (Tecce used gigabit; a 2.5 Gbit card is untested by us)",
+      "verdict": "A cheap experiment, not a 128 GB machine",
+      "catches": [
+        "It boots ordinary Linux, so there is no jailbreak, but it is a bare board: you supply power, cooling and a network connection.",
+        "Each board has 16 GB shared between the processor and the graphics side, and the setup guide says you silently get only 12 GiB until a kernel memory setting is raised.",
+        "The one published cluster write-up used three boards over gigabit Ethernet (45 GB of pooled memory). A third board added overhead instead of speed, and long contexts were slow. It is a way to fit a bigger model, not a way to run it faster.",
+        "We found no clean eight-board result. A twelve-board chassis exists, but we found nothing tying it to a measured result.",
+        "That the BC-250 is nearly the same silicon as a PS5 comes from a forum comment. Verify it before betting money on it."
+      ],
+      "sources": [
+        {
+          "label": "akandr/bc250 setup guide and benchmarks",
+          "url": "https://github.com/akandr/bc250"
+        },
+        {
+          "label": "Ciro Lucio Tecce: Local Inference on an Asrock BC250 Cluster",
+          "url": "https://ciroluciotecce.it/en/posts/bc250-cluster-inferenza-locale/"
+        },
+        {
+          "label": "LocalLLaMA: two BC-250 boards running Qwen3.6-35B",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1wou3gr/my_foray_into_local_ai_two_bc250_ex_mining_apus/"
+        },
+        {
+          "label": "Level1Techs: Project Ariel and LLMtune",
+          "url": "https://forum.level1techs.com/t/project-ariel-asrock-bc250-arieltune/252262"
+        }
+      ],
+      "price_kind": "asking"
+    },
+    {
+      "id": "strix-halo",
+      "name": "One 128 GB mini PC (Ryzen AI Max+ 395 class)",
+      "units": 1,
+      "gb_per_unit": 128,
+      "unit_price_usd_low": 2700,
+      "unit_price_usd_high": 4400,
+      "unit_price_note": "Listings seen on 2026-10-17 and not refreshed today. We did not verify each listing's memory size.",
+      "price_source": "https://www.ebay.com/shop/ai-395-max?_nkw=ai+395+max",
+      "price_checked_on": "2026-10-17",
+      "watts_each_low": null,
+      "watts_each_high": null,
+      "network": "none needed",
+      "verdict": "Most expensive, least fuss",
+      "catches": [
+        "One pool of memory and no cluster to tune, but the memory is shared with the processor and slower than a graphics card's own.",
+        "Prices are from 2026-10-17 and have not been rechecked."
+      ],
+      "sources": [
+        {
+          "label": "eBay Ryzen AI Max+ 395 listings",
+          "url": "https://www.ebay.com/shop/ai-395-max?_nkw=ai+395+max"
+        },
+        {
+          "label": "Amazon GMKtec EVO-X2 listing",
+          "url": "https://www.amazon.com/GMKtec-Computers-LPDDR5X-8000MHz-EVO-X2/dp/B0F53XL9DP"
+        }
+      ],
+      "price_kind": "asking"
+    }
+  ],
+  "bc250_benchmarks": {
+    "source_url": "https://github.com/akandr/bc250",
+    "checked_on": "2026-10-17",
+    "caveat": "One author's numbers on one board each (24 or 40 compute units unlocked), llama.cpp with Vulkan. We have not reproduced them. Ollama ran some models 32 to 44 percent slower than llama.cpp in the same guide, and a long-context test fell to 2.3 tokens per second at 64K of context.",
+    "median_watts": {
+      "24cu": 101,
+      "40cu": 116
+    },
+    "rows": [
+      {
+        "model": "gpt-oss-20b (llama.cpp)",
+        "tg_24cu": 66.1,
+        "tg_40cu": 87.5
+      },
+      {
+        "model": "Qwen3.6 35B-A3B at 2-bit",
+        "tg_24cu": 59.6,
+        "tg_40cu": 78.0
+      },
+      {
+        "model": "deepseek-r1 14B",
+        "tg_24cu": 21.2,
+        "tg_40cu": 30.4
+      },
+      {
+        "model": "Qwen3 8B (Ollama)",
+        "tg_24cu": 31.6,
+        "tg_40cu": null
+      },
+      {
+        "model": "QwQ 32B at 2-bit",
+        "tg_24cu": 9.6,
+        "tg_40cu": 14.9
+      }
+    ]
+  }
+}

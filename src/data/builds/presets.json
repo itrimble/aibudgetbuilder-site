@@ -1,0 +1,56 @@
+[
+  {
+    "name": "6x P40 (144 GB)",
+    "counts": {
+      "tesla-p40": 6
+    },
+    "adapters": [
+      "adt-r43sf-m2-x16-gen3",
+      "adt-r13-x1-x16-extender",
+      "adt-r13-x1-x16-extender",
+      "adt-r13-x1-x16-extender"
+    ],
+    "psu": "msi-meg-ai1600t-pcie5"
+  },
+  {
+    "name": "4x V100 32GB SXM2 (128 GB)",
+    "counts": {
+      "v100-32-sxm2": 4
+    },
+    "adapters": [
+      "adt-r43sf-m2-x16-gen3",
+      "adt-r13-x1-x16-extender"
+    ],
+    "psu": "asrock-taichi-tc-1650t"
+  },
+  {
+    "name": "4x V620 (128 GB)",
+    "counts": {
+      "radeon-pro-v620": 4
+    },
+    "adapters": [
+      "adt-r43sf-m2-x16-gen3",
+      "adt-r13-x1-x16-extender"
+    ],
+    "psu": "asrock-taichi-tc-1650t"
+  },
+  {
+    "name": "4x MI50 (128 GB)",
+    "counts": {
+      "instinct-mi50-32": 4
+    },
+    "adapters": [
+      "adt-r43sf-m2-x16-gen3",
+      "adt-r13-x1-x16-extender"
+    ],
+    "psu": "asrock-taichi-tc-1650t"
+  },
+  {
+    "name": "2x V620 (64 GB, the video)",
+    "counts": {
+      "radeon-pro-v620": 2
+    },
+    "adapters": [],
+    "psu": "corsair-rm1000x-shift"
+  }
+]

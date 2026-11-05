@@ -1,0 +1,11 @@
+[
+  {
+    "model": "mixtral-8x7b",
+    "infohash": "5546272da9065eddeb6fcd7ffddeef5b75be79a7",
+    "magnet": "magnet:?xt=urn:btih:5546272da9065eddeb6fcd7ffddeef5b75be79a7&dn=mixtral-8x7b-32kseqlen",
+    "published_by": "Mistral AI",
+    "published_at": "https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "note": "Mistral's own Hugging Face README calls this its original torrent release of Mixtral 8x7B. The torrent holds Mistral's original file layout, not the Hugging Face or GGUF files, so you would have to convert it before llama.cpp can read it. The README's tracker addresses are garbled, so only the infohash and name are kept here and your client finds peers through the DHT. Compare the files against the checksums Mistral publishes before you use them.",
+    "checked_on": "2026-11-04"
+  }
+]

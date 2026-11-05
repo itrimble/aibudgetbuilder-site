@@ -1,0 +1,273 @@
+[
+  {
+    "id": "corsair-hx1500i-cp-9020309-na",
+    "name": "Corsair HX1500i (CP-9020309-NA)",
+    "watts": 1500,
+    "pcie_8pin": 5,
+    "price": 319.99,
+    "source_url": "https://www.corsair.com/us/en/p/psu/cp-9020309-na/hx1500i-fully-modular-ultra-low-noise-platinum-atx-1500-watt-pc-power-supply-cp-9020309-na",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.corsair.com/us/en/p/psu/cp-9020309-na/hx1500i-fully-modular-ultra-low-noise-platinum-atx-1500-watt-pc-power-supply-cp-9020309-na",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years",
+      "price"
+    ],
+    "spec_unverified": [
+      "rails",
+      "has_12vhpwr"
+    ],
+    "spec_note": "Connector counts are 'TOTAL CONNECTORS' from the page cable table. Page has a Single/Multiple 12V rail toggle; rail count not stated. ATX 3.1 certified per page. PCIe 8-pin (6+2) 5 connectors. Separately lists 2 cables '2x8-Pin to 12V-2x6' (1 per cable); whether these use PSU 8-pin outputs is not stated, so has_12vhpwr (native) is null and the 5 is not reduced.",
+    "price_basis": "msrp"
+  },
+  {
+    "id": "corsair-hx1200i-cp-9020307-na",
+    "name": "Corsair HX1200i (CP-9020307-NA)",
+    "watts": 1200,
+    "pcie_8pin": 5,
+    "price": 279.99,
+    "source_url": "https://www.corsair.com/us/en/p/psu/cp-9020307-na/hx1200i-fully-modular-ultra-low-noise-platinum-atx-1200-watt-pc-power-supply-cp-9020307-na",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.corsair.com/us/en/p/psu/cp-9020307-na/hx1200i-fully-modular-ultra-low-noise-platinum-atx-1200-watt-pc-power-supply-cp-9020307-na",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years",
+      "price"
+    ],
+    "spec_unverified": [
+      "rails",
+      "has_12vhpwr"
+    ],
+    "spec_note": "Connector counts are 'TOTAL CONNECTORS' from the page cable table. Page has a Single/Multiple 12V rail toggle; rail count not stated. ATX 3.1 certified per page. PCIe 8-pin (6+2) 5 connectors; also lists 2 cables '2x8-Pin to 12V-2x6' (1 per cable), so native 12V-2x6 is unconfirmed (null).",
+    "price_basis": "msrp"
+  },
+  {
+    "id": "corsair-rm1200x-shift",
+    "name": "Corsair RM1200x SHIFT (CP-9020254-NA)",
+    "watts": 1200,
+    "pcie_8pin": 8,
+    "price": 254.99,
+    "source_url": "https://www.corsair.com/us/en/p/psu/cp-9020254-na/rm1200x-shift-80-plus-gold-fully-modular-atx-power-supply-cp-9020254-na",
+    "checked_on": "2026-11-04",
+    "price_basis": "msrp",
+    "spec_source_url": "https://www.corsair.com/us/en/p/psu/cp-9020254-na/rm1200x-shift-80-plus-gold-fully-modular-atx-power-supply-cp-9020254-na",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "has_12vhpwr",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years"
+    ],
+    "spec_unverified": [
+      "rails",
+      "price"
+    ],
+    "spec_note": "pcie_8pin = cable listing: 2 cables x2 connectors + 4 cables x1 = 8. Power table shows a single +12V row (100A), rail count not stated as a number so left null. Price is Corsair's own store price, not a third-party retailer. Price and InStock status re-read on the Corsair page on 2026-11-04 and unchanged."
+  },
+  {
+    "id": "corsair-rm1000x-shift",
+    "name": "Corsair RM1000x SHIFT (CP-9020253-NA)",
+    "watts": 1000,
+    "pcie_8pin": 7,
+    "price": 234.99,
+    "source_url": "https://www.corsair.com/us/en/p/psu/cp-9020253-na/rm1000x-shift-80-plus-gold-fully-modular-atx-power-supply-cp-9020253-na",
+    "checked_on": "2026-11-04",
+    "price_basis": "msrp",
+    "spec_source_url": "https://www.corsair.com/us/en/p/psu/cp-9020253-na/rm1000x-shift-80-plus-gold-fully-modular-atx-power-supply-cp-9020253-na",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "has_12vhpwr",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years"
+    ],
+    "spec_unverified": [
+      "rails",
+      "price"
+    ],
+    "spec_note": "pcie_8pin = cable listing: 2 cables x2 + 3 cables x1 = 7. Single +12V row (83.3A); rail count not stated as a number. Price is Corsair's own store price (In Stock when read). Price and InStock status re-read on the Corsair page on 2026-11-04 and unchanged."
+  },
+  {
+    "id": "msi-meg-ai1300p-pcie5",
+    "name": "MSI MEG Ai1300P PCIE5",
+    "watts": 1300,
+    "pcie_8pin": 8,
+    "price": 349.99,
+    "source_url": "https://us-store.msi.com/MEG-Ai1300P-PCIE5",
+    "checked_on": "2026-11-03",
+    "price_basis": "new",
+    "spec_source_url": "https://us-store.msi.com/MEG-Ai1300P-PCIE5",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "has_12vhpwr",
+      "eps_8pin",
+      "efficiency",
+      "warranty_years"
+    ],
+    "spec_unverified": [
+      "atx_version",
+      "rails"
+    ],
+    "spec_note": "MSI table: PCI-E (6+2) = 8, PCI-E 5.0 (16 pin) = 1 (600W), EPS (8 PIN) 1 + EPS (4+4) 1 = 2 EPS outputs. ATX 3.1 appears only in page keywords, not in the spec table, so left null. Price from MSI US store, In Stock when read."
+  },
+  {
+    "id": "msi-meg-ai1600t-pcie5",
+    "name": "MSI MEG Ai1600T PCIE5",
+    "watts": 1600,
+    "pcie_8pin": 9,
+    "price": 622.96,
+    "source_url": "https://www.newegg.com/msi-atx12v-1600-w-up-to-94-power-supplies-black-meg-ai1600t-pcie5/p/N82E16817701028",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://storage-asset.msi.com/datasheet/power-supply/global/MEG-Ai1600T-PCIE5.pdf",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "eps_8pin",
+      "efficiency"
+    ],
+    "spec_unverified": [
+      "rails",
+      "has_12vhpwr (datasheet lists 2 native 12V-2x6 connectors, which the picker does not count)",
+      "warranty_years (MSI store page blocked automated access)",
+      "atx_version (datasheet says 'ATX 3.1 Ready')"
+    ],
+    "spec_note": "MSI global datasheet, read 2026-11-04: Power Watt 1600W; ATX 24-pin 1; EPS 4+4 pin 2; PCI-E 5.1 16-pin 2 (600W); PCI-E 6+2 pin 9; 80 PLUS Titanium up to 94%. The picker counts the 9 PCIe 6+2-pin outputs. Price is a Newegg asking price read 2026-11-03 (tier C, new); MSI's own US store returned Access Denied, so it was not used.",
+    "price_basis": "new"
+  },
+  {
+    "id": "asus-pro-ws-1600w-platinum",
+    "name": "ASUS Pro WS 1600W Platinum (200-240 V mains only)",
+    "watts": 1600,
+    "pcie_8pin": 4,
+    "price": 595.23,
+    "source_url": "https://www.newegg.com/p/1HU-009B-001R4",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asus.com/motherboards-components/power-supply-units/workstation/asus-pro-ws-1600p/techspec/",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "ac_input_range"
+    ],
+    "spec_unverified": [
+      "rails",
+      "warranty_years",
+      "has_12vhpwr (2 native PCIe 5.1 16-pin connectors are listed, which the picker does not count)"
+    ],
+    "spec_note": "ASUS tech spec page, read 2026-11-04: Total Output 1600W; ATX 3.1; 80Plus Platinum; AC input 200-240Vac (it will not run from 120 V mains); cable connectors MB 24/20-pin x1, CPU 4+4-pin x2, PCIE 5.1 16-pin x2, PCIE 6+2-pin x4, SATA x9, PERIPHERAL x3. The picker counts the 4 PCIe 6+2-pin outputs, so it suits few cards. Price is a Newegg asking price read 2026-11-03 (tier C, new).",
+    "price_basis": "new"
+  },
+  {
+    "id": "corsair-rm750e-cp-9020262-na",
+    "name": "Corsair RM750e (CP-9020262-NA), backordered at Corsair on 2026-11-04",
+    "watts": 750,
+    "pcie_8pin": 3,
+    "price": 99.99,
+    "source_url": "https://www.corsair.com/us/en/p/psu/cp-9020262-na/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020262-na",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.corsair.com/us/en/p/psu/cp-9020262-na/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020262-na",
+    "spec_checked_on": "2026-11-04",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years",
+      "price"
+    ],
+    "spec_unverified": [
+      "rails",
+      "has_12vhpwr (the page lists one 12V-2x6 cable, which the picker does not count)"
+    ],
+    "spec_note": "Corsair page, read 2026-11-04. Cable listing: PCIe 8-pin (6+2) one single-ended cable (1 connector) and one double-ended cable (2 connectors) = 3 PCIe 8-pin outputs; EPS 4+4 x2; one 12V-2x6 cable. Continuous power 750 W, ATX12V 3.1, 80 PLUS Gold, 7 year warranty, AC input 100-240 V. Price $99.99 is Corsair's list price. Corsair showed the item as OutOfStock (backorder) on 2026-11-04, so the price may not be what you can pay today.",
+    "price_basis": "msrp"
+  },
+  {
+    "id": "asrock-taichi-tc-1650t",
+    "name": "ASRock Taichi TC-1650T",
+    "vendor": "ASRock",
+    "watts": 1650,
+    "pcie_8pin": 8,
+    "has_12vhpwr": true,
+    "rails": null,
+    "eps_8pin": 2,
+    "atx_version": "ATX 3.1",
+    "efficiency": "80 Plus Titanium",
+    "warranty_years": 10,
+    "price": 370.99,
+    "price_basis": "new",
+    "source_url": "https://www.amazon.com/ASRock-TC-1650T-Titanium-Capacitors-Cybenetics/dp/B0DNLP39SR",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://www.asrock.com/Power-Supply/Taichi/TC-1650T/",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "has_12vhpwr",
+      "eps_8pin",
+      "atx_version",
+      "efficiency",
+      "warranty_years"
+    ],
+    "spec_unverified": [
+      "rails"
+    ],
+    "spec_note": "Page lists PCIe 6+2pin = 8, PCIe5.1 12+4pin = 2, EPS 4+4pin = 2. Wattage 1650 from model name/keywords. Page shows a 137.5 A +12V figure but no rail count. Price: Amazon asking price $370.99, sold by ASRock USA, in stock, read through an Exa search excerpt on 2026-11-04 (not the page itself; delivery text in the excerpt dates from late October). Other US sellers listed $399.99 (Selects, Nov 1) to $479.99 (Central Computers). Retailer listing gives input 100-240 V, so it can run on 120 V mains."
+  },
+  {
+    "id": "thermaltake-toughpower-gf3-1650w",
+    "name": "Thermaltake Toughpower GF3 1650W Gold TT Premium",
+    "vendor": "Thermaltake",
+    "watts": 1650,
+    "pcie_8pin": 9,
+    "has_12vhpwr": true,
+    "rails": null,
+    "eps_8pin": null,
+    "atx_version": "ATX 3.0",
+    "efficiency": "80 Plus Gold",
+    "warranty_years": 10,
+    "price": 299.99,
+    "price_basis": "new",
+    "source_url": "https://www.newegg.com/thermaltake-toughpower-gf3-series-ps-tpd-1650fnfagu-4-1650-w/p/N82E16817153434",
+    "checked_on": "2026-11-04",
+    "spec_source_url": "https://es.thermaltake.com/toughpower-gf3-1650w-gold-tt-premium-edition.html",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "watts",
+      "pcie_8pin",
+      "has_12vhpwr",
+      "atx_version",
+      "efficiency",
+      "warranty_years"
+    ],
+    "spec_unverified": [
+      "eps_8pin",
+      "rails",
+      "warranty_years (EU label on the maker page; US Newegg listing also says 10 years)"
+    ],
+    "spec_note": "Spanish EU store page: PCI-E 6+2pin = 9, PCIe 12+4pin = 2, ATX 3.0, 80 PLUS Gold at 115Vac, '10 Years' EU Guarantee Label (EU warranty, US may differ). Price there is EUR 349.90, not USD, so price is null. Input current 20-16A. US price: Newegg asking price $299.99 (sold by Newegg, plus a Thermaltake direct offer at $299.99 + $4.99 shipping), read through Exa search excerpts 2026-11-04. Amazon lists the same $299.99 and states 9x PCIe 6+2 and 2x 12+4. Input 100-240 V."
+  }
+]

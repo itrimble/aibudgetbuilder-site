@@ -1,0 +1,367 @@
+[
+  {
+    "id": "asrock-x470-taichi",
+    "name": "ASRock X470 Taichi (AM4)",
+    "socket": "AM4",
+    "ram_type": null,
+    "ram_slots": null,
+    "max_ram_gb": null,
+    "gpu_slots": [
+      {
+        "id": "PCIE_a",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_b",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_c",
+        "lanes": null,
+        "gen": 2,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_a",
+        "lanes": null,
+        "gen": null,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_b",
+        "lanes": null,
+        "gen": null,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Partial record: only the page's description line was read ('2 PCIe 3.0 x16, 1 PCIe 2.0 x16, 2 PCIe 2.0 x1', '2 Ultra M.2', DDR4-3466+ OC). The query on the spec table failed. Electrical widths unknown, so lanes are null. No price.",
+    "source_url": "https://www.asrock.com/mb/AMD/X470%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/AMD/X470%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "slot connector counts/gens from description text",
+      "2 Ultra M.2 sockets"
+    ],
+    "spec_unverified": [
+      "electrical lanes",
+      "DIMM count and max RAM",
+      "slot sharing",
+      "lane source",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock X470 Taichi (AM4)"
+  },
+  {
+    "id": "asrock-z790-taichi",
+    "name": "ASRock Z790 Taichi (LGA1700)",
+    "socket": "LGA1700",
+    "ram_type": "DDR5",
+    "ram_slots": 4,
+    "max_ram_gb": null,
+    "gpu_slots": [
+      {
+        "id": "PCIE1",
+        "lanes": 16,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE2",
+        "lanes": null,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 5,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_2",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_3",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_4",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      },
+      {
+        "id": "M2_5",
+        "lanes": 4,
+        "gen": 4,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": "EATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Two PCIe 5.0 x16 (PCIE1, PCIE2) and one PCIe 4.0 x16 running x4 (PCIE3). ASRock: if M2_1 is occupied PCIE1 drops to x8; if PCIE2 is occupied M2_1 is disabled; if PCIE3 is occupied SATA3_0-3 are disabled; M2_1 and M2_2 cannot both be populated. PCIE2 electrical width is not stated on the page, so lanes are null. No price.",
+    "source_url": "https://www.asrock.com/mb/Intel/Z790%20Taichi/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/Intel/Z790%20Taichi/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "socket via 12th-14th gen",
+      "4 DDR5 DIMM",
+      "PCIE1/2 PCIe 5.0 x16, PCIE3 PCIe 4.0 x16 at x4",
+      "5 M.2 and sharing rules",
+      "EATX"
+    ],
+    "spec_unverified": [
+      "PCIE2 electrical width",
+      "lane source",
+      "max RAM",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock Z790 Taichi (LGA1700)"
+  },
+  {
+    "id": "asus-x99-e-ws-usb31",
+    "name": "ASUS X99-E WS/USB 3.1 (LGA2011-3)",
+    "socket": "LGA2011-3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 128,
+    "gpu_slots": [
+      {
+        "id": "PCIE_x16_1",
+        "lanes": 16,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_2",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_3",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_4",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_5",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_6",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x16_7",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [
+      {
+        "id": "M2_1",
+        "lanes": 4,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "ASUS manual: 7 PCIe 3.0/2.0 x16 slots; with a 40-lane CPU one card runs x16, two x16/x16, three x16/x16/x16, four x16 each, seven x16/x8/x8/x8/x8/x8/x8. A 28-lane CPU is listed with the same modes in the spec text. The manual's text does not say which physical slots take the x16 positions in each mode, so only slot 1 is given a lane count. M.2 shares bandwidth with a PCIe 3.0 x4 slot, PCIe mode only. 128GB max. The manual PDF was opened from a third-party mirror (digitalintelligence.com), not asus.com.",
+    "source_url": "https://digitalintelligence.com/files/X99-E_WS_USB31_Manual.pdf",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://digitalintelligence.com/files/X99-E_WS_USB31_Manual.pdf",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "7 PCIe 3.0/2.0 x16 and mode list",
+      "8 DIMM, 128GB",
+      "1 M.2 Socket 3 PCIe-only"
+    ],
+    "spec_unverified": [
+      "per-slot electrical map",
+      "PLX switch / cpu-vs-switch lane source",
+      "form factor",
+      "bifurcation",
+      "price",
+      "maker-domain source (mirror of ASUS manual)"
+    ],
+    "brand": "asus",
+    "image_query": "ASUS X99-E WS/USB 3.1 (LGA2011-3)"
+  },
+  {
+    "id": "supermicro-x10sra-f",
+    "name": "Supermicro X10SRA-F (LGA2011-3)",
+    "socket": "LGA2011-3",
+    "ram_type": "DDR4",
+    "ram_slots": 8,
+    "max_ram_gb": 1024,
+    "gpu_slots": [
+      {
+        "id": "x16_a",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_b",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_c",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      },
+      {
+        "id": "x16_d",
+        "lanes": null,
+        "gen": 3,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [],
+    "bifurcation": "unknown",
+    "form_factor": "ATX",
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "Four PCIe 3.0 x16 slots that run 16/16/NA/8 or 16/8/8/8 (the page does not map this to slot numbers, so lanes are null). Slot #1 (x4) and Slot #4 (x16) are disabled with an i7-5820K. Also 2 PCIe 2.0 x1 in an x4 slot. Up to 1TB 3DS ECC LRDIMM. No price.",
+    "source_url": "https://www.supermicro.com/en/products/motherboard/x10sra-f",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.supermicro.com/en/products/motherboard/x10sra-f",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "4 x PCIe 3.0 x16 and modes",
+      "8 DIMM and capacities",
+      "socket R3",
+      "ATX"
+    ],
+    "spec_unverified": [
+      "per-slot lanes",
+      "M.2",
+      "lane source",
+      "bifurcation",
+      "price"
+    ],
+    "brand": "supermicro",
+    "image_query": "Supermicro X10SRA-F (LGA2011-3)"
+  },
+  {
+    "id": "asrock-h81-pro-btc-r2",
+    "name": "ASRock H81 Pro BTC R2.0 (mining board, LGA1150)",
+    "socket": "LGA1150",
+    "ram_type": "DDR3",
+    "ram_slots": 2,
+    "max_ram_gb": 16,
+    "gpu_slots": [
+      {
+        "id": "PCIE2",
+        "lanes": 16,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_1",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_2",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_3",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_4",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      },
+      {
+        "id": "PCIE_x1_5",
+        "lanes": 1,
+        "gen": 2,
+        "source": "unknown"
+      }
+    ],
+    "m2_slots": [],
+    "bifurcation": "unknown",
+    "form_factor": null,
+    "price_low": null,
+    "price_high": null,
+    "price_basis": null,
+    "note": "One PCIe 2.0 x16 (x16 mode) and five PCIe 2.0 x1. DDR3, 16GB max. Older and weaker than the H110 Pro BTC+. M.2 not listed on the page. No price.",
+    "source_url": "https://www.asrock.com/mb/Intel/H81%20Pro%20BTC%20R2.0/index.asp",
+    "checked_on": "2026-11-03",
+    "spec_source_url": "https://www.asrock.com/mb/Intel/H81%20Pro%20BTC%20R2.0/index.asp",
+    "spec_checked_on": "2026-11-03",
+    "spec_verified": [
+      "PCIe slot list",
+      "2 DDR3, 16GB"
+    ],
+    "spec_unverified": [
+      "lane source",
+      "form factor",
+      "price"
+    ],
+    "brand": "asrock",
+    "image_query": "ASRock H81 Pro BTC R2.0 (mining board, LGA1150)"
+  }
+]

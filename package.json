@@ -1,0 +1,38 @@
+{
+  "name": "aibudgetbuild",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "audit": "vite-node scripts/update-methodology.ts --print",
+    "methodology": "vite-node scripts/update-methodology.ts",
+    "methodology:check": "vite-node scripts/update-methodology.ts --check",
+    "images": "node scripts/fetch-images.mjs",
+    "serve": "scripts/serve.sh",
+    "serve:stop": "scripts/serve.sh stop",
+    "serve:status": "scripts/serve.sh status",
+    "models:links": "node scripts/check-model-links.mjs",
+    "stage": "scripts/stage.sh"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^3.2.4"
+  }
+}
