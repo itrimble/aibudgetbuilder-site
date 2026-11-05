@@ -749,6 +749,60 @@
     "tg128": "24 ± 0",
     "date": "2026-10-25",
     "host": "14-inch M2 Max"
+   },
+   {
+    "model": "Gemma-4-12B QAT Q4_0, flash attention on",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "1,538.69 ± 6.15",
+    "tg128": "44.88 ± 0.02",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted)"
+   },
+   {
+    "model": "Gemma-4-12B QAT Q4_0, flash attention on",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "CUDA",
+    "pp512": "2,123.08 ± 24.18",
+    "tg128": "49.83 ± 0.03",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted)"
+   },
+   {
+    "model": "Qwen2.5-7B Q4_K_M",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "CUDA",
+    "pp512": "2,919.15 ± 37.74",
+    "tg128": "81.46 ± 0.04",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted) (n=3)"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0, flash attention on",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "673.27 ± 0.55",
+    "tg128": "22.52 ± 0.06",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted) (n=3)"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0, flash attention on",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "CUDA",
+    "pp512": "943.70 ± 10.33",
+    "tg128": "24.63 ± 0.01",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted) (n=3)"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0, split across the Arc Pro B60 and the 5060 Ti",
+    "card": "two cards, one tunnel",
+    "backend": "llama.cpp (both cards)",
+    "pp512": "453.46 ± 5.21",
+    "tg128": "15.67 ± 2.17",
+    "date": "2026-10-23",
+    "host": "16-inch M1 Max (author's setup notes, n=5 unless noted)"
    }
   ],
   "fit_note": "The 27B model fits on the 16 GB card with room to spare: weights 14,367 MiB, KV cache 661 MiB and compute buffer 150 MiB make 15,178 MiB on a card with 16,311 MiB, with all 66 layers on the card and 1,133 MiB free.",
@@ -779,7 +833,7 @@
    "Prices are the article's Amazon and maker figures from 2026-11-05 and were not rechecked by us.",
    "Everything was measured by one author on Macs running Omarchy with a patched kernel; a PC with a different port, kernel or driver may differ.",
    "The article is about a computer you already own: the host is not in the totals.",
-   "We could not read the author's X post about it (login wall)."
+   "We could not read the author's X post about it (login wall); the setup notes and the article are what we read."
   ],
   "source": {
    "label": "Joshua Warren, \"Local AI at home: a $299.99 card and a $947.95 build\"",
@@ -1298,23 +1352,40 @@
    "Full text of Geerling's LLM result tables (fetch truncated before them), the dev.to TB5-vs-USB4 RPC article (excerpt only), the YouTube video transcripts beyond what search returned."
   ],
   "conflict": {
-   "title": "One caveat on the article's host",
-   "text": "The article's author runs this from an Apple Silicon MacBook Pro under Linux with a patched kernel. We could not independently confirm PCIe tunnelling for that exact setup (the Asahi Linux project said on 2026-10-28 that it was not yet supported, seen as an excerpt). The dock-and-card approach itself is well documented on Windows and Linux PCs with USB4, Thunderbolt or OCuLink, which is what most readers will use.",
+   "title": "The host: what the author's own setup notes say",
+   "text": "The setup runs on a 16-inch M1 Max MacBook Pro under Linux, which is not a stock configuration. The author's setup notes (read by us, with captured receipts dated 2026-10-23: nvidia-smi, boltctl, PCI and kernel-log captures) say it needs a patched 7.1.12 kernel with 16K pages and a working tunnel window, a driver registry option that avoids a hard reset of the Mac, and two NVIDIA library files for Vulkan to find the card. The author measured the card over USB4 at PCIe x4 through the tunnel (the card can do x8). The Asahi Linux project said on 2026-10-28 that its own kernel does not yet support PCIe tunnelling (a post seen as an excerpt), so this is a private patched kernel, not something a stock Apple-silicon Linux install gives you. We have not reproduced any of it. On a Windows or Linux PC with USB4, Thunderbolt or OCuLink, the dock-and-card approach needs none of these patches.",
    "sources": [
+    {
+     "label": "omarchy-egpu: RTX 5060 Ti setup notes (author's repository)",
+     "url": "https://github.com/joshuaswarren/omarchy-egpu/blob/main/cards/rtx-5060-ti/setup.md",
+     "how_seen": "read page in full by us",
+     "date": "2026-10-23 (status table)"
+    },
     {
      "label": "Asahi Linux post (Mastodon)",
      "url": "https://social.treehouse.systems/@AsahiLinux/117519553147505278",
      "how_seen": "excerpt only",
      "date": "2026-10-28"
-    },
-    {
-     "label": "Phoronix report on the USB4 patch series (as cited in our research)",
-     "url": null,
-     "how_seen": "excerpt only",
-     "date": "2026-08-31"
     }
    ]
   },
-  "b60_note": "The article's Arc Pro B60 result (3 tok/s on a 27B model, 20 on a 7B) is far below the public llama.cpp Vulkan scoreboard, which lists the B60 at about 68.6 tok/s on the same 7B model. That points to the author's host or driver stack, not the card, so do not read it as the B60's real speed."
+  "b60_note": "The article's Arc Pro B60 result (3 tok/s on a 27B model, 20 on a 7B) is far below the public llama.cpp Vulkan scoreboard, which lists the B60 at about 68.6 tok/s on the same 7B model. That points to the author's host or driver stack, not the card, so do not read it as the B60's real speed.",
+  "host_setup": {
+   "title": "What the author's host needed (from the setup notes)",
+   "items": [
+    "A lab-patched 7.1.12 kernel with 16K pages and a working PCIe tunnel window (root-port prefetchable-window enable and identity bus addresses).",
+    "A driver registry key inside NVreg_RegistryDwords (RmForceDisableIomapWC=1). Without it, the first nvidia-smi hard-reset the Mac; with it there was no crash and no Xid error across several runs. The author infers the cause and says it was not measured for NVIDIA specifically. It also removes NVIDIA's unaligned BAR access on arm64.",
+    "For Vulkan: libEGL_nvidia.so.0 and the glvnd EGL vendor file 10_nvidia.json. Without them every Vulkan call fails and llama.cpp sees no GPU.",
+    "Two eGPUs on one tunnel: with both attached at boot, the Intel Arc card's SR-IOV BARs (56 GiB) used up the tunnel window and the second card got no address space. Running the NVIDIA card alone avoided that. Chaining the two enclosures worked with one more kernel option (hpmmioprefsize=256M).",
+    "The author's nouveau (open-source driver) route was only compiled, never run on this hardware; every measurement uses the NVIDIA open modules."
+   ],
+   "source": {
+    "label": "omarchy-egpu: RTX 5060 Ti setup notes (author's repository)",
+    "url": "https://github.com/joshuaswarren/omarchy-egpu/blob/main/cards/rtx-5060-ti/setup.md",
+    "how_seen": "read page in full by us",
+    "date": "2026-10-23 (status table)"
+   }
+  },
+  "setup_discrepancy": "On the same 27B model and Vulkan backend the article reports 20 tok/s generating, while the setup notes list 22.52. Both are the author's numbers from different runs and builds, so read the speed as about 20 to 23 tok/s. Splitting the model across two cards was slower (15.67) than the 5060 Ti alone."
  }
 }

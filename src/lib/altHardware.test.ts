@@ -64,7 +64,10 @@ describe('more-hardware data', () => {
       expect(s.how_seen, s.url ?? s.label).toBeTruthy()
       expect(s.url ?? '', s.label).toMatch(/^https:\/\//)
     }
-    expect(more.egpu.conflict.text).toMatch(/Apple Silicon/)
+    expect(more.egpu.conflict.text).toMatch(/M1 Max/)
+    expect(more.egpu.conflict.text).toMatch(/not reproduced/)
+    expect(more.egpu.host_setup.items.length).toBeGreaterThan(3)
+    expect(more.egpu.host_setup.source.how_seen).toMatch(/read/)
     for (const r of more.egpu.cost_per_gb.rows) expect(r.egpu_total_usd, r.card).toBeCloseTo(r.card_usd + 177.96, 1)
   })
 })

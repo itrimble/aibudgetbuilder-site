@@ -9,6 +9,7 @@ type Cpg = { card: string; card_usd: number; egpu_total_usd: number; egpu_usd_pe
 const X = data.egpu as unknown as {
   links: Link[]; more_docks: Dock[]; others_measured: Meas[]; multi: Multi[]; catches: string[]; not_found: string[]
   cost_per_gb: { note: string; rows: Cpg[] }; conflict: { title: string; text: string; sources: Src[] }; b60_note: string
+  host_setup: { title: string; items: string[]; source: Src }; setup_discrepancy: string
 }
 const usd0 = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`
 
@@ -24,6 +25,9 @@ export function EgpuExpanded() {
         <h3 className="mb-1 font-mono text-base text-accent">{X.conflict.title}</h3>
         <p className="text-muted">{X.conflict.text}</p>
         <p className="mt-1 text-xs text-subtle"><Links list={X.conflict.sources} /></p>
+        <h4 className="mt-3 font-mono text-sm text-accent">{X.host_setup.title}</h4>
+        <ul className="mt-1 list-disc space-y-1 pl-5 text-xs text-muted">{X.host_setup.items.map((i) => <li key={i}>{i}</li>)}</ul>
+        <p className="mt-2 text-xs text-muted">{X.setup_discrepancy}</p>
       </div>
 
       <div>

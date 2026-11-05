@@ -550,7 +550,7 @@
    "linux": {
     "status": "not researched",
     "backend": null,
-    "note": "An unofficial Linux port for Apple silicon exists; we did not research its GPU compute support, so we make no claim."
+    "note": "An unofficial Linux port for Apple silicon exists; we did not research its GPU compute support, so we make no claim. One author documents an eGPU on an Apple-silicon MacBook under Linux with a private patched kernel; see the Budget eGPU section. That is not stock support."
    },
    "macos": {
     "status": "works",
