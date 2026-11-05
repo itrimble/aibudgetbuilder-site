@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { auditAll, summarise, tier, type AuditInput } from './audit'
 import { liveAuditInput } from './auditData'
+import ratesData from '../data/rates.json'
+import linksData from '../data/models/links.json'
 
-const live = () => liveAuditInput('2026-11-05')
+// The data refreshes itself daily, so the pinned date must never be earlier than the newest snapshot (a snapshot from "the future" is an audit error).
+const PINNED = [ratesData.fetched_on, ratesData.published, linksData.checked_on, '2026-11-05'].sort().pop()!
+const live = () => liveAuditInput(PINNED)
 const ruleHits = (i: AuditInput, rule: string) => auditAll(i).filter((f) => f.rule === rule)
 
 describe('methodology audit on the live data', () => {
@@ -76,8 +80,9 @@ describe('each logic check actually fires on bad data', () => {
   it('R22/R23/R24: rates must be complete, and go stale then unshippable', () => {
     const i = live(); i.rates = { ...i.rates, rates: { ...i.rates.rates, GBP: 0 } }
     expect(ruleHits(i, 'R22').length).toBe(1)
-    expect(ruleHits({ ...live(), today: '2026-11-12' }, 'R23').length).toBe(1)
-    expect(ruleHits({ ...live(), today: '2026-12-10' }, 'R24').length).toBe(1)
+    const fixed = { ...live(), rates: { ...live().rates, published: '2026-11-03' } }
+    expect(ruleHits({ ...fixed, today: '2026-11-12' }, 'R23').length).toBe(1)
+    expect(ruleHits({ ...fixed, today: '2026-12-10' }, 'R24').length).toBe(1)
   })
   it('R25: budget tiers out of order or duplicated', () => {
     const i = live(); i.budgets = [{ id: 'a', name: 'A', usd: 1000 }, { id: 'b', name: 'B', usd: 500 }, { id: 'a', name: 'C', usd: 2000 }]
