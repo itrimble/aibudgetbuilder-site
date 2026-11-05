@@ -3,7 +3,7 @@ export type Source = { source_url: string; checked_on: string; note?: string; pl
 export type Gpu = Source & {
   id: string
   name: string
-  vendor: 'NVIDIA' | 'AMD'
+  vendor: 'NVIDIA' | 'AMD' | 'Intel'
   vram_gb: number
   arch?: string // optional: left blank when the maker page does not state it
   slot_width: number // physical slots occupied
