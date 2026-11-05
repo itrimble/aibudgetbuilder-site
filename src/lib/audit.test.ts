@@ -132,6 +132,18 @@ describe('each logic check actually fires on bad data', () => {
     const owned = { ...i, presets: [preset], pcs: [{ name: 'Test PC', owned_gpus: ['rx-6600xt'] }] } as unknown as AuditInput
     expect(ruleHits(owned, 'R32').length).toBeGreaterThan(0)
   })
+  it('R37/R38/R39: a note that contradicts its range, has a formatting slip, or speaks in first person', () => {
+    const base = live()
+    const withNote = (note: string, lo = 489, hi = 555) => ({ ...base, gpus: base.gpus.map((g, i) => (i === 0 ? { ...g, note, price_low: lo, price_high: hi } : g)) }) as AuditInput
+    expect(ruleHits(withNote('Dealers list $1,500 and $1,750.'), 'R37').length).toBe(1)
+    expect(ruleHits(withNote('Dealers list $1,500 and $1,750. Why the range and the dealer figures differ: they are new.'), 'R37').length).toBe(0)
+    expect(ruleHits(withNote('Used asking $520.'), 'R37').length).toBe(0)
+    expect(ruleHits(withNote('Its 12-month average is $138,.'), 'R38').length).toBe(1)
+    expect(ruleHits(withNote('Lowest asking price (5,999), not an average.'), 'R38').length).toBe(1)
+    expect(ruleHits(withNote("The low end is the tracker's 12-month average."), 'R38').length).toBe(1)
+    expect(ruleHits(withNote('Price is my sum.'), 'R39').length).toBe(1)
+    expect(ruleHits(withNote('Price is our sum.'), 'R39').length).toBe(0)
+  })
   it('R34/R35/R36: untrusted model links, missing, moved or stale link checks, and torrents that are not the maker\'s', () => {
     const i = live()
     const link = (extra: object) => ({ checked_on: '2026-11-04', status: 'ok', ...extra })

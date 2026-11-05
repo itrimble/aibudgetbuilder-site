@@ -1059,7 +1059,7 @@
   },
   {
     "id": "msi-x570-tomahawk",
-    "name": "MSI MAG X570 Tomahawk WiFi (Ian's board)",
+    "name": "MSI MAG X570 Tomahawk WiFi",
     "socket": "AM4",
     "ram_type": "DDR4",
     "ram_slots": 4,
@@ -1127,7 +1127,7 @@
       "price"
     ],
     "brand": "msi",
-    "image_query": "MSI MAG X570 Tomahawk WiFi (Ian's board)"
+    "image_query": "MSI MAG X570 Tomahawk WiFi"
   },
   {
     "id": "hp-z4-g4",

@@ -265,9 +265,9 @@ export default function App() {
                 <ul className="mt-2 space-y-2" aria-live="polite">
                   {budgetResult.options.slice(0, 3).map((o) => (
                     <li key={o.gpu.id} className="rounded border border-line bg-panel p-3 text-sm">
-                      <div className="font-semibold">{o.n} x {o.gpu.name.replace(/\(.*?\)/g, '').trim()}: {o.vram} GB total</div>
+                      <div className="font-semibold">{o.n} x {o.gpu.name.replace(/\(.*?\)/g, '').trim()}: {o.vram} GB total{o.vram > o.newVram ? ` (${o.newVram} GB new + ${o.vram - o.newVram} GB you own)` : ''}</div>
                       <div className="text-xs text-muted">{rng(o.costLow, o.costHigh)} ({rng(o.perGbLow, o.perGbHigh)} per GB added){usdNote(o.costLow, o.costHigh)}</div>
-                      <div className="text-xs text-subtle">Needs: {o.needs.join(', ') || 'nothing else'}.{o.placeholders.length > 0 && ` Includes placeholder prices for: ${o.placeholders.join(', ')}.`}</div>
+                      <div className="text-xs text-subtle">Needs: {o.needs.join(', ') || 'nothing else'}.{o.slowLink ? ' Cards on x1 risers load models slowly (about 1 GB/s); speed after loading changes little.' : ''}{o.placeholders.length > 0 && ` Includes placeholder prices for: ${o.placeholders.join(', ')}.`}</div>
                       <button className="mt-1 text-xs text-link underline" onClick={() => {
                         setCounts({ [o.gpu.id]: o.n })
                         setAdapterIds([...o.m2Adapters.map((a) => a.id), ...Array(o.risers).fill('adt-r13-x1-x16-extender')])

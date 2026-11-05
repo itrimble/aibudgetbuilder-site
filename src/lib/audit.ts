@@ -68,6 +68,9 @@ export const RULES: Rule[] = [
   { id: 'R34', severity: 'error', title: 'Every model link points at a trusted host and every Hugging Face repo it names has a dated link check', why: 'People download multi-gigabyte files from these links. A link to a look-alike host, or to a repo nobody has checked, is the easiest way to send a reader to the wrong file.' },
   { id: 'R35', severity: 'warn', title: 'Model links are checked within 30 days and none is moved, missing, disabled or unreachable', why: 'Repos get renamed, gated and deleted. A stale or broken link is a small failure that looks like a broken promise, so the snapshot has a shelf life and a moved repo shows up as a warning to fix.' },
   { id: 'R36', severity: 'error', title: 'A torrent is listed only with a valid infohash, the maker named, and the maker\'s own page that publishes it', why: 'A magnet link guarantees consistent bytes, not authentic ones. The site lists a torrent only when the maker itself published it, so a reader never gets a swarm link from a stranger.' },
+  { id: 'R37', severity: 'warn', title: 'A price quoted in a card note must sit near the card\'s range, or the note must say why it does not', why: 'A reader who sees a note quoting $1,500 beside a range of $489 to $555 stops trusting every number. The range and its note must agree or explain the gap.' },
+  { id: 'R38', severity: 'error', title: 'Card notes carry no formatting slips or claims that contradict the price rule', why: 'Stray punctuation such as "$138,.", a price with no dollar sign, or the old claim that a low end is a 12-month average makes the data look unfinished or states something the methodology forbids.' },
+  { id: 'R39', severity: 'warn', title: 'Card notes are written in the site\'s voice, not first person', why: 'Phrases like "my sum" or "I have not benchmarked" read like a working log, not a published page. Say "our sum" or "we have not".' },
 ]
 const ruleOf = (id: string) => RULES.find((r) => r.id === id)!
 
@@ -337,6 +340,18 @@ export function auditAll(d: AuditInput): Finding[] {
     }
     if (!isDate(d.modelLinks.checked_on)) add('R35', 'model-links', 'checked_on is missing or invalid.')
     else if (ageDays(d.modelLinks.checked_on, new Date(today + 'T00:00:00Z')) > 30) add('R35', 'model-links', `The link check is ${Math.round(ageDays(d.modelLinks.checked_on, new Date(today + 'T00:00:00Z')))} days old; run node scripts/check-model-links.mjs.`)
+  }
+  for (const g of d.gpus as unknown as { id: string; note?: string; price_low?: number; price_high?: number }[]) {
+    const note = g.note ?? ''
+    const id = `gpu:${g.id}`
+    if (/,\.|\$\d+,\.|low end is the tracker'?s? (12-month|all-time) average|\((\d[\d,]*)\), not an average/.test(note)) add('R38', id, 'The note has a formatting slip or a price-basis claim the methodology forbids.')
+    if (/\b(I|my|me)\b/.test(note)) add('R39', id, 'The note uses first person.')
+    const lo = g.price_low ?? 0, hi = g.price_high ?? 0
+    if (hi > 0 && !/Why the range|outlier|ignored|not part of the used range|not a price you can pay|listings from /i.test(note)) {
+      const amounts = [...note.matchAll(/\$([\d,]+(?:\.\d+)?)/g)].map((m) => Number(m[1].replace(/,/g, ''))).filter((n) => n >= 100)
+      const odd = amounts.filter((n) => n > hi * 1.6 || n < lo * 0.5)
+      if (odd.length) add('R37', id, `The note quotes ${odd.map((n) => '$' + n).join(', ')} but the range is $${lo} to $${hi}, and the note does not say why.`)
+    }
   }
   const moeIds = new Set((d.moe ?? []).map((m) => m.id))
   for (const t of d.torrents ?? []) {

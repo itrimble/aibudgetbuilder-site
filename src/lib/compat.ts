@@ -64,7 +64,7 @@ export function checkBuild(build: Build, board: Board, gpus: Gpu[], adapters: Ad
     if (p.where === 'NO SLOT')
       f.push({ severity: 'error', code: 'no-slot', message: `${p.gpu.name} has no slot or adapter left on ${board.name}.` })
     else if (p.lanes <= 1)
-      f.push({ severity: 'warn', code: 'x1-link', message: `${p.gpu.name} would run at x${p.lanes}: model loading is slow, layer-split inference after load is usually fine.` })
+      f.push({ severity: 'warn', code: 'x1-link', message: `${p.gpu.name} would run at x${p.lanes}. PCIe 3.0 x1 moves about 1 GB/s, so a 16 GB model takes roughly 16 seconds or more to load. Once loaded, the speed loss is small (one measurement: about 3% for an RTX 4090 on a single lane), and a model split by layers across cards is the setup that tolerates it.` })
     else if (p.lanes <= 4)
       f.push({ severity: 'info', code: 'x4-link', message: `${p.gpu.name} sits at x${p.lanes} (${p.where}).` })
   }

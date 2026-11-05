@@ -10,7 +10,7 @@ export type Tier = { id: string; name: string; usd: number; blurb: string }
 export const TIERS = budgets as Tier[]
 
 export type Option = {
-  gpu: Gpu; n: number; vram: number
+  gpu: Gpu; n: number; vram: number; newVram: number; slowLink: boolean
   costLow: number; costHigh: number; perGbLow: number; perGbHigh: number
   m2Adapters: Adapter[]; risers: number; psu: Psu; buyPsu: boolean
   needs: string[]; findings: Finding[]; placeholders: string[]
@@ -58,7 +58,7 @@ function plan(i: RecommendInput, g: Gpu, n: number): Option | null {
   if (useRiser) needs.push(`${useRiser} x1 riser${useRiser > 1 ? 's' : ''}`)
   if (g.cooling === 'passive') needs.push('fan shroud or forced airflow')
   const placeholders = [psu.price > 0 && psu.placeholder ? 'PSU' : '', useM2 && m2Adapter?.placeholder ? 'M.2 adapters' : '', useRiser && riser?.placeholder ? 'risers' : ''].filter(Boolean)
-  return { gpu: g, n, vram, costLow, costHigh, perGbLow: costLow / bought, perGbHigh: costHigh / bought, m2Adapters, risers: useRiser, psu, buyPsu: psu.price > 0, needs, findings, placeholders }
+  return { gpu: g, n, vram, newVram: bought, slowLink: useRiser > 0, costLow, costHigh, perGbLow: costLow / bought, perGbHigh: costHigh / bought, m2Adapters, risers: useRiser, psu, buyPsu: psu.price > 0, needs, findings, placeholders }
 }
 
 /** The best build per card model that stays inside the budget (top of the price range), most memory first, plus the cheapest buildable option for when nothing fits. */
