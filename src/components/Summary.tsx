@@ -79,9 +79,9 @@ export function MobileBar({ vram, newVram, ownedVram, rng, low, high, problems, 
       )}
       <button onClick={() => setOpen(!open)} aria-expanded={open}
         className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-3 border-t border-line bg-panel px-4 py-3 text-left shadow-[0_-4px_14px_rgba(0,0,0,.12)]">
-        <span><span className="font-mono text-lg font-bold text-accent">{vram} GB</span> <span className="text-xs text-subtle">{ownedVram > 0 ? `${newVram} new + ${ownedVram} owned` : 'total'}</span></span>
-        <span className="font-mono text-sm">{rng(low, high)}</span>
-        <span className={`rounded-full border px-2 text-xs ${problems ? 'border-err text-err' : warnings ? 'border-warn text-warn' : 'border-ok text-ok'}`}>{problems ? `${problems} problem${problems > 1 ? 's' : ''}` : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''}` : 'ok'} {open ? '▼' : '▲'}</span>
+        <span className="min-w-0"><span className="font-mono text-lg font-bold text-accent">{vram} GB</span><span className="block text-[11px] leading-tight text-subtle">{ownedVram > 0 ? `${newVram} new + ${ownedVram} owned` : 'total'}</span></span>
+        <span className="whitespace-nowrap font-mono text-sm">{rng(low, high)}</span>
+        <span className={`whitespace-nowrap rounded-full border px-2 text-xs ${problems ? 'border-err text-err' : warnings ? 'border-warn text-warn' : 'border-ok text-ok'}`}>{problems ? `${problems} problem${problems > 1 ? 's' : ''}` : warnings ? `${warnings} warning${warnings > 1 ? 's' : ''}` : 'ok'} {open ? '▼' : '▲'}</span>
       </button>
     </div>
   )
