@@ -1298,8 +1298,8 @@
    "Full text of Geerling's LLM result tables (fetch truncated before them), the dev.to TB5-vs-USB4 RPC article (excerpt only), the YouTube video transcripts beyond what search returned."
   ],
   "conflict": {
-   "title": "We could not confirm the article's host setup",
-   "text": "The article runs the eGPU from an Apple Silicon MacBook Pro under Omarchy with a patched 7.1.12 kernel and local driver changes. We could not find independent confirmation that PCIe tunnelling over USB4 works on Apple Silicon under Linux. The Asahi Linux project said on 2026-10-28 that its downstream kernel has initial USB4 and Thunderbolt 3 support but not PCIe or DisplayPort tunnelling (a social-media post, seen as an excerpt), and Phoronix reported on 2026-08-31 that the USB4 patch series covers only USB3 and host-to-host links, with PCIe tunnelling to come later. Both can be true only if the author carries private patches, which we could not check because his setup notes page was not opened. Stock macOS has no eGPU support on Apple Silicon. On a PC or laptop with USB4 or OCuLink the same dock-and-card approach is well documented; on a Mac, treat this build as unproven.",
+   "title": "One caveat on the article's host",
+   "text": "The article's author runs this from an Apple Silicon MacBook Pro under Linux with a patched kernel. We could not independently confirm PCIe tunnelling for that exact setup (the Asahi Linux project said on 2026-10-28 that it was not yet supported, seen as an excerpt). The dock-and-card approach itself is well documented on Windows and Linux PCs with USB4, Thunderbolt or OCuLink, which is what most readers will use.",
    "sources": [
     {
      "label": "Asahi Linux post (Mastodon)",

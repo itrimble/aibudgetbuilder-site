@@ -15,7 +15,7 @@ const BEFORE: Item[] = [
   { title: 'The card you already own', body: 'Your current card draws power too. Tick "Keep the card already in your PC" only if it will stay installed; if you pull it, nothing is plugged into the monitor.', basis: 'site' },
   { title: 'Cooling for passive cards', body: 'Datacenter cards such as the Tesla P40 have no fan. They need forced airflow through the card and often an adapter cable for the power connector. The Checks panel flags a passive card.', basis: 'site' },
   { title: 'Memory sticks', body: 'No 32 GB DDR4 stick is single rank, so the board\'s faster single-rank rating does not apply to it. With two sticks, use one stick per channel in the slots the manual names.', basis: 'site' },
-  { title: 'Drivers and operating system', body: 'Check the card\'s software column before you buy: some old cards only work with a pinned driver or only through Vulkan. We list CUDA, ROCm and Vulkan support per card; a Windows column is not built yet.', basis: 'site' },
+  { title: 'Drivers and operating system', body: 'Check the card\'s software column before you buy: some old cards only work with a pinned driver or only through Vulkan. We list CUDA, ROCm and Vulkan support per card, and the Windows, Linux, Mac tab says what each operating system supports, card family by card family.', basis: 'site' },
   { title: 'Physical size and the case', body: 'The site does not yet check card length against a case. Measure it yourself; open frames and risers are the usual answer for four or more cards.', basis: 'general' },
 ]
 

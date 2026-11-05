@@ -14,6 +14,7 @@ import { Community } from './components/Community'
 import { OtherHardware } from './components/OtherHardware'
 import { UseCases } from './components/UseCases'
 import { BuyingGuide } from './components/BuyingGuide'
+import { OsGuide } from './components/OsGuide'
 import { Icon, Logo, PartImage, credits } from './components/Visual'
 import { disclosure, shopLink } from './lib/affiliate'
 import { CURRENCIES, RATES, detectCurrency, fmt, fmtRange, fmtUsd, fmtUsdRange, isSupported, toUsd } from './lib/currency'
@@ -71,7 +72,7 @@ function useCurrency() {
 
 export default function App() {
   const [dark, setDark] = useTheme()
-  const [view, setView] = useState<'builder' | 'models' | 'capacity' | 'community' | 'consoles' | 'uses' | 'guide'>('builder')
+  const [view, setView] = useState<'builder' | 'models' | 'capacity' | 'community' | 'consoles' | 'uses' | 'guide' | 'os'>('builder')
   const shared = useMemo(() => (typeof window === 'undefined' ? null : decodeBuild(window.location.hash, KNOWN)), []) // a build link, or null (never a partial build)
   const [pcId, setPcId] = useState(shared?.pcId ?? 'omarchy')
   const pc = PCS.find((p) => p.id === pcId)!
@@ -162,13 +163,13 @@ export default function App() {
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="font-mono text-2xl font-bold text-accent">AI Budget Build</h1>
-          <p className="text-sm text-muted">Start from the PC you own. See what fits, what it costs, and what it can run.</p>
+          <p className="text-sm text-muted">Budget local AI on Windows, Linux or macOS. Start from the machine you own: see what fits, what it costs, and what it can run.</p>
         </div>
         <nav className="flex flex-wrap gap-2" aria-label="Views">
-          {(['builder', 'models', 'capacity', 'community', 'consoles', 'uses', 'guide'] as const).map((v) => (
+          {(['builder', 'models', 'capacity', 'community', 'consoles', 'uses', 'guide', 'os'] as const).map((v) => (
             <button key={v} onClick={() => setView(v)} aria-pressed={view === v}
               className={`rounded px-3 py-1 font-mono text-sm ${view === v ? 'bg-accent text-onaccent' : 'border border-line bg-panel'}`}>
-              {v === 'builder' ? 'Builder' : v === 'models' ? 'Models by task' : v === 'capacity' ? 'What can I run?' : v === 'community' ? 'Community reports' : v === 'consoles' ? 'PS5, Mac and odd hardware' : v === 'uses' ? 'What people build' : 'Before you buy'}
+              {v === 'builder' ? 'Builder' : v === 'models' ? 'Models by task' : v === 'capacity' ? 'What can I run?' : v === 'community' ? 'Community reports' : v === 'consoles' ? 'PS5, Mac and odd hardware' : v === 'uses' ? 'What people build' : v === 'guide' ? 'Before you buy' : 'Windows, Linux, Mac'}
             </button>
           ))}
           <label className="flex items-center gap-1 text-sm text-muted">Currency
@@ -185,7 +186,9 @@ export default function App() {
       </p>
 
       <main id="main">
-        {view === 'guide' ? (
+        {view === 'os' ? (
+          <OsGuide />
+        ) : view === 'guide' ? (
           <BuyingGuide />
         ) : view === 'uses' ? (
           <UseCases />

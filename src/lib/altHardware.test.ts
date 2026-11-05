@@ -68,3 +68,21 @@ describe('more-hardware data', () => {
     for (const r of more.egpu.cost_per_gb.rows) expect(r.egpu_total_usd, r.card).toBeCloseTo(r.card_usd + 177.96, 1)
   })
 })
+
+import os from '../data/builds/os-support.json'
+describe('os-support data', () => {
+  it('has a valid status for all three systems on every row and a source for every operating system', () => {
+    for (const r of os.matrix) for (const k of ['windows', 'linux', 'macos'] as const) expect(['works', 'works with caveat', 'not supported', 'not researched'], `${r.family} ${k}`).toContain(r[k].status)
+    for (const o of os.os) expect(o.sources.length, o.os).toBeGreaterThan(0)
+    expect(os.os.map((o) => o.os).sort()).toEqual(['Linux', 'Windows', 'macOS'])
+  })
+  it('keeps the two facts we checked ourselves tied to a page we read', () => {
+    expect(os.verified_by_us.length).toBe(2)
+    for (const v of os.verified_by_us) { expect(v.source.url).toMatch(/^https:\/\//); expect(v.source.how_seen).toMatch(/read/) }
+  })
+  it('makes no claim about Windows or Linux on Apple silicon', () => {
+    const apple = os.matrix.find((r) => r.family.startsWith('Apple'))!
+    expect(apple.windows.status).toBe('not researched')
+    expect(apple.linux.status).toBe('not researched')
+  })
+})

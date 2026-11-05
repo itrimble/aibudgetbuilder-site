@@ -1,0 +1,624 @@
+{
+ "checked_on": "2026-11-05",
+ "intro": "This site is about budget local AI across hardware and across Windows, Linux and macOS. The Builder checks PC parts (slots, lanes, power, cooling); this page covers what runs where. Support changes with every driver and release, so each statement says where it was read and when.",
+ "verified_by_us": [
+  {
+   "claim": "AMD's Windows HIP SDK 7.2.0 does not support the Radeon RX 6000 series (6600 to 6950 XT), the Radeon PRO W6800 or the Radeon PRO VII (MI50-class gfx906). It does support the RX 7000 and RX 9000 series, the R9700 and the Ryzen AI Max chips.",
+   "source": {
+    "label": "AMD HIP SDK for Windows 7.2.0: system requirements (page dated 2026-07-31, marked legacy documentation)",
+    "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/reference/system-requirements.html",
+    "how_seen": "read page in full by us, 2026-11-05"
+   }
+  },
+  {
+   "claim": "The CUDA Toolkit 13.5 release notes say support was removed for Maxwell, Pascal and Volta GPUs (anything older than Turing). That is the toolkit, not necessarily the driver: older toolkits and drivers still run those cards.",
+   "source": {
+    "label": "NVIDIA CUDA Toolkit 13.5 release notes",
+    "url": "https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html",
+    "how_seen": "read page by us (matching line extracted), 2026-11-05"
+   }
+  }
+ ],
+ "os": [
+  {
+   "os": "Windows",
+   "summary": "Windows is easiest with NVIDIA (CUDA driver only, no toolkit needed for Ollama/LM Studio). AMD works two ways: ROCm/HIP only on RDNA3/RDNA4 Radeons (RX 7000/9000, W7000, Ryzen AI Max) and NOT on RX 6000/V620 per AMD's Windows table; everything else falls back to Vulkan, which Ollama and llama.cpp support. Intel Arc runs via llama.cpp SYCL (Windows 11) or Vulkan. Pascal/Volta datacenter cards work on the R580 driver but are a hassle on Windows (see pitfalls).",
+   "tools": [
+    "Ollama for Windows (Windows 10 22H2+; NVIDIA driver 551.61+; AMD needs ROCm v7/HIP7 driver stack for ROCm or any Vulkan-capable Radeon driver for Vulkan)",
+    "LM Studio (Windows x64 or ARM; AVX2 required; 16 GB RAM recommended; at least 4 GB dedicated VRAM recommended)",
+    "llama.cpp prebuilt release zips (CUDA, Vulkan, HIP, SYCL variants exist; SYCL zips named llama-bNNNN-bin-win-sycl-x64.zip)"
+   ],
+   "limits": [
+    "AMD Ryzen AI Max+ 395 on Windows: AMD's blog says Variable Graphics Memory gives up to 96 GB on a 128 GB machine, with Vulkan llama.cpp (Adrenalin 25.8.1 and later), enabling up to 128B-parameter models. So the Windows GPU cap on Strix Halo is 96 GB of 128 GB per AMD, set via VGM.",
+    "Intel SYCL doc: model needs shared memory of at least 8.0 GB for an iGPU and 4.0 GB for a discrete GPU for llama-2-7b Q4_0 (docs example).",
+    "Windows 11 22H2 is the validated Windows for HIP SDK 7.2.0; ROCm compat matrix page lists Windows 11 25H2 with Adrenalin 26.10.41.05."
+   ],
+   "pitfalls": [
+    "RX 6000 series (6800 XT, 6900 XT etc) and Radeon PRO W6800/W6600: AMD HIP SDK 7.2.0 Windows table shows Runtime, HIP SDK and Debugger all NOT supported for gfx1030/1031/1032. Use Vulkan instead.",
+    "NVIDIA datacenter doc (R580 release notes) says graphics APIs on Windows (OpenGL, Vulkan, DX11/12) or any WDDM 2.0+ functionality on Data Center GPUs requires vGPU. Practical consequence for Tesla P40/P100/V100 on Windows: Vulkan and display via WDDM are not supported on them by NVIDIA; use CUDA (TCC mode) only. Whether a specific P40 can be flipped to WDDM is NOT confirmed from a primary page (see not_found).",
+    "Forum excerpts (excerpt only, not primary): mixed TCC and WDDM GPUs break WSL2/Docker GPU visibility; one poster says it works when the WDDM card gets the lower driver index. Treat as anecdotal.",
+    "Tesla cards have no display output: you need a second GPU or iGPU for the monitor.",
+    "Windows Vulkan on Strix Halo: a LM Studio bug report (issue 1048, Oct 2025, excerpt only) described Vulkan runtime not using the GPU on gfx1151 in one version; driver and runtime versions matter.",
+    "WSL2 GPU passthrough: not verified from a primary page in this run. NVIDIA CUDA-on-WSL is widely used, but I did not read NVIDIA's doc."
+   ],
+   "sources": [
+    {
+     "label": "AMD HIP SDK for Windows 7.2.0 system requirements",
+     "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/reference/system-requirements.html",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "AMD ROCm compatibility matrix (redirected, shows ROCm 10.1.0, Windows 11 25H2 row)",
+     "url": "https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "Ollama hardware support",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "read page (full text saved and read)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "Ollama on Windows",
+     "url": "https://docs.ollama.com/windows",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "LM Studio system requirements",
+     "url": "https://lmstudio.ai/docs/app/system-requirements",
+     "how_seen": "read page (targeted quote extract; Windows GPU line and Linux details partly truncated)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "llama.cpp SYCL backend doc",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/docs/backend/SYCL.md",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "os": "Linux",
+   "summary": "Linux has the widest hardware reach. NVIDIA: CUDA 13.x toolkit has dropped Maxwell, Pascal and Volta, but NVIDIA's R580 datacenter driver notes still list CUDA 13.x for Maxwell, Pascal, Volta, so Pascal/Volta stay usable on the R580 driver branch (and with older CUDA 12.x toolkits). AMD: ROCm officially covers RDNA3/RDNA4 plus Radeon PRO V-series (gfx1030) per AMD's matrix; Ollama lists RX 6800 XT/6900 XT and V620 as supported on Linux; MI50/MI60 (gfx906) were put in maintenance mode in ROCm 6.0 and removed in ROCm 7.0 per release notes (excerpt). Vulkan is the fallback for anything else. Intel Arc: llama.cpp SYCL verified on Arc A770/A750/B580 on Linux.",
+   "tools": [
+    "Ollama (Linux install script/container)",
+    "llama.cpp built from source or release binaries (CUDA/HIP/Vulkan/SYCL)",
+    "LM Studio AppImage (Ubuntu 20.04+ stated; newer than 22 not well tested; x64 and ARM64)",
+    "vLLM (Linux-focused; not verified from a primary page in this run)"
+   ],
+   "limits": [
+    "Ollama NVIDIA: compute capability 5.0+ and driver 550+; CC 5.0 to 6.2 (Maxwell/Pascal) requires driver 570+.",
+    "MLX CUDA on Linux needs NVIDIA SM 7.5 or newer (Turing and up), driver 550.54.14+, CUDA toolkit 12.0+; CUDA 13 package needs driver 580+. Pascal/Volta cannot use MLX-CUDA.",
+    "Vulkan under Ollama: needs cap_perfmon (setcap) or root to expose free VRAM; otherwise it estimates sizes."
+   ],
+   "pitfalls": [
+    "CUDA Toolkit 13.5 release notes (read): 'Removed support for Maxwell, Pascal, and Volta GPUs, corresponding to compute capabilities earlier than Turing' and cusolver 'Dropped support for pre-Turing architectures'. So new CUDA toolkits will not target P40/P100/V100/1080 Ti; use pre-built llama.cpp/Ollama binaries that ship their own older CUDA runtimes, or a CUDA 12.x build.",
+    "NVIDIA datacenter notes (read): Release 470 was the last driver branch for Kepler. R580 notes still list Maxwell, Pascal, Volta. An NVIDIA Omniverse doc excerpt says Maxwell/Pascal/Volta are not supported by newer branches (excerpt only, search snippet cut off). Exact end-of-life branch statement was not read on an NVIDIA primary page.",
+    "AMD MI50/MI60 (gfx906): ROCm 6.0 changelog excerpt says gfx906 'enters maintenance mode in ROCm 6.0'; ROCm 7.0.0 release notes excerpt says 'Removed support for AMD Instinct MI50 and MI60'. Ollama's current Linux list has no gfx906 (lists MI100/gfx908 and up). Expect to pin an old ROCm or use Vulkan; not verified in this run.",
+    "Ollama notes you can try HSA_OVERRIDE_GFX_VERSION (e.g. 10.3.0 for gfx1030-like cards) to force unsupported RDNA2 cards; unofficial.",
+    "Ollama on AMD Linux may need the ollama user in the render group; Vulkan on Intel/AMD needs Mesa or vendor packages.",
+    "SYCL: the llama.cpp release packages require the same oneAPI and Intel GPU driver versions as the build machine."
+   ],
+   "sources": [
+    {
+     "label": "CUDA Toolkit 13.5 release notes",
+     "url": "https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "NVIDIA Data Center driver R580 release notes",
+     "url": "http://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "AMD ROCm 10.1.0 compatibility matrix",
+     "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
+     "how_seen": "read page (targeted quote extract; Radeon table returned, MI50/MI60 rows not returned)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "ROCm 7.0.0 release notes (MI50/MI60 removed)",
+     "url": "https://rocm.docs.amd.com/en/docs-7.0.0/about/release-notes.html",
+     "how_seen": "excerpt only",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "ROCm 6.0 changelog (gfx906 maintenance mode)",
+     "url": "https://rocm.docs.amd.com/en/docs-6.0.0/about/CHANGELOG.html",
+     "how_seen": "excerpt only",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "Ollama hardware support (Linux AMD list incl. 6800 XT, V620; Vulkan notes)",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "read page",
+     "date": "2026-11-05"
+    }
+   ]
+  },
+  {
+   "os": "macOS",
+   "summary": "Apple silicon is a first-class llama.cpp target (Metal, Accelerate, ARM NEON). Ollama uses Metal. LM Studio needs Apple silicon and macOS 14+, and says Intel Macs are not supported. MLX is Apple-silicon macOS 14+ only (it also has a Linux CUDA build, but not a Mac one for NVIDIA). No CUDA on macOS. Apple's own eGPU page says eGPUs need a Mac with an Intel processor, so NO eGPU on Apple silicon. Memory is unified, so RAM size is the model-size budget; the GPU can use roughly 75% by default on high-memory Macs.",
+   "tools": [
+    "LM Studio (Apple silicon, macOS 14.0+, 16 GB+ recommended, 8 GB possible with small models and small context)",
+    "Ollama (Metal)",
+    "llama.cpp (Metal build)",
+    "MLX / mlx-lm (Python >= 3.10, macOS >= 14.0)"
+   ],
+   "limits": [
+    "Default GPU wired-memory limit is about 75% of RAM on higher-memory Macs (blog excerpts; tweakable with sysctl iogpu.wired_limit_mb; value 0 returns to default). Apple did not publish this in anything I read.",
+    "Sizing rule of thumb for the site (derived from the 75% figure, NOT measured, not from a primary page): 16 GB gives about 12 GB for the GPU, 32 GB about 24 GB, 64 GB about 48 GB, 128 GB about 96 GB by default. Smaller-RAM Macs reportedly get a lower share (excerpt said ~75% 'on higher-memory machines'); raising the limit can reach higher values.",
+    "Intel Macs: Apple says eGPUs work on Intel Macs with Thunderbolt 3 running macOS High Sierra 10.13.4 or later. LM Studio does not support Intel Macs. Intel+eGPU for LLMs is therefore limited to Ollama/llama.cpp builds; not tested or verified here."
+   ],
+   "pitfalls": [
+    "No eGPU on Apple silicon (confirmed: Apple page 102363 says an eGPU requires a Mac with an Intel processor).",
+    "sysctl iogpu.wired_limit_mb resets on reboot unless persisted via a LaunchDaemon (shown in a Medium excerpt) or /etc/sysctl.conf (one blog says SIP may need disabling for sysctl.conf; unverified). Setting the limit too high can starve macOS and freeze the machine (blog guidance, not Apple).",
+    "Price per GB of usable memory is Apple's selling point against PC GPUs; Mac prices used: Mac mini M6 32 GB $1,299; M5 Pro 64 GB $2,699; Studio M5 Max 128 GB about $5,100 (supplied by Ian, not re-verified here). Mac memory bandwidth is lower than discrete GPUs, so tokens per second are lower; no benchmark was run in this research."
+   ],
+   "sources": [
+    {
+     "label": "Apple: Use an external graphics processor with your Mac",
+     "url": "https://support.apple.com/en-us/102363",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "llama.cpp README (Apple silicon first-class; backend table)",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/README.md",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "LM Studio system requirements (macOS)",
+     "url": "https://lmstudio.ai/docs/app/system-requirements",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "Ollama: Metal on Apple devices",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "read page",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "MLX install: Apple silicon, macOS >= 14.0",
+     "url": "https://ml-explore.github.io/mlx/build/html/install.html",
+     "how_seen": "read page (targeted quote extract)",
+     "date": "2026-11-05"
+    },
+    {
+     "label": "Greg's Tech Notes: 75% default, sysctl iogpu.wired_limit_mb",
+     "url": "https://stencel.io/posts/apple-silicon-limitations-with-usage-on-local-llm%20.html",
+     "how_seen": "excerpt only (third party)",
+     "date": "2026-11-05"
+    }
+   ]
+  }
+ ],
+ "matrix": [
+  {
+   "family": "NVIDIA Pascal / Volta datacenter and old consumer",
+   "cards": "Tesla P40, Tesla P100, GTX 1080 Ti (Pascal); Tesla V100 (Volta)",
+   "sources": [
+    {
+     "label": "docs.nvidia.com",
+     "url": "https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.nvidia.com",
+     "url": "http://docs.nvidia.com/datacenter/tesla/tesla-release-notes-580-65-06/index.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works with caveat",
+    "backend": "CUDA (llama.cpp CUDA builds, Ollama, LM Studio); not Vulkan on datacenter cards",
+    "note": "1080 Ti is a normal GeForce and is fine. P40/P100/V100 are Tesla cards: NVIDIA datacenter notes say Vulkan/DirectX/WDDM2.0+ on Data Center GPUs needs vGPU; no display output; mixed TCC/WDDM breaks WSL per forum excerpt. Needs driver 570+ for Ollama on CC 5.0-6.2."
+   },
+   "linux": {
+    "status": "works with caveat",
+    "backend": "CUDA via R580-era driver; use pre-built binaries or CUDA 12.x toolkit",
+    "note": "CUDA Toolkit 13.5 removed Pascal/Volta targets; R580 driver notes still list them. Datacenter cards need cooling and 8-pin EPS adapter (not verified here)."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none (no NVIDIA drivers or CUDA on macOS)",
+    "note": "Apple eGPU page covers Intel Macs only and no NVIDIA support is stated."
+   }
+  },
+  {
+   "family": "NVIDIA Turing",
+   "cards": "RTX 2080 Ti (SM 7.5)",
+   "sources": [
+    {
+     "label": "docs.nvidia.com",
+     "url": "https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "ml-explore.github.io",
+     "url": "https://ml-explore.github.io/mlx/build/html/install.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/windows",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works",
+    "backend": "CUDA",
+    "note": "Driver 551.61+ per Ollama Windows page."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "CUDA 13.x supported (Turing is the new floor); MLX-CUDA SM 7.5+ also OK",
+    "note": "Lowest architecture still targeted by CUDA 13.5."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "No CUDA on macOS."
+   }
+  },
+  {
+   "family": "NVIDIA Ampere / Ada / Blackwell consumer",
+   "cards": "RTX 3060, RTX 3090, RTX 4060 Ti, RTX 5060 Ti",
+   "sources": [
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/windows",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "ml-explore.github.io",
+     "url": "https://ml-explore.github.io/mlx/build/html/install.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works",
+    "backend": "CUDA",
+    "note": "Ollama needs driver 550+ (Windows page 551.61+). Blackwell (5060 Ti) needs a recent driver; exact minimum for Blackwell not read from a primary page."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "CUDA",
+    "note": "Ollama driver 550+; MLX-CUDA CUDA 13 package needs driver 580+."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "No CUDA; no eGPU on Apple silicon."
+   }
+  },
+  {
+   "family": "AMD Instinct MI50 / MI60 (gfx906)",
+   "cards": "MI50, MI60 (also Radeon VII / Radeon Pro VII are gfx906)",
+   "sources": [
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/en/docs-7.0.0/about/release-notes.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/en/docs-6.0.0/about/CHANGELOG.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "not supported",
+    "backend": "none official; Vulkan might work but was not verified",
+    "note": "Not in AMD's HIP SDK Windows table; datacenter card, no display; Windows Vulkan on MI50 unverified."
+   },
+   "linux": {
+    "status": "works with caveat",
+    "backend": "Old ROCm (pinned pre-7.0) or Vulkan (Vulkan not verified here)",
+    "note": "gfx906 maintenance mode from ROCm 6.0; ROCm 7.0.0 release notes excerpt: 'Removed support for AMD Instinct MI50 and MI60'. Not in Ollama's current Linux support table."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "Intel Mac AMD eGPU support is for Apple-era consumer cards, not verified for MI50."
+   }
+  },
+  {
+   "family": "AMD RDNA2",
+   "cards": "Radeon PRO V620 (gfx1030), RX 6800 XT (gfx1030)",
+   "sources": [
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/reference/system-requirements.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works with caveat",
+    "backend": "Vulkan only (ROCm/HIP not supported)",
+    "note": "AMD HIP SDK 7.2.0 Windows table marks RX 6800 XT, 6900 XT, 6700 XT, 6600 XT and W6800 as NOT supported for runtime and HIP SDK. Ollama Windows list has no RX 6000. Vulkan path is the fallback (performance not measured)."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "ROCm/HIP (Ollama); gfx1030 listed",
+    "note": "Ollama Linux list includes RX 6800 XT, 6800, 6900 XT, 6950 XT and Radeon PRO V620 (gfx1030 example). AMD matrix header lists 'Radeon PRO V Series' and 'W6000 Series' with gfx1030 (extract was garbled, so row-level RX 6000 status not confirmed on AMD's own page)."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "Apple silicon has no eGPU; Intel-Mac AMD eGPU support not verified for these cards."
+   }
+  },
+  {
+   "family": "AMD RDNA3 / RDNA4",
+   "cards": "RX 7600 XT (gfx1102), RX 7900 XTX (gfx1100), RX 9060 / 9060 XT (gfx1200), RX 9070 / 9070 XT (gfx1201)",
+   "sources": [
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/reference/system-requirements.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works",
+    "backend": "HIP/ROCm (AMD lists all four as Runtime + HIP SDK supported); Vulkan also available",
+    "note": "Ollama Windows table lists RX 7600 XT, 7900 XTX etc.; RX 9000 are on AMD's table but not in Ollama's Windows list (Ollama lists RX 7000 and PRO W7000 only), so for 9060/9070 on Windows use llama.cpp HIP or Vulkan if Ollama's ROCm path does not pick them up."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "ROCm/HIP",
+    "note": "Listed on AMD matrix (RX 9000, RX 7000) and in Ollama Linux table (9070 XT, 9070, 9060 XT, 9060, 7900 XTX, 7600 XT...)."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "No eGPU on Apple silicon."
+   }
+  },
+  {
+   "family": "AMD Ryzen AI Max (Strix Halo, unified memory)",
+   "cards": "Ryzen AI Max+ 395 (gfx1151), Max 390/385",
+   "sources": [
+    {
+     "label": "www.amd.com",
+     "url": "https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-upgraded-run-up-to-128-billion-parameter-llms-lm-studio.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "rocm.docs.amd.com",
+     "url": "https://rocm.docs.amd.com/projects/install-on-windows/en/latest/reference/system-requirements.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works with caveat",
+    "backend": "Vulkan llama.cpp (AMD's LM Studio path) or HIP (gfx1151 on AMD Windows table)",
+    "note": "AMD says Variable Graphics Memory gives up to 96 GB of a 128 GB system. A LM Studio bug report (excerpt) showed Vulkan regressions in one version."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "ROCm (gfx1151 in Ollama Linux list)",
+    "note": "Memory split not researched for Linux."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "x86 AMD chip, no macOS."
+   }
+  },
+  {
+   "family": "Intel Arc",
+   "cards": "Arc A770, Arc B580, Arc Pro B60",
+   "sources": [
+    {
+     "label": "github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/docs/backend/SYCL.md",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/README.md",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "docs.ollama.com",
+     "url": "https://docs.ollama.com/gpu",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "works with caveat",
+    "backend": "llama.cpp SYCL (Windows 11) or Vulkan",
+    "note": "SYCL doc verified: Arc A770/A750 and B580 on Arc series; Windows 11 supported. Arc Pro B60 not named in the doc (it is Battlemage like B580 but unverified). Ollama can use Vulkan on Windows."
+   },
+   "linux": {
+    "status": "works",
+    "backend": "llama.cpp SYCL (oneAPI) or Vulkan",
+    "note": "SYCL doc: Arc B580/Linux/oneAPI 2025.1 and A770/Linux verified; Ubuntu 22.04, Fedora Silverblue 39, Arch verified. OpenVINO backend in llama.cpp is 'In Progress'."
+   },
+   "macos": {
+    "status": "not supported",
+    "backend": "none",
+    "note": "No Intel Arc driver or eGPU on macOS (Apple page lists Intel Macs with AMD-era eGPUs; Arc not mentioned in what I read)."
+   }
+  },
+  {
+   "family": "Apple M-series",
+   "cards": "M1 to M5 families (Mac mini, MacBook, Studio)",
+   "sources": [
+    {
+     "label": "github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/README.md",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "lmstudio.ai",
+     "url": "https://lmstudio.ai/docs/app/system-requirements",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "ml-explore.github.io",
+     "url": "https://ml-explore.github.io/mlx/build/html/install.html",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    },
+    {
+     "label": "support.apple.com",
+     "url": "https://support.apple.com/en-us/102363",
+     "how_seen": "cited in research (not re-read by us)",
+     "date": null
+    }
+   ],
+   "windows": {
+    "status": "not researched",
+    "backend": null,
+    "note": "Apple silicon Macs do not run Windows natively; GPU compute inside a Windows virtual machine was not researched."
+   },
+   "linux": {
+    "status": "not researched",
+    "backend": null,
+    "note": "An unofficial Linux port for Apple silicon exists; we did not research its GPU compute support, so we make no claim."
+   },
+   "macos": {
+    "status": "works",
+    "backend": "Metal (llama.cpp, Ollama, LM Studio) and MLX",
+    "note": "llama.cpp README: Apple silicon is 'a first-class citizen'. LM Studio needs macOS 14+; MLX needs macOS >= 14.0. No eGPU."
+   }
+  }
+ ],
+ "cross_os_tools": [
+  {
+   "tool": "llama.cpp",
+   "windows": true,
+   "linux": true,
+   "macos": true,
+   "note": "Backends: CUDA, HIP, Vulkan, SYCL, Metal, OpenVINO (in progress), CPU/BLAS, RPC (README backend table, read). Format: GGUF.",
+   "source": "https://github.com/ggml-org/llama.cpp/blob/master/README.md"
+  },
+  {
+   "tool": "Ollama",
+   "windows": true,
+   "linux": true,
+   "macos": true,
+   "note": "CUDA, ROCm v7, Vulkan (Windows/Linux), Metal (Apple). Docs read.",
+   "source": "https://docs.ollama.com/gpu"
+  },
+  {
+   "tool": "LM Studio",
+   "windows": true,
+   "linux": true,
+   "macos": true,
+   "note": "macOS: Apple silicon only, macOS 14+; Windows x64/ARM with AVX2; Linux AppImage x64/ARM64. Intel Macs not supported.",
+   "source": "https://lmstudio.ai/docs/app/system-requirements"
+  },
+  {
+   "tool": "MLX",
+   "windows": false,
+   "linux": "CUDA backend only (NVIDIA SM 7.5+, driver 550.54.14+)",
+   "macos": true,
+   "note": "Apple silicon + macOS >= 14.0; MLX also exists for Linux CUDA, but is mainly a macOS tool. Windows not found in the install doc extract.",
+   "source": "https://ml-explore.github.io/mlx/build/html/install.html"
+  },
+  {
+   "tool": "vLLM",
+   "windows": "not verified",
+   "linux": "not verified (widely described as Linux-focused)",
+   "macos": "not verified",
+   "note": "No vLLM primary page read in this run; do not publish OS claims without reading its docs.",
+   "source": null
+  }
+ ],
+ "mac_memory": {
+  "default_gpu_share": "About 75% of unified memory on higher-memory Apple silicon Macs (from third-party blog excerpts; 0 means 'use default'). Implies roughly 96 GB usable on a 128 GB machine, 48 GB on 64 GB. Smaller-RAM Macs may get a smaller share; not verified. Apple has no page I read that states this.",
+  "how_to_raise": "sudo sysctl iogpu.wired_limit_mb=<MB> (e.g. 57344 for ~56 GB on a 64 GB Mac per Reddit excerpt; 61440 for 60 GB per Medium excerpt). Resets on reboot; persist with a LaunchDaemon that runs sysctl at load (Medium excerpt) or /etc/sysctl.conf (one blog says SIP may block it; unverified). Leave several GB for macOS. Set to 0 to restore default.",
+  "source": "https://stencel.io/posts/apple-silicon-limitations-with-usage-on-local-llm%20.html (excerpt only); https://medium.com/@se.mehmet.baykar/increase-vram-on-apple-silicon-for-local-llms-1b35c453b165 (excerpt only); https://www.reddit.com/r/LocalLLaMA/comments/186phti/m1m2m3_increase_vram_allocation_with_sudo_sysctl/ (excerpt only)"
+ },
+ "not_found": [
+  "NVIDIA primary page stating which driver branch is the LAST to support Pascal/Volta (R580 notes list them; the 'last branch' announcement was only seen in a truncated third-party snippet).",
+  "NVIDIA primary page on TCC vs WDDM vs MCDM driver modes for Tesla P40/P100/V100 on Windows and whether nvidia-smi -dm can set WDDM on a P40. Only the R580 datacenter note (graphics APIs/WDDM on datacenter GPUs needs vGPU) and forum excerpts were seen.",
+  "NVIDIA CUDA-on-WSL2 / Microsoft WSL GPU docs (not opened).",
+  "AMD Linux compatibility matrix MI50/MI60 and RX 6800 XT rows: the extract returned only a Radeon header table with gfx1030 under 'PRO V Series / W6000', not row-level support, and the MI50 removal is from a ROCm 7.0.0 release-notes search excerpt.",
+  "Mesa/Vulkan docs (RADV on gfx906, Vulkan performance vs ROCm). Not opened.",
+  "Intel IPEX-LLM and OpenVINO docs, Arc Pro B60 support, Intel kernel/driver requirements (only llama.cpp SYCL doc read).",
+  "Ollama and llama.cpp status on Arc Pro B60: not named in anything read.",
+  "Apple's own statement of the GPU wired-memory default; only third-party blogs.",
+  "vLLM docs and OS support.",
+  "Hugging Face/MLX docs on safetensors vs MLX format.",
+  "Windows shared GPU memory (Dedicated vs Shared) caps for non-AMD iGPUs; only Strix Halo VGM figure from AMD blog excerpt.",
+  "AMD Windows Strix Halo AMD VGM page itself (the FAQ link) was not opened; the 96 GB figure comes from the AMD blog excerpt.",
+  "Any benchmark: no tokens-per-second numbers were collected."
+ ]
+}
