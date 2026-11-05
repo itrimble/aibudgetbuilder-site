@@ -8,7 +8,7 @@ import pcData from './data/builds/my-pcs.json'
 import presetData from './data/builds/presets.json'
 import { ASSUMED_EFFICIENCY, checkBuild, fitsModel, needsFrom, placeCards, totals } from './lib/compat'
 import type { Adapter, Board, Build, Gpu, MyPc, Psu } from './lib/types'
-import { Models, type ModelRec } from './components/Models'
+import { Models, taskLabel, type ModelRec } from './components/Models'
 import { Capacity } from './components/Capacity'
 import { Community } from './components/Community'
 import { OtherHardware } from './components/OtherHardware'
@@ -223,7 +223,7 @@ export default function App() {
                 <h2 className={label}>2. What do you want to run?</h2>
                 <select aria-label="Model goal" value={goal} onChange={(e) => setGoal(e.target.value)} className="w-full rounded border border-line bg-panel p-2">
                   <option value="">Pick a model (optional)</option>
-                  {allModels.map((m) => <option key={`${m.task}|${m.name}`} value={`${m.task}|${m.name}`}>{m.task}: {m.name} (~{m.vram_gb_estimate} GB)</option>)}
+                  {allModels.map((m) => <option key={`${m.task}|${m.name}`} value={`${m.task}|${m.name}`}>{taskLabel(m.task)}: {m.name} (~{m.vram_gb_estimate} GB)</option>)}
                 </select>
                 {target && (
                   <div className="mt-2 rounded border border-line bg-panel p-3 text-sm" aria-live="polite">
