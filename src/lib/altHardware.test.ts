@@ -51,4 +51,20 @@ describe('more-hardware data', () => {
       expect(c.source.how_seen).toBeTruthy()
     }
   })
+  it('keeps every eGPU build total equal to its listed parts, and cites a page that was read', () => {
+    for (const b of more.egpu.builds) {
+      const sum = (b.parts.match(/\$[\d.]+/g) ?? []).reduce((n, x) => n + Number(x.slice(1)), 0)
+      expect(Math.round(sum * 100) / 100, b.name).toBe(b.total)
+    }
+    expect(more.egpu.source.url).toMatch(/^https:\/\//)
+    expect(more.egpu.source.how_seen).toMatch(/read/)
+  })
+  it('says how every expanded eGPU source was seen, and keeps the Apple Silicon conflict on the page', () => {
+    for (const s of [...more.egpu.links.flatMap((l) => l.sources), ...more.egpu.more_docks.flatMap((d) => d.sources), ...more.egpu.others_measured.map((m) => m.source), ...more.egpu.multi.map((m) => m.source)]) {
+      expect(s.how_seen, s.url ?? s.label).toBeTruthy()
+      expect(s.url ?? '', s.label).toMatch(/^https:\/\//)
+    }
+    expect(more.egpu.conflict.text).toMatch(/Apple Silicon/)
+    for (const r of more.egpu.cost_per_gb.rows) expect(r.egpu_total_usd, r.card).toBeCloseTo(r.card_usd + 177.96, 1)
+  })
 })

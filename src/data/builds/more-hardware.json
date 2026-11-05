@@ -619,5 +619,702 @@
    "name": "Cheap 10 GB mining cards on x1 risers (P102-100)",
    "why": "A YouTube creator quoted about $40 per card \"before the price spike\"; we could not verify a current price or a result."
   }
- ]
+ ],
+ "egpu": {
+  "checked_on": "2026-11-05",
+  "intro": "An external GPU lets a laptop or small PC you already own run a big model: the card holds the model, a dock connects it over USB4 or Thunderbolt, and a separate power supply feeds it. The first source below is one author, one set of machines and a patched Linux kernel, so read the speeds as what was seen there, not as a guarantee.",
+  "host_note": "All speeds in this section were measured by the article's author on a 16-inch M1 Max MacBook Pro (NVIDIA and Intel cards) and a 14-inch M2 Max (the two AMD cards), running Omarchy with a patched 7.1.12 Linux kernel and local driver changes. The author says that is not a stock Omarchy recipe. We have not reproduced any of it.",
+  "docks": [
+   {
+    "name": "ADT-Link UT4G",
+    "price_usd": 128.0,
+    "psu_included": false,
+    "note": "The cheapest chain in the article."
+   },
+   {
+    "name": "Rosewill RNE-01 plus OwlTree dock (with its 50 cm riser cable)",
+    "price_usd": 169.98,
+    "psu_included": false,
+    "note": "$69.99 plus $99.99; $41.98 more than the UT4G."
+   },
+   {
+    "name": "Trebleet",
+    "price_usd": 359.99,
+    "psu_included": true,
+    "note": "Maker listing; power supply built in."
+   },
+   {
+    "name": "Sonnet Breakaway Box 850 T5",
+    "price_usd": 599.99,
+    "psu_included": true,
+    "note": "Power supply built in."
+   }
+  ],
+  "psu": {
+   "name": "Rosewill 650 W",
+   "price_amazon": 49.96,
+   "price_maker": 59.99
+  },
+  "cards": [
+   {
+    "card": "ASRock RX 7600 Challenger OC 8 GB",
+    "price_usd": 299.99,
+    "sellers": "16 new and used"
+   },
+   {
+    "card": "PNY RTX 5060 Ti 16 GB",
+    "price_usd": 769.99,
+    "sellers": "20 new and used"
+   },
+   {
+    "card": "ASRock RX 9070 Challenger 16 GB",
+    "price_usd": 749.99,
+    "sellers": "4 new"
+   },
+   {
+    "card": "ASRock Arc Pro B60 24 GB",
+    "price_usd": 999.99,
+    "sellers": "3 new"
+   }
+  ],
+  "measured": [
+   {
+    "model": "Llama-2-7B Q4_0",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "2,151 ± 2",
+    "tg128": "78 ± 1",
+    "date": "2026-11-04",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Llama-2-7B Q4_0",
+    "card": "Arc Pro B60 24 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "1,117 ± 3",
+    "tg128": "20 ± 0",
+    "date": "2026-11-02",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "626 ± 4",
+    "tg128": "20 ± 0",
+    "date": "2026-11-04",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0",
+    "card": "Arc Pro B60 24 GB",
+    "backend": "llama.cpp Vulkan",
+    "pp512": "203 ± 7",
+    "tg128": "3 ± 0",
+    "date": "2026-11-02",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Llama-2-7B Q4_0",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "CUDA",
+    "pp512": null,
+    "tg128": "95",
+    "date": "2026-11-04",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Qwen3.8-27B Q4_0",
+    "card": "RTX 5060 Ti 16 GB",
+    "backend": "CUDA",
+    "pp512": null,
+    "tg128": "24",
+    "date": "2026-11-04",
+    "host": "16-inch M1 Max"
+   },
+   {
+    "model": "Qwen2.5-7B Q4_K_M",
+    "card": "RX 7600 8 GB",
+    "backend": "llama.cpp (same build as the RX 9070 row)",
+    "pp512": "965 ± 0",
+    "tg128": "31 ± 0",
+    "date": "2026-10-22",
+    "host": "14-inch M2 Max"
+   },
+   {
+    "model": "Qwen2.5-7B Q4_K_M",
+    "card": "RX 9070 16 GB",
+    "backend": "llama.cpp (same build as the RX 7600 row)",
+    "pp512": "2,426 ± 9",
+    "tg128": "24 ± 0",
+    "date": "2026-10-25",
+    "host": "14-inch M2 Max"
+   }
+  ],
+  "fit_note": "The 27B model fits on the 16 GB card with room to spare: weights 14,367 MiB, KV cache 661 MiB and compute buffer 150 MiB make 15,178 MiB on a card with 16,311 MiB, with all 66 layers on the card and 1,133 MiB free.",
+  "takeaways": [
+   "The $299.99 RX 7600 decoded a 7B model faster (31 tok/s) than the $749.99 RX 9070 (24 tok/s); the 9070 read the prompt about 2.5 times faster. Decoding speed tracks memory bandwidth and software, not price.",
+   "The 24 GB Arc Pro B60 was much slower than the 16 GB RTX 5060 Ti on the 27B model (3 against 20 tok/s on Vulkan): more memory did not help when the model already fit.",
+   "On CUDA the 5060 Ti was faster still (95 and 24 tok/s on the same two models), and CUDA is not available on the Arc card."
+  ],
+  "builds": [
+   {
+    "name": "RTX 5060 Ti + UT4G + cheapest power supply",
+    "parts": "$769.99 + $128.00 + $49.96",
+    "total": 947.95
+   },
+   {
+    "name": "RTX 5060 Ti + UT4G + maker power supply",
+    "parts": "$769.99 + $128.00 + $59.99",
+    "total": 957.98
+   },
+   {
+    "name": "RTX 5060 Ti + Rosewill RNE-01 and OwlTree dock + cheapest power supply",
+    "parts": "$769.99 + $69.99 + $99.99 + $49.96",
+    "total": 989.93
+   }
+  ],
+  "training": "Fine-tuning also fits: Qwen3-8B with NF4 QLoRA on a small slice of Tiny Shakespeare, 300 steps over 153,600 training tokens, ran at 638 tokens per second with 7,695 MiB peak GPU memory, and the evaluation loss fell from 2.65287 to 2.05897.",
+  "caveats": [
+   "Prices are the article's Amazon and maker figures from 2026-11-05 and were not rechecked by us.",
+   "Everything was measured by one author on Macs running Omarchy with a patched kernel; a PC with a different port, kernel or driver may differ.",
+   "The article is about a computer you already own: the host is not in the totals.",
+   "We could not read the author's X post about it (login wall)."
+  ],
+  "source": {
+   "label": "Joshua Warren, \"Local AI at home: a $299.99 card and a $947.95 build\"",
+   "url": "https://joshuawarren.com/blog/egpu-setup-under-1000-for-omarchy/",
+   "date": "2026-11-05",
+   "how_seen": "read page"
+  },
+  "links": [
+   {
+    "name": "OCuLink (SFF-8611) x4 - native PCIe",
+    "bandwidth": "PCIe 4.0 x4 = ~7.88 GB/s theoretical per direction (arithmetic); OCuLink has no speed of its own, it is whatever the host M.2/port negotiates (Gen3 x4 host = ~3.94 GB/s).",
+    "notes": "ChargerLAB measured 6.0-6.7 GB/s through a Minisforum DEG1 (as cited by ComputingForGeeks, secondary). Next Tech and AI (YouTube transcript, excerpt) measured an Arc A770 on OCuLink: 5.68 GB/s host-to-device, 5.75 GB/s device-to-host with clpeak/Vulkan. egpu.io forum user morgwai measured DEG1 OCuLink at ~6000 MiB/s. No hot-plug: power the dock first, then boot the host, shut down before unplugging (ComputingForGeeks; M920q bifurcation GitHub thread). Cable matters: Jeff Geerling found the DEG1's bundled OCuLink cable (extra sideband wires) worked where a generic chenyang cable did not, and that straight M.2-to-OCuLink adapters without a ReDriver failed with some cards on a Pi (RX 7900 XT undetected until a ReDriver adapter was used). GPD Win Max 2 with 2x RX 6950 XT: OCuLink Gen3 vs Gen4 was 14.4 vs ~18 tok/s on a MoE paging workload (author's README).",
+    "sources": [
+     {
+      "label": "Local AI Master: OCuLink vs Thunderbolt 5 vs 4 (table of link rates, arithmetic, no hot-plug)",
+      "url": "https://localaimaster.com/blog/thunderbolt-vs-oculink-ai",
+      "how_seen": "READ (truncated mid-article)",
+      "date": "2026-04-23 (updated 2026-11-02)"
+     },
+     {
+      "label": "ComputingForGeeks: Best OCuLink eGPU docks and mini PCs",
+      "url": "https://computingforgeeks.com/best-oculink-egpu-mini-pc/",
+      "how_seen": "READ (truncated)",
+      "date": "2026-10-19"
+     },
+     {
+      "label": "Jeff Geerling: not all OCuLink docks/cables are equal",
+      "url": "https://www.jeffgeerling.com/blog/2025/not-all-oculink-egpu-docks-are-created-equal/",
+      "how_seen": "READ",
+      "date": "2025-09-29"
+     }
+    ]
+   },
+   {
+    "name": "Thunderbolt 3 / Thunderbolt 4 / USB4 v1 (40 Gbit/s) PCIe tunnel",
+    "bandwidth": "Tunnel is PCIe 3.0 x4 class: ~3.94 GB/s theoretical (~32 Gbit/s). Intel requires min 32 Gbit/s PCIe on TB4. USB4 v1 PCIe tunnelling is optional in the spec and minimum USB4 data rate is 20 Gbit/s (Arch Wiki).",
+    "notes": "Measured: morgwai (egpu.io) UT4G (ASM2464PD, USB4 v1) ~3600 MiB/s, TH3P4G3 (TB3) ~2700 MiB/s, DEG1 OCuLink ~6000 MiB/s. Next Tech and AI RX 6800 on a UT4G over USB4: 3.86 GB/s h2d / 3.82 GB/s d2h (excerpt). A Framework forum answer (single user claim) says practical TB3/TB4 eGPU maximum is ~22 Gbit/s because ~10 Gbit/s is reserved for USB3; Debian wiki says capacity 'varies from about 12 to 45 Gbps' by laptop/adapter mix. So the '22-32 Gbit/s' range is supported, with laptop implementation as the big variable. Debian wiki limitations: Nvidia Blackwell (RTX 50xx) cards are 'notorious' for problems as USB-C eGPUs; PCIe tunnelling has no GPU atomics, which disables ROCm on USB-C-attached AMD GPUs (use Vulkan). ADT-Link's own UT4G page says the dock does not support USB-only ports and 'Mac OS only supports AMD graphics cards'. Kimono Oyaji: RX 9060 XT over Thunderbolt reported link '2.5 GT/s x1' yet still beat the iGPU on 2.3GB+ models; model LOAD never completed over Thunderbolt in that author's setup, but finished in ~2 s over OCuLink (single-author, other variables changed too).",
+    "sources": [
+     {
+      "label": "egpu.io forum: morgwai measured link speeds + dual 3090 results; later posts on gpt-oss-120b partial offload",
+      "url": "https://egpu.io/forums/pro-applications/impact-of-egpu-connection-speed-on-local-llm-inference-in-multi-egpu-setups/",
+      "how_seen": "READ",
+      "date": "2025-09-15 (posts to 2025-11-23)"
+     },
+     {
+      "label": "ADT-Link UT4G maker page (ASM2464PDX, TB3/TB4/USB4, hot-swap note, PSU table)",
+      "url": "https://www.adt.link/product/UT4G.html",
+      "how_seen": "READ",
+      "date": "shelf time 2024-10-10"
+     },
+     {
+      "label": "Debian wiki ExternalGpu (Blackwell problems, no atomics on tunnelled PCIe, 12-45 Gbps range)",
+      "url": "https://wiki.debian.org/ExternalGpu",
+      "how_seen": "EXCERPT",
+      "date": "undated (mentions 2025)"
+     }
+    ]
+   },
+   {
+    "name": "USB4 v2 (80 Gbit/s) and Thunderbolt 5",
+    "bandwidth": "PCIe 4.0 x4 tunnel, ~7.88 GB/s theoretical (Intel quotes 64 Gbit/s for PCIe). Same PCIe bandwidth as OCuLink on paper.",
+    "notes": "Next Tech and AI claims real-world TB5 eGPU measurements ~5.6 GB/s (excerpt of a video transcript, not verified). ComputingForGeeks: DEG2 runs TB5 and OCuLink at PCIe 4.0 x4 both. Dev.to author who 'bought Thunderbolt 5 and got USB4 40G' shows a host port labelled TB5 may only negotiate 40G; check the actual link (excerpt only). Retail TB5 docks: DEG2 ~$240-300, Sonnet 850 T5 $599.99, Razer Core X V2 ~$350 (no PSU), Gigabyte AORUS AI BOX with RTX 5060 Ti ~$700 per egpu.io guide.",
+    "sources": [
+     {
+      "label": "Local AI Master link table",
+      "url": "https://localaimaster.com/blog/thunderbolt-vs-oculink-ai",
+      "how_seen": "READ (truncated)",
+      "date": "2026-04-23 (upd. 2026-11-02)"
+     },
+     {
+      "label": "dev.to: bought TB5, got USB4 40G (RPC benchmark)",
+      "url": "https://dev.to/faliye/i-bought-thunderbolt-5-and-got-usb4-40g-re-benchmarking-a-two-machine-llamacpp-rpc-setup-across-29im",
+      "how_seen": "EXCERPT",
+      "date": "2026-10-30"
+     },
+     {
+      "label": "egpu.io buyer's guide Nov 2026 (controller chips, PSU type, prices)",
+      "url": "https://egpu.io/best-egpu-buyers-guide/",
+      "how_seen": "EXCERPT (large table)",
+      "date": "2026-11-02"
+     }
+    ]
+   },
+   {
+    "name": "M.2 / PCIe-slot to OCuLink adapters; Raspberry Pi 1-lane",
+    "bandwidth": "Depends on host slot: a Gen4 x4 M.2 gives ~7.88 GB/s, a Gen3 x4 M.2 only ~3.94 GB/s. Raspberry Pi 5: one PCIe Gen3 lane (Geerling: ~850 MB/s peak PCIe on the Pi; ~300 MB/s from a USB3 SSD for loading).",
+    "notes": "Geerling (Dec 2025, READ): RTX 4090 on a Pi 5 via 1 Gen3 lane lost only 2-5% of peak on LLMs when the model was resident; four RTX A5000 on one Pi (user mpsparrow) ran Llama 3 70B at 11.83 tok/s vs 12 on an Intel server (second-hand report in his post). The Pi + Minisforum DEG1 + M.2-to-OCuLink + 850W PSU build is listed at $350-400 without a GPU. ComputingForGeeks quotes Geerling's 4090 Qwen3 30B Q4 numbers as 41.05 tok/s (x1) vs 42.51 (desktop) and I confirmed the 41.05 tg128 row in his ai-benchmarks issue #43 (excerpt). One caution from the GPD README: an M.2 OCuLink adapter board that wired only 2 lanes existed; verify with lspci/GPU-Z. On mini PCs, M.2 adapters cost an SSD slot (ComputingForGeeks).",
+    "sources": [
+     {
+      "label": "Jeff Geerling: Big GPUs don't need big PCs",
+      "url": "https://www.jeffgeerling.com/blog/2025/big-gpus-dont-need-big-pcs/",
+      "how_seen": "READ (truncated before LLM tables)",
+      "date": "2025-12-20"
+     },
+     {
+      "label": "geerlingguy/ai-benchmarks RTX 4090 llama-bench issue",
+      "url": "https://github.com/geerlingguy/ai-benchmarks/issues/43",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     }
+    ]
+   },
+   {
+    "name": "Effect on LOAD time, prompt processing and generation once resident in VRAM",
+    "bandwidth": "n/a",
+    "notes": "GENERATION: link barely matters if the model fits in VRAM. Geerling 4090 Qwen3 32B-class Q4 tg 41.05 (x1) vs 42.51 desktop (-3.4%, as cited by ComputingForGeeks). zephel01 (note.com, EXCERPT) cites 5-17% steady-state loss on USB4 and ~1.5-3% on OCuLink from other measurements, with a 3090 example 96 to 79.5 tok/s on Llama 3.1 8B; the 'small models lose more' pattern is plausible but I did not open the underlying source. Next Tech and AI: RX 6800 over USB4 got 44 tok/s on Qwen3 14B Q4_K_M vs 40 in a tower (excerpt). PROMPT PROCESSING: also link-insensitive when fully resident; link-bound only when layers/experts are offloaded to system RAM: gpt-oss-120b with 12 of 36 layers on GPU, pp 140 tok/s over TB3 x4 vs 304 over PCIe3 x16 (-54%), tg 2.27 vs 2.33 (egpu.io posts as quoted by ComputingForGeeks; the egpu.io thread itself mentions the benchmark but I did not see the 140/304 table). Kimono Oyaji (READ): pp on qwen3:8b 4.9GB: RX 9060 XT over Thunderbolt 2,045 tok/s vs RTX 5060 Ti on OCuLink 3,316 vs iGPU 1,217 (different GPUs, so not link-only); 1.2GB llama3.2:1b was 299 tok/s on TB but 10,668 after moving the same 9060 XT to OCuLink (author notes OS/model storage also changed, so not proof). LOAD TIME: arithmetic floors from localaimaster (27B Q4_K_M 16.2 GB: >=2.1 s on 7.88 GB/s, >=4.1 s on 4 GB/s; 70B 39 GB: ~5 s vs ~10 s), explicitly 'not measurements'. Measured OCuLink load qwen3:8b 4.9GB: 2.22 / 1.91 / 1.91 s (9060 XT), 5.22 / 2.31 / 2.32 s (5060 Ti) (Kimono Oyaji). I found NO clean measured TB-vs-OCuLink load-time table for the same card. Lane-count sweeps x1/x4/x8/x16 for llama.cpp with the model fully resident: only the Geerling x1 vs x16 result found.",
+    "sources": [
+     {
+      "label": "Kimono Oyaji's Lab: same GPU, TB vs OCuLink",
+      "url": "https://kimono-oyaji.com/en/egpu-thunderbolt-speed-measured-en/",
+      "how_seen": "READ (truncated near end)",
+      "date": "2026-08-25"
+     },
+     {
+      "label": "ComputingForGeeks table of x1/TB3 vs full link",
+      "url": "https://computingforgeeks.com/best-oculink-egpu-mini-pc/",
+      "how_seen": "READ (truncated)",
+      "date": "2026-10-19"
+     },
+     {
+      "label": "Local AI Master: eGPU for local AI (load-time floor table)",
+      "url": "https://localaimaster.com/blog/egpu-local-ai-benchmarks",
+      "how_seen": "EXCERPT",
+      "date": "2026-03-08"
+     }
+    ]
+   }
+  ],
+  "more_docks": [
+   {
+    "name": "Minisforum DEG1",
+    "price_usd": 109.0,
+    "price_basis": "Minisforum store sale $109.00 (regular $139); product page also showed $109.90; ComputingForGeeks 'about $110' on Amazon",
+    "link_type": "OCuLink PCIe 4.0 x4 only (no Thunderbolt)",
+    "needs_psu": "Yes: ATX or SFX via 24-pin, PSU not included",
+    "notes": "Open frame, any card length. Needs power button on and TGX switch OFF (Geerling). Bundled cable is the working one; generic cables can fail. No hot-plug. Geerling could not get a 7900 XT detected on a Pi without a ReDriver M.2 adapter. German retail ~EUR 118-129.",
+    "sources": [
+     {
+      "label": "Minisforum store listing",
+      "url": "https://store.minisforum.com/collections/0-200",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     },
+     {
+      "label": "Minisforum DEG1 product page",
+      "url": "https://www.minisforum.com/products/minisforum-deg1-egpu-dock",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     },
+     {
+      "label": "ComputingForGeeks",
+      "url": "https://computingforgeeks.com/best-oculink-egpu-mini-pc/",
+      "how_seen": "READ (truncated)",
+      "date": "2026-10-19"
+     }
+    ]
+   },
+   {
+    "name": "Minisforum DEG2",
+    "price_usd": 239.9,
+    "price_basis": "Minisforum product page $239.90; store collection page $259.90 (regular $309); egpu.io $300; Sonnet article says $247",
+    "link_type": "OCuLink PCIe 4.0 x4 + USB4 v2 / TB5 (JHL9480) with hardware toggle; M.2 slot, 2.5GbE, 140W PD",
+    "needs_psu": "Yes: ATX/SFX, 24-pin + 8-pin, not included",
+    "notes": "A user (zephel01, excerpt) could not get a USB4-attached RTX 3090 stable on a DEG2 (connected, passed boltctl, then dropped out of lspci) and fixed it by swapping to an AOOSTAR AG02 - single-user report.",
+    "sources": [
+     {
+      "label": "Minisforum DEG2 page",
+      "url": "https://www.minisforum.com/products/deg2",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     },
+     {
+      "label": "Minisforum store listing",
+      "url": "https://store.minisforum.com/collections/0-200",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     },
+     {
+      "label": "zephel01 dual-eGPU story",
+      "url": "https://note.com/zephel01/n/nc40749abd843?hl=en",
+      "how_seen": "EXCERPT",
+      "date": "2026-07-09"
+     }
+    ]
+   },
+   {
+    "name": "AOOSTAR AG02 (GTBOX G-DOCK)",
+    "price_usd": 229.0,
+    "price_basis": "AOOSTAR store sale $229 (was $249); egpu.io lists $249-269",
+    "link_type": "OCuLink PCIe 4.0 x4 + USB4 v1 (ASM2464PD, 40 Gbit/s), 100 W PD out",
+    "needs_psu": "No: built-in 800W flex-ATX PSU",
+    "notes": "Ranked #1 on egpu.io 6-month tally. Used in two multi-eGPU builds below. ComputingForGeeks excluded it as not in stock new from the maker on 2026-10-19.",
+    "sources": [
+     {
+      "label": "AOOSTAR dock collection",
+      "url": "https://aoostar.com/collections/egpu-dock-11-12",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     },
+     {
+      "label": "egpu.io guide",
+      "url": "https://egpu.io/best-egpu-buyers-guide/",
+      "how_seen": "EXCERPT",
+      "date": "2026-11-02"
+     }
+    ]
+   },
+   {
+    "name": "Razer Core X (TB3) / Core X V2 (TB5)",
+    "price_usd": 300.0,
+    "price_basis": "egpu.io guide: Core X $300 (650W internal PSU), Core X V2 $350 (TB5, PSU not included); Sonnet article says V2 $349.99",
+    "link_type": "Core X = TB3 PCIe 3.0 x4 (DSL6540); V2 = TB5 PCIe 4.0 x4",
+    "needs_psu": "Core X: no (650W built in); V2: yes",
+    "notes": "Core X V2 listed as EUR 3,499 on a Geizhals EU snippet - treat as an outlier/typo, not used.",
+    "sources": [
+     {
+      "label": "egpu.io guide",
+      "url": "https://egpu.io/best-egpu-buyers-guide/",
+      "how_seen": "EXCERPT",
+      "date": "2026-11-02"
+     },
+     {
+      "label": "Notebookcheck",
+      "url": "https://www.notebookcheck.net/Sonnet-launches-performance-focused-eGPU-enclosure-with-850W-PSU.1400725.0.html",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     }
+    ]
+   },
+   {
+    "name": "Beelink EX",
+    "price_usd": 119.0,
+    "price_basis": "Amazon listing 'Price: 119 USD'",
+    "link_type": "Proprietary PCIe x8 connection; only for Beelink GTi12 / GTi14 mini PCs",
+    "needs_psu": "No: built-in 600 W PSU",
+    "notes": "Not usable with other hosts. Alex Ziskind video (excerpt) compared a Beelink eGPU machine with a GMKtec; I did not read it.",
+    "sources": [
+     {
+      "label": "Amazon Beelink EX",
+      "url": "https://www.amazon.com/dp/B0DFWNP7KX",
+      "how_seen": "EXCERPT",
+      "date": "undated"
+     }
+    ]
+   },
+   {
+    "name": "EXP GDC TH3P4G3 (TB3) and Wikingoo",
+    "price_usd": 120.0,
+    "price_basis": "egpu.io guide: TH3P4G3 $120 + case, Wikingoo $115",
+    "link_type": "TB3 PCIe 3.0 x4 (JHL7440)",
+    "needs_psu": "Yes (ATX external)",
+    "notes": "TH3P4G3 measured ~2700 MiB/s by morgwai; still ran a dual-3090 70B layer split at the same speed as a faster pair.",
+    "sources": [
+     {
+      "label": "egpu.io guide",
+      "url": "https://egpu.io/best-egpu-buyers-guide/",
+      "how_seen": "EXCERPT",
+      "date": "2026-11-02"
+     },
+     {
+      "label": "morgwai thread",
+      "url": "https://egpu.io/forums/pro-applications/impact-of-egpu-connection-speed-on-local-llm-inference-in-multi-egpu-setups/",
+      "how_seen": "READ",
+      "date": "2025-09-15"
+     }
+    ]
+   }
+  ],
+  "others_measured": [
+   {
+    "card": "RTX 5060 Ti 16GB",
+    "host": "Ryzen AI Max+ 395 mini PC (Strix Halo) via OCuLink",
+    "result": "qwen3:8b (4.9GB), llama.cpp: pp 3,316 tok/s (prompt processing only; generation figure not in the text I read)",
+    "author": "Kimono Oyaji",
+    "source": {
+     "label": "kimono-oyaji.com",
+     "url": "https://kimono-oyaji.com/en/egpu-thunderbolt-speed-measured-en/",
+     "how_seen": "READ",
+     "date": "2026-08-25"
+    }
+   },
+   {
+    "card": "RTX 5060 Ti 16GB (bench reference)",
+    "host": "unspecified",
+    "result": "Llama-2-7B: pp512 3461, tg128 93.5 (Warren measured 78 on his M1 Max host with Vulkan, so ~16% lower; host and driver differences, not proven to be the link)",
+    "author": "scoreboard / Warren",
+    "source": {
+     "label": "github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/discussions/10879",
+     "how_seen": "READ (truncated table)",
+     "date": "scoreboard"
+    }
+   },
+   {
+    "card": "RTX 3090 24GB (used)",
+    "host": "2x 3090 on TongFang laptop: one DEG1 OCuLink (~6000 MiB/s) + one UT4G (~3600 MiB/s); ollama 0.11.10",
+    "result": "mistral-small 22B fp16 / gemma3 27B q8_0 / qwen3 30B-A3B q8_0 / deepseek-r1 70B distill q4_K_M: two cards: mistral-small 22b fp16 18.69; gemma3 27b q8 25.45; qwen3 30b-a3b q8 107.8; r1 70b q4_K_M 17.96; athene 72b q4_0 18.71",
+    "author": "morgwai (egpu.io)",
+    "source": {
+     "label": "egpu.io",
+     "url": "https://egpu.io/forums/pro-applications/impact-of-egpu-connection-speed-on-local-llm-inference-in-multi-egpu-setups/",
+     "how_seen": "READ",
+     "date": "2025-09-15"
+    }
+   },
+   {
+    "card": "RTX 5090 (OCuLink) + RTX 3090 (USB4 via AG02)",
+    "host": "GMKtec/Beelink-class EVO-X2 (Ryzen AI Max+ 395), OCuLink + USB4",
+    "result": "27B Q4_K_M: speed ratio 5090:3090 = 1.85x vs memory-bandwidth ratio 1.91x; absolute tok/s not captured",
+    "author": "zephel01",
+    "source": {
+     "label": "note.com",
+     "url": "https://note.com/zephel01/n/nc40749abd843?hl=en",
+     "how_seen": "EXCERPT",
+     "date": "2026-07-09"
+    }
+   },
+   {
+    "card": "RX 6800 16GB via USB4 (UT4G) + Arc A770 16GB via OCuLink",
+    "host": "mini PC with two USB4 40G ports, one OCuLink",
+    "result": "Qwen3 14B Q4_K_M (solo RX 6800); Gemma 4 31B Q5_K_M (both); Qwen3.5 35B Q5_K_M MoE (both): RX 6800 solo 44 tok/s; two cards: Gemma 4 31B Q5_K_M 13 tok/s, Qwen3.5 35B Q5_K_M MoE 50 tok/s; author says matches his tower",
+    "author": "Next Tech and AI (YouTube)",
+    "source": {
+     "label": "www.youtube.com",
+     "url": "https://www.youtube.com/watch?v=XJ9_zu0-N9k",
+     "how_seen": "EXCERPT (transcript)",
+     "date": "undated"
+    }
+   },
+   {
+    "card": "RTX 4090 (reference for link effect, on a Pi 5 x1 lane)",
+    "host": "Raspberry Pi 5, PCIe Gen3 x1 via OCuLink",
+    "result": "Qwen3 32B-class Q4_K_M (file 18.4 GiB): tg128 41.05, pp512 2079 (desktop reference tg 42.51 per ComputingForGeeks quoting Geerling)",
+    "author": "Jeff Geerling",
+    "source": {
+     "label": "github.com",
+     "url": "https://github.com/geerlingguy/ai-benchmarks/issues/43",
+     "how_seen": "EXCERPT",
+     "date": "undated"
+    }
+   },
+   {
+    "card": "RX 6950 XT 16GB x2 (used ~$600 each ask)",
+    "host": "GPD WIN Max 2 (Ryzen 7 7840U, 64GB), 2x OCuLink Gen4 x4 (one native, one via M.2 adapter), Windows 11",
+    "result": "Qwen3.8-Flash-Next 176B MoE: decode 17.7-19.6 at 256k ctx; prefill only ~18 tok/s. A 27B dense model that fit in VRAM prefilled at 403-444 tok/s (24x faster)",
+    "author": "ChangXiang-SCU",
+    "source": {
+     "label": "github.cnmirror.space",
+     "url": "https://github.cnmirror.space/ChangXiang-SCU/dual-egpu-moe-llm/blob/main/README.md",
+     "how_seen": "READ",
+     "date": "undated"
+    }
+   }
+  ],
+  "multi": [
+   {
+    "what": "2x RTX 3090 on one laptop, DEG1 (OCuLink) + UT4G (USB4v1), or TH3P4G3 (TB3) with UT4G daisy-chained behind it, ollama layer split, 22B-72B models",
+    "result": "Throughput virtually identical across both link layouts (e.g. 70B q4_K_M 17.96 vs 17.83 tok/s; qwen3 30B-A3B 107.8 vs 105.1). Author later built 2x OCuLink and got the same numbers again. GPU utilisation never above ~55% because layer split runs the cards in sequence. Daisy-chaining over TB3 was fine.",
+    "caveats": "Layer split only; llama.cpp tensor parallel was 'alpha' and gave no gain in the author's tries; ollama has no tensor parallel. A different poster found llama.cpp does not parallelise unless the strongest GPU is listed first in CUDA_VISIBLE_DEVICES. Another poster measured two GPUs slower than one on gpt-oss-120b with CPU offload.",
+    "source": {
+     "label": "egpu.io",
+     "url": "https://egpu.io/forums/pro-applications/impact-of-egpu-connection-speed-on-local-llm-inference-in-multi-egpu-setups/",
+     "how_seen": "READ",
+     "date": "2025-09-15 to 2025-11-23"
+    }
+   },
+   {
+    "what": "RTX 5090 (OCuLink) + RTX 3090 (USB4) on an EVO-X2 mini PC, 56 GB total",
+    "result": "Works. First dock (Minisforum DEG2) on USB4 connected for seconds, passed boltctl, then dropped out of lspci; swapping to an AOOSTAR AG02 fixed it with zero disconnects under load. 3090 ran at 99% utilisation over USB4. Same ASM2464 chip, different dock behaviour.",
+    "caveats": "Single-author blog, EXCERPT only; vLLM tensor parallel needs matched cards, llama.cpp --tensor-split handles mixed cards; the author's own earlier note said no 5090+3090 tok/s were found online.",
+    "source": {
+     "label": "note.com",
+     "url": "https://note.com/zephel01/n/nc40749abd843?hl=en",
+     "how_seen": "EXCERPT",
+     "date": "2026-07-09"
+    }
+   },
+   {
+    "what": "5 GPUs on an AOOSTAR GEM 10 mini PC: 4 via M.2-to-OCuLink (x4 each), 1 via USB4 on an AOOSTAR AG02, 176 GB VRAM total (2x Quadro RTX 8000, 2x P40, 1x V100)",
+    "result": "Runs 235B/397B models fully GPU-resident, 24/7. OCuLink and USB4 ports do not share lanes on this host (AOOSTAR support confirmed).",
+    "caveats": "Boot and backup SSDs had to move to USB3 to free M.2 slots. Old datacenter cards, not a budget-friendly cost per GB claim; not tested by me.",
+    "source": {
+     "label": "peuqui.github.io",
+     "url": "https://peuqui.github.io/AIfred-Intelligence/examples/Hardware_Setup_Frankenstein_MiniPC.html",
+     "how_seen": "EXCERPT",
+     "date": "2026-03"
+    }
+   },
+   {
+    "what": "2x 16GB (RX 6800 on USB4/UT4G + Arc A770 on OCuLink), 32 GB total, LM Studio Vulkan",
+    "result": "Gemma 4 31B Q5_K_M 13 tok/s; Qwen3.5 35B MoE Q5_K_M 50 tok/s - matched his tower. Mixed vendors work with LM Studio's even split only.",
+    "caveats": "Video transcript excerpt, not verified; uneven VRAM split noted; he advises hibernating before unplugging USB4 (blue screen risk).",
+    "source": {
+     "label": "www.youtube.com",
+     "url": "https://www.youtube.com/watch?v=XJ9_zu0-N9k",
+     "how_seen": "EXCERPT",
+     "date": "undated"
+    }
+   },
+   {
+    "what": "2x RX 6950 XT 16GB on a GPD WIN Max 2 via 2x OCuLink Gen4 x4 for a 176B MoE with expert cache",
+    "result": "17.7-19.6 tok/s decode; prefill ~18 tok/s. Needs Resizable BAR and a BIOS PFMMIO change to run two large-BAR 16GB eGPUs at once (second card allocations fail otherwise).",
+    "caveats": "Windows 11, custom llama.cpp PR patches; prefill is the wall.",
+    "source": {
+     "label": "github.cnmirror.space",
+     "url": "https://github.cnmirror.space/ChangXiang-SCU/dual-egpu-moe-llm/blob/main/README.md",
+     "how_seen": "READ",
+     "date": "undated"
+    }
+   },
+   {
+    "what": "llama.cpp multi-GPU modes",
+    "result": "Default --split-mode layer is pipeline parallel and 'can tolerate slow interconnect speeds'; --split-mode tensor is experimental, mostly meaningful for NVIDIA CUDA, and is much more bottlenecked by GPU interconnect. NVIDIA's playbook says tensor parallel needs matched GPUs and recommends x8/x8 or better.",
+    "caveats": "So two budget eGPUs on x4 links should be run as layer split: you gain capacity, not speed (each card ~50% busy).",
+    "source": {
+     "label": "github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/blob/master/docs/multi-gpu.md",
+     "how_seen": "EXCERPT",
+     "date": "undated"
+    }
+   }
+  ],
+  "cost_per_gb": {
+   "note": "My arithmetic, not a sourced figure. eGPU overhead = UT4G $128 + cheapest 650W PSU $49.96 = $177.96 (Warren prices). Card prices: Warren Amazon for 5060 Ti; eBay used asking medians from CresvaMent Nov 5 2026 (asking, not sold) for others; 3090 uses SOLD median from GPU Sold. Host not included. Internal-GPU comparison column is the card alone (no dock/PSU), so a desktop also needs a host/PSU/case of its own.",
+   "rows": [
+    {
+     "card": "RTX 5060 Ti 16GB new",
+     "card_usd": 769.99,
+     "egpu_total_usd": 947.95,
+     "egpu_usd_per_gb": 59.2,
+     "card_only_usd_per_gb": 48.1,
+     "note": null
+    },
+    {
+     "card": "RTX 5060 Ti 16GB used (ask median $700)",
+     "card_usd": 700,
+     "egpu_total_usd": 877.96,
+     "egpu_usd_per_gb": 54.9,
+     "card_only_usd_per_gb": 43.8,
+     "note": null
+    },
+    {
+     "card": "RX 9060 XT 16GB (TechSpot US Oct 2026 $620)",
+     "card_usd": 620,
+     "egpu_total_usd": 797.96,
+     "egpu_usd_per_gb": 49.9,
+     "card_only_usd_per_gb": 38.8,
+     "note": null
+    },
+    {
+     "card": "RTX 4060 Ti 16GB used (ask median $660)",
+     "card_usd": 660,
+     "egpu_total_usd": 837.96,
+     "egpu_usd_per_gb": 52.4,
+     "card_only_usd_per_gb": 41.3,
+     "note": null
+    },
+    {
+     "card": "RTX 3060 12GB used (ask median $350)",
+     "card_usd": 350,
+     "egpu_total_usd": 527.96,
+     "egpu_usd_per_gb": 44.0,
+     "card_only_usd_per_gb": 29.2,
+     "note": null
+    },
+    {
+     "card": "RX 6800 XT 16GB used (ask median $450) - not measured as eGPU here",
+     "card_usd": 450,
+     "egpu_total_usd": 627.96,
+     "egpu_usd_per_gb": 39.2,
+     "card_only_usd_per_gb": 28.1,
+     "note": null
+    },
+    {
+     "card": "RTX 3090 24GB used (sold median $1,586)",
+     "card_usd": 1586,
+     "egpu_total_usd": 1763.96,
+     "egpu_usd_per_gb": 73.5,
+     "card_only_usd_per_gb": 66.1,
+     "note": "no longer a sub-$1000 build"
+    },
+    {
+     "card": "Arc Pro B60 24GB (Warren $999.99)",
+     "card_usd": 999.99,
+     "egpu_total_usd": 1177.95,
+     "egpu_usd_per_gb": 49.1,
+     "card_only_usd_per_gb": 41.7,
+     "note": "cheap per GB on paper, but Warren measured 3 tok/s on a 27B"
+    }
+   ]
+  },
+  "catches": [
+   "Thunderbolt/USB4 authorisation: with security level 'user' or 'secure' the dock must be authorised before PCIe tunnels exist (echo 1 > /sys/bus/thunderbolt/devices/0-1/authorized or boltctl enroll). Linux's software connection manager only offers level 'user'. Some BIOSes have a 'nopcie' level. Source: kernel.org admin guide (excerpt) and Arch Wiki (excerpt).",
+   "Hot-plug: OCuLink has none (power dock first, boot host second). USB4/TB is hot-pluggable on paper, but ADT-Link says not to unplug while a program runs; pgaleone got a kernel panic from touching the cable; Next Tech and AI recommends hibernating before disconnecting; zephel01 logged 5 USB4 drops vs 0 OCuLink drops in 200 hours (secondary, from localaimaster/egpu.io, not verified).",
+   "Linux kernel params often needed for TB/USB4: pcie_ports=native pci=assign-busses,hpbussize=0x33,realloc,hpmmiosize=...,hpmmioprefsize=16G (Arch Wiki). pgaleone also needed pcie_aspm=off, pcie_port_pm=off, iommu=pt, NVreg_DynamicPowerManagement=0 and Resizable BAR off to stop freezes with an RTX 3090 on a UT4G; took 'weeks'.",
+   "Dock quality varies on the same chip: DEG2 failed with a 3090 on USB4 where AOOSTAR AG02 (same ASM2464 family) worked at once (single report).",
+   "Cables: use the dock's bundled OCuLink cable; generic or no-ReDriver M.2 adapters can leave the card undetected (Geerling).",
+   "Power: none of DEG1/DEG2/UT4G/EG02 include a PSU. ADT-Link suggests >=450W for 3060/70-class and >=600W for 3080/4080+; Warren's $49.96 Rosewill 650W is the cheap case. 3090 spikes strained the PSU in pgaleone's build. Built-in PSU docks: AG02 (800W), Core X (650W), Sonnet 850 T5, Beelink EX (600W, Beelink only).",
+   "Partial offload is the real link-sensitive case: when MoE experts or layers sit in system RAM, prompt processing falls by around half over TB3 x4 (gpt-oss-120b 140 vs 304 tok/s) - buy enough VRAM to avoid that.",
+   "Blackwell (RTX 50xx) over USB-C eGPU is flagged as problematic on the Debian wiki, while Warren runs a 5060 Ti on USB4 successfully (on a patched kernel); mixed evidence, test before promising.",
+   "ROCm does not work on PCIe-tunnelled AMD GPUs (no atomics, Debian wiki), so Vulkan is the AMD path over USB4/TB; Warren also used Vulkan.",
+   "Backend/driver penalty is as large as the link penalty in some reports: Warren's Arc Pro B60 got 3 tok/s on a 27B and 20 on a 7B on Vulkan, whereas the public llama.cpp Vulkan scoreboard has the B60 at ~68.6 tok/s on that 7B. His 5060 Ti: 78 tok/s Vulkan vs scoreboard 93.5, 95 on his own CUDA run.",
+   "Noise/heat: not measured by any source I read; open-frame docks (DEG1) have no case fans, GPU fans only. Not found.",
+   "Resizable BAR and BIOS MMIO windows: two 16 GB cards at once needed a PFMMIO BIOS change on a GPD Win Max 2 (README); a 24 GB card needed hpmmiosize=512M in pgaleone's kernel line."
+  ],
+  "not_found": [
+   "Primary-source (maker) pages for Minisforum DEG1/DEG2 and AOOSTAR were only seen as search excerpts, not opened; minisforum.com/products/deg1 returned CRAWL_NOT_FOUND.",
+   "ADT-Link R43SG and F9G prices and a plain-R43SG product page; no F9G anywhere.",
+   "A clean measured TB-vs-OCuLink MODEL LOAD time table for the same card (only OCuLink loads measured by Kimono Oyaji, plus arithmetic floors); a clean llama.cpp x1/x4/x8/x16 sweep for fully-resident models (only Geerling x1 vs x16).",
+   "Any measured tok/s for an RTX 4060 Ti 16GB, RX 7600 XT 16GB, RTX 3060 12GB, Arc B580 or Radeon PRO V620 used as an eGPU (scoreboard numbers are internal-slot Vulkan/CUDA, listed as references only). V620 appears on the Vulkan scoreboard at tg128 81.78, pp512 1595 but no price or eGPU use found.",
+   "GPD G1 current US price (only 2023 launch price) and any measured LLM result for it.",
+   "Trebleet, Rosewill RNE-01 and OwlTree pages (only Warren's prices).",
+   "The Warren 'setup notes' page for the patched 7.1.12 kernel; any independent confirmation that PCIe tunnelling works on Apple M1 Max under Linux (Asahi sources say it does not yet).",
+   "Noise, power draw at the wall and fan behaviour of budget eGPU stacks.",
+   "Reddit, X and Facebook threads: not opened (login-walled / not returned by tools). X posts appear only as quotes inside Geerling's post.",
+   "Full text of Geerling's LLM result tables (fetch truncated before them), the dev.to TB5-vs-USB4 RPC article (excerpt only), the YouTube video transcripts beyond what search returned."
+  ],
+  "conflict": {
+   "title": "We could not confirm the article's host setup",
+   "text": "The article runs the eGPU from an Apple Silicon MacBook Pro under Omarchy with a patched 7.1.12 kernel and local driver changes. We could not find independent confirmation that PCIe tunnelling over USB4 works on Apple Silicon under Linux. The Asahi Linux project said on 2026-10-28 that its downstream kernel has initial USB4 and Thunderbolt 3 support but not PCIe or DisplayPort tunnelling (a social-media post, seen as an excerpt), and Phoronix reported on 2026-08-31 that the USB4 patch series covers only USB3 and host-to-host links, with PCIe tunnelling to come later. Both can be true only if the author carries private patches, which we could not check because his setup notes page was not opened. Stock macOS has no eGPU support on Apple Silicon. On a PC or laptop with USB4 or OCuLink the same dock-and-card approach is well documented; on a Mac, treat this build as unproven.",
+   "sources": [
+    {
+     "label": "Asahi Linux post (Mastodon)",
+     "url": "https://social.treehouse.systems/@AsahiLinux/117519553147505278",
+     "how_seen": "excerpt only",
+     "date": "2026-10-28"
+    },
+    {
+     "label": "Phoronix report on the USB4 patch series (as cited in our research)",
+     "url": null,
+     "how_seen": "excerpt only",
+     "date": "2026-08-31"
+    }
+   ]
+  },
+  "b60_note": "The article's Arc Pro B60 result (3 tok/s on a 27B model, 20 on a 7B) is far below the public llama.cpp Vulkan scoreboard, which lists the B60 at about 68.6 tok/s on the same 7B model. That points to the author's host or driver stack, not the card, so do not read it as the B60's real speed."
+ }
 }

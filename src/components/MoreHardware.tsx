@@ -1,4 +1,5 @@
 import data from '../data/builds/more-hardware.json'
+import { EgpuBudget } from './EgpuBudget'
 
 type Src = { label: string; url: string | null; date?: string | null; how_seen?: string | null }
 type Route = {
@@ -56,6 +57,8 @@ export function MoreHardware() {
           </div>
         </section>
       ))}
+
+      <EgpuBudget />
 
       <section aria-label="Mac cluster results">
         <h2 className="mb-1 font-mono text-lg text-accent">Mac clusters: what has been measured</h2>
