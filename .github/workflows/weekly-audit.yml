@@ -1,0 +1,54 @@
+# Weekly audit: checks every source link and every page of the live build at phone and desktop width, and opens an issue if anything needs a person.
+# It changes nothing in the repo. It runs here (not in a cloud sandbox) because it needs the open internet and a browser.
+name: Weekly audit
+
+on:
+  schedule:
+    - cron: '17 12 * * 1'   # Mondays 12:17 UTC, before the weekly improvement routine at 13:00
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Check every source link
+        run: node scripts/check-links.mjs --json "$RUNNER_TEMP/links.json"
+
+      - name: Build and serve the site
+        run: |
+          npm run build
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory dist >/dev/null 2>&1 &
+          sleep 2
+          curl -fsS -o /dev/null http://127.0.0.1:4173/
+
+      - name: Install a browser outside the repo
+        run: |
+          mkdir -p "$RUNNER_TEMP/audit"
+          cd "$RUNNER_TEMP/audit"
+          npm init -y >/dev/null
+          npm i playwright @axe-core/playwright
+          npx playwright install --with-deps chromium
+
+      - name: Check layout and accessibility
+        run: AUDIT_MODULES="$RUNNER_TEMP/audit" node scripts/check-layout.mjs http://127.0.0.1:4173/ "$RUNNER_TEMP/layout.json"
+
+      - name: Open an issue if anything needs a person
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if node scripts/audit-report.mjs "$RUNNER_TEMP/links.json" "$RUNNER_TEMP/layout.json" > "$RUNNER_TEMP/body.md"; then
+            gh issue create --title "Weekly audit $(date -u +%F)" --body-file "$RUNNER_TEMP/body.md"
+          else
+            echo "Nothing to report."
+          fi

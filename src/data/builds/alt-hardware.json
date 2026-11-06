@@ -26,7 +26,7 @@
       "verdict": "Not recommended",
       "catches": [
         "Linux needs a jailbreak. The ps5-linux loader (README read 2026-11-05) now supports Phat and Slim firmware 3.00 to 7.61 and 11.00 to 13.60, and Pro 11.00 to 13.60. It does not list 8.x to 10.x, and a console cannot be downgraded. Our 2026-10-17 post said 7.61 was the limit; that is out of date.",
-        "The jailbreak is tethered: it has to be re-run after every reboot, can take several tries, and can crash the console. Newer firmware matters because 14.00 and 14.10 have no public kernel exploit and 14.20 patched a leaked one, so do not update a console you want to keep jailbreakable.",
+        "The jailbreak is tethered: it has to be re-run after every reboot, can take several tries, and can crash the console. Newer firmware matters: a jailbreak status tracker we read on 2026-11-03 (ps5jbstatus.com, which now returns 404, so we cannot link it) reported that 14.00 and 14.10 had no public kernel exploit and that 14.20 patched a leaked one. Check the loader's own page before updating a console you want to keep jailbreakable.",
         "You cannot read the firmware from most used listings. Sellers who advertised a usable firmware (12.40 to 13.60) asked $530 to $600 on eBay on Oct 18, against $430 to $525 when no firmware was stated (search excerpts, asking prices).",
         "Eight consoles each hold their own 16 GB shared with the system. It is not one 128 GB pool; llama.cpp splits layers across the network and runs at the speed of the slowest link.",
         "Measured by someone else: two PS5s pooled over gigabit ran a 27B model at about 14 to 21 tok/s, and one console running a smaller version of the same model was as fast or faster at 19.7 to 22 (ps5-llama-cluster README, 2026-10-24, firmware 13.60). Pooling bought a larger version, vision and a 262K context, not speed. A LinkedIn post claims about 41 tok/s on a 35B model with two consoles; we could not open its repo, so that is unverified.",
@@ -40,10 +40,6 @@
         {
           "label": "fragtion/ps5-llama-cluster (two-console measurements)",
           "url": "https://github.com/fragtion/ps5-llama-cluster"
-        },
-        {
-          "label": "ps5jbstatus.com (jailbreak status tracker)",
-          "url": "https://ps5jbstatus.com/"
         },
         {
           "label": "llama.cpp discussion: RPC over Ethernet strangely slow",
