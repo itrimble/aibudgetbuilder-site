@@ -538,7 +538,7 @@
    "tok_per_sec": "31.9 with exo across four, 19.5 on one; llama.cpp over ordinary networking went down, from 20.4 to 15.2",
    "source": {
     "label": "Jeff Geerling (Apple-loaned hardware)",
-    "url": "https://www.jeffgeerling.com/blog/2025/15-tb-vram-on-mac-studio-rdma-over-thunderbolt-5",
+    "url": "https://www.jeffgeerling.com/blog/2025/15-tb-vram-on-mac-studio-rdma-over-thunderbolt-5/",
     "date": "2025-12-18",
     "how_seen": "read page"
    },
