@@ -10,7 +10,8 @@ permissions:
 
 jobs:
   checks:
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Skip the run the bot's own methodology commit triggers: GitHub holds it as action_required, and the first run already covered the same content.
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
