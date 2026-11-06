@@ -115,7 +115,7 @@ export function CardTable({ cards, counts, setCount, rng, usdNote }: { cards: Gp
         <span className="text-muted">Cards you have picked always stay in the list. Showing {shown.length} of {cards.length}.</span>
       </div>
 
-      <div className="hidden overflow-x-auto md:block">
+      <div className="hidden overflow-x-auto md:block" tabIndex={0} role="region" aria-label="Scrollable table">
         <table className="w-full text-left text-sm">
           <thead><tr className="border-b border-line">
             {head('name', 'Card')}{head('vram', 'VRAM')}{head('pergb', '$/GB')}{head('power', 'Power')}

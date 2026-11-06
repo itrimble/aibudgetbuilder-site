@@ -35,7 +35,7 @@ export function OtherHardware() {
 
       <section aria-label="Options side by side">
         <h2 className="mb-2 font-mono text-lg text-accent">Three ways to 128 GB, side by side</h2>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[44rem] text-left text-sm">
             <thead className="text-xs text-muted">
               <tr><th className="py-1 pr-3">Option</th><th className="pr-3">Memory</th><th className="pr-3">Cost of the units</th><th className="pr-3">Power</th><th>Our read</th></tr>
@@ -77,7 +77,7 @@ export function OtherHardware() {
           From <a className="text-link underline" href={b.source_url}>akandr/bc250</a>, read {b.checked_on}. Generation speed in tokens per second. Median draw {b.median_watts['24cu']} W
           (24 compute units) and {b.median_watts['40cu']} W (40).
         </p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[28rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Model</th><th className="pr-3 text-right">24-unit board</th><th className="text-right">40-unit board</th></tr></thead>
             <tbody>

@@ -22,7 +22,7 @@ export function EgpuBudget() {
 
       <h3 className="mb-1 font-mono text-base text-accent">The three purchases</h3>
       <div className="grid gap-3 md:grid-cols-2">
-        <div className="min-w-0 overflow-x-auto">
+        <div className="min-w-0 overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[22rem] text-left text-sm">
             <caption className="mb-1 text-left text-xs text-subtle">Docks, without a power supply unless noted</caption>
             <tbody>
@@ -36,7 +36,7 @@ export function EgpuBudget() {
             </tbody>
           </table>
         </div>
-        <div className="min-w-0 overflow-x-auto">
+        <div className="min-w-0 overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[22rem] text-left text-sm">
             <caption className="mb-1 text-left text-xs text-subtle">Cards tried, with Amazon price and sellers</caption>
             <tbody>
@@ -52,7 +52,7 @@ export function EgpuBudget() {
       </div>
 
       <h3 className="mb-1 mt-4 font-mono text-base text-accent">What it costs in total</h3>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
         <table className="w-full min-w-[34rem] text-left text-sm">
           <tbody>
             {E.builds.map((b) => (
@@ -69,7 +69,7 @@ export function EgpuBudget() {
 
       <h3 className="mb-1 mt-4 font-mono text-base text-accent">What the author measured</h3>
       <p className="mb-2 text-xs text-subtle">Prompt speed (pp512) is tokens per second reading the prompt; generation speed (tg128) is tokens per second writing. Three repetitions per row for the Vulkan tests.</p>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
         <table className="w-full min-w-[44rem] text-left text-sm">
           <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Model</th><th className="pr-3">Card</th><th className="pr-3">Backend</th><th className="pr-3 text-right">Prompt</th><th className="pr-3 text-right">Generate</th><th>Host, date</th></tr></thead>
           <tbody>

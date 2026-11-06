@@ -36,7 +36,7 @@ export function Community() {
           From <a className="text-link underline" href={BENCH.source_url}>{BENCH.author}</a> and the sources named per row, checked {BENCH.checked_on}.
           Prompt speed is tokens per second reading the prompt (pp512), generation speed is tokens per second writing (tg128).
         </p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[40rem] text-left text-sm">
             <thead className="text-xs text-muted">
               <tr><th className="py-1 pr-3">Card</th><th className="pr-3">Model</th><th className="pr-3">Backend</th><th className="pr-3 text-right">Prompt</th><th className="pr-3 text-right">Generate</th><th className="text-right">Watts</th></tr>

@@ -108,7 +108,7 @@ export function Capacity({ buildVramGb, buildCards }: { buildVramGb: number; bui
 
       <section aria-label="Mixture of experts models">
         <h3 className="mb-2 font-mono text-base text-accent">Mixture-of-experts models</h3>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full text-left text-sm">
             <thead className="text-xs uppercase tracking-wide text-subtle">
               <tr><th className="py-1 pr-3">Model</th><th className="pr-3">Total / active</th><th className="pr-3">Size at {level}</th><th className="pr-3">Fit</th><th className="pr-3">Licence</th></tr>

@@ -63,7 +63,7 @@ export function MoreHardware() {
       <section aria-label="Mac cluster results">
         <h2 className="mb-1 font-mono text-lg text-accent">Mac clusters: what has been measured</h2>
         <p className="mb-2 text-xs text-subtle">Clustering Macs speeds a model up only over a fast direct link (Thunderbolt 5 with RDMA); over ordinary networking it tends to slow it down.</p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[44rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Setup</th><th className="pr-3">Model</th><th className="pr-3">Generation speed</th><th>Source</th></tr></thead>
             <tbody>

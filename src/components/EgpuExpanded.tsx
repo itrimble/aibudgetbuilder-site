@@ -47,7 +47,7 @@ export function EgpuExpanded() {
       <div>
         <h3 className="mb-1 font-mono text-base text-accent">More docks</h3>
         <p className="mb-2 text-xs text-subtle">Prices are store or guide listings seen on the dates in the basis column; most pages were search excerpts, so check the maker before buying.</p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[44rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Dock</th><th className="pr-3">Price</th><th className="pr-3">Link</th><th className="pr-3">Power supply</th><th>Notes</th></tr></thead>
             <tbody>
@@ -98,7 +98,7 @@ export function EgpuExpanded() {
       <div>
         <h3 className="mb-1 font-mono text-base text-accent">Cost per GB of video memory, with and without the dock</h3>
         <p className="mb-2 text-xs text-subtle">{X.cost_per_gb.note}</p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[34rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Card</th><th className="pr-3 text-right">Card</th><th className="pr-3 text-right">With dock and PSU</th><th className="pr-3 text-right">$/GB with</th><th className="text-right">$/GB card only</th></tr></thead>
             <tbody>

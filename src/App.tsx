@@ -183,7 +183,7 @@ export default function App() {
     </Summary>
   )
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 pb-24 md:pb-6">
+    <div className="mx-auto max-w-6xl break-words px-4 py-6 pb-24 md:pb-6">
       <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="font-mono text-2xl font-bold text-accent">AI Budget Build</h1>

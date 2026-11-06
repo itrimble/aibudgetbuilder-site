@@ -74,7 +74,7 @@ export function OsGuide() {
       <section aria-label="Support by GPU family">
         <h2 className="mb-1 font-mono text-lg text-accent">Support by card family</h2>
         <p className="mb-2 text-xs text-subtle">&quot;Works&quot; means the tool&apos;s own docs say so for that card family; it is not a benchmark and we have not run any of these.</p>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[60rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Cards</th><th className="pr-3">Windows</th><th className="pr-3">Linux</th><th className="pr-3">macOS</th></tr></thead>
             <tbody>
@@ -91,7 +91,7 @@ export function OsGuide() {
 
       <section aria-label="Tools on every system">
         <h2 className="mb-1 font-mono text-lg text-accent">Tools that run on more than one system</h2>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
           <table className="w-full min-w-[40rem] text-left text-sm">
             <thead className="text-xs text-muted"><tr><th className="py-1 pr-3">Tool</th><th className="pr-3">Windows</th><th className="pr-3">Linux</th><th className="pr-3">macOS</th><th>Note</th></tr></thead>
             <tbody>
