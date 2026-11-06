@@ -15,6 +15,11 @@ describe('link check helpers', () => {
     expect(skipped('https://huggingface.co/a/b')).toBe(true)
     expect(skipped('https://www.nvidia.com/x')).toBe(false)
   })
+  it('treats a trailing-slash-only redirect as fine and skips Rosewill', () => {
+    expect(classify(301, 'https://a.com/x/', 'https://a.com/x').kind).toBe('ok')
+    expect(classify(301, 'https://a.com/y', 'https://a.com/x').kind).toBe('moved')
+    expect(skipped('https://www.rosewill.com/p')).toBe(true)
+  })
   it('classifies statuses', () => {
     expect(classify(200).kind).toBe('ok')
     expect(classify(301, 'https://new').kind).toBe('moved')

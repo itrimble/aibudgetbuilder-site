@@ -572,7 +572,7 @@
     ],
     "spec_note": "NVIDIA RTX 4080 family page (4080 and 4080 SUPER columns identical): 16 GB GDDR6X, 3-Slot, Total Graphics Power 320 W, 750 W system, '3x PCIe 8-pin cables (adapter in box)'. Architecture and cooling not read from the page. Specs are NVIDIA's reference/Founders Edition design; partner cards differ in slot width, cooling and power connectors. 2026-11-04 update: NVIDIA 4080 family page lists NVIDIA Architecture: Ada Lovelace.",
     "bandwidth_gbs": 716.8,
-    "bandwidth_source_url": "https://images.nvidia.com/aem-dam/Solutions/Data-Center/l4/nvidia-ada-gpu-architecture-whitepaper-v2.1.pdf",
+    "bandwidth_source_url": "https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf",
     "bandwidth_checked_on": "2026-11-05",
     "bandwidth_basis": "maker page, read"
   },
@@ -1139,23 +1139,23 @@
     "checked_on": "2026-11-05",
     "image_query": "NVIDIA GeForce GTX 1080 Ti",
     "brand": "nvidia",
-    "spec_source_url": "https://www.nvidia.com/en-us/geforce/10-series/10-series-specs/",
-    "spec_checked_on": "2026-11-04",
+    "spec_source_url": "https://www.nvidia.com/content/geforce-gtx/gtx_1080_ti_user_guide.pdf",
+    "spec_checked_on": "2026-11-06",
     "spec_verified": [
-      "vram_gb",
-      "tdp_w",
       "slot_width",
       "connector_count"
     ],
     "spec_unverified": [
+      "vram_gb",
+      "tdp_w",
       "cooling",
       "arch"
     ],
-    "spec_note": "NVIDIA 10 Series specs page, read 2026-11-04 through a search excerpt: 11 GB GDDR5X, 250 W graphics card power, one 6-pin plus one 8-pin, 2-slot width, 10.5 in long. The NVIDIA user guide PDF also says one 6-pin and one 8-pin. Architecture is left blank because the NVIDIA page does not name it. Cooling is entered as active because every production board has fans, but the NVIDIA page does not say so (PNY lists a Blower Edition), so it is not counted as verified.",
+    "spec_note": "Cited source is the NVIDIA GTX 1080 Ti user guide PDF, opened 2026-11-06: one 6-pin plus one 8-pin power connector, a dual-width x16 slot, 600 W minimum power supply. NVIDIA's 10 Series specs page, which gave 11 GB GDDR5X, 250 W and 484 GB/s in search excerpts on 2026-11-04 and 2026-11-05, now redirects to the 50 Series page, so 11 GB and 250 W are no longer checked against a live maker page and are listed as unverified. Architecture is left blank because neither source names it. Cooling is entered as active because every production board has fans, but neither source says so.",
     "bandwidth_gbs": 484,
-    "bandwidth_source_url": "https://www.nvidia.com/en-us/geforce/10-series/10-series-specs/",
-    "bandwidth_checked_on": "2026-11-05",
-    "bandwidth_basis": "maker page, seen as a search excerpt"
+    "bandwidth_source_url": "https://www.evga.com/articles/archive/01116/evga-geforce-gtx-1080-ti-kingpin/default.asp",
+    "bandwidth_checked_on": "2026-11-06",
+    "bandwidth_basis": "third-party page (not the maker)"
   },
   {
     "id": "rtx-a6000",
