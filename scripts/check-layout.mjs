@@ -18,7 +18,8 @@ let views = 0
 
 const browser = await chromium.launch()
 for (const width of WIDTHS) {
-  const page = await browser.newPage({ viewport: { width, height: 900 } })
+  const context = await browser.newContext({ viewport: { width, height: 900 } }) // axe-core requires a page that came from a context
+  const page = await context.newPage()
   const errors = []
   page.on('pageerror', (e) => errors.push(String(e.message).slice(0, 160)))
   page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 160)) })
@@ -38,7 +39,7 @@ for (const width of WIDTHS) {
     }
   }
   for (const e of [...new Set(errors)]) problems.push({ width, view: 'any', kind: 'console error', detail: e })
-  await page.close()
+  await context.close()
 }
 await browser.close()
 const result = { views, widths: WIDTHS, problems }
