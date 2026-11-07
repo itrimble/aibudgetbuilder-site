@@ -2013,7 +2013,7 @@
     ],
     "bifurcation": "unknown",
     "note": "A generic profile for mid-range ATX boards. Your real board may differ: check its manual for the second x16 slot's lane count. Not a specific product.",
-    "source_url": "https://www.pcisig.com",
+    "source_url": "https://www.pcisig.com/",
     "checked_on": "2026-11-03"
   },
   {
@@ -2047,7 +2047,7 @@
     ],
     "bifurcation": "unknown",
     "note": "One physical slot. A second card needs an M.2-to-OCuLink or M.2-to-PCIe adapter and an external PSU. Generic profile, not a specific product.",
-    "source_url": "https://www.pcisig.com",
+    "source_url": "https://www.pcisig.com/",
     "checked_on": "2026-11-03"
   },
   {

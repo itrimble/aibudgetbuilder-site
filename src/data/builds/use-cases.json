@@ -361,11 +361,6 @@
           "url": "https://www.youtube.com/watch?v=0AqpaFm11oI",
           "how_seen": "search excerpt incl. transcript text (yt-dlp not run)",
           "date": "not shown"
-        },
-        {
-          "url": "https://insights.marvin-42.com/articles/675-comments-later-localllama-is-still-arguing-about-whether-local-coding-llms-are-worth-it",
-          "how_seen": "search excerpt (summary of a r/LocalLLaMA thread, not the thread)",
-          "date": "2026-04-29"
         }
       ]
     },
@@ -700,8 +695,7 @@
       "text": "Local coding agents: the same weights gave 12/12 task passes under two harnesses and 7/12 under a third (first-prompt size 1.4k vs 15.8k tokens). Tool calling is the weak point: qwen2.5-coder has no native tool calling in Ollama, Qwen3 thinking mode can suppress tool calls, and Ollama lacks tool_choice 'required'. A LocalLLaMA thread summary describes users quitting local agents over poor tool-call judgement and broken prompt caches.",
       "sources": [
         "https://dev.to/paul_irolla_6b5ae261d0224/comment/3i2c2",
-        "https://dev.to/trynocoder/what-broke-when-we-ran-an-ai-coding-agent-on-local-ollama-models-including-a-4gb-gpu-4f9c",
-        "https://insights.marvin-42.com/articles/675-comments-later-localllama-is-still-arguing-about-whether-local-coding-llms-are-worth-it"
+        "https://dev.to/trynocoder/what-broke-when-we-ran-an-ai-coding-agent-on-local-ollama-models-including-a-4gb-gpu-4f9c"
       ]
     },
     {
@@ -792,7 +786,7 @@
     {
       "platform": "Reddit (r/LocalLLaMA, r/LocalLLM, r/homelab, r/selfhosted, r/StableDiffusion, r/comfyui, r/MachineLearning)",
       "result": "excerpts only",
-      "note": "I did not open any reddit.com thread. Content came from third-party mirrors/summaries (reddit.sentinel-team.org snapshots, tokenfeed.ai, bittide.aicompass.dev, marvin-42 insights, a French news article citing an r/LocalLLM post). r/StableDiffusion, r/comfyui and r/MachineLearning produced no usable thread excerpt in my searches. Dates for mirror posts are snapshot dates."
+      "note": "I did not open any reddit.com thread. Content came from third-party mirrors/summaries (reddit.sentinel-team.org snapshots, tokenfeed.ai, bittide.aicompass.dev, a French news article citing an r/LocalLLM post). r/StableDiffusion, r/comfyui and r/MachineLearning produced no usable thread excerpt in my searches. Dates for mirror posts are snapshot dates. A marvin-42 insights summary was also used until 2026-11-06, when its page stopped loading; it was removed from the sources."
     },
     {
       "platform": "YouTube",

@@ -29,6 +29,8 @@ jobs:
           npm run methodology
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # A change to the Generated date alone is not worth a commit: the bot's push starts a second run that GitHub holds for approval.
+          if git diff -I'^Generated [0-9-]+ by' --quiet docs/METHODOLOGY.md; then git checkout docs/METHODOLOGY.md; fi
           git add docs/METHODOLOGY.md
           if git diff --cached --quiet; then echo "Methodology already current."; else
             git commit -m "Regenerate the methodology status"
