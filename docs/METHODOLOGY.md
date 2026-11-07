@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-06 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-07 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
