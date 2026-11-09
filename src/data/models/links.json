@@ -1,9 +1,9 @@
 {
-  "checked_on": "2026-11-08",
+  "checked_on": "2026-11-09",
   "source": "https://huggingface.co/api/models/{repo} (Hugging Face public model metadata)",
   "repos": {
     "ACE-Step/ACE-Step-v1-3.5B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ACE-Step/ACE-Step-v1-3.5B",
       "last_modified": "2025-05-22",
@@ -17,7 +17,7 @@
       "file_count": 14
     },
     "ASLP-lab/DiffRhythm-base": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ASLP-lab/DiffRhythm-base",
       "last_modified": "2025-03-26",
@@ -31,7 +31,7 @@
       "file_count": 7
     },
     "BreezeBlue/Breeze-TTS-2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "BreezeBlue/Breeze-TTS-2",
       "last_modified": "2026-09-09",
@@ -45,7 +45,7 @@
       "file_count": 17
     },
     "FunAudioLLM/ThinkSound": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "FunAudioLLM/ThinkSound",
       "last_modified": "2025-07-17",
@@ -59,7 +59,7 @@
       "file_count": 9
     },
     "HiDream-ai/HiDream-I1-Full": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "HiDream-ai/HiDream-I1-Full",
       "last_modified": "2025-07-17",
@@ -73,7 +73,7 @@
       "file_count": 36
     },
     "Lightricks/LTX-2.5-Diffusers": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Lightricks/LTX-2.5-Diffusers",
       "last_modified": "2026-10-22",
@@ -87,7 +87,7 @@
       "file_count": 66
     },
     "Lightricks/LTX-Video": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Lightricks/LTX-Video",
       "last_modified": "2025-07-16",
@@ -101,7 +101,7 @@
       "file_count": 63
     },
     "MaziyarPanahi/Mixtral-8x22B-Instruct-v0.1-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "MaziyarPanahi/Mixtral-8x22B-Instruct-v0.1-GGUF",
       "last_modified": "2024-04-18",
@@ -115,7 +115,7 @@
       "file_count": 49
     },
     "MiniMaxAI/MiniMax-H3": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "MiniMaxAI/MiniMax-H3",
       "last_modified": "2026-08-13",
@@ -129,7 +129,7 @@
       "file_count": 280
     },
     "MiniMaxAI/MiniMax-M2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "MiniMaxAI/MiniMax-M2",
       "last_modified": "2026-10-26",
@@ -143,7 +143,7 @@
       "file_count": 153
     },
     "MiniMaxAI/MiniMax-Music3": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "MiniMaxAI/MiniMax-Music3",
       "last_modified": "2026-10-26",
@@ -157,7 +157,7 @@
       "file_count": 88
     },
     "Nanbeige/Nanbeige4.3-33B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Nanbeige/Nanbeige4.3-33B",
       "last_modified": "2026-10-28",
@@ -171,7 +171,7 @@
       "file_count": 28
     },
     "OpenGVLab/InternVL3-8B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "OpenGVLab/InternVL3-8B",
       "last_modified": "2025-09-11",
@@ -185,7 +185,7 @@
       "file_count": 24
     },
     "OpenMOSS-Team/MOSS-Image-SFT": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "OpenMOSS-Team/MOSS-Image-SFT",
       "last_modified": "2026-10-21",
@@ -199,7 +199,7 @@
       "file_count": 37
     },
     "Qwen/Qwen-Image": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen-Image",
       "last_modified": "2025-08-18",
@@ -213,7 +213,7 @@
       "file_count": 31
     },
     "Qwen/Qwen-Image-2.1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen-Image-2.1",
       "last_modified": "2026-09-30",
@@ -227,7 +227,7 @@
       "file_count": 28
     },
     "Qwen/Qwen-Image-Edit-2509": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen-Image-Edit-2509",
       "last_modified": "2025-09-22",
@@ -241,7 +241,7 @@
       "file_count": 35
     },
     "Qwen/Qwen2.5-Coder-7B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen2.5-Coder-7B-Instruct",
       "last_modified": "2025-01-12",
@@ -255,7 +255,7 @@
       "file_count": 14
     },
     "Qwen/Qwen2.5-VL-7B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen2.5-VL-7B-Instruct",
       "last_modified": "2025-04-06",
@@ -269,7 +269,7 @@
       "file_count": 16
     },
     "Qwen/Qwen3-235B-A22B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-235B-A22B",
       "last_modified": "2025-07-26",
@@ -283,7 +283,7 @@
       "file_count": 128
     },
     "Qwen/Qwen3-30B-A3B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-30B-A3B",
       "last_modified": "2025-07-26",
@@ -297,7 +297,7 @@
       "file_count": 26
     },
     "Qwen/Qwen3-Coder-30B-A3B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "last_modified": "2025-12-03",
@@ -311,7 +311,7 @@
       "file_count": 28
     },
     "Qwen/Qwen3-Coder-480B-A35B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
       "last_modified": "2025-08-21",
@@ -325,7 +325,7 @@
       "file_count": 253
     },
     "Qwen/Qwen3-Coder-Next": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Coder-Next",
       "last_modified": "2026-02-03",
@@ -339,7 +339,7 @@
       "file_count": 52
     },
     "Qwen/Qwen3-Embedding-4B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Embedding-4B",
       "last_modified": "2025-06-20",
@@ -353,7 +353,7 @@
       "file_count": 14
     },
     "Qwen/Qwen3-Embedding-8B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Embedding-8B",
       "last_modified": "2025-07-07",
@@ -367,7 +367,7 @@
       "file_count": 17
     },
     "Qwen/Qwen3-Next-80B-A3B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Next-80B-A3B-Instruct",
       "last_modified": "2025-09-17",
@@ -381,7 +381,7 @@
       "file_count": 51
     },
     "Qwen/Qwen3-Reranker-8B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-Reranker-8B",
       "last_modified": "2026-04-16",
@@ -395,7 +395,7 @@
       "file_count": 19
     },
     "Qwen/Qwen3-VL-32B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-VL-32B-Instruct",
       "last_modified": "2025-10-21",
@@ -409,7 +409,7 @@
       "file_count": 26
     },
     "Qwen/Qwen3-VL-8B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3-VL-8B-Instruct",
       "last_modified": "2025-10-15",
@@ -423,7 +423,7 @@
       "file_count": 16
     },
     "Qwen/Qwen3.5-35B-A3B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3.5-35B-A3B",
       "last_modified": "2026-04-24",
@@ -437,7 +437,7 @@
       "file_count": 27
     },
     "Qwen/Qwen3.5-397B-A17B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3.5-397B-A17B",
       "last_modified": "2026-04-24",
@@ -451,7 +451,7 @@
       "file_count": 107
     },
     "Qwen/Qwen3.6-35B-A3B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3.6-35B-A3B",
       "last_modified": "2026-11-07",
@@ -465,7 +465,7 @@
       "file_count": 40
     },
     "Qwen/Qwen3.8-27B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3.8-27B",
       "last_modified": "2026-11-07",
@@ -479,7 +479,7 @@
       "file_count": 32
     },
     "Qwen/Qwen3.8-Flash-Next": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Qwen/Qwen3.8-Flash-Next",
       "last_modified": "2026-11-07",
@@ -493,7 +493,7 @@
       "file_count": 144
     },
     "ResembleAI/chatterbox": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ResembleAI/chatterbox",
       "last_modified": "2026-06-10",
@@ -507,7 +507,7 @@
       "file_count": 18
     },
     "SWivid/F5-TTS": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "SWivid/F5-TTS",
       "last_modified": "2025-03-21",
@@ -521,7 +521,7 @@
       "file_count": 9
     },
     "TencentARC/InstantMesh": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "TencentARC/InstantMesh",
       "last_modified": "2024-04-11",
@@ -535,7 +535,7 @@
       "file_count": 7
     },
     "TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "TheBloke/Mixtral-8x7B-Instruct-v0.1-GGUF",
       "last_modified": "2023-12-14",
@@ -549,7 +549,7 @@
       "file_count": 11
     },
     "Wan-AI/Wan2.1-T2V-1.3B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Wan-AI/Wan2.1-T2V-1.3B",
       "last_modified": "2025-03-01",
@@ -563,7 +563,7 @@
       "file_count": 22
     },
     "Wan-AI/Wan2.1-T2V-14B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Wan-AI/Wan2.1-T2V-14B",
       "last_modified": "2025-03-12",
@@ -577,7 +577,7 @@
       "file_count": 27
     },
     "Wan-AI/Wan2.2-Animate-14B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Wan-AI/Wan2.2-Animate-14B",
       "last_modified": "2025-11-05",
@@ -591,7 +591,7 @@
       "file_count": 444
     },
     "Wan-AI/Wan2.2-S2V-14B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Wan-AI/Wan2.2-S2V-14B",
       "last_modified": "2025-09-17",
@@ -605,7 +605,7 @@
       "file_count": 49
     },
     "Wan-AI/Wan2.2-TI2V-5B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "Wan-AI/Wan2.2-TI2V-5B",
       "last_modified": "2025-08-07",
@@ -619,7 +619,7 @@
       "file_count": 23
     },
     "baidu/ERNIE-4.5-21B-A3B-PT": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "baidu/ERNIE-4.5-21B-A3B-PT",
       "last_modified": "2025-11-26",
@@ -633,7 +633,7 @@
       "file_count": 21
     },
     "baidu/ERNIE-4.5-300B-A47B-PT": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "baidu/ERNIE-4.5-300B-A47B-PT",
       "last_modified": "2025-11-26",
@@ -647,7 +647,7 @@
       "file_count": 136
     },
     "baidu/Unlimited-OCR-2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "baidu/Unlimited-OCR-2",
       "last_modified": "2026-11-02",
@@ -661,7 +661,7 @@
       "file_count": 26
     },
     "bartowski/inclusionAI_Ling-flash-2.0-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "bartowski/inclusionAI_Ling-flash-2.0-GGUF",
       "last_modified": "2025-10-21",
@@ -675,7 +675,7 @@
       "file_count": 42
     },
     "black-forest-labs/FLUX.1-Kontext-dev": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "black-forest-labs/FLUX.1-Kontext-dev",
       "last_modified": "2026-01-01",
@@ -689,7 +689,7 @@
       "file_count": 29
     },
     "black-forest-labs/FLUX.1-dev": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "black-forest-labs/FLUX.1-dev",
       "last_modified": "2025-06-27",
@@ -703,7 +703,7 @@
       "file_count": 29
     },
     "black-forest-labs/FLUX.1-schnell": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "black-forest-labs/FLUX.1-schnell",
       "last_modified": "2024-08-16",
@@ -717,7 +717,7 @@
       "file_count": 28
     },
     "canopylabs/orpheus-3b-0.1-ft": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "canopylabs/orpheus-3b-0.1-ft",
       "last_modified": "2025-05-06",
@@ -731,7 +731,7 @@
       "file_count": 21
     },
     "coqui/XTTS-v2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "coqui/XTTS-v2",
       "last_modified": "2023-12-11",
@@ -745,7 +745,7 @@
       "file_count": 18
     },
     "deepseek-ai/DeepSeek-R1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "deepseek-ai/DeepSeek-R1",
       "last_modified": "2025-03-27",
@@ -759,7 +759,7 @@
       "file_count": 174
     },
     "deepseek-ai/DeepSeek-V3.1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "deepseek-ai/DeepSeek-V3.1",
       "last_modified": "2025-09-05",
@@ -773,7 +773,7 @@
       "file_count": 177
     },
     "deepseek-ai/DeepSeek-V4.1-Flash-1017": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
       "last_modified": "2026-10-17",
@@ -787,7 +787,7 @@
       "file_count": 83
     },
     "dots-studio/dots.llm1.inst": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "dots-studio/dots.llm1.inst",
       "last_modified": "2025-08-08",
@@ -801,7 +801,7 @@
       "file_count": 85
     },
     "facebook/audiogen-medium": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "facebook/audiogen-medium",
       "last_modified": "2024-03-12",
@@ -815,7 +815,7 @@
       "file_count": 4
     },
     "facebook/musicgen-medium": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "facebook/musicgen-medium",
       "last_modified": "2023-11-17",
@@ -829,7 +829,7 @@
       "file_count": 12
     },
     "fishaudio/drama-3": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "fishaudio/drama-3",
       "last_modified": "2026-10-29",
@@ -843,7 +843,7 @@
       "file_count": 25
     },
     "ggml-org/gpt-oss-120b-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ggml-org/gpt-oss-120b-GGUF",
       "last_modified": "2026-10-19",
@@ -857,7 +857,7 @@
       "file_count": 7
     },
     "ggml-org/gpt-oss-20b-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ggml-org/gpt-oss-20b-GGUF",
       "last_modified": "2026-10-19",
@@ -871,7 +871,7 @@
       "file_count": 7
     },
     "google/embeddinggemma-2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "google/embeddinggemma-2",
       "last_modified": "2026-10-28",
@@ -885,7 +885,7 @@
       "file_count": 15
     },
     "google/gemma-3-12b-it": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "google/gemma-3-12b-it",
       "last_modified": "2025-03-21",
@@ -899,7 +899,7 @@
       "file_count": 18
     },
     "google/gemma-4-12B-it": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "google/gemma-4-12B-it",
       "last_modified": "2026-10-30",
@@ -913,7 +913,7 @@
       "file_count": 9
     },
     "hexgrad/Kokoro-82M": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "hexgrad/Kokoro-82M",
       "last_modified": "2025-04-10",
@@ -927,7 +927,7 @@
       "file_count": 72
     },
     "hkchengrex/MMAudio": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "hkchengrex/MMAudio",
       "last_modified": "2026-02-19",
@@ -941,7 +941,7 @@
       "file_count": 26
     },
     "ibm-granite/granite-4.0-h-small": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ibm-granite/granite-4.0-h-small",
       "last_modified": "2025-11-03",
@@ -955,7 +955,7 @@
       "file_count": 26
     },
     "ibm-granite/granite-4.0-h-small-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "ibm-granite/granite-4.0-h-small-GGUF",
       "last_modified": "2025-10-08",
@@ -969,7 +969,7 @@
       "file_count": 17
     },
     "inclusionAI/Ling-flash-2.0": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "inclusionAI/Ling-flash-2.0",
       "last_modified": "2026-09-24",
@@ -983,7 +983,7 @@
       "file_count": 32
     },
     "inclusionAI/Ring-flash-2.0": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "inclusionAI/Ring-flash-2.0",
       "last_modified": "2026-09-24",
@@ -997,7 +997,7 @@
       "file_count": 32
     },
     "k2-fsa/OmniVoice": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "k2-fsa/OmniVoice",
       "last_modified": "2026-07-03",
@@ -1011,7 +1011,7 @@
       "file_count": 13
     },
     "krea/Krea-2-Turbo": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "krea/Krea-2-Turbo",
       "last_modified": "2026-07-24",
@@ -1025,7 +1025,7 @@
       "file_count": 55
     },
     "m-a-p/YuE-s1-7B-anneal-en-cot": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "m-a-p/YuE-s1-7B-anneal-en-cot",
       "last_modified": "2025-03-12",
@@ -1039,7 +1039,7 @@
       "file_count": 12
     },
     "m-a-p/YuE2-3B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "m-a-p/YuE2-3B",
       "last_modified": "2026-10-06",
@@ -1053,7 +1053,7 @@
       "file_count": 28
     },
     "meta-llama/Llama-4-Maverick-17B-128E-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
       "last_modified": "2025-05-22",
@@ -1067,7 +1067,7 @@
       "file_count": 69
     },
     "meta-llama/Llama-4-Scout-17B-16E-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
       "last_modified": "2025-05-22",
@@ -1081,7 +1081,7 @@
       "file_count": 64
     },
     "microsoft/Mage-VL-Cowork": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "microsoft/Mage-VL-Cowork",
       "last_modified": "2026-10-30",
@@ -1095,7 +1095,7 @@
       "file_count": 25
     },
     "microsoft/TRELLIS-image-large": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "microsoft/TRELLIS-image-large",
       "last_modified": "2024-12-06",
@@ -1109,7 +1109,7 @@
       "file_count": 19
     },
     "microsoft/VibeVoice-1.5B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "microsoft/VibeVoice-1.5B",
       "last_modified": "2026-01-22",
@@ -1123,7 +1123,7 @@
       "file_count": 9
     },
     "mistralai/Mistral-Large-3-675B-Instruct-2512": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "mistralai/Mistral-Large-3-675B-Instruct-2512",
       "last_modified": "2026-07-15",
@@ -1137,7 +1137,7 @@
       "file_count": 283
     },
     "mistralai/Mixtral-8x22B-Instruct-v0.1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "mistralai/Mixtral-8x22B-Instruct-v0.1",
       "last_modified": "2025-07-24",
@@ -1151,7 +1151,7 @@
       "file_count": 69
     },
     "mistralai/Mixtral-8x7B-Instruct-v0.1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "mistralai/Mixtral-8x7B-Instruct-v0.1",
       "last_modified": "2025-07-24",
@@ -1165,7 +1165,7 @@
       "file_count": 36
     },
     "mistralai/Pixtral-12B-2409": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "mistralai/Pixtral-12B-2409",
       "last_modified": "2026-06-02",
@@ -1179,7 +1179,7 @@
       "file_count": 5
     },
     "moonshotai/Kimi-K2-Instruct-0905": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "moonshotai/Kimi-K2-Instruct-0905",
       "last_modified": "2026-01-30",
@@ -1193,7 +1193,7 @@
       "file_count": 80
     },
     "moonshotai/Kimi-K2-Thinking": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "moonshotai/Kimi-K2-Thinking",
       "last_modified": "2026-01-30",
@@ -1207,7 +1207,7 @@
       "file_count": 80
     },
     "nari-labs/Dia-1.6B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "nari-labs/Dia-1.6B",
       "last_modified": "2025-06-01",
@@ -1221,7 +1221,7 @@
       "file_count": 6
     },
     "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
       "last_modified": "2026-08-24",
@@ -1235,7 +1235,7 @@
       "file_count": 35
     },
     "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
       "last_modified": "2026-10-29",
@@ -1249,7 +1249,7 @@
       "file_count": 22
     },
     "nvidia/parakeet-tdt-0.6b-v3": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "nvidia/parakeet-tdt-0.6b-v3",
       "last_modified": "2026-08-05",
@@ -1263,7 +1263,7 @@
       "file_count": 12
     },
     "openai/gpt-oss-120b": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "openai/gpt-oss-120b",
       "last_modified": "2025-08-26",
@@ -1277,7 +1277,7 @@
       "file_count": 37
     },
     "openai/gpt-oss-20b": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "openai/gpt-oss-20b",
       "last_modified": "2025-08-26",
@@ -1291,7 +1291,7 @@
       "file_count": 18
     },
     "openai/whisper-large-v3": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "openai/whisper-large-v3",
       "last_modified": "2024-08-12",
@@ -1305,11 +1305,11 @@
       "file_count": 21
     },
     "openbmb/VoxCPM2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "openbmb/VoxCPM2",
-      "last_modified": "2026-08-18",
-      "sha": "32279effe8c19989596f05d353d1447f51d9e915",
+      "last_modified": "2026-11-09",
+      "sha": "7936080b41163874f38610f46f438e2c0757f9fd",
       "gated": false,
       "disabled": false,
       "licence": "apache-2.0",
@@ -1319,7 +1319,7 @@
       "file_count": 9
     },
     "stabilityai/TripoSR": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/TripoSR",
       "last_modified": "2024-08-09",
@@ -1333,7 +1333,7 @@
       "file_count": 6
     },
     "stabilityai/stable-audio-3-medium": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/stable-audio-3-medium",
       "last_modified": "2026-10-06",
@@ -1347,7 +1347,7 @@
       "file_count": 17
     },
     "stabilityai/stable-audio-3-small-sfx": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/stable-audio-3-small-sfx",
       "last_modified": "2026-10-06",
@@ -1361,7 +1361,7 @@
       "file_count": 17
     },
     "stabilityai/stable-audio-open-1.0": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/stable-audio-open-1.0",
       "last_modified": "2025-06-19",
@@ -1375,7 +1375,7 @@
       "file_count": 25
     },
     "stabilityai/stable-diffusion-xl-base-1.0": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/stable-diffusion-xl-base-1.0",
       "last_modified": "2023-10-30",
@@ -1389,7 +1389,7 @@
       "file_count": 57
     },
     "stabilityai/stable-fast-3d": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "stabilityai/stable-fast-3d",
       "last_modified": "2025-04-08",
@@ -1403,7 +1403,7 @@
       "file_count": 6
     },
     "tencent/Hunyuan-A13B-Instruct": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "tencent/Hunyuan-A13B-Instruct",
       "last_modified": "2025-08-21",
@@ -1417,7 +1417,7 @@
       "file_count": 46
     },
     "tencent/Hunyuan-MT-7B": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "tencent/Hunyuan-MT-7B",
       "last_modified": "2025-12-30",
@@ -1431,7 +1431,7 @@
       "file_count": 12
     },
     "tencent/Hunyuan3D-2": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "tencent/Hunyuan3D-2",
       "last_modified": "2025-10-17",
@@ -1445,7 +1445,7 @@
       "file_count": 82
     },
     "tencent/Hunyuan3D-2.1": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "tencent/Hunyuan3D-2.1",
       "last_modified": "2025-10-17",
@@ -1459,7 +1459,7 @@
       "file_count": 30
     },
     "tencent/HunyuanVideo": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "tencent/HunyuanVideo",
       "last_modified": "2025-03-06",
@@ -1473,7 +1473,7 @@
       "file_count": 10
     },
     "unsloth/DeepSeek-R1-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/DeepSeek-R1-GGUF",
       "last_modified": "2025-05-30",
@@ -1487,7 +1487,7 @@
       "file_count": 118
     },
     "unsloth/DeepSeek-V3.1-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/DeepSeek-V3.1-GGUF",
       "last_modified": "2025-09-22",
@@ -1501,7 +1501,7 @@
       "file_count": 241
     },
     "unsloth/ERNIE-4.5-21B-A3B-PT-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/ERNIE-4.5-21B-A3B-PT-GGUF",
       "last_modified": "2026-01-24",
@@ -1515,7 +1515,7 @@
       "file_count": 30
     },
     "unsloth/ERNIE-4.5-300B-A47B-PT-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/ERNIE-4.5-300B-A47B-PT-GGUF",
       "last_modified": "2025-07-18",
@@ -1529,7 +1529,7 @@
       "file_count": 117
     },
     "unsloth/GLM-4.5-Air-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/GLM-4.5-Air-GGUF",
       "last_modified": "2025-12-25",
@@ -1543,7 +1543,7 @@
       "file_count": 55
     },
     "unsloth/GLM-4.5-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/GLM-4.5-GGUF",
       "last_modified": "2025-12-26",
@@ -1557,7 +1557,7 @@
       "file_count": 134
     },
     "unsloth/GLM-4.6-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/GLM-4.6-GGUF",
       "last_modified": "2025-12-27",
@@ -1571,7 +1571,7 @@
       "file_count": 133
     },
     "unsloth/GLM-4.7-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/GLM-4.7-GGUF",
       "last_modified": "2025-12-27",
@@ -1585,7 +1585,7 @@
       "file_count": 135
     },
     "unsloth/Hunyuan-A13B-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Hunyuan-A13B-Instruct-GGUF",
       "last_modified": "2025-07-10",
@@ -1599,7 +1599,7 @@
       "file_count": 39
     },
     "unsloth/Kimi-K2-Instruct-0905-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Kimi-K2-Instruct-0905-GGUF",
       "last_modified": "2025-09-06",
@@ -1613,7 +1613,7 @@
       "file_count": 368
     },
     "unsloth/Kimi-K2-Thinking-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Kimi-K2-Thinking-GGUF",
       "last_modified": "2026-01-27",
@@ -1627,7 +1627,7 @@
       "file_count": 370
     },
     "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF",
       "last_modified": "2025-06-18",
@@ -1641,7 +1641,7 @@
       "file_count": 151
     },
     "unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF",
       "last_modified": "2025-06-17",
@@ -1655,7 +1655,7 @@
       "file_count": 54
     },
     "unsloth/MiniMax-M2-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/MiniMax-M2-GGUF",
       "last_modified": "2025-11-03",
@@ -1669,7 +1669,7 @@
       "file_count": 90
     },
     "unsloth/Mistral-Large-3-675B-Instruct-2512-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Mistral-Large-3-675B-Instruct-2512-GGUF",
       "last_modified": "2025-12-16",
@@ -1683,7 +1683,7 @@
       "file_count": 244
     },
     "unsloth/Nemotron-3-Nano-30B-A3B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Nemotron-3-Nano-30B-A3B-GGUF",
       "last_modified": "2025-12-31",
@@ -1697,7 +1697,7 @@
       "file_count": 29
     },
     "unsloth/Qwen3-235B-A22B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-235B-A22B-GGUF",
       "last_modified": "2025-06-08",
@@ -1711,7 +1711,7 @@
       "file_count": 78
     },
     "unsloth/Qwen3-30B-A3B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-30B-A3B-GGUF",
       "last_modified": "2025-06-08",
@@ -1725,7 +1725,7 @@
       "file_count": 33
     },
     "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF",
       "last_modified": "2026-01-30",
@@ -1739,7 +1739,7 @@
       "file_count": 33
     },
     "unsloth/Qwen3-Coder-480B-A35B-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-Coder-480B-A35B-Instruct-GGUF",
       "last_modified": "2025-07-31",
@@ -1753,7 +1753,7 @@
       "file_count": 164
     },
     "unsloth/Qwen3-Coder-Next-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-Coder-Next-GGUF",
       "last_modified": "2026-03-06",
@@ -1767,7 +1767,7 @@
       "file_count": 66
     },
     "unsloth/Qwen3-Next-80B-A3B-Instruct-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3-Next-80B-A3B-Instruct-GGUF",
       "last_modified": "2026-01-14",
@@ -1781,7 +1781,7 @@
       "file_count": 41
     },
     "unsloth/Qwen3.5-35B-A3B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3.5-35B-A3B-GGUF",
       "last_modified": "2026-03-05",
@@ -1795,7 +1795,7 @@
       "file_count": 32
     },
     "unsloth/Qwen3.5-397B-A17B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3.5-397B-A17B-GGUF",
       "last_modified": "2026-03-07",
@@ -1809,7 +1809,7 @@
       "file_count": 198
     },
     "unsloth/Qwen3.6-35B-A3B-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/Qwen3.6-35B-A3B-GGUF",
       "last_modified": "2026-04-20",
@@ -1823,7 +1823,7 @@
       "file_count": 31
     },
     "unsloth/dots.llm1.inst-GGUF": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "unsloth/dots.llm1.inst-GGUF",
       "last_modified": "2025-06-26",
@@ -1837,7 +1837,7 @@
       "file_count": 68
     },
     "zai-org/GLM-4.5": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "zai-org/GLM-4.5",
       "last_modified": "2025-08-11",
@@ -1851,7 +1851,7 @@
       "file_count": 101
     },
     "zai-org/GLM-4.5-Air": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "zai-org/GLM-4.5-Air",
       "last_modified": "2025-08-11",
@@ -1865,7 +1865,7 @@
       "file_count": 55
     },
     "zai-org/GLM-4.6": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "zai-org/GLM-4.6",
       "last_modified": "2025-09-30",
@@ -1879,7 +1879,7 @@
       "file_count": 101
     },
     "zai-org/GLM-4.7": {
-      "checked_on": "2026-11-08",
+      "checked_on": "2026-11-09",
       "status": "ok",
       "canonical": "zai-org/GLM-4.7",
       "last_modified": "2026-01-29",
