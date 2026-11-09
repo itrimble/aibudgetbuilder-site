@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-08 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-09 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
@@ -125,11 +125,11 @@ Generated 2026-11-08 by `npm run methodology`. Do not edit between the markers: 
 | Images | 3 free-licence, 12 missing | Missing parts show an icon tile |
 | Presets, PC profiles | 5, 5 | |
 
-**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-05. Next price refresh due by **2026-11-17** (14-day rule).
+**Source tiers across priced records:** A: 27, C: 27, unknown: 39. Oldest check date 2026-11-03, newest 2026-11-09. Next price refresh due by **2026-11-17** (14-day rule).
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
-**Audit result:** 0 errors, 28 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
+**Audit result:** 0 errors, 30 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
 
 ### Open warnings (known gaps, shown honestly)
 
@@ -151,6 +151,8 @@ Generated 2026-11-08 by `npm run methodology`. Do not edit between the markers: 
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 910 W x 1.2 headroom = 1092 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 920 W x 1.2 headroom = 1104 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R41** `gpu:instinct-mi50-32`: Bandwidth rests on weaker evidence: maker press release, search excerpt ("up to 1 TB/s", converted to 1,000 GB/s).
+- **R37** `gpu:instinct-mi50-32`: The note quotes $117 but the range is $688 to $850, and the note does not say why.
+- **R37** `gpu:v100-32-sxm2`: The note quotes $280, $360, $115 but the range is $838 to $1030, and the note does not say why.
 - **R41** `gpu:rtx-3060-12`: Bandwidth rests on weaker evidence: third-party page (not the maker).
 - **R41** `gpu:rtx-4080-super`: Bandwidth rests on weaker evidence: third-party page (not the maker).
 - **R41** `gpu:rtx-4070-ti-super`: Bandwidth rests on weaker evidence: maker page, seen as a search excerpt.
