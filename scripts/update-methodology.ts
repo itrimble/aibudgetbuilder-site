@@ -37,6 +37,11 @@ const modelCount = input.tasks.reduce((n, t) => n + t.models.length, 0)
 const oldest = dates[0], newest = dates[dates.length - 1]
 const nextDue = oldest ? new Date(Date.parse(oldest) + MAX_AGE.priceWarn * 864e5).toISOString().slice(0, 10) : 'unknown'
 
+const systemComparisons = input.benchmarks.system_comparisons ?? []
+const systemNote = systemComparisons.length
+  ? ` System comparisons: ${systemComparisons.length} (${systemComparisons.map((c) => c.source_url).join(', ')}).`
+  : ''
+
 const status = `Generated ${today} by \`npm run methodology\`. Do not edit between the markers: edit the rules in \`src/lib/audit.ts\` or the data, then regenerate.
 
 | What | Count | Notes |
@@ -45,7 +50,7 @@ const status = `Generated ${today} by \`npm run methodology\`. Do not edit betwe
 | Boards | ${input.boards.length} | |
 | Adapters, PSUs | ${input.adapters.length}, ${input.psus.length} | Placeholders until real models are chosen |
 | Models | ${modelCount} in ${input.tasks.length} task groups | Memory figures are arithmetic unless a record says measured |
-| Benchmark rows | ${input.benchmarks.rows.length} | Source: ${input.benchmarks.source_url ?? 'none'} |
+| Benchmark rows | ${input.benchmarks.rows.length} | GPU rows: ${input.benchmarks.source_url ?? 'none'}.${systemNote} |
 | Images | ${imgs.filter((i) => i.status === 'ok').length} free-licence, ${imgs.filter((i) => i.status === 'missing').length} missing | Missing parts show an icon tile |
 | Presets, PC profiles | ${input.presets.length}, ${input.pcs.length} | |
 

@@ -124,5 +124,43 @@
    "verified": false
   }
  ],
- "image_video_notes": "Lon Seidman: Flux 1024x1024 ~1 min; LTX 2.5 5s 720p ~3.5 min; MiniMax H3 too slow on V100. Intel Arc card was under 1.5 min on the same job."
+ "image_video_notes": "Lon Seidman: Flux 1024x1024 ~1 min; LTX 2.5 5s 720p ~3.5 min; MiniMax H3 too slow on V100. Intel Arc card was under 1.5 min on the same job.",
+ "system_comparisons": [
+  {
+   "id": "mac-studio-512gb-vs-4x-gx10",
+   "title": "Apple Mac Studio 512 GB (1 unit) vs ASUS Ascent GX10 128 GB (4 units)",
+   "source_url": "https://x.com/i/status/2120477873123525050",
+   "checked_on": "2026-11-11",
+   "author": "X post",
+   "model": "DeepSeek V4.1 Flash, original weights, same bench on both",
+   "method_caveats": [
+    "One poster's numbers, not reproduced by us. Reader report, not verified.",
+    "The post names the runners as mlx-serve on the Mac and spark-ds41f on the GX10 units. It does not state versions or flags. Quantization details beyond \"original weights\", and power draw, were not stated.",
+    "Text and code are separate workloads, as the post reports them.",
+    "The post mentions DGX Spark recipes. The shortened link in the post is the attached photo, and that link was not followed.",
+    "The prices are the figures written in the post, not a store listing checked by us. The post says ASUS GX10 and groups the four units with DGX Spark.",
+    "The post text was read through a public status mirror on 2026-11-12 because x.com returned 403. The numbers match that text."
+   ],
+   "systems": [
+    {
+     "name": "Apple Mac Studio 512 GB",
+     "units": 1,
+     "price_usd": 25799
+    },
+    {
+     "name": "ASUS Ascent GX10 128 GB",
+     "units": 4,
+     "price_usd": 24000,
+     "note": "DGX Spark-class cluster. The post says ASUS GX10."
+    }
+   ],
+   "measures": [
+    { "measure": "Concurrency 1, text", "unit": "tok/s", "values": [53, 73] },
+    { "measure": "Concurrency 1, code", "unit": "tok/s", "values": [84, 122] },
+    { "measure": "Concurrency 16, text", "unit": "tok/s", "values": [137, 330] },
+    { "measure": "Concurrency 16, code", "unit": "tok/s", "values": [148, 847] },
+    { "measure": "128K prefill", "unit": "tok/s", "values": [3325, 7522] }
+   ]
+  }
+ ]
 }
