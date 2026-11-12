@@ -126,7 +126,7 @@ Accounts (eBay Partner Network, Amazon Associates) are not active yet. The code 
 - Every record has `source_url` and `checked_on`. A figure without them does not ship.
 - Prices are asking prices from listing pages and trackers, never quotes. Refresh by a scheduled job that commits a new snapshot; never scrape live in the browser.
 - Model VRAM is our arithmetic unless the record says it was measured, and the `vram_basis` field says how it was worked out.
-- Speeds shown come from a named source with card count, backend and caveats (`src/data/builds/community-benchmarks.json`). Our own measurements get a separate badge.
+- Speeds shown come from a named source with card count, backend and caveats (`src/data/builds/community-benchmarks.json`). A whole-system comparison lives in that file's `system_comparisons` list and is rendered in its own table, with the same source, date, author and caveats. Our own measurements get a separate badge.
 - Features that are not tested sit behind flags, default off in production (the P2 and P3 rows in `USER-STORIES.md`).
 
 ## 11. Accessibility
@@ -144,3 +144,4 @@ No third-party requests. No analytics until opted in. First load under 1 MB befo
 | Date | Change |
 |-|-|
 | 2026-11-03 | Bible started. Light default, token set, step-first layout, icon and logo policy, image source order, affiliate rules. Sources recorded: Material Design Icons (Apache-2.0), Bootstrap Icons (MIT), Simple Icons 13.21.0 (CC0), Wikimedia Commons (per-file licence) |
+| 2026-11-12 | Community benchmarks can hold a system comparison in its own table | A concurrency comparison of whole machines does not fit a single-GPU llama-bench row |

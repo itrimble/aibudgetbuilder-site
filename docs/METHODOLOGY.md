@@ -27,10 +27,11 @@ Every record has a `source_url` and `checked_on`. The tier comes from the source
 | A | Maker documents, standards bodies, our own copy of a manual | Specs, slot maps, power connectors |
 | B | Named, dated measurements and write-ups by identifiable people or reputable publications; model pages on Hugging Face | Speeds (with caveats), model facts, how-to claims |
 | C | Marketplace listings and price trackers | Asking prices only, never specs |
-| D | Forum threads, comments, video comments | Leads to chase. Never shown as fact. A tier D claim must be marked "reader report, not verified" |
+| D | Forum threads, comments, video comments, social posts | Leads to chase. Never shown as fact. A tier D claim must be marked "reader report, not verified" |
 | M | Our own measurement, with the protocol in section 7 | Anything, labelled "measured by us" with date and setup |
 
 Rules of use: a spec cites tier A or B. A price cites tier C and is dated. A speed cites tier B or M and carries its card count, backend and caveats.
+A speed from a forum or a social post is tier D. It may be shown only as a reader report, not verified, in the system-comparison table, and it does not enter the single-GPU rows.
 When two sources disagree, show the more conservative number and say they disagree. Never average sources that measured different things.
 
 ## 3. How each kind of data is collected
@@ -49,7 +50,9 @@ parameters x bits per weight / 8, plus a context allowance, with the working sho
 The audit recomputes the estimate from the stated quantisation (R12) and fails on a mismatch.
 
 **Benchmarks.** Only rows from a named person's published results, with source, date, backend and card count (or "card count unknown"). Our own
-numbers go in only under section 7. Speeds are never combined across different software versions.
+numbers go in only under section 7. Speeds are never combined across different software versions. A comparison of whole systems at several
+concurrency levels is not a llama-bench row. It is stored in `system_comparisons` in the same file, with its own source, date, author and caveats,
+and shown in its own table. A social-media post is tier D and is labelled a reader report, not verified.
 
 **Images.** Section "Images" in `DESIGN-BIBLE.md`: our own photo, then a free-licence Commons photo with credit, then an icon tile. The audit blocks any image without a free licence, an author and a source page (R18).
 
@@ -77,7 +80,7 @@ two-card suggestion fit while the build had three errors; suggestions now run th
 3. For a **card**: set vram, tdp, slot width, connectors, cooling, stacks, price range, a note saying what you give up, and `spec_source_url` if you have one.
 4. For a **board**: slots with lanes and generation from the manual, M.2 slots, RAM type and slots, bifurcation `unknown` unless shown.
 5. For a **model**: parameters, quant, estimate with `vram_basis` starting "My arithmetic" or "Measured", licence, source.
-6. For a **benchmark**: row plus source, backend, card count, caveats. Do not add a row you cannot trace.
+6. For a **benchmark**: row plus source, backend, card count, caveats. A whole-system comparison is a separate `system_comparisons` record, not a GPU row. Do not add a row you cannot trace.
 7. For a **preset**: ids must exist, and the number in its name must equal the cards' total (R11).
 8. Run `npm test`. Fix errors. Read the warnings: new ones are your responsibility, not noise.
 9. Run `npm run methodology` and commit the regenerated file with the data. If a rule changed, a row was added to the rule history: fill in the reason in the change log.
@@ -121,7 +124,7 @@ Generated 2026-11-12 by `npm run methodology`. Do not edit between the markers: 
 | Boards | 26 | |
 | Adapters, PSUs | 2, 10 | Placeholders until real models are chosen |
 | Models | 63 in 16 task groups | Memory figures are arithmetic unless a record says measured |
-| Benchmark rows | 12 | Source: https://countryboycomputersbg.com/instinct-mi50-32gb-vs-radeon-pro-v620-32gb/ |
+| Benchmark rows | 12 | GPU rows: https://countryboycomputersbg.com/instinct-mi50-32gb-vs-radeon-pro-v620-32gb/. System comparisons: 1 (https://x.com/i/status/2120477873123525050). |
 | Images | 3 free-licence, 12 missing | Missing parts show an icon tile |
 | Presets, PC profiles | 5, 5 | |
 
@@ -309,3 +312,4 @@ A row is added automatically whenever a rule is added, removed or reworded. Fill
 | 2026-11-04 | Model cards now show where to get the weights: the maker's Hugging Face page with the date it last changed there and its licence field, the GGUF repo with a note when it is a re-quantised copy by someone other than the maker, plain cautions (gated, pickle-only files, moved or missing repo), and a collapsed note on downloading safely. A new script, `npm run models:links`, checks all 135 Hugging Face repos the site names against Hugging Face's public model metadata (one request per repo, no login, no weights downloaded) and writes a dated snapshot. New rules R34 to R36 check trusted hosts, the snapshot's age and any moved repo, and the shape of any torrent entry | On the first run all 135 repos answered, two had moved (ThinkSound to FunAudioLLM and dots.llm1.inst to dots-studio, both links updated), 13 are gated (the FLUX, Llama 4, Gemma 3, Stable Audio and similar cards, now labelled) and 10 hold only pickle-based files (MusicGen, AudioGen, XTTS-v2, Kokoro and others, now labelled). The licence field Hugging Face reports agreed with ours for every model that has one, once our added notes (for example 'other (gated)') are set aside; four repos report no licence. Torrents: only one maker-published magnet was found and verified, Mistral's original Mixtral 8x7B release, listed in Mistral's own Hugging Face README; it is the raw layout and needs conversion for llama.cpp. Mistral's Mixtral 8x22B README points at an X post I could not open, so it is not listed. Community torrent indexes exist and some are well run, but a magnet only proves the bytes are consistent, so the site links none of them; the safe-download note says so. The 'changed on Hugging Face' date and the gated flag are Hugging Face's, read on 2026-11-04. Not verified: that every GGUF re-quantiser is trustworthy (the card says when a repo is not the maker's), and anything behind a login |
 | 2026-11-03 | Added R21: every spec field is verified against the maker or listed as unverified | The user's rule: the first goal is that the site never says something untrue. Specs for all 8 cards were first entered from memory and listings. They were then checked against NVIDIA and AMD pages. 26 field values were confirmed and 14 stay unverified, shown as such on each card (counted from the data on 2026-11-03; correction: an earlier draft of this line said 29 and 12, which was wrong). Two checks went wrong and were caught: AMD's MI50 page returned 404 (the AMD accelerator specifications table was used instead), and AMD's RX 6600 XT URL redirected to the RX 9000 page, returning another card's figures (16 GB, 250 W), which were rejected and replaced with the correct 6600 XT page |
 | 2026-11-03 | Added R22 to R27: exchange-rate completeness and freshness, budget tier validity, currency formatting, placeholder prices | Budget levels and foreign currencies were added. Rates come from the ECB with a date and source, never typed in. The first draft of the tier descriptions said things like "Reach 100+ GB with older server cards", which is true for some boards and false for others; they were replaced with neutral labels and R25 now rejects tier text with a memory figure. R25's own test then showed its first pattern missed "100+ GB", so the pattern was fixed. Four adapter and PSU price records are placeholders and are now listed as warnings so budget results that rely on them say so |
+| 2026-11-12 | System comparisons sit beside the GPU benchmark rows | An X post compared a Mac Studio with four ASUS GX10 units at two concurrency levels, plus a 128K prefill. Those figures are not pp512/tg128 rows, so they are a `system_comparisons` record with their own source, date, author and caveats, and their own table. x.com is tier D, and the page says reader report, not verified. The post text was read through a public status mirror because x.com returned 403 |

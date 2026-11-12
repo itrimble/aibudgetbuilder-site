@@ -82,7 +82,7 @@ const HOSTS: [RegExp, Tier][] = [
   [/^file:/, 'A'],
   [/(lon\.tv|countryboycomputersbg\.com|tymscar\.com|tomshardware\.com|huggingface\.co|github\.com|wikimedia\.org|iconify\.design)/, 'B'],
   [/(ebay\.com|amazon\.com|newegg\.com|bestvaluegpu\.com)/, 'C'],
-  [/(reddit\.com|youtube\.com|servethehome\.com|forum)/, 'D'],
+  [/(reddit\.com|youtube\.com|servethehome\.com|forum|(^|\.)(x|twitter)\.com$)/, 'D'],
 ]
 export function tier(url?: string): Tier {
   if (!url) return 'unknown'
@@ -96,7 +96,7 @@ type Rec = Record<string, any> // eslint-disable-line @typescript-eslint/no-expl
 export type AuditInput = {
   gpus: Rec[]; boards: Rec[]; adapters: Rec[]; psus: Rec[]
   tasks: { task: string; models: Rec[] }[]
-  benchmarks: { source_url?: string; checked_on?: string; rows: Rec[] }
+  benchmarks: { source_url?: string; checked_on?: string; rows: Rec[]; system_comparisons?: Rec[] }
   images: Record<string, Rec>; imageFiles: string[]
   pcs: Rec[]; presets: Rec[]
   moe?: Rec[]; gamedev?: Rec[]
@@ -231,6 +231,24 @@ export function auditAll(d: AuditInput): Finding[] {
     const id = `bench:${r.gpu} / ${r.model}`
     if (!(r.tg128 > 0) || !(r.source || bm.source_url)) add('R15', id, 'Needs tg128 > 0 and a source.')
     if (r.pp512 && r.tg128 && r.pp512 < r.tg128) add('R16', id, `Prompt ${r.pp512} slower than generation ${r.tg128}.`)
+  }
+  for (const c of bm.system_comparisons ?? []) {
+    const id = `bench-system:${c.id ?? c.title ?? '?'}`
+    if (!c.source_url || !isDate(c.checked_on)) add('R01', id, 'Missing source or date.')
+    else if (Date.parse(c.checked_on) > Date.parse(today)) add('R02', id, `Bad or future date "${c.checked_on}".`)
+    else if (days(c.checked_on, today) > MAX_AGE.benchmark) add('R17', id, `Checked ${Math.round(days(c.checked_on, today))} days ago.`)
+    if (!c.author || !c.method_caveats?.length) add('R15', id, 'Needs an author and method caveats.')
+    const systems: Rec[] = c.systems ?? []
+    if (systems.length < 2) add('R15', id, 'Needs at least two systems.')
+    for (const s of systems) if (!s.name || !(s.units > 0) || !(s.price_usd > 0)) add('R15', id, 'Each system needs a name, a unit count and a positive price.')
+    const measures: Rec[] = c.measures ?? []
+    if (!measures.length) add('R15', id, 'Needs at least one measured speed.')
+    for (const m of measures) {
+      const values: number[] = m.values ?? []
+      if (values.length !== systems.length || values.some((v) => !(v > 0))) add('R15', id, `${m.measure ?? 'measure'}: each system needs a positive speed.`)
+    }
+    const caveatText = (c.method_caveats ?? []).join(' ')
+    if (c.source_url && tier(c.source_url) === 'D' && !/not verified|reader report/i.test(caveatText)) add('R15', id, 'A tier D source must say it is a reader report, not verified.')
   }
 
   // images

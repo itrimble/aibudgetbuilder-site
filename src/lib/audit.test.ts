@@ -77,6 +77,35 @@ describe('each logic check actually fires on bad data', () => {
     expect(ruleHits(i, 'R15').length).toBe(1)
     expect(ruleHits(i, 'R16').length).toBe(1)
   })
+  it('keeps the system comparison out of the GPU rows and records its source', () => {
+    const b = live().benchmarks
+    expect(b.rows).toHaveLength(12)
+    expect(b.rows.some((r) => /Mac Studio|GX10|DeepSeek V4/i.test(String(r.gpu) + String(r.model)))).toBe(false)
+    expect(b.system_comparisons).toHaveLength(1)
+    const c = b.system_comparisons![0]
+    expect(c.source_url).toBe('https://x.com/i/status/2120477873123525050')
+    expect(c.checked_on).toBe('2026-11-11')
+    expect(c.author).toBe('X post')
+    expect(c.method_caveats.length).toBeGreaterThan(0)
+    expect(tier(c.source_url)).toBe('D')
+  })
+  it('R01/R15: a system comparison needs a source, positive speeds, and a not-verified label when the source is tier D', () => {
+    const bad = live()
+    bad.benchmarks = {
+      ...bad.benchmarks,
+      system_comparisons: [{
+        id: 'bad', author: 'X post', method_caveats: ['reader report, not verified'],
+        systems: [{ name: 'A', units: 1, price_usd: 1 }, { name: 'B', units: 4, price_usd: 2 }],
+        measures: [{ measure: 'Concurrency 1, text', unit: 'tok/s', values: [0, 10] }],
+      }],
+    }
+    expect(ruleHits(bad, 'R01').some((f) => f.id === 'bench-system:bad')).toBe(true)
+    expect(ruleHits(bad, 'R15').some((f) => f.id === 'bench-system:bad' && /positive speed/.test(f.message))).toBe(true)
+    const unlabeled = live()
+    const current = unlabeled.benchmarks.system_comparisons![0]
+    unlabeled.benchmarks = { ...unlabeled.benchmarks, system_comparisons: [{ ...current, method_caveats: ['One poster.'] }] }
+    expect(ruleHits(unlabeled, 'R15').some((f) => f.id === `bench-system:${current.id}` && /not verified/.test(f.message))).toBe(true)
+  })
   it('R22/R23/R24: rates must be complete, and go stale then unshippable', () => {
     const i = live(); i.rates = { ...i.rates, rates: { ...i.rates.rates, GBP: 0 } }
     expect(ruleHits(i, 'R22').length).toBe(1)
@@ -212,6 +241,8 @@ describe('each logic check actually fires on bad data', () => {
     expect(tier('https://blog.lon.tv/x')).toBe('B')
     expect(tier('https://www.ebay.com/itm/1')).toBe('C')
     expect(tier('https://www.reddit.com/r/x')).toBe('D')
+    expect(tier('https://x.com/i/status/1')).toBe('D')
+    expect(tier('https://twitter.com/a/status/1')).toBe('D')
     expect(tier('not a url')).toBe('unknown')
   })
 })

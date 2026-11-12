@@ -6,12 +6,23 @@ import { fmtUsd, fmtUsdRange } from '../lib/currency'
 type Claim = { kind: string; at: string; text: string; gpu?: string | null; gpu_id?: string; backend?: string; pp?: number; tg?: number; watts?: number; price_usd?: number; price_note?: string; cross_check?: string }
 type Video = { id: string; channel: string; title: string; url: string; uploaded: string; duration: string; transcript: string; transcript_checked_on: string; test_bench: string; claims: Claim[] }
 type Bench = { gpu: string; model: string; backend: string; pp512: number | null; tg128: number | null; watts: number | null; source?: string; note?: string }
+type SystemBox = { name: string; units: number; price_usd: number; note?: string }
+type SystemMeasure = { measure: string; unit: string; values: number[] }
+type SystemComparison = {
+  id: string; title: string; source_url: string; checked_on: string; author: string; model: string
+  method_caveats: string[]; systems: SystemBox[]; measures: SystemMeasure[]
+}
 
 const VIDEOS = videoData.videos as unknown as Video[]
-const BENCH = benchData as unknown as { source_url: string; checked_on: string; author: string; method_caveats: string[]; rows: Bench[]; reader_reports: { claim: string; by: string; verified: boolean }[] }
+const BENCH = benchData as unknown as {
+  source_url: string; checked_on: string; author: string; method_caveats: string[]; rows: Bench[]
+  reader_reports: { claim: string; by: string; verified: boolean }[]
+  system_comparisons?: SystemComparison[]
+}
 const GPUS = gpuData as unknown as { id: string; name: string; price_low: number; price_high: number; checked_on: string }[]
 const KIND_LABEL: Record<string, string> = { benchmark: 'Speed', software: 'Software', power: 'Power', price: 'Price', compat: 'Compatibility' }
 
+const COMPARISONS = BENCH.system_comparisons ?? []
 const seconds = (hms: string) => hms.split(':').reduce((a, n) => a * 60 + Number(n), 0)
 const daysAgo = (date: string) => Math.max(0, Math.round((Date.now() - Date.parse(date)) / 864e5))
 const at = (v: Video, c: Claim) => `${v.url}&t=${seconds(c.at)}s`
@@ -59,6 +70,58 @@ export function Community() {
           {BENCH.method_caveats.map((c) => <li key={c}>{c}</li>)}
         </ul>
       </section>
+
+      {COMPARISONS.length > 0 && (
+        <section aria-label="System comparisons" className="min-w-0">
+          <h2 className="mb-1 font-mono text-lg text-accent">System comparisons</h2>
+          <p className="mb-3 text-sm text-muted">
+            One whole machine against another, at more than one concurrency level. These are not single-GPU llama-bench rows, so they stay in their own table.
+          </p>
+          {COMPARISONS.map((c) => (
+            <article key={c.id} className="min-w-0">
+              <h3 className="font-mono text-base text-accent">{c.title}</h3>
+              <p className="mb-2 text-xs text-subtle">
+                {c.model}. From <a className="text-link underline" href={c.source_url}>{c.author}</a>, checked {c.checked_on}. Reader report, not verified.
+              </p>
+              <div className="min-w-0 overflow-x-auto" tabIndex={0} role="region" aria-label="Scrollable table">
+                <table className="w-full min-w-[28rem] text-left text-sm">
+                  <caption className="mb-1 text-left text-xs text-subtle">Speeds are tok/s. Not verified.</caption>
+                  <thead className="text-xs text-muted">
+                    <tr>
+                      <th scope="col" className="py-1 pr-3">Measure</th>
+                      {c.systems.map((s) => (
+                        <th scope="col" key={s.name} className="break-words px-3 py-1 text-right font-normal">
+                          {s.name}, {s.units} {s.units === 1 ? 'unit' : 'units'}
+                          {s.note && <span className="mt-0.5 block text-subtle">{s.note}</span>}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-line align-top">
+                      <th scope="row" className="py-1 pr-3 font-normal">Price in the post</th>
+                      {c.systems.map((s) => (
+                        <td key={s.name} className="px-3 py-1 text-right font-mono tabular-nums">{fmtUsd(s.price_usd)}</td>
+                      ))}
+                    </tr>
+                    {c.measures.map((m) => (
+                      <tr key={m.measure} className="border-t border-line align-top">
+                        <th scope="row" className="break-words py-1 pr-3 font-normal">{m.measure}</th>
+                        {m.values.map((v, i) => (
+                          <td key={c.systems[i].name} className="px-3 py-1 text-right font-mono tabular-nums">{num(v)} {m.unit}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-xs text-subtle">
+                {c.method_caveats.map((note) => <li key={note}>{note}</li>)}
+              </ul>
+            </article>
+          ))}
+        </section>
+      )}
 
       <section aria-label="Video reports" className="space-y-4">
         <h2 className="font-mono text-lg text-accent">Video reports</h2>
