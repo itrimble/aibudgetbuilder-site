@@ -129,7 +129,7 @@ Generated 2026-11-13 by `npm run methodology`. Do not edit between the markers: 
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
-**Audit result:** 0 errors, 30 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
+**Audit result:** 0 errors, 28 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
 
 ### Open warnings (known gaps, shown honestly)
 
@@ -151,9 +151,7 @@ Generated 2026-11-13 by `npm run methodology`. Do not edit between the markers: 
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 910 W x 1.2 headroom = 1092 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 920 W x 1.2 headroom = 1104 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R41** `gpu:instinct-mi50-32`: Bandwidth rests on weaker evidence: maker press release, search excerpt ("up to 1 TB/s", converted to 1,000 GB/s).
-- **R37** `gpu:v100-32-sxm2`: The note quotes $280, $360, $115 but the range is $838 to $903, and the note does not say why.
 - **R41** `gpu:rtx-3060-12`: Bandwidth rests on weaker evidence: third-party page (not the maker).
-- **R37** `gpu:rtx-5090`: The note quotes $8999 but the range is $5499 to $5499, and the note does not say why.
 - **R41** `gpu:rtx-4080-super`: Bandwidth rests on weaker evidence: third-party page (not the maker).
 - **R41** `gpu:rtx-4070-ti-super`: Bandwidth rests on weaker evidence: maker page, seen as a search excerpt.
 - **R41** `gpu:rtx-3080-ti`: Bandwidth rests on weaker evidence: third-party page (not the maker).
