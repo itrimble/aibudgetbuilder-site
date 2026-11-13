@@ -1,22 +1,24 @@
 #!/usr/bin/env node
 // Check every https link in src/data/**/*.json and write a report: which links are fine, which moved for good, which are dead.
-// Hosts that block scripts (eBay, Amazon, Reddit, X, Facebook, LinkedIn) are skipped, and Hugging Face is skipped because `npm run models:links` already checks it through the API.
+// Hosts that block scripts (eBay, Amazon, Reddit, X, Facebook, LinkedIn, Rosewill) are skipped, and Hugging Face is skipped because `npm run models:links` already checks it through the API.
 // Usage: node scripts/check-links.mjs [--json out.json]     Exit code is always 0; the weekly workflow decides what to do with the report.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const SKIP_HOST = /(^|\.)(ebay|amazon|reddit|x|twitter|facebook|linkedin|huggingface)\.(com|co)$|^t\.co$/
+const SKIP_HOST = /(^|\.)(ebay|amazon|reddit|x|twitter|facebook|linkedin|huggingface|rosewill)\.(com|co)$|^t\.co$/
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36' // some sites answer 404 to anything that does not look like a browser
 
 const trim = (u) => { let x = u.replace(/[.,;]+$/, ''); while (x.endsWith(')') && x.split(')').length > x.split('(').length) x = x.slice(0, -1); return x } // a closing bracket belongs to the link only when it has an opening one
 export const collectUrls = (text) => [...new Set([...text.matchAll(/https:\/\/[^\s"'<>\\]+/g)].map((m) => trim(m[0])))]
 export const skipped = (url) => { try { return SKIP_HOST.test(new URL(url).hostname) } catch { return true } }
 
+const sameAside = (from, to) => { try { const a = new URL(from), b = new URL(to, from); return a.origin === b.origin && a.pathname.replace(/\/+$/, '') === b.pathname.replace(/\/+$/, '') && a.search === b.search } catch { return false } } // a redirect that only adds or drops a trailing slash
+
 /** ok: 2xx. moved: a permanent redirect (301 or 308). dead: 404, 410 or a name that does not resolve. blocked: 403, 429, 999 (the site refuses scripts). unreachable: a reset or timeout. error: any other HTTP status. */
-export function classify(status, location) {
+export function classify(status, location, url) {
   if (status >= 200 && status < 300) return { kind: 'ok' }
-  if ((status === 301 || status === 308) && location) return { kind: 'moved', to: location }
+  if ((status === 301 || status === 308) && location) return sameAside(url, location) ? { kind: 'ok', note: 'trailing slash only' } : { kind: 'moved', to: location }
   if (status >= 300 && status < 400) return { kind: 'ok', note: `temporary redirect ${status}` }
   if (status === 404 || status === 410) return { kind: 'dead' }
   if (status === 403 || status === 429 || status === 999) return { kind: 'blocked' }
@@ -25,7 +27,7 @@ export function classify(status, location) {
 
 async function probe(url) {
   const opts = (method) => ({ method, redirect: 'manual', signal: AbortSignal.timeout(20000), headers: { 'User-Agent': UA } })
-  const done = (res) => { const loc = res.headers.get('location'); return { url, status: res.status, ...classify(res.status, loc ? new URL(loc, url).href : null) } }
+  const done = (res) => { const loc = res.headers.get('location'); return { url, status: res.status, ...classify(res.status, loc ? new URL(loc, url).href : null, url) } }
   try {
     let res = await fetch(url, opts('HEAD'))
     if (res.status === 405 || res.status === 501 || res.status === 403) res = await fetch(url, opts('GET'))
