@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-13 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-14 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
@@ -125,7 +125,7 @@ Generated 2026-11-13 by `npm run methodology`. Do not edit between the markers: 
 | Images | 3 free-licence, 12 missing | Missing parts show an icon tile |
 | Presets, PC profiles | 5, 5 | |
 
-**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-05. Next price refresh due by **2026-11-17** (14-day rule).
+**Source tiers across priced records:** A: 27, C: 23, unknown: 43. Oldest check date 2026-11-03, newest 2026-11-14. Next price refresh due by **2026-11-17** (14-day rule).
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
