@@ -343,7 +343,7 @@
     "price_low": 4999,
     "price_high": 4999,
     "price_basis": "used",
-    "note": " Extreme prices: not a budget card. Price basis 2026-11-15: lowest current US eBay used asking price ($4,999, bestvaluegpu.com, checked Nov 14), not an average; the tracker's November median of daily lows is $6,000 used and $7,999 new, and its 12-month average is $3,659.",
+    "note": " Extreme prices: not a budget card. Price basis 2026-11-15: lowest current US eBay used asking price ($4,999, bestvaluegpu.com, checked Nov 14), not an average; the tracker's November median of daily lows is $6,000 used and $7,999 new, and its 12-month average of $3,659 is not a price you can pay today.",
     "source_url": "https://bestvaluegpu.com/history/new-and-used-rtx-5090-price-history-and-specs/",
     "checked_on": "2026-11-15",
     "image_query": "NVIDIA GeForce RTX 5090 32GB",
