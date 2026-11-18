@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-17 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-18 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
@@ -129,10 +129,19 @@ Generated 2026-11-17 by `npm run methodology`. Do not edit between the markers: 
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
-**Audit result:** 0 errors, 28 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
+**Audit result:** 0 errors, 37 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
 
 ### Open warnings (known gaps, shown honestly)
 
+- **R04** `gpu:rx-6600xt`: Price checked 15 days ago.
+- **R04** `gpu:rtx-3060-12`: Price checked 15 days ago.
+- **R04** `board:asrock-romed8-2t`: Price checked 15 days ago.
+- **R04** `board:asus-b250-mining-expert`: Price checked 15 days ago.
+- **R04** `adapter:adt-r13-x1-x16-extender`: Price checked 15 days ago.
+- **R04** `adapter:adt-r43sf-m2-x16-gen3`: Price checked 15 days ago.
+- **R04** `psu:msi-meg-ai1300p-pcie5`: Price checked 15 days ago.
+- **R04** `psu:msi-meg-ai1600t-pcie5`: Price checked 15 days ago.
+- **R04** `psu:asus-pro-ws-1600w-platinum`: Price checked 15 days ago.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1650 W x 1.2 headroom = 1980 W; MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1810 W x 1.2 headroom = 2172 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1820 W x 1.2 headroom = 2184 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
