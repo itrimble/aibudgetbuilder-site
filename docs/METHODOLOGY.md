@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-18 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-19 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
@@ -125,23 +125,72 @@ Generated 2026-11-18 by `npm run methodology`. Do not edit between the markers: 
 | Images | 3 free-licence, 12 missing | Missing parts show an icon tile |
 | Presets, PC profiles | 5, 5 | |
 
-**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-05. Next price refresh due by **2026-11-17** (14-day rule).
+**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-19. Next price refresh due by **2026-11-17** (14-day rule).
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
-**Audit result:** 0 errors, 37 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
+**Audit result:** 0 errors, 86 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
 
 ### Open warnings (known gaps, shown honestly)
 
-- **R04** `gpu:rx-6600xt`: Price checked 15 days ago.
-- **R04** `gpu:rtx-3060-12`: Price checked 15 days ago.
-- **R04** `board:asrock-romed8-2t`: Price checked 15 days ago.
-- **R04** `board:asus-b250-mining-expert`: Price checked 15 days ago.
-- **R04** `adapter:adt-r13-x1-x16-extender`: Price checked 15 days ago.
-- **R04** `adapter:adt-r43sf-m2-x16-gen3`: Price checked 15 days ago.
-- **R04** `psu:msi-meg-ai1300p-pcie5`: Price checked 15 days ago.
-- **R04** `psu:msi-meg-ai1600t-pcie5`: Price checked 15 days ago.
-- **R04** `psu:asus-pro-ws-1600w-platinum`: Price checked 15 days ago.
+- **R04** `gpu:rx-6600xt`: Price checked 16 days ago.
+- **R04** `gpu:rtx-3060-12`: Price checked 16 days ago.
+- **R04** `board:asrock-romed8-2t`: Price checked 16 days ago.
+- **R04** `board:asus-b250-mining-expert`: Price checked 16 days ago.
+- **R04** `board:gigabyte-mz32-ar0`: Price checked 15 days ago.
+- **R04** `adapter:adt-r13-x1-x16-extender`: Price checked 16 days ago.
+- **R04** `adapter:adt-r43sf-m2-x16-gen3`: Price checked 16 days ago.
+- **R04** `psu:corsair-hx1500i-cp-9020309-na`: Price checked 15 days ago.
+- **R04** `psu:corsair-hx1200i-cp-9020307-na`: Price checked 15 days ago.
+- **R04** `psu:corsair-rm1200x-shift`: Price checked 15 days ago.
+- **R04** `psu:corsair-rm1000x-shift`: Price checked 15 days ago.
+- **R04** `psu:msi-meg-ai1300p-pcie5`: Price checked 16 days ago.
+- **R04** `psu:msi-meg-ai1600t-pcie5`: Price checked 16 days ago.
+- **R04** `psu:asus-pro-ws-1600w-platinum`: Price checked 16 days ago.
+- **R04** `psu:corsair-rm750e-cp-9020262-na`: Price checked 15 days ago.
+- **R04** `psu:asrock-taichi-tc-1650t`: Price checked 15 days ago.
+- **R04** `psu:thermaltake-toughpower-gf3-1650w`: Price checked 15 days ago.
+- **R04** `drive:samsung-990-pro-2tb`: Price checked 15 days ago.
+- **R04** `drive:wd-black-sn850x-2tb`: Price checked 15 days ago.
+- **R04** `drive:corsair-f2000gbmp600pnh`: Price checked 15 days ago.
+- **R04** `drive:corsair-f4000gbmp600plpw`: Price checked 15 days ago.
+- **R04** `drive:corsair-f2000gbmp600ehs`: Price checked 15 days ago.
+- **R04** `drive:corsair-f4000gbmp600ehs`: Price checked 15 days ago.
+- **R04** `drive:corsair-f4000gbmp600enh`: Price checked 15 days ago.
+- **R04** `drive:corsair-f2000gbmp600cxt`: Price checked 15 days ago.
+- **R04** `drive:corsair-f4000gbmp600cxt`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmg32gx4m2e3200c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmh32gx4m2e3200c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmh32gx4m2e3200c16w`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmh64gx5m2d5600z40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmh64gx5m2d6000z40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk32gx4m2a2666c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk32gx4m2e3200c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk32gx4m2e3200c16w`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d5600z40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d6000c40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d6000z40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmk96gx5m2b7000c40`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmp96gx5m2b6400c32`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmt64gx4m4e3200c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw128gx4m4d3600c18`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw32gx4m2e3200c16`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw32gx4m2e3200c16w`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw64gx4m2d3600c18`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw64gx4m4d3600c18`: Price checked 15 days ago.
+- **R04** `ram:corsair-cmw64gx4m4e3200c16`: Price checked 15 days ago.
+- **R04** `ram:crucial-cp2k32g4dfra32a`: Price checked 15 days ago.
+- **R04** `ram:crucial-ct2k32g4dfd832a`: Price checked 15 days ago.
+- **R04** `ram:nemix-64gb-ddr4-3200-2rx8`: Price checked 15 days ago.
+- **R04** `case:corsair-7000d-airflow-black`: Price checked 15 days ago.
+- **R04** `case:phanteks-enthoo-pro-2-server-edition-tg`: Price checked 15 days ago.
+- **R04** `case:phanteks-enthoo-pro-2-server-edition-cp`: Price checked 15 days ago.
+- **R04** `case:kingwin-kc-8gpu`: Price checked 15 days ago.
+- **R04** `case:kingwin-kc-12gpu`: Price checked 15 days ago.
+- **R04** `case:rosewill-rsv-ai01`: Price checked 15 days ago.
+- **R04** `case:rosewill-rsv-l4500u`: Price checked 15 days ago.
+- **R04** `case:rosewill-rsv-l4412u`: Price checked 15 days ago.
+- **R04** `case:rosewill-rsv-l4000u`: Price checked 15 days ago.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1650 W x 1.2 headroom = 1980 W; MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1810 W x 1.2 headroom = 2172 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1820 W x 1.2 headroom = 2184 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
