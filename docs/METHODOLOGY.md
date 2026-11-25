@@ -113,7 +113,7 @@ from extracted text. PSU and adapter entries are placeholders until real models 
 ## Status (AUTO)
 
 <!-- AUTO:STATUS:START -->
-Generated 2026-11-24 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
+Generated 2026-11-25 by `npm run methodology`. Do not edit between the markers: edit the rules in `src/lib/audit.ts` or the data, then regenerate.
 
 | What | Count | Notes |
 |-|-|-|
@@ -125,125 +125,116 @@ Generated 2026-11-24 by `npm run methodology`. Do not edit between the markers: 
 | Images | 3 free-licence, 12 missing | Missing parts show an icon tile |
 | Presets, PC profiles | 5, 5 | |
 
-**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-05. Next price refresh due by **2026-11-17** (14-day rule).
+**Source tiers across priced records:** A: 27, C: 26, unknown: 40. Oldest check date 2026-11-03, newest 2026-11-25. Next price refresh due by **2026-11-17** (14-day rule).
 
 **Card specs checked against the maker (field level):** 259 verified, 68 not verified, across 55 cards. Each card shows its own list.
 
-**Audit result:** 0 errors, 139 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
+**Audit result:** 0 errors, 131 warnings, 179 info records. No errors, so the data may ship. Warnings are published below.
 
 ### Open warnings (known gaps, shown honestly)
 
-- **R04** `gpu:tesla-p40`: Price checked 19 days ago.
-- **R04** `gpu:instinct-mi50-32`: Price checked 19 days ago.
-- **R04** `gpu:radeon-pro-v620`: Price checked 19 days ago.
-- **R04** `gpu:rtx-3090`: Price checked 19 days ago.
-- **R04** `gpu:rx-6600xt`: Price checked 21 days ago.
-- **R04** `gpu:v100-32-sxm2`: Price checked 19 days ago.
-- **R04** `gpu:v100-32-pcie`: Price checked 19 days ago.
-- **R04** `gpu:rtx-3060-12`: Price checked 21 days ago.
-- **R04** `gpu:rtx-5090`: Price checked 19 days ago.
-- **R04** `gpu:rtx-5080`: Price checked 19 days ago.
-- **R04** `gpu:rtx-5070-ti`: Price checked 19 days ago.
-- **R04** `gpu:rtx-5060-ti-16gb`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4090`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4080`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4080-super`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4070-ti-super`: Price checked 19 days ago.
-- **R04** `gpu:rtx-3080-ti`: Price checked 19 days ago.
-- **R04** `gpu:rx-6800`: Price checked 19 days ago.
-- **R04** `gpu:rx-6800-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-6900-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-7600-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-7800-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-7900-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-7900-xtx`: Price checked 19 days ago.
-- **R04** `gpu:rx-9070`: Price checked 19 days ago.
-- **R04** `gpu:rx-9070-xt`: Price checked 19 days ago.
-- **R04** `gpu:rx-9060-xt-16gb`: Price checked 19 days ago.
-- **R04** `gpu:gtx-1080-ti`: Price checked 19 days ago.
-- **R04** `gpu:rtx-a6000`: Price checked 19 days ago.
-- **R04** `gpu:rtx-a5000`: Price checked 19 days ago.
-- **R04** `gpu:rtx-a4000`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-a40`: Price checked 19 days ago.
-- **R04** `gpu:radeon-ai-pro-r9700`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4060-ti-16gb`: Price checked 19 days ago.
-- **R04** `gpu:rtx-3090-ti`: Price checked 19 days ago.
-- **R04** `gpu:radeon-pro-w7900`: Price checked 19 days ago.
-- **R04** `gpu:radeon-pro-w7800`: Price checked 19 days ago.
-- **R04** `gpu:radeon-pro-w6800`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-l40s`: Price checked 19 days ago.
-- **R04** `gpu:rtx-6000-ada`: Price checked 19 days ago.
-- **R04** `gpu:rtx-5000-ada`: Price checked 19 days ago.
-- **R04** `gpu:rtx-4000-ada`: Price checked 19 days ago.
-- **R04** `gpu:quadro-rtx-8000`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-a100-80gb-pcie`: Price checked 19 days ago.
-- **R04** `gpu:rtx-pro-5000-blackwell`: Price checked 19 days ago.
-- **R04** `gpu:rtx-pro-6000-blackwell`: Price checked 19 days ago.
-- **R04** `gpu:arc-a770-16gb`: Price checked 19 days ago.
-- **R04** `gpu:arc-b580`: Price checked 19 days ago.
-- **R04** `gpu:tesla-p100-16gb`: Price checked 19 days ago.
-- **R04** `gpu:v100-16-pcie`: Price checked 19 days ago.
-- **R04** `gpu:tesla-t4`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-a30`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-l4`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-a10`: Price checked 19 days ago.
-- **R04** `gpu:nvidia-a2`: Price checked 19 days ago.
-- **R04** `board:asrock-romed8-2t`: Price checked 21 days ago.
-- **R04** `board:asus-b250-mining-expert`: Price checked 21 days ago.
-- **R04** `board:gigabyte-mz32-ar0`: Price checked 20 days ago.
-- **R04** `adapter:adt-r13-x1-x16-extender`: Price checked 21 days ago.
-- **R04** `adapter:adt-r43sf-m2-x16-gen3`: Price checked 21 days ago.
-- **R04** `psu:corsair-hx1500i-cp-9020309-na`: Price checked 20 days ago.
-- **R04** `psu:corsair-hx1200i-cp-9020307-na`: Price checked 20 days ago.
-- **R04** `psu:corsair-rm1200x-shift`: Price checked 20 days ago.
-- **R04** `psu:corsair-rm1000x-shift`: Price checked 20 days ago.
-- **R04** `psu:msi-meg-ai1300p-pcie5`: Price checked 21 days ago.
-- **R04** `psu:msi-meg-ai1600t-pcie5`: Price checked 21 days ago.
-- **R04** `psu:asus-pro-ws-1600w-platinum`: Price checked 21 days ago.
-- **R04** `psu:corsair-rm750e-cp-9020262-na`: Price checked 20 days ago.
-- **R04** `psu:asrock-taichi-tc-1650t`: Price checked 20 days ago.
-- **R04** `psu:thermaltake-toughpower-gf3-1650w`: Price checked 20 days ago.
-- **R04** `drive:samsung-990-pro-2tb`: Price checked 20 days ago.
-- **R04** `drive:wd-black-sn850x-2tb`: Price checked 20 days ago.
-- **R04** `drive:corsair-f2000gbmp600pnh`: Price checked 20 days ago.
-- **R04** `drive:corsair-f4000gbmp600plpw`: Price checked 20 days ago.
-- **R04** `drive:corsair-f2000gbmp600ehs`: Price checked 20 days ago.
-- **R04** `drive:corsair-f4000gbmp600ehs`: Price checked 20 days ago.
-- **R04** `drive:corsair-f4000gbmp600enh`: Price checked 20 days ago.
-- **R04** `drive:corsair-f2000gbmp600cxt`: Price checked 20 days ago.
-- **R04** `drive:corsair-f4000gbmp600cxt`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmg32gx4m2e3200c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmh32gx4m2e3200c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmh32gx4m2e3200c16w`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmh64gx5m2d5600z40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmh64gx5m2d6000z40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk32gx4m2a2666c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk32gx4m2e3200c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk32gx4m2e3200c16w`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk64gx5m2d5600z40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk64gx5m2d6000c40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk64gx5m2d6000z40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmk96gx5m2b7000c40`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmp96gx5m2b6400c32`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmt64gx4m4e3200c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw128gx4m4d3600c18`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw32gx4m2e3200c16`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw32gx4m2e3200c16w`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw64gx4m2d3600c18`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw64gx4m4d3600c18`: Price checked 20 days ago.
-- **R04** `ram:corsair-cmw64gx4m4e3200c16`: Price checked 20 days ago.
-- **R04** `ram:crucial-cp2k32g4dfra32a`: Price checked 20 days ago.
-- **R04** `ram:crucial-ct2k32g4dfd832a`: Price checked 20 days ago.
-- **R04** `ram:nemix-64gb-ddr4-3200-2rx8`: Price checked 20 days ago.
-- **R04** `case:corsair-7000d-airflow-black`: Price checked 20 days ago.
-- **R04** `case:phanteks-enthoo-pro-2-server-edition-tg`: Price checked 20 days ago.
-- **R04** `case:phanteks-enthoo-pro-2-server-edition-cp`: Price checked 20 days ago.
-- **R04** `case:kingwin-kc-8gpu`: Price checked 20 days ago.
-- **R04** `case:kingwin-kc-12gpu`: Price checked 20 days ago.
-- **R04** `case:rosewill-rsv-ai01`: Price checked 20 days ago.
-- **R04** `case:rosewill-rsv-l4500u`: Price checked 20 days ago.
-- **R04** `case:rosewill-rsv-l4412u`: Price checked 20 days ago.
-- **R04** `case:rosewill-rsv-l4000u`: Price checked 20 days ago.
+- **R04** `gpu:radeon-pro-v620`: Price checked 20 days ago.
+- **R04** `gpu:rx-6600xt`: Price checked 22 days ago.
+- **R04** `gpu:rtx-3060-12`: Price checked 22 days ago.
+- **R04** `gpu:rtx-4090`: Price checked 20 days ago.
+- **R04** `gpu:rtx-4080`: Price checked 20 days ago.
+- **R04** `gpu:rtx-4080-super`: Price checked 20 days ago.
+- **R04** `gpu:rtx-4070-ti-super`: Price checked 20 days ago.
+- **R04** `gpu:rtx-3080-ti`: Price checked 20 days ago.
+- **R04** `gpu:rx-6800`: Price checked 20 days ago.
+- **R04** `gpu:rx-6800-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-6900-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-7600-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-7800-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-7900-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-7900-xtx`: Price checked 20 days ago.
+- **R04** `gpu:rx-9070`: Price checked 20 days ago.
+- **R04** `gpu:rx-9070-xt`: Price checked 20 days ago.
+- **R04** `gpu:rx-9060-xt-16gb`: Price checked 20 days ago.
+- **R04** `gpu:gtx-1080-ti`: Price checked 20 days ago.
+- **R04** `gpu:rtx-a6000`: Price checked 20 days ago.
+- **R04** `gpu:rtx-a5000`: Price checked 20 days ago.
+- **R04** `gpu:rtx-a4000`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-a40`: Price checked 20 days ago.
+- **R04** `gpu:radeon-ai-pro-r9700`: Price checked 20 days ago.
+- **R04** `gpu:rtx-4060-ti-16gb`: Price checked 20 days ago.
+- **R04** `gpu:rtx-3090-ti`: Price checked 20 days ago.
+- **R04** `gpu:radeon-pro-w7900`: Price checked 20 days ago.
+- **R04** `gpu:radeon-pro-w7800`: Price checked 20 days ago.
+- **R04** `gpu:radeon-pro-w6800`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-l40s`: Price checked 20 days ago.
+- **R04** `gpu:rtx-6000-ada`: Price checked 20 days ago.
+- **R04** `gpu:rtx-5000-ada`: Price checked 20 days ago.
+- **R04** `gpu:rtx-4000-ada`: Price checked 20 days ago.
+- **R04** `gpu:quadro-rtx-8000`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-a100-80gb-pcie`: Price checked 20 days ago.
+- **R04** `gpu:rtx-pro-5000-blackwell`: Price checked 20 days ago.
+- **R04** `gpu:rtx-pro-6000-blackwell`: Price checked 20 days ago.
+- **R04** `gpu:arc-a770-16gb`: Price checked 20 days ago.
+- **R04** `gpu:arc-b580`: Price checked 20 days ago.
+- **R04** `gpu:tesla-p100-16gb`: Price checked 20 days ago.
+- **R04** `gpu:v100-16-pcie`: Price checked 20 days ago.
+- **R04** `gpu:tesla-t4`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-a30`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-l4`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-a10`: Price checked 20 days ago.
+- **R04** `gpu:nvidia-a2`: Price checked 20 days ago.
+- **R04** `board:asrock-romed8-2t`: Price checked 22 days ago.
+- **R04** `board:asus-b250-mining-expert`: Price checked 22 days ago.
+- **R04** `board:gigabyte-mz32-ar0`: Price checked 21 days ago.
+- **R04** `adapter:adt-r13-x1-x16-extender`: Price checked 22 days ago.
+- **R04** `adapter:adt-r43sf-m2-x16-gen3`: Price checked 22 days ago.
+- **R04** `psu:corsair-hx1500i-cp-9020309-na`: Price checked 21 days ago.
+- **R04** `psu:corsair-hx1200i-cp-9020307-na`: Price checked 21 days ago.
+- **R04** `psu:corsair-rm1200x-shift`: Price checked 21 days ago.
+- **R04** `psu:corsair-rm1000x-shift`: Price checked 21 days ago.
+- **R04** `psu:msi-meg-ai1300p-pcie5`: Price checked 22 days ago.
+- **R04** `psu:msi-meg-ai1600t-pcie5`: Price checked 22 days ago.
+- **R04** `psu:asus-pro-ws-1600w-platinum`: Price checked 22 days ago.
+- **R04** `psu:corsair-rm750e-cp-9020262-na`: Price checked 21 days ago.
+- **R04** `psu:asrock-taichi-tc-1650t`: Price checked 21 days ago.
+- **R04** `psu:thermaltake-toughpower-gf3-1650w`: Price checked 21 days ago.
+- **R04** `drive:samsung-990-pro-2tb`: Price checked 21 days ago.
+- **R04** `drive:wd-black-sn850x-2tb`: Price checked 21 days ago.
+- **R04** `drive:corsair-f2000gbmp600pnh`: Price checked 21 days ago.
+- **R04** `drive:corsair-f4000gbmp600plpw`: Price checked 21 days ago.
+- **R04** `drive:corsair-f2000gbmp600ehs`: Price checked 21 days ago.
+- **R04** `drive:corsair-f4000gbmp600ehs`: Price checked 21 days ago.
+- **R04** `drive:corsair-f4000gbmp600enh`: Price checked 21 days ago.
+- **R04** `drive:corsair-f2000gbmp600cxt`: Price checked 21 days ago.
+- **R04** `drive:corsair-f4000gbmp600cxt`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmg32gx4m2e3200c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmh32gx4m2e3200c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmh32gx4m2e3200c16w`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmh64gx5m2d5600z40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmh64gx5m2d6000z40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk32gx4m2a2666c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk32gx4m2e3200c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk32gx4m2e3200c16w`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d5600z40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d6000c40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk64gx5m2d6000z40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmk96gx5m2b7000c40`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmp96gx5m2b6400c32`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmt64gx4m4e3200c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw128gx4m4d3600c18`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw32gx4m2e3200c16`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw32gx4m2e3200c16w`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw64gx4m2d3600c18`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw64gx4m4d3600c18`: Price checked 21 days ago.
+- **R04** `ram:corsair-cmw64gx4m4e3200c16`: Price checked 21 days ago.
+- **R04** `ram:crucial-cp2k32g4dfra32a`: Price checked 21 days ago.
+- **R04** `ram:crucial-ct2k32g4dfd832a`: Price checked 21 days ago.
+- **R04** `ram:nemix-64gb-ddr4-3200-2rx8`: Price checked 21 days ago.
+- **R04** `case:corsair-7000d-airflow-black`: Price checked 21 days ago.
+- **R04** `case:phanteks-enthoo-pro-2-server-edition-tg`: Price checked 21 days ago.
+- **R04** `case:phanteks-enthoo-pro-2-server-edition-cp`: Price checked 21 days ago.
+- **R04** `case:kingwin-kc-8gpu`: Price checked 21 days ago.
+- **R04** `case:kingwin-kc-12gpu`: Price checked 21 days ago.
+- **R04** `case:rosewill-rsv-ai01`: Price checked 21 days ago.
+- **R04** `case:rosewill-rsv-l4500u`: Price checked 21 days ago.
+- **R04** `case:rosewill-rsv-l4412u`: Price checked 21 days ago.
+- **R04** `case:rosewill-rsv-l4000u`: Price checked 21 days ago.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1650 W x 1.2 headroom = 1980 W; MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1810 W x 1.2 headroom = 2172 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
 - **R32** `preset:6x P40 (144 GB)`: Needs about 1820 W x 1.2 headroom = 2184 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); MSI MEG Ai1600T PCIE5 is 1600 W.
@@ -262,6 +253,7 @@ Generated 2026-11-24 by `npm run methodology`. Do not edit between the markers: 
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 910 W x 1.2 headroom = 1092 W on "Example: Ryzen 9 5950X + RX 6600 XT" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R32** `preset:2x V620 (64 GB, the video)`: Needs about 920 W x 1.2 headroom = 1104 W on "Gamer with an RTX 3060 12GB" with its own 1 card(s) kept (the builder's keep-your-card box clears this); Corsair RM1000x SHIFT (CP-9020253-NA) is 1000 W.
 - **R41** `gpu:instinct-mi50-32`: Bandwidth rests on weaker evidence: maker press release, search excerpt ("up to 1 TB/s", converted to 1,000 GB/s).
+- **R37** `gpu:v100-32-sxm2`: The note quotes $280, $360, $115, $160 but the range is $799.99 to $1100, and the note does not say why.
 - **R41** `gpu:rtx-3060-12`: Bandwidth rests on weaker evidence: third-party page (not the maker).
 - **R41** `gpu:rtx-4080-super`: Bandwidth rests on weaker evidence: third-party page (not the maker).
 - **R41** `gpu:rtx-4070-ti-super`: Bandwidth rests on weaker evidence: maker page, seen as a search excerpt.
